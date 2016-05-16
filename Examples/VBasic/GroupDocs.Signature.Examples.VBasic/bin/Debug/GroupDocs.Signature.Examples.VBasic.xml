@@ -1,0 +1,201 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GroupDocs.Signature.Examples.VBasic
+</name>
+</assembly>
+<members>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetConfigurations">
+	<summary>
+ Initialize, populate and return the SignatureConfig object
+ </summary>
+	<returns>Populated SignatureConfig object</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.ApplyLicense">
+	<summary>
+ Set product's license
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.SaveFile(System.String,System.String,GroupDocs.Signature.Handler.SignatureHandler,System.Object,System.Object,System.Object)">
+	<summary>
+ Saves the output/signed file
+ </summary>
+	<param name="fileExtension">Extension of the file</param>
+	<param name="fileName">Name of the file</param>
+	<param name="handler">Signature's handler</param>
+	<param name="textSignOptions">Text sign true or false</param>
+	<param name="imageSignOptions">Image sign true or false</param>
+	<param name="digitalSignOptions">Digital sign true or false</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.#ctor(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)">
+	<summary>
+ Caches azure stream
+ </summary>
+	<param name="blob"></param>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanRead">
+	<summary>
+ Sets reading
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanSeek">
+	<summary>
+ Sets seeking
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanWrite">
+	<summary>
+ Sets writing
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Flush">
+	<summary>
+ Sets flushing
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Length">
+	<summary>
+ Sets lenght
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Position">
+	<summary>
+ Gets and Sets position
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Read(System.Byte[],System.Int32,System.Int32)">
+	<summary>
+ Reads buffer
+ </summary>
+	<param name="buffer"></param>
+	<param name="offset"></param>
+	<param name="count"></param>
+	<returns></returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureInputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure input data
+ </summary>
+	<param name="endpoint">End point</param>
+	<param name="accountName">Account name</param>
+	<param name="accountKey">Key</param>
+	<param name="containerName">Container Name</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureInputDataHandler.GetStream(System.String)">
+	<summary>
+ Gets stream
+ </summary>
+	<param name="guid">ID</param>
+	<returns>Returns memory stream</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure data
+ </summary>
+	<param name="endpoint"></param>
+	<param name="accountName"></param>
+	<param name="accountKey"></param>
+	<param name="containerName"></param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureDataHandler.GetContainerReference">
+	<summary>
+ Gets container reference
+ </summary>
+	<returns>Returns container</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentWithText(System.String)">
+	<summary>
+ Signing a pdf document with text
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignCellDocumentWithText(System.String)">
+	<summary>
+ Signing a cell document with text
+ </summary>
+	<param name="fileName">Name of the input filel</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignSlideDocumentWithText(System.String)">
+	<summary>
+ Signing a slide document with text
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignWordDocumentWithText(System.String)">
+	<summary>
+ Signing a word document with text
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentWithImage(System.String)">
+	<summary>
+ Signing a pdf document with image
+ </summary>
+	<param name="fileName">Name of the input filed</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignCellDocumentWithImage(System.String)">
+	<summary>
+ Signing a cell document with image
+ </summary>
+	<param name="fileName">Name of the inut file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignSlideDocumentWithImage(System.String)">
+	<summary>
+ Signing a slide document with image
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignWordDocumentWithImage(System.String)">
+	<summary>
+ Signing word document with image
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignCellDocumentDigitally(System.String)">
+	<summary>
+ Signing a cell document with digital certificate
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentDigitally(System.String)">
+	<summary>
+ Signing a pdf document with digital certificate
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignWordDocumentDigitally(System.String)">
+	<summary>
+ Signing a word document with digital certificate
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignSlideDocumentDigitally(System.String)">
+	<summary>
+ Signing a slide document with digital certificate
+ </summary>
+	<param name="fileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.CustomInputHandlerTest(System.String)">
+	<summary>
+ Custom input handling 
+ </summary>
+	<param name="inputFileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.CustomOutputHandlerTest(System.String)">
+	<summary>
+ Custome output handling
+ </summary>
+	<param name="inputFileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure output data
+ </summary>
+	<param name="endpoint">End point</param>
+	<param name="accountName">Account name</param>
+	<param name="accountKey">Key</param>
+	<param name="containerName">Container Name</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.CreateFile(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+	<summary>
+ Creates file
+ </summary>
+	<param name="fileDescription">Description of the file</param>
+	<param name="signOptions">Sign options</param>
+	<param name="saveOptions">Save options</param>
+	<returns>writeable append blob</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.CreateStream(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+	<summary>
+ Creats stream
+ </summary>
+	<param name="fileDescription"></param>
+	<param name="signOptions"></param>
+	<param name="saveOptions"></param>
+	<returns></returns>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GroupDocs.Signature.Examples.VBasic.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
