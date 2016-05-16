@@ -1,0 +1,1 @@
+A universal component library designed for easy integration into any .NET and Java application. Allows you to add text, image or digital signatures to about 30 different types of documents, including Microsoft Office and OpenDocument file formats, PDF documents and more.
