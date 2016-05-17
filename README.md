@@ -19,7 +19,7 @@ Directory | Description
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Signature for .NET](http://groupdocs.com/dot-net/electronic-signature-library)
-+ **Download:** [Download GroupDocs.Assembly for .NET](#)
++ **Download:** [Download GroupDocs.Signature for .NET](#)
 + **Documentation:** [GroupDocs.Signature for .NET Documentation](#)
 + **Forum:** [GroupDocs.Signature for .NET Forum](#)
 + **Blog:** [GroupDocs.Signature for .NET Blog](#)
