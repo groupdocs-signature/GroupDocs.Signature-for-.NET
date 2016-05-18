@@ -108,9 +108,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Azure\SampleAzureDataHandler.vb" />
-    <Compile Include="Azure\SampleAzureInputDataHandler.vb" />
-    <Compile Include="Azure\SampleAzureOutputDataHandler.vb" />
+    <Compile Include="Azure\AzureDataHandler.vb" />
+    <Compile Include="Azure\AzureInputDataHandler.vb" />
+    <Compile Include="Azure\AzureOutputDataHandler.vb" />
     <Compile Include="Signatures.vb" />
     <Compile Include="Utilities.vb" />
   </ItemGroup>

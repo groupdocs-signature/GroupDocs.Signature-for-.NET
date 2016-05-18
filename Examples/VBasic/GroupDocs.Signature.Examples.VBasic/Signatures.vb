@@ -294,7 +294,7 @@ Public Class Signatures
 
 
         Dim saveOptions As New SaveOptions(OutputType.[String])
-        Dim customInputStorageProvider As IInputDataHandler = New SampleAzureInputDataHandler(DevStorageEmulatorUrl, DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "testbucket")
+        Dim customInputStorageProvider As IInputDataHandler = New AzureInputDataHandler(DevStorageEmulatorUrl, DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "testbucket")
         Dim handlerWithCustomStorage As New SignatureHandler(config, customInputStorageProvider)
 
         ' setup image signature options
@@ -325,7 +325,7 @@ Public Class Signatures
 
 
         Dim saveOptions As New SaveOptions(OutputType.[String])
-        Dim customOutputStorageProvider As IOutputDataHandler = New SampleAzureOutputDataHandler(DevStorageEmulatorUrl, DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "tempbucket")
+        Dim customOutputStorageProvider As IOutputDataHandler = New AzureOutputDataHandler(DevStorageEmulatorUrl, DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "tempbucket")
         Dim handlerWithCustomStorage As New SignatureHandler(config, customOutputStorageProvider)
         ' setup image signature options
         Dim signOptions = New PdfSignImageOptions("sign.png")

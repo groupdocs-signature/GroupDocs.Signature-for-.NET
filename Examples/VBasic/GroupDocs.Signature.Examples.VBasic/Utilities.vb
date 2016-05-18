@@ -39,7 +39,7 @@ Public Class Utilities
             Dim lic As New License()
             'apply license
             lic.SetLicense(licensePath)
-        Catch ex As Exception
+        Catch ex As System.Exception
             Console.WriteLine(ex.Message)
         End Try
     End Sub

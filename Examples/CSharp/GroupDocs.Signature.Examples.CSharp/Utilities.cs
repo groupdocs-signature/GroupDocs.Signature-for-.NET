@@ -52,7 +52,7 @@ namespace GroupDocs.Signature.Examples.CSharp
                 //apply license
                 lic.SetLicense(licensePath);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

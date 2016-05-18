@@ -314,7 +314,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             var handler = new SignatureHandler(config);
 
             SaveOptions saveOptions = new SaveOptions(OutputType.String);
-            IInputDataHandler customInputStorageProvider = new SampleAzureInputDataHandler(DevStorageEmulatorUrl,
+            IInputDataHandler customInputStorageProvider = new AzureInputDataHandler(DevStorageEmulatorUrl,
                 DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "testbucket");
             SignatureHandler handlerWithCustomStorage = new SignatureHandler(config, customInputStorageProvider);
 
@@ -347,7 +347,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             var handler = new SignatureHandler(config);
 
             SaveOptions saveOptions = new SaveOptions(OutputType.String);
-            IOutputDataHandler customOutputStorageProvider = new SampleAzureOutputDataHandler(
+            IOutputDataHandler customOutputStorageProvider = new AzureOutputDataHandler(
                 DevStorageEmulatorUrl, DevStorageEmulatorAccountName, DevStorageEmulatorAccountKey, "tempbucket");
             SignatureHandler handlerWithCustomStorage = new SignatureHandler(config, customOutputStorageProvider);
             // setup image signature options

@@ -6,7 +6,58 @@ GroupDocs.Signature.Examples.VBasic
 </name>
 </assembly>
 <members>
-<member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetConfigurations">
+<member name="M:GroupDocs.Signature.Examples.VBasic.AzureOutputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure output data
+ </summary>
+	<param name="endpoint">End point</param>
+	<param name="accountName">Account name</param>
+	<param name="accountKey">Key</param>
+	<param name="containerName">Container Name</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureOutputDataHandler.CreateFile(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+	<summary>
+ Creates file
+ </summary>
+	<param name="fileDescription">Description of the file</param>
+	<param name="signOptions">Sign options</param>
+	<param name="saveOptions">Save options</param>
+	<returns>writeable append blob</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureOutputDataHandler.CreateStream(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+	<summary>
+ Creats stream
+ </summary>
+	<param name="fileDescription"></param>
+	<param name="signOptions"></param>
+	<param name="saveOptions"></param>
+	<returns></returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureInputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure input data
+ </summary>
+	<param name="endpoint">End point</param>
+	<param name="accountName">Account name</param>
+	<param name="accountKey">Key</param>
+	<param name="containerName">Container Name</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureInputDataHandler.GetStream(System.String)">
+	<summary>
+ Gets stream
+ </summary>
+	<param name="guid">ID</param>
+	<returns>Returns memory stream</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Handles azure data
+ </summary>
+	<param name="endpoint"></param>
+	<param name="accountName"></param>
+	<param name="accountKey"></param>
+	<param name="containerName"></param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.AzureDataHandler.GetContainerReference">
+	<summary>
+ Gets container reference
+ </summary>
+	<returns>Returns container</returns>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetConfigurations">
 	<summary>
  Initialize, populate and return the SignatureConfig object
  </summary>
@@ -25,70 +76,6 @@ GroupDocs.Signature.Examples.VBasic
 	<param name="textSignOptions">Text sign true or false</param>
 	<param name="imageSignOptions">Image sign true or false</param>
 	<param name="digitalSignOptions">Digital sign true or false</param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.#ctor(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)">
-	<summary>
- Caches azure stream
- </summary>
-	<param name="blob"></param>
-</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanRead">
-	<summary>
- Sets reading
- </summary>
-</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanSeek">
-	<summary>
- Sets seeking
- </summary>
-</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanWrite">
-	<summary>
- Sets writing
- </summary>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Flush">
-	<summary>
- Sets flushing
- </summary>
-</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Length">
-	<summary>
- Sets lenght
- </summary>
-</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Position">
-	<summary>
- Gets and Sets position
- </summary>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Read(System.Byte[],System.Int32,System.Int32)">
-	<summary>
- Reads buffer
- </summary>
-	<param name="buffer"></param>
-	<param name="offset"></param>
-	<param name="count"></param>
-	<returns></returns>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureInputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
-	<summary>
- Handles azure input data
- </summary>
-	<param name="endpoint">End point</param>
-	<param name="accountName">Account name</param>
-	<param name="accountKey">Key</param>
-	<param name="containerName">Container Name</param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureInputDataHandler.GetStream(System.String)">
-	<summary>
- Gets stream
- </summary>
-	<param name="guid">ID</param>
-	<returns>Returns memory stream</returns>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureDataHandler.#ctor(System.String,System.String,System.String,System.String)">
-	<summary>
- Handles azure data
- </summary>
-	<param name="endpoint"></param>
-	<param name="accountName"></param>
-	<param name="accountKey"></param>
-	<param name="containerName"></param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureDataHandler.GetContainerReference">
-	<summary>
- Gets container reference
- </summary>
-	<returns>Returns container</returns>
 </member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentWithText(System.String)">
 	<summary>
  Signing a pdf document with text
@@ -159,29 +146,42 @@ GroupDocs.Signature.Examples.VBasic
  Custome output handling
  </summary>
 	<param name="inputFileName">Name of the input file</param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.#ctor(System.String,System.String,System.String,System.String)">
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.#ctor(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)">
 	<summary>
- Handles azure output data
+ Caches azure stream
  </summary>
-	<param name="endpoint">End point</param>
-	<param name="accountName">Account name</param>
-	<param name="accountKey">Key</param>
-	<param name="containerName">Container Name</param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.CreateFile(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+	<param name="blob"></param>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanRead">
 	<summary>
- Creates file
+ Sets reading
  </summary>
-	<param name="fileDescription">Description of the file</param>
-	<param name="signOptions">Sign options</param>
-	<param name="saveOptions">Save options</param>
-	<returns>writeable append blob</returns>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.SampleAzureOutputDataHandler.CreateStream(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanSeek">
 	<summary>
- Creats stream
+ Sets seeking
  </summary>
-	<param name="fileDescription"></param>
-	<param name="signOptions"></param>
-	<param name="saveOptions"></param>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.CanWrite">
+	<summary>
+ Sets writing
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Flush">
+	<summary>
+ Sets flushing
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Length">
+	<summary>
+ Sets lenght
+ </summary>
+</member><member name="P:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Position">
+	<summary>
+ Gets and Sets position
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.CachingAzureStream.Read(System.Byte[],System.Int32,System.Int32)">
+	<summary>
+ Reads buffer
+ </summary>
+	<param name="buffer"></param>
+	<param name="offset"></param>
+	<param name="count"></param>
 	<returns></returns>
 </member><member name="P:GroupDocs.Signature.Examples.VBasic.My.Resources.Resources.ResourceManager">
 	<summary>
