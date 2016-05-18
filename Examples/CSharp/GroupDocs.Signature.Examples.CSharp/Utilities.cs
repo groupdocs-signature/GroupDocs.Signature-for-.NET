@@ -13,11 +13,13 @@ namespace GroupDocs.Signature.Examples.CSharp
 {
     public class Utilities
     {
+        //ExStart:commonutilities
         public const string storagePath = "../../../../Data/Storage/";
         public const string outputPath = "../../../../Data/Output/";
         public const string licensePath = "../../../../Data/Storage/GroupDocs.Total.lic";
         public const string imagePath = "../../../../Data/Images/";
         public const string certificatePath = "../../../../Data/Certificates/";
+        //ExEnd:commonutilities
 
         /// <summary>
         /// Initialize, populate and return the SignatureConfig object
@@ -37,16 +39,25 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:Configurations
         }
 
+        //ExStart:Applylicense
         /// <summary>
         /// Set product's license
         /// </summary>
         public static void ApplyLicense()
         {
-            //ExStart:Applylicense
-            License lic = new License();
-            lic.SetLicense(licensePath);
-            //ExEnd:Applylicense
+            try
+            {
+                //initialize License
+                License lic = new License();
+                //apply license
+                lic.SetLicense(licensePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+        //ExEnd:Applylicense
 
         /// <summary>
         /// Saves the output/signed file
@@ -59,6 +70,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="digitalSignOptions">Digital sign true or false</param>
         public static void SaveFile(string fileExtension, string fileName, SignatureHandler handler, object textSignOptions, object imageSignOptions, object digitalSignOptions)
         {
+            //ExStart:saveoutputfile
             try
             {
                 switch (fileExtension)
@@ -165,6 +177,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             {
                 Console.WriteLine(ex.Message);
             }
+            //ExEnd:saveoutputfile
         }
     }
 }

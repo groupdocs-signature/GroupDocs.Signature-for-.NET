@@ -18,7 +18,7 @@ Public Class Signatures
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup image signature options 
+        ' setup text signature options 
         Dim signOptions = New PdfSignTextOptions("coca cola")
         signOptions.Left = 100
         signOptions.Top = 100
@@ -37,7 +37,7 @@ Public Class Signatures
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup options with text of signature
+        ' setup text signature options
         Dim signOptions = New CellsSignTextOptions("coca cola")
         ' text position
         signOptions.RowNumber = 3
@@ -63,7 +63,7 @@ Public Class Signatures
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup image signature options 
+        ' setup text signature options 
         Dim signOptions = New SlidesSignTextOptions("coca cola")
         signOptions.Left = 10
         signOptions.Top = 10
@@ -84,7 +84,7 @@ Public Class Signatures
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        ' setup text signature options
         Dim signOptions = New WordsSignTextOptions("coca cola")
         signOptions.Left = 10
         signOptions.Top = 10
@@ -173,7 +173,7 @@ Public Class Signatures
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        ' setup image signature options
         Dim signOptions = New WordsSignImageOptions("sign.png")
         signOptions.Left = 10
         signOptions.Top = 10

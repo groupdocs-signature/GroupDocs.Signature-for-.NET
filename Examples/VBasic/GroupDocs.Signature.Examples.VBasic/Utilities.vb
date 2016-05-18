@@ -4,11 +4,13 @@ Imports GroupDocs.Signature.Handler
 
 Public Class Utilities
 
+    'ExStart:commonutilitiesvb
     Public Const storagePath As String = "../../../../Data/Storage/"
     Public Const outputPath As String = "../../../../Data/Output/"
     Public Const licensePath As String = "../../../../Data/Storage/GroupDocs.Total.lic"
     Public Const imagePath As String = "../../../../Data/Images/"
     Public Const certificatePath As String = "../../../../Data/Certificates/"
+    'ExEnd:commonutilitiesvb
 
     ''' <summary>
     ''' Initialize, populate and return the SignatureConfig object
@@ -27,15 +29,22 @@ Public Class Utilities
         'ExEnd:Configurations
     End Function
 
+    'ExStart:Applylicense
     ''' <summary>
     ''' Set product's license
     ''' </summary>
     Public Shared Sub ApplyLicense()
-        'ExStart:Applylicense
-        Dim lic As New License()
-        lic.SetLicense(licensePath)
-        'ExEnd:Applylicense
+        Try
+            'initialize License
+            Dim lic As New License()
+            'apply license
+            lic.SetLicense(licensePath)
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
     End Sub
+    'ExEnd:Applylicense
+
 
     ''' <summary>
     ''' Saves the output/signed file
@@ -47,6 +56,7 @@ Public Class Utilities
     ''' <param name="imageSignOptions">Image sign true or false</param>
     ''' <param name="digitalSignOptions">Digital sign true or false</param>
     Public Shared Sub SaveFile(fileExtension As String, fileName As String, handler As SignatureHandler, textSignOptions As Object, imageSignOptions As Object, digitalSignOptions As Object)
+        'ExStart:saveoutputfile
         Try
             Select Case fileExtension
                 Case ".docx"
@@ -153,6 +163,7 @@ Public Class Utilities
         Catch ex As System.Exception
             Console.WriteLine(ex.Message)
         End Try
+        'ExEnd:saveoutputfile
     End Sub
 
 End Class

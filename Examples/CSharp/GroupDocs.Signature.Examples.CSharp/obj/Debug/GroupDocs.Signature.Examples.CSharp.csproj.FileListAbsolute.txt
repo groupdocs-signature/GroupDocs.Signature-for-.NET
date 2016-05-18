@@ -120,3 +120,7 @@ D:\OtherProducts\groupdocs.signature-for-.NET\Examples\CSharp\GroupDocs.Signatur
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.exe.config
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache

@@ -131,3 +131,10 @@ D:\OtherProducts\groupdocs.signature-for-.NET\Examples\VBasic\GroupDocs.Signatur
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
 D:\OtherProducts\groupdocs.signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.exe.config
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.exe
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.xml
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.pdb
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
+D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache

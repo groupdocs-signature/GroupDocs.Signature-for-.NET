@@ -26,7 +26,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
-            // setup image signature options 
+            // setup text signature options 
             var signOptions = new PdfSignTextOptions("coca cola");
             signOptions.Left = 100;
             signOptions.Top = 100;
@@ -46,7 +46,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
-            // setup options with text of signature
+            // setup text signature options
             var signOptions = new CellsSignTextOptions("coca cola");
             // text position
             signOptions.RowNumber = 3;
@@ -73,7 +73,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
-            // setup image signature options 
+            // setup text signature options 
             var signOptions = new SlidesSignTextOptions("coca cola");
             signOptions.Left = 10;
             signOptions.Top = 10;
@@ -95,7 +95,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
-            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            // setup text signature options
             var signOptions = new WordsSignTextOptions("coca cola");
             signOptions.Left = 10;
             signOptions.Top = 10;
@@ -188,7 +188,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
-            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            // setup image signature options
             var signOptions = new WordsSignImageOptions("sign.png");
             signOptions.Left = 10;
             signOptions.Top = 10;
