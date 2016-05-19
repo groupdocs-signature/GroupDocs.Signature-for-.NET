@@ -51,8 +51,8 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Azure
 
-            //Signatures.CustomInputHandlerTest("digital signatures.pdf");
-            //Signatures.CustomOutputHandlerTest("digital signatures.pdf");
+            //Signatures.CustomInputHandler("digital signatures.pdf");
+            //Signatures.CustomOutputHandler("digital signatures.pdf");
 
             #endregion
         }

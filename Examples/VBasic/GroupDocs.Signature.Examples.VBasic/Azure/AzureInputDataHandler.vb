@@ -4,6 +4,7 @@ Imports Microsoft.WindowsAzure.Storage.Blob
 Imports GroupDocs.Signature.Handler.Input
 
 
+'ExStart:inputdatahandlervb
 Public Class AzureInputDataHandler
     Inherits AzureDataHandler
     Implements IInputDataHandler
@@ -38,4 +39,5 @@ Public Class AzureInputDataHandler
         Return result
     End Function
 End Class
+'ExEnd:inputdatahandlervb
 

@@ -4,6 +4,7 @@ Imports GroupDocs.Signature.Domain
 Imports System.IO
 Imports Microsoft.WindowsAzure.Storage.Blob
 
+'ExStart:outputdatahandler
 Public Class AzureOutputDataHandler
     Inherits AzureDataHandler
     Implements IOutputDataHandler
@@ -56,4 +57,5 @@ Public Class AzureOutputDataHandler
         Throw New NotImplementedException()
     End Function
 End Class
+'ExEnd:outputdatahandler
 

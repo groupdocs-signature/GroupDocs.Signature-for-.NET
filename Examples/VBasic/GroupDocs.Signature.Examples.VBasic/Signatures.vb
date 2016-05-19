@@ -281,7 +281,7 @@ Public Class Signatures
     ''' Custom input handling 
     ''' </summary>
     ''' <param name="inputFileName">Name of the input file</param>
-    Public Shared Sub CustomInputHandlerTest(inputFileName As String)
+    Public Shared Sub CustomInputHandler(inputFileName As String)
         'ExStart:custominputhandler
         Const DevStorageEmulatorUrl As String = "http://127.0.0.1:10000/devstoreaccount1/"
         Const DevStorageEmulatorAccountName As String = "devstoreaccount1"
@@ -312,7 +312,7 @@ Public Class Signatures
     ''' Custome output handling
     ''' </summary>
     ''' <param name="inputFileName">Name of the input file</param>
-    Public Shared Sub CustomOutputHandlerTest(inputFileName As String)
+    Public Shared Sub CustomOutputHandler(inputFileName As String)
         'ExStart:customoutputhandler
         Const DevStorageEmulatorUrl As String = "http://127.0.0.1:10000/devstoreaccount1/"
         Const DevStorageEmulatorAccountName As String = "devstoreaccount1"

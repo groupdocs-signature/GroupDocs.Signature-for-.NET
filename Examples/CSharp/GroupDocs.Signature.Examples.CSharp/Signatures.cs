@@ -300,7 +300,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Custom input handling 
         /// </summary>
         /// <param name="inputFileName">Name of the input file</param>
-        public static void CustomInputHandlerTest(string inputFileName)
+        public static void CustomInputHandler(string inputFileName)
         {
             //ExStart:custominputhandler
             const string DevStorageEmulatorUrl = "http://127.0.0.1:10000/devstoreaccount1/";
@@ -333,7 +333,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Custome output handling
         /// </summary>
         /// <param name="inputFileName">Name of the input file</param>
-        public static void CustomOutputHandlerTest(string inputFileName)
+        public static void CustomOutputHandler(string inputFileName)
         {
             //ExStart:customoutputhandler
             const string DevStorageEmulatorUrl = "http://127.0.0.1:10000/devstoreaccount1/";

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
+    //ExStart:inputdatahandler
     public class AzureInputDataHandler : AzureDataHandler, IInputDataHandler
     {
         /// <summary>
@@ -50,4 +51,5 @@ namespace GroupDocs.Signature.Examples.CSharp
             return result;
         }
     }
+    //ExEnd:inputdatahandler
 }

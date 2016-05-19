@@ -42,8 +42,8 @@
 
         '#Region "Azure"
 
-        'Signatures.CustomInputHandlerTest("digital signatures.pdf")
-        'Signatures.CustomOutputHandlerTest("digital signatures.pdf")
+        'Signatures.CustomInputHandler("digital signatures.pdf")
+        'Signatures.CustomOutputHandler("digital signatures.pdf")
 
         '#End Region
     End Sub

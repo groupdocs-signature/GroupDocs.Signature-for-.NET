@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
+    //ExStart:outputdatahandler
     public class AzureOutputDataHandler : AzureDataHandler, IOutputDataHandler
     {
         /// <summary>
@@ -72,4 +73,5 @@ namespace GroupDocs.Signature.Examples.CSharp
             throw new NotImplementedException();
         }
     }
+    //ExEnd:outputdatahandler
 }
