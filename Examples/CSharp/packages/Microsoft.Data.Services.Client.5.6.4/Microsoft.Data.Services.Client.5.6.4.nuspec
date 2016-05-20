@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Data.Services.Client</id>
+    <version>5.6.4</version>
+    <title>WCF Data Services Client for OData v1-3</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/?linkid=9809688</licenseUrl>
+    <projectUrl>http://odata.github.io</projectUrl>
+    <iconUrl>http://static.tumblr.com/hgchgxz/9ualgdf98/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>LINQ-enabled client API for issuing OData queries and consuming OData payloads. Supports OData v3. Targets .NET 4.0, Silverlight 4.0 or .NET Portable Lib with support for .NET 4.5, Win Phone 8, Win Phone 8.1, and Win 8. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.</description>
+    <summary />
+    <releaseNotes>Features
+    [GitHub issue #144] ODataLib now suppresses the errors in reading open entity’s undeclared collection or complex property value
+
+Bug fixes
+    [GitHub issue #60] Fix an issue that $select does not work with EntityFramework 5</releaseNotes>
+    <tags>wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices</tags>
+    <dependencies>
+      <dependency id="Microsoft.Data.OData" version="[5.6.4]" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Windows" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="Silverlight4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
