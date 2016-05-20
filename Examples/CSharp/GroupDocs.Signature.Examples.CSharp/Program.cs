@@ -11,27 +11,27 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
-            Signatures.SignPdfDocumentWithText("digital signatures.pdf");
+            //Signatures.SignPdfDocumentWithText("digital signatures.pdf");
 
-            Signatures.SignCellDocumentWithText("pie chart.xlsx");
+            //Signatures.SignCellDocumentWithText("pie chart.xlsx");
 
-            Signatures.SignSlideDocumentWithText("butterfly effect.pptx");
+            //Signatures.SignSlideDocumentWithText("butterfly effect.pptx");
 
-            Signatures.SignWordDocumentWithText("getting started.docx");
+            //Signatures.SignWordDocumentWithText("getting started.docx");
 
             #endregion
 
             #region WorkingWithImageSignature
 
-            Signatures.SignPdfDocumentWithImage("digital signatures.pdf");
+            //Signatures.SignPdfDocumentWithImage("digital signatures.pdf");
 
-            Signatures.SignCellDocumentWithImage("pie chart.xlsx");
+            //Signatures.SignCellDocumentWithImage("pie chart.xlsx");
 
-            Signatures.SignSlideDocumentWithImage("butterfly effect.pptx");
+            //Signatures.SignSlideDocumentWithImage("butterfly effect.pptx");
 
             Signatures.SignWordDocumentWithImage("getting started.docx");
 
@@ -39,13 +39,13 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region WorkingWithDigitalSignature
 
-            Signatures.SignPdfDocumentDigitally("digital signatures.pdf");
+            //Signatures.SignPdfDocumentDigitally("digital signatures.pdf");
 
-            Signatures.SignCellDocumentDigitally("pie chart.xlsx");
+            //Signatures.SignCellDocumentDigitally("pie chart.xlsx");
 
-            Signatures.SignWordDocumentDigitally("getting started.docx");
+            //Signatures.SignWordDocumentDigitally("getting started.docx");
 
-            Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
+            //Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
 
             #endregion
 
