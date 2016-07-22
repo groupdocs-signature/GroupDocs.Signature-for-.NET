@@ -1,0 +1,1753 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroupDocs.Signature</name>
+    </assembly>
+    <members>
+        <member name="T:GroupDocs.Signature.Base.BaseInstance`1">
+            <summary>
+            Singleton implementation
+            </summary>
+            <typeparam name="T">Singleton class</typeparam>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.RELEASE_DATE">
+            <summary>
+            The _release date
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.PLATFORM">
+            <summary>
+            The _platform
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.FAMILY">
+            <summary>
+            The _family
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.PRODUCT">
+            <summary>
+            The _product
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="P:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.ReleaseDate">
+            <summary>
+            Gets the release date.
+            </summary>
+            <value>The release date.</value>
+        </member>
+        <member name="P:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.Product">
+            <summary>
+            Gets the product.
+            </summary>
+            <value>The product.</value>
+        </member>
+        <member name="P:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.Platform">
+            <summary>
+            Gets the platform.
+            </summary>
+            <value>The platform.</value>
+        </member>
+        <member name="P:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.Family">
+            <summary>
+            Gets the family.
+            </summary>
+            <value>The family.</value>
+        </member>
+        <member name="T:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.AssemblyConstantsInitializer">
+            <summary>
+            Class AssemblyConstantsInitializer.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.AssemblyConstantsInitializer.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.AssemblyConstantsInitializer"/> class.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.SignatureAssemblyConstants.AssemblyConstantsInitializer._instance">
+            <summary>
+            The _instance
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Base.Licensing.TrialRules">
+            <summary>
+            Static functions to define Trial Limitations
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.TRIAL_LABEL_ROTATION_ANGLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.MAX_PAGE_NUMBER">
+            <summary>
+            Maximum Number of Page that can be processed in Trial Mode
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.MAX_PAGES_COUNT">
+            <summary>
+            Maximum Count of DocumentsPages that can be processed in Trial Mode
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.MAX_DOCUMENT_PER_HOUR">
+            <summary>
+            Maximum Documents that can be processed in Trial Mode per Hour
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.TRIAL_MESSAGE_FONT_NAME">
+            <summary>
+            Trial Message Font Name
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.TRIAL_MESSAGE_FONT_SIZE">
+            <summary>
+            Trial Message Font Size
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Base.Licensing.TrialRules.TRIAL_MESSAGE_COLOR">
+            <summary>
+            Trial Message Color
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Base.Licensing.TrialRules.IsInTrialMode">
+            <returns></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.HorizontalAlignment">
+            <summary>
+            Specifies alignment of element on Document Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.HorizontalAlignment.Default">
+            <summary>
+            Same as GroupDocs.Signature.Domain.HorizontalAlignment.None.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.HorizontalAlignment.None">
+            <summary>
+            The object is explicitly positioned, usually using its Left property.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.HorizontalAlignment.Left">
+            <summary>
+            Specifies that the object shall be left aligned to the horizontal alignment  base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.HorizontalAlignment.Center">
+            <summary>
+            Specifies that the object shall be centered with respect to the horizontal alignment base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.HorizontalAlignment.Right">
+            <summary>
+            Specifies that the object shall be right aligned to the horizontal alignment  base.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.Padding">
+            <summary>
+            Represents padding or margin information associated with element
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Padding.Empty">
+            <summary>
+            Provides a Padding object with no padding.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.Padding.#ctor">
+            <summary>
+            Initializes a new instance of Padding class using zero values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.Padding.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the System.Windows.Forms.Padding class using
+                the supplied padding size for all edges.
+            </summary>
+            <param name="all">The number of pixels to be used for padding for all edges.</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.All">
+            <summary>
+            Gets or sets the padding value for all the edges.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Bottom">
+            <summary>
+            Gets or sets the padding value for the bottom edge.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Horizontal">
+            <summary>
+            Gets the combined padding for the right and left edges.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Left">
+            <summary>
+            Gets or sets the padding value for the left edge.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Right">
+            <summary>
+            Gets or sets the padding value for the right edge.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Top">
+            <summary>
+            Gets or sets the padding value for the top edge.
+            </summary>       
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.Padding.Vertical">
+            <summary>
+            Gets the combined padding for the top and bottom edges.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.Position">
+            <summary>
+            Specifies alignment of element on Document Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.None">
+            <summary>The element is not located to any edges of page.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.Top">
+            <summary>The element is located to the top of page.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.Bottom">
+            <summary>The element is located to the bottom of page.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.Left">
+            <summary>The element is located to the left of page.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.Right">
+            <summary>The element is located to the right of page.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.HorizontalCenter">
+            <summary>The element is located to the center of horizontal line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.Position.VerticalCenter">
+            <summary>The element is located to the center of vertical line.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.CellsDigitalSignature">
+            <summary>
+            Describes Signature of Cells documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DigitalSignature">
+            <summary>
+            Digital Signature
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.init(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Init method to create options from existing certificate
+            </summary>
+            <param name="certificate"></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.#ctor(System.Security.Cryptography.X509Certificates.X509Store,System.Int32)">
+            <summary>
+            Create Digital Signature based on specified X509 Store and index of certificate
+            </summary>
+            <param name="Store">X509 Store</param>
+            <param name="index">Index of certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Create Digital Signature with specified certificate
+            </summary>
+            <param name="certificate">X509 Certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.LoadDigitalSignatures">
+            <summary>
+            Load Digital Signatures from system X509 Certificates Store
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.GetAsposeDigitalSignature(System.String,System.String)">
+            <summary>
+            Convert Certificate to Aspose Digital Signature
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalSignature.Certificate">
+            <summary>
+            Certificate of X509Certificate2
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalSignature.Comments">
+            <summary>
+            Signing purpose comment.
+            </summary> 
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalSignature.IsValid">
+            <summary>
+            Keeps true if this digital signature is valid and the document has not been tampered with.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalSignature.SignatureType">
+            <summary>
+            Type of the digital signature.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalSignature.SignTime">
+            <summary>
+            Time the document was signed.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.CellsDigitalSignature.#ctor">
+            <summary>
+            Initialize Cells Digital Signature with no certificate
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.CellsDigitalSignature.#ctor(System.Security.Cryptography.X509Certificates.X509Store,System.Int32)">
+            <summary>
+            Initialize Cells Digital Signature with Certificate store and index of certificate
+            </summary>
+            <param name="Store">Store of X509 Certificates</param>
+            <param name="index">Index of Certificate from store</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.CellsDigitalSignature.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            
+            </summary>
+            <param name="certificate"></param>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DigitalSignatureType">
+            <summary>
+             Digital Signature Type define the method to sign
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DigitalSignatureType.Unknown">
+            <summary>Indicates an error, unknown digital signature type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DigitalSignatureType.CryptoApi">
+            <summary>The Crypto API signature method used in Microsoft Word 97-2003 .DOC binary documents.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DigitalSignatureType.XmlDsig">
+            <summary>The XmlDsig signature method used in OOXML and OpenDocument documents.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.FolderDescription">
+            <summary>
+            Class to keep information of folder
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FolderDescription.#ctor(System.String)">
+            <summary>
+            Create Folder Description object with specified path
+            </summary>
+            <param name="_Path">Path to folder</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FolderDescription.#ctor(System.String,System.String)">
+            <summary>
+            Create Folder Description object with specified path
+            </summary>
+            <param name="_Path">Path to folder</param>
+            <param name="_Pattern">Path to folder</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FolderDescription.ToString">
+            <summary>
+            Overrides conversion object to string
+            </summary>
+            <returns>Returns string appearence of object</returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.Path">
+            <summary>
+            Unique identifier for object - url, path, id
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.Name">
+            <summary>
+            Name of folder
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.LastModifiedDate">
+            <summary>
+            Date of last modified
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.Exists">
+            <summary>
+            Returns if specified folder exists.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.SearchPattern">
+            <summary>
+            Search Files Pattern
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FolderDescription.Files">
+            <summary>
+            List of File Description in Folder
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PDFDigitalSignature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.ResizeType">
+            <summary>
+            Define Document Part type
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.None">
+            <summary>No resize</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.LeftTopToLeftTop">
+            <summary>Left Top resize</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.RightTopToRightTop">
+            <summary>Right top resize</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.RightBottomToRightBottom">
+            <summary>Right Bottom</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.LeftBottomToLeftBottom">
+            <summary>Left Bottom</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.CenterToCenter">
+            <summary>Center resize</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.LanczosResample">
+            <summary>Lanczo Resample</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.NearestNeighbourResample">
+            <summary>Nearest Neighbour Resample</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ResizeType.AdaptiveResample">
+            <summary>Adaptive Resample</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.RotateFlipType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.RotateNoneFlipNone">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate90FlipNone">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate180FlipNone">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate270FlipNone">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.RotateNoneFlipX">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate90FlipX">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate180FlipX">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate270FlipX">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.RotateNoneFlipY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate90FlipY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate180FlipY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate270FlipY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.RotateNoneFlipXY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate90FlipXY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate180FlipXY">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.RotateFlipType.Rotate270FlipXY">
+            <summary></summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SaveFileFormatType">
+            <summary>
+            Define different save file formats
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.CSV">
+            <summary>Comma separated values</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel97To2003">
+            <summary>Excel 97 file format</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlsx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlsm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xltx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xltm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlam">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.TabDelimited">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Html">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Pdf">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.ODS">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel2003XML">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlsb">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.MHtml">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.XPS">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.TIFF">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel95">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel4">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel3">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Excel2">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Pptx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Docx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.SVG">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Dif">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Doc">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Ppt">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.MapiMessage">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.MSEquation">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Ole10Native">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.VSD">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.VSDX">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Docm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Dotx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Dotm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Pptm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Potx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Potm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Ppsx">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Ppsm">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Ooxml">
+            <summary></summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Unknown">
+            <summary></summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SignedDocumentInfo">
+            <summary>
+            Class to keep signed document GUID and signed date
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.SignedDocumentInfo.#ctor(System.String)">
+            <summary>
+            Create SignedDocumentInfo object based on file identifier
+            </summary>
+            <param name="guid"></param>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignedDocumentInfo.SignedOn">
+            <summary>
+            Date when Document was signed
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignedDocumentInfo.SignedTick">
+            <summary>
+            Time mark of Sign document event
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignedDocumentInfo.GUID">
+            <summary>
+            Document GUID
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.VerticalAlignment">
+            <summary>
+            Specifies vertical alignment of element on Document Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Default">
+            <summary>
+            Same as GroupDocs.Signature.Domain.VerticalAlignment.None.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.None">
+            <summary>
+            The object is explicitly positioned, usually using its Top property.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Top">
+            <summary>
+            Specifies that the object shall be at the top of the vertical alignment base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Center">
+            <summary>
+            Specifies that the object shall be centered with respect to the vertical
+                alignment base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Bottom">
+            <summary>
+            Specifies that the object shall be at the bottom of the vertical alignment
+                base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Inside">
+            <summary>
+            Specifies that the object shall be inside of the horizontal alignment base.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Outside">
+            <summary>
+            Specifies that the object shall be outside of the vertical alignment base.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DocumentPart">
+            <summary>
+            Define Document Part type
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.Body">
+            <summary>Document Body section.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.HeaderEven">
+            <summary>Header for even numbered pages.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.HeaderPrimary">
+            <summary>Primary header, also used for odd numbered pages.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.FooterEven">
+            <summary>Footer for even numbered pages.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.FooterPrimary">
+            <summary>Primary footer, also used for odd numbered pages.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.HeaderFirst">
+            <summary>Header for the first page of the section.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentPart.FooterFirst">
+            <summary>Footer for the first page of the section.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.WordsDigitalSignature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.WordsDigitalSignature.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.WordsDigitalSignature.#ctor(Aspose.Words.DigitalSignature)">
+            <summary>
+            
+            </summary>
+            <param name="Signature"></param>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.DocumentProcessHandler.Documents">
+            <summary>
+            Get Signed Documents List
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Config.SignatureConfig">
+            <summary>
+            Represents a options for Signature Operations
+               Provides methods to load, save configuration
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.#ctor(System.String)">
+            <summary>
+            Load Signature Configuration from file
+            </summary>
+            <param name="configFileName">Configuration file path</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.#ctor">
+            <summary>
+            Create Signature Config with default settings
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates Signature Config with specified paths
+            </summary>
+            <param name="_StoragePath">Storage Path for source files</param>
+            <param name="_OutputPath">Output path for signed documents</param>
+            <param name="_ImagesPath">Images path</param>
+            <param name="_CertificatesPath">Pth with digital certificates and keys</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.Load(System.String)">
+            <summary>
+            Load Configuration from file
+            </summary>
+            <param name="ConfigFileName">File with configuration</param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.Save(System.String)">
+            <summary>
+            Save Signature Configuration to file
+            </summary>
+            <param name="configFileName">Configuration file path</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Config.SignatureConfig.CheckPaths">
+            <summary>
+            Check paths for existing locations
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Config.SignatureConfig.StoragePath">
+            <summary>
+            Get or Set the Signature storage path
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Config.SignatureConfig.OutputPath">
+            <summary>
+            Get or Set the Signature output path
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Config.SignatureConfig.ImagesPath">
+            <summary>
+            Get or Set the Signature images path
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Config.SignatureConfig.CertificatesPath">
+            <summary>
+            Get or Set the Signature certificate files path
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.FileDescription">
+            <summary>
+             Properties of file to be signed
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FileDescription.#ctor(System.String)">
+            <summary>
+            Create File Description object with specified file id - file name or remote resource name
+            </summary>
+            <param name="guid">Unique file or resource identifier. Short file name for Local Path</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FileDescription.op_Implicit(System.String)~GroupDocs.Signature.Domain.FileDescription">
+            <summary>
+            Implicit conversion from string to FileDescription
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.FileDescription.ToString">
+            <summary>
+            Overrides ToString method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.GUID">
+            <summary>
+            Unique identifier for file - absolute or relative path, resource or url
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.Name">
+            <summary>
+            Name of file
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.Size">
+            <summary>
+            Size of file
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.LastModified">
+            <summary>
+            Date of last modified
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.FileType">
+            <summary>
+            File Location Type - Undefined, Local, Network
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.Exists">
+            <summary>
+            Returns if specified GUID file exists.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.BaseName">
+            <summary>
+            File name without extension
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.FileDescription.Extension">
+            <summary>
+            File extension
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.FileUtils">
+            <summary>
+             File Utilities features
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.OutputFileDescription">
+            <summary>
+             OutputFileDescription class keeps information of output file
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.OutputFileDescription.#ctor(System.String)">
+            <summary>
+            Creates Output File Description
+            </summary>
+            <param name="guid">Unique file identifier - local file path or remote resource url</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.OutputFileDescription.GetStream">
+            <summary>
+            Get Stream associated with File Description
+            </summary>
+            <returns>Returns created Stream</returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.OutputFileDescription.Stream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PathType">
+            <summary>
+            Define file path type
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PathType.Undefined">
+            <summary>Undefined reference</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PathType.LocalPath">
+            <summary>Local path file</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PathType.NetworkPath">
+            <summary>Network file/web resource</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PathType.LocalFolder">
+            <summary>Local path of folder</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.ResourceInfo">
+            <summary>
+            Resource information data
+            </summary>
+        </member>
+        <member name="T:src.Domain.SignatureFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Exception.FileNotSupportedException">
+            <summary>
+            GroupDocs Signature exception for unsupported file type or format
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Exception.GroupDocsSignatureException">
+            <summary>
+            GroupDocs Signature general exception
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Exception.GroupDocsSignatureException.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Exception.GroupDocsSignatureException.#ctor(System.String)">
+            <summary>
+            Throw exception with specific message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Exception.GroupDocsSignatureException.#ctor(System.Exception,System.String)">
+            <summary>
+            Throw exception with specific message and original exception
+            </summary>
+            <param name="ex"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Exception.FileNotSupportedException.#ctor(System.String)">
+            <summary>
+            Throw exception with specific message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:GroupDocs.Signature.Exception.LicenseException">
+            <summary>
+            Invalid license exception
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Exception.TrialException">
+            <summary>
+            Invalid Trial operation exception
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Exception.TrialException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Input.IInputDataHandler">
+            <summary>
+            Implement this interface to provide custom way of loading of the input file. E.g. from Amazon S3
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Input.IInputDataHandler.GetFileDescription(System.String)">
+            <summary>
+            Get properties of the input file by guid
+            </summary>
+            <param name="guid">Unique identifier of the input file.</param>
+            <returns><seealso cref="T:GroupDocs.Signature.Domain.FileDescription">FileDescription</seealso></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Input.IInputDataHandler.GetStream(System.String)">
+            <summary>
+            Get stream for the file specified by guid
+            </summary>
+            <param name="guid">Unique identifier of the input file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Input.InputCertificateHandler">
+            <summary>
+             Input Data Handler class describes input data file handler
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Input.InputCertificateHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig)">
+            <summary>
+            Creates InputHandler with specified Configuration and FileDescription object
+            </summary>
+            <param name="config">Signature Configuration</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Input.InputImageHandler">
+            <summary>
+             Input Data Handler class describes input data file handler
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Input.InputImageHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig)">
+            <summary>
+            Creates Input Image Handler with specified Configuration and FileDescription object
+            </summary>
+            <param name="signatureConfig">Signature Configuration</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler">
+            <summary>
+            Implement this interface to provide custom way of saving of the output file. E.g. to Amazon S3
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Output.IOutputDataHandler.CreateFile(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Creates a file at a specified location.
+            </summary>
+            <param name="fileDescription">The path to the file being created.</param>
+            <param name="signOptions">The Sign Options.</param>
+            <param name="saveOptions">The Save Options.</param>
+            <returns>A stream for writing to the newly created file.</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.Output.IOutputDataHandler.CreateStream(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Creates a stream with specified options.
+            </summary>
+            <param name="fileDescription">The path of original file.</param>
+            <param name="signOptions">The Sign Options.</param>
+            <param name="saveOptions">The Save Options.</param>
+            <returns>A stream for writing to the newly created file.</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.SignatureHandler">
+            <summary>
+            Create instanse of SignatureHandler class to sign documents with image and digital signatures
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor">
+            <summary>
+            Instantiate the SignatureHandler with default <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/>, <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> and <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/>
+            All files will be loaded from local file system
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig)">
+            <summary>
+            Instantiate the SignatureHandler with default <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> and <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/>
+            All files will be loaded from localfile system
+            </summary>
+            <param name="signatureConfig">Instance of <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig,GroupDocs.Signature.Handler.Input.IInputDataHandler)">
+            <summary>
+            Instantiate the SignatureHandler with default <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> and custom <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> implementation
+            </summary>
+            <param name="signatureConfig">Instance of <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/></param>
+            <param name="inputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> interface</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig,GroupDocs.Signature.Handler.Output.IOutputDataHandler)">
+            <summary>
+            Instantiate the SignatureHandler with default <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> and custom <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> implementation
+            </summary>
+            <param name="signatureConfig">Instance of <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/></param>
+            <param name="outputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> interface</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig,GroupDocs.Signature.Handler.Input.IInputDataHandler,GroupDocs.Signature.Handler.Output.IOutputDataHandler)">
+            <summary>
+            Instantiate the SignatureHandler with custom <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> and <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> implementation
+            </summary>
+            <param name="signatureConfig">Instance of <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/></param>
+            <param name="inputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> interface</param>
+            <param name="outputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> interface</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.String,GroupDocs.Signature.Options.SignOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="signOptions">Signature Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.String,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="loadOptions">Load Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.String,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="saveOptions">Save Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.String,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.LoadOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="loadOptions">Load Options</param>
+            <param name="saveOptions">Save Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.IO.Stream,GroupDocs.Signature.Options.SignOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="signOptions">Signature Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.IO.Stream,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="loadOptions">Load Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.IO.Stream,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="saveOptions">Save Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.IO.Stream,GroupDocs.Signature.Options.SignOptions,GroupDocs.Signature.Options.LoadOptions,GroupDocs.Signature.Options.SaveOptions)">
+            <summary>
+            Sign the document from file quid with SignOptions, load and save options
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="signOptions">Signature Options</param>
+            <param name="loadOptions">Load Options</param>
+            <param name="saveOptions">Save Options</param>
+            <returns>Returns Stream of signed document or string as file path to signed file</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.SetLicense(System.String)">
+            <summary>
+            Set GroupDocs Signature license file path
+            </summary>
+            <param name="licensePath"></param>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig">
+            <summary>
+            Signature Configuration with file location paths options
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.SignatureHandler.InputDataHandler">
+            <summary>
+            Input File Handler for source document to sign
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.SignatureHandler.OutputDataHandler">
+            <summary>
+            Output File Handler for destination document
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.SignatureHandler.DocumentProcessHandler">
+            <summary>
+            Trial Documents process handler to meet trial rules requirements
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Locale.LocaleHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.Locale.LocaleHandler.LocalePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.Locale.LocaleHandler.Dictionary">
+            <summary>
+            Dictionary of pair Code-Text
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.CellsSignDigitalOptions">
+            <summary>
+            Digital Options for Cells Documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SignDigitalOptions">
+            <summary>
+            Option for Digital Signature operations
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SignImageOptions">
+            <summary>
+            Options for Image Signature
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SignOptions">
+            <summary>
+            Sign Options - keeps options to sign document
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignOptions.#ctor">
+            <summary>
+            Creates default Signature Option
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignOptions.DocumentPageNumber">
+            <summary>
+            Document Page Number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignOptions.SignatureConfig">
+            <summary>
+            Signature Configuration to access images and certificates files
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Options.SignImageOptions.fImageStream">
+            <summary>
+            Keeps image stream
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.#ctor">
+            <summary>
+            Creates Signature Image Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Signature Image Option with image
+            </summary>
+            <param name="_ImageStream">Image Stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Image Option with image file description
+            </summary>
+            <param name="guid">Image File name</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.SetImage(System.String)">
+            <summary>
+            Set Signature Image
+            </summary>
+            <param name="guid">The unique path to image file</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.SetImage(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="_ImageStream"></param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.ImageFileName">
+            <summary>
+            Get and Set Image File Name
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.ImageStream">
+            <summary>
+            Get or set Image stream of option
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Width">
+            <summary>
+            Width of image
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Height">
+            <summary>
+            Height of image on destination
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Left">
+            <summary>
+            X position of image on destination
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Top">
+            <summary>
+            Y Position
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.SignAllPages">
+            <summary>
+            Flag to put image of signature on all document pages
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of Image on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of Image on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Margin">
+            <summary>
+            Gets the space, in pixels, that is specified by default between Image and Document edges.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Rectangle">
+            <summary>
+            Rectangle of area to put the image in document
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor">
+            <summary>
+            Signature Digital Options
+            </summary>
+            
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(GroupDocs.Signature.Domain.DigitalSignature)">
+            <summary>
+            Signature Digital Options
+            </summary>
+            <param name="signature">Digital Signature</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Digital Signature option with given digital certificate file
+            </summary>
+            <param name="DigitalCertificateFileName">File path to digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates Digital Signature option with given digital certificate file
+            </summary>
+            <param name="DigitalCertificateFileName">File path to digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.GetPKCS1">
+            <summary>
+            Get PKCS1 object from file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.DigitalCertificate">
+            <summary>
+            File Description of Digital Certificate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Password">
+            <summary>
+            Password for Digital Signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Visible">
+            <summary>
+            Flag is digital signature is visible on document view
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Signature">
+            <summary>
+            Digital Signature properties
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignDigitalOptions.#ctor">
+            <summary>
+            Creates Cells Digital Signature options with default parameters
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Cells Digital Signature options with given digital certificate
+            </summary>
+            <param name="pathToPfx">Digital Certificate file</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.CellsSignImageOptions">
+            <summary>
+            Image Options for Cells Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignImageOptions.#ctor">
+            <summary>
+            Creates Signature Cells Image Option with default operation
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignImageOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Signature Cells Image Option with image
+            </summary>
+            <param name="_Image">Image Stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignImageOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Cells Image Option with image file
+            </summary>
+            <param name="guid">Image file identifier</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.SheetNumber">
+            <summary>
+            Sheet number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.RowNumber">
+            <summary>
+            Cell Row Number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.ColumnNumber">
+            <summary>
+            Cell Column Number
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.CellsSignTextOptions">
+            <summary>
+            Text Options for Cells Documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SignTextOptions">
+            <summary>
+            Options for Text Signature
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignTextOptions.#ctor">
+            <summary>
+            Creates Signature Text Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignTextOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Text Option with text
+            </summary>
+            <param name="text">Text signature</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Text">
+            <summary>
+            X position of text on destination
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Left">
+            <summary>
+            X position of text on destination
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Top">
+            <summary>
+            Y Position
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Width">
+            <summary>
+            Width of Text
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Height">
+            <summary>
+            Height of Text
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.SignAllPages">
+            <summary>
+            Flag to put text of signature on all document pages
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignTextOptions.#ctor">
+            <summary>
+            Creates Signature Cells Text Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignTextOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Cells Text Option with text
+            </summary>
+            <param name="text">Text signature</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.SheetNumber">
+            <summary>
+            Sheet number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.RowNumber">
+            <summary>
+            Cell Row Number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.ColumnNumber">
+            <summary>
+            Cell Column Number
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.LoadOptions">
+            <summary>
+            Load document options
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.LoadOptions.Password">
+            <summary>
+            Set password to unprotect protected document
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.OutputType">
+            <summary>
+            Supported output types
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Options.OutputType.Stream">
+            <summary>
+            The output will be stream or list of streams
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Options.OutputType.String">
+            <summary>
+            The output will be file path as string
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PdfSignDigitalOptions">
+            <summary>
+            Digital Signature Option for PDF Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates PDF Digital Signature Option
+            </summary>
+            <param name="_PFXFileDescription">File Descriptio of PFX Certificate</param>
+            <param name="_SignatureAppearence">File Description of Signature Appearence image</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates PDF Digital Signature Option
+            </summary>
+            <param name="_PFXFileDescriptio">File Descriptio of PFX Certificate</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.Reason">
+            <summary>
+            Reason of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.Contact">
+            <summary>
+            Signature Contact
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.Location">
+            <summary>
+            Signature Location
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.SignatureImageFile">
+            <summary>
+            File Description of Digital Signature file location
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PdfSignImageOptions">
+            <summary>
+            Image Signature Options for PDF Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignImageOptions.#ctor">
+            <summary>
+            Creates Signature PDF Image Options
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignImageOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Signature PDF Image Options with image
+            </summary>
+            <param name="_Image">Image Stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignImageOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature PDF Image Option with image file
+            </summary>
+            <param name="guid">Image file identifier</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PDFSignTextOptions">
+            <summary>
+            Text Signature Options for PDF Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFSignTextOptions.#ctor">
+            <summary>
+            Creates Signature PDF Text Option with default operation
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFSignTextOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature PDF Text Option with image
+            </summary>
+            <param name="text">Text signture</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SaveOptions">
+            <summary>
+            General signature save opitons class
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor">
+            <summary>
+            Create SaveOptions instance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create SaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SaveOptions.OutputType">
+             <summary>
+             Result type of the signature - String or Stream
+            
+             default: Stream
+             </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SlidesSignDigitalOptions">
+            <summary>
+            Digital Signature Option for Slides Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription,GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates Slides Digital Signature Option
+            </summary>
+            
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates Slides Digital Signature Option
+            </summary>
+            
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignDigitalOptions.Reason">
+            <summary>
+            Reason of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignDigitalOptions.Contact">
+            <summary>
+            Signature Contact
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignDigitalOptions.Location">
+            <summary>
+            Signature Location
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignDigitalOptions.SignatureImageFile">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SlidesSignTextOptions">
+            <summary>
+            Text Signature Option for Slides Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignTextOptions.#ctor">
+            <summary>
+            Creates Signature Slides Text Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignTextOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Slides Text Option with text
+            </summary>
+            <param name="text">Text signature</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SlidesSignImageOptions">
+            <summary>
+            Image Signature Option for Slides Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignImageOptions.#ctor">
+            <summary>
+            Creates Signature Slides Image Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignImageOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Signature Slides Image Option with image
+            </summary>
+            <param name="_Image">Image Stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSignImageOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Slides Image Option with image file
+            </summary>
+            <param name="imageFileName">Image File Name</param>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.WordsSignDigitalOptions">
+            <summary>
+            Digital Signature Option for Words Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates Words Digital Signature option with given digital certificate file
+            </summary>
+            <param name="CertificateFile">File path to digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor">
+            <summary>
+            Creates Words Digital Signature option with default parameters
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.WordsSignImageOptions">
+            <summary>
+            Image Signature Option for Words Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignImageOptions.#ctor">
+            <summary>
+            Creates Signature Words Image Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignImageOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Signature Words Image Option with image
+            </summary>
+            <param name="_Image">Image Stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignImageOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Words Image Option with image file
+            </summary>
+            <param name="guid">Image file identifier</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignImageOptions.DocumentPart">
+            <summary>
+            Part of Document to locate Signature Image
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.WordsSignTextOptions">
+            <summary>
+            Text Signature Option for Words Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignTextOptions.#ctor">
+            <summary>
+            Creates Signature Words Text Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignTextOptions.#ctor(System.String)">
+            <summary>
+            Creates Signature Words Text Option with text
+            </summary>
+            <param name="text">Text signature</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.DocumentPart">
+            <summary>
+            Part of Document to locate Signature Text
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadSignatures(GroupDocs.Signature.Domain.InputDataSource)">
+            <summary>
+            Internal method to load digital signatures
+            </summary>
+            <param name="inputDataSource">Source file desccription</param>
+            <returns>List of Digital Signatures in document</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Resources.MessageCode">
+            <summary>
+            Container for string based codes of messages entire library
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,12 @@
+﻿.DownloadLinkContainer {
+    font-size: 18px;
+    height: 30px;
+    margin: 30px
+}
+
+.DownloadLink {
+    display: none;
+    color: blue;
+    padding: 10px 20px;
+    background-color: rgb(244,232,215)
+}
