@@ -1,0 +1,211 @@
+﻿<style type="text/css">
+    div.doc-page {
+        display: block;
+    }
+
+    .centered_doc {
+        margin: 0 auto;
+        overflow: visible;
+        width: 960px;
+    }
+
+    .modal-blue .modal-body {
+        filter: none;
+    }
+</style>
+
+<textarea readonly="readonly" rows="1" cols="1" id="selection-content"></textarea>
+<div id="doc_viewer" class="centered_doc signature-viewer" data-bind="attr: { id: docViewerId }, css: { 'doc_viewer': _mode == 'embed', 'centered_doc': _mode != 'embed' }">
+    <div id="pages-container" class="pages_container">
+        <!-- ko foreach: { data: pages, as: 'page' } -->
+        <!-- ko if: url()!=''-->
+        <div class="doc-page" data-bind="pageId: number, attr: { id: $parent.pagePrefix + number }, style: { width: ($parent.pageWidth() == 0 ? '100%' : $parent.pageWidth() + 'px') }, dropField: { fx: {} }">
+            <div class="viewer_loading_overlay" data-bind="visible: $root.inprogress() || !visible(), style: { width: ($parent.pageWidth() == $parent.pageImageWidth ? '100%' : $parent.pageWidth() + 'px') }" style="height: 100%; width: 100%; position: absolute; left:34px; top:0px;">
+                <div class="loading_overlay_message" style="width: 250px;">
+                    <span class="progresspin"></span>
+                    <p>Loading your content...</p>
+                </div>
+            </div>
+            <!-- ko with: $root.vm -->
+            <!-- ko foreach: { data: fields, as: 'field' } -->
+            <!-- ko foreach: { data: locations, as: 'location' } -->
+            <!-- ko if: (location.page())==$parents[2].number -->
+            <div data-bind="template: { name: $parent.templateName(), data: $data }"></div>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- /ko -->
+            <div>
+                <img class="page-image" data-bind="attr: { id: $root.docViewerId + '-img-' + number, src: (visible() ? url : '') }" />
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+</div>
+<script type="text/html" id="signature-field-template">
+    <div class="field_in_document signature_doc_field signature_doc_field_signature toolTip own sign_input_field" rel="tooltip" data-placement="top" style="cursor: pointer;"
+         data-bind="moveExistingField: { enable: true },
+    calculatePosition: location,
+    resizeField: { enable: true },
+    tooltip: {},
+    fieldTooltipText: {},
+    css: { 'field_in_document': field.data().length == 0, 'error': !field.isValid()}
+    ">
+        <span class="star_required" data-bind="css: { 'star_required': field.mandatory(), 'star_not_required': !field.mandatory() } "></span>
+
+        <!-- ko if: field.data().length>0 -->
+        <!-- ko if: field.data().substring(0,4)=='<svg' -->
+        <div data-bind="html: field.data, visible: field.data() != ''" style="height: 100%" />
+        <!-- /ko -->
+        <!-- ko if: field.data().substring(0,4)!='<svg' -->
+        <img data-bind="attr: { src: field.data }, visible: field.data() != ''" style="width: 100%; height: 100%;" />
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- ko if: field.data().length==0 -->
+        <!-- ko if: !$root.vm.config.checkBrowserForSvgSupport() -->
+        <span class="sig_background"></span>
+        <!-- /ko -->
+        <!-- ko if: $root.vm.config.checkBrowserForSvgSupport() -->
+        <span data-bind="html: $root.signatureBackgroundSvg"></span>
+        <!-- /ko -->
+        <!-- /ko -->
+
+    </div>
+</script>
+<script type="text/html" id="singleline-field-template">
+    <div class="toolTip signature_doc_field" rel="tooltip" data-placement="top" style="position: absolute;" data-bind="
+    calculatePosition: location,
+    moveExistingField: { enable: true },
+    resizeField: { enable: true }">
+        <span class="star_required" data-bind="css: { 'star_required': field.mandatory(), 'star_not_required': !field.mandatory() } "></span>
+        <input type="text" class="sign_input_field"
+               data-bind="value: field.data,
+    valueUpdate: ['keyup'],
+    signatureFieldStyle: location,
+    css: { 'error': !field.isValid(), selected_field: location.selected() },
+    moveInViewport: location.selected(),
+    tooltip: {},
+    fieldTooltipText: {},
+    attr: {'maxlength': (field.settings()!=null && field.settings().maxLength !=null && parseInt(field.settings().maxLength())>0) ? parseInt(field.settings().maxLength()): null },
+    disable: field.isCalcField()">
+        <span class="field_on_doc_icon fod_icon_text"></span>
+    </div>
+</script>
+<script type="text/html" id="multiline-field-template">
+    <div class="toolTip signature_doc_field" rel="tooltip" data-placement="top" style="position: absolute;" data-bind="calculatePosition: location,
+    moveExistingField: { enable: true },
+    resizeField: { enable: true }">
+        <span class="star_required" data-bind="css: { 'star_required': field.mandatory(), 'star_not_required': !field.mandatory() } "></span>
+        <textarea class="sign_input_field" style="resize: none;" data-bind="value: field.data, valueUpdate: ['keyup'],
+    signatureFieldStyle: location,
+    css: { 'error': !field.isValid(), selected_field: location.selected() },
+    moveInViewport: location.selected(),
+    tooltip: {},
+    fieldTooltipText: {}"></textarea>
+        <span class="field_on_doc_icon fod_icon_multitext"></span>
+    </div>
+</script>
+<script type="text/html" id="date-field-template">
+    <div class="signature_doc_field" style="position: absolute;" rel="tooltip" data-placement="top" data-bind="
+    calculatePosition: location,
+    moveExistingField: { enable: true },
+    resizeField: { enable: true }">
+        <span class="star_required" data-bind="css: { 'star_required': field.mandatory(), 'star_not_required': !field.mandatory() } "></span>
+        <input type="text" readonly="readonly" title="Please click to select a date" style="cursor: pointer; background: none repeat scroll 0px 0px rgb(255, 255, 255); border: 1px dashed rgb(18, 83, 137);" class="sign_input_field" data-bind="value: field.data,
+    signatureFieldStyle: location,
+    datePicker: { dateFormat: field.settings()!=null && field.settings().dateFormat !=null ? field.settings().dateFormat() : 'dd.mm.yy' },
+    css: { 'error': !field.isValid(), selected_field: location.selected() },
+    moveInViewport: location.selected(),
+    tooltip: {},
+    fieldTooltipText: {}">
+        <span class="field_on_doc_icon fod_icon_date"></span>
+    </div>
+</script>
+<script type="text/html" id="dropdown-field-template">
+    <div class="signature_doc_field" style="position: absolute;" rel="tooltip" data-placement="top" data-bind="
+    calculatePosition: location,
+    moveExistingField: { enable: true },
+    resizeField: { enable: true }">
+        <div class="dropdown sign_input_field" data-bind="fieldDropdown: field,
+                signatureFieldStyle: location,
+                css: { 'error': !field.isValid() && !location.selected(), selected_field: location.selected() },
+                moveInViewport: location.selected(),
+                tooltip:{},
+                fieldTooltipText: {}
+            ">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" data-bind="signatureFieldStyle: location">
+                <span data-bind="text: field.data()">Dropdown</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <!-- ko foreach: field.acceptableValuesArray() -->
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: $data">Another link</a></li>
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="checkbox-field-template">
+    <div style="position: absolute; border: none;" rel="tooltip" data-placement="top" class="sign_input_field signature_doc_field" data-bind="calculatePosition: location,
+    attr: { 'data-original-title': field.isValid() ? (!location.selected() ? field.tooltip() != '' ? field.tooltip() : field.name() : '') : field.data.error, 'data-mandatory': field.mandatory() },
+    tooltip: {},
+    css: { 'error': !field.isValid(), selected_field: location.selected(), foreign: !$root.vm.isOwnField(field) },
+    fieldTooltipText: {},
+    moveExistingField: { enable: true },
+    resizeField: { enable: true }" data-placement="top">
+        <span class="star_required" data-bind="css: { 'star_required': field.mandatory(), 'star_not_required': !field.mandatory() } "></span>
+        <!-- ko if: !$root.vm.config.checkBrowserForSvgSupport() -->
+        <span class="checkbox" data-bind="fieldCheckbox: {}, moveInViewport: location.selected()," style="margin: 0px;">
+            <img src="/content/images/checker.png" alt="checked">
+        </span>
+        <!-- /ko -->
+        <!-- ko if: $root.vm.config.checkBrowserForSvgSupport() -->
+        <span class="svg_checkbox" data-bind="svgFieldCheckbox: {}">
+            <!-- ko if: field.data()==null || field.data()=='' || field.data()=='off' -->
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 28 28">
+                <rect width="19" height="19" x="4.5" y="4.5" id="box" style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:0.33000004" />
+            </svg>
+            <!-- /ko -->
+            <!-- ko if: field.data()!=null && field.data()=='on' -->
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 28 28">
+                <path d="M 11.94,20.25 8.7,13.64 C 7.5836008,11.362408 8.7449524,11.954942 9.234963,12.670011 12.802978,17.461386 11.781076,19.309624 14.75,13.24 L 20.707,1.0616 C 21.19746,0.0424868 21.563475,1.05578 21.049,2.27 l -6.488,17.07 c -0.381549,1.003861 -1.786,2.05 -2.621,0.9 l -10e-4,0.005 10e-4,0.005 z" />
+                <rect width="19" height="19" x="4.5" y="4.5" id="box" style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:0.33000004" />
+            </svg>
+            <!-- /ko -->
+        </span>
+        <!-- /ko -->
+
+    </div>
+</script>
+<script type="text/html" id="stamp-field-template">
+    <div style="position: absolute; cursor: pointer;" class="signature_doc_field" data-placement="top"
+         data-bind="calculatePosition: location,
+            tooltip: {},
+            css: { 'error': !field.isValid() && !location.selected(), selected_field: location.selected(), foreign: !$root.vm.isOwnField(field), 'sign_input_field': $root.vm.isOwnField(field) },
+            fieldTooltipText: {},
+            moveExistingField: { enable: true },
+            resizeField: { enable: true }
+        ">
+        <!-- ko if: field.data()!=null && field.data().length>2 && (field.progress()==0 || field.progress()==100) -->
+        <img style="width: 100%; height: 100%;" data-bind="attr: { src: JSON.parse(field.data()).data }, visible: field.data() != '',
+            updateLocationOnImageLoad: { location: location }" />
+        <!-- /ko -->
+        <!-- ko if: field.data()!=null && field.data().length==0 -->
+        <!-- ko if: !$root.vm.config.checkBrowserForSvgSupport() -->
+        <div style="height:100%; width: 100%; text-align: center;">
+            <div style="position: relative; top: 50%; margin-top: -9px;">Click to upload stamp</div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: $root.vm.config.checkBrowserForSvgSupport() -->
+        <span data-bind="html: $root.stampBackgroundSvg"></span>
+        <!-- /ko -->
+        <!-- /ko -->
+        <div class="progress" data-bind="visible: field.progress()>0 && field.progress()<100 ">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr:{'aria-valuenow': field.progress()}, style: { width: field.progress() + '%' }">
+                <div data-bind="text: field.progress() + ' %'" class="progress-label"></div>
+            </div>
+        </div>
+        <input type="file" class="file-input js-fileapi-wrapper" data-bind="event: { change: function(location, e) { $root.vm.fileUploaded(field, location, e); } }" style="font-size: 15px !important; width: 100% !important; height: 100% !important;">
+    </div>
+</script>

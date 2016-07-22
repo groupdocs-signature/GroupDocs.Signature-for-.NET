@@ -1,0 +1,35 @@
+body > div.groupdocsPrintFrame, body > div.groupdocsPrintFrameDeactivated {
+    display: none;
+}
+
+@media print {
+    * { 
+        margin: 0 !important; padding: 0 !important; 
+    }
+    
+    html, body {
+        height:100% !important;
+    }
+    
+    body {
+        overflow: visible !important;
+    }
+    
+    body * {
+        display: none !important;
+    }
+    
+    body div.groupdocsPrintFrame{
+        height: 100%;
+    }
+    
+    body div.groupdocsPrintFrame, body div.groupdocsPrintFrame img {
+        display:block !important;
+    }
+    
+    div.groupdocsPrintFrame img {
+        max-width: 100%;
+        max-height: 100%;
+        page-break-after: always;
+    }
+}
