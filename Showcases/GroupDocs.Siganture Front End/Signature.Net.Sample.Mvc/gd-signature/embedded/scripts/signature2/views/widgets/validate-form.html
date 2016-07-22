@@ -1,0 +1,40 @@
+﻿<div class="modal fade modal2" data-bind="modal: isVisible" data-keyboard="false" data-backdrop="static">
+    <div class="modal_inner_wrapper">
+<!--        <a class="popclose" data-bind="click: closeDialog"></a>-->
+        <div class="modal_header">
+            <h3>You must validate your email before access the form</h3>
+            <div id="circleG" style="margin: 10px; position:absolute" data-bind="visible: inprogress">
+                <div id="circleG_1" class="circleG">
+                </div>
+                <div id="circleG_2" class="circleG">
+                </div>
+                <div id="circleG_3" class="circleG">
+                </div>
+            </div>
+        </div>
+        <div class="modal_content">
+            <div class="modal_input_wrap_left" >
+                <div data-bind="visible: !emailExist()">
+                    <p style="margin-top: 10px;">
+                        Email
+                    </p>
+                    <p>
+                        <input type="text" data-bind="value: email,valueUpdate: ['keyup']" />
+                        <span data-bind="validationMessage: email" class="errorMessage"></span>
+                    </p>
+                    <button class="btn" data-bind="click:setEmail, enable: email.isValid(), css: {disabled: !email.isValid() }">Submit Email</button>
+                </div>
+                <div data-bind="visible: emailExist">
+                    <p>Please enter validation code you get in the email <span data-bind="text:email"></span></p>
+                    <p>
+                        <input type="text" data-bind="value: code,valueUpdate: ['keyup']" />
+                    </p>
+                    <button class="btn" data-bind="click:resentValidationCode">Resent validation code</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <a class="red_button" data-bind="click: validate, enable: code() && code().length==10, css: { disabled: !code() || code().length!=10}" href="#">Validate</a>
+        </div>
+    </div>
+</div>

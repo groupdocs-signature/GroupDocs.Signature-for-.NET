@@ -1,0 +1,30 @@
+﻿<div class="modal fade modal2" data-bind="modal: isVisible" data-keyboard="false" data-backdrop="static">
+    <div class="modal_inner_wrapper">
+        <a class="popclose" data-bind="click: closeDialog"></a>
+        <div class="modal_header">
+            <h3>Sign confirmation </h3>
+        </div>
+        <div class="modal_content">
+            <div class="modal_input_wrap_left">
+                <p data-bind="visible: !requireUserAuthForSign() && !requestUserAuthByPhoto()">Are you sure you want to sign this envelope?</p>
+                
+                <div data-bind="visible: requireUserAuthForSign() || requestUserAuthByPhoto()">
+                    <p style="white-space: pre-wrap" data-bind="text:captureInfoText, css:captureInfoTextCss" class="small_text"></p>
+                    <div data-bind="visible:canCapture()">
+                        <video autoplay id="video" width="160" height="120"></video>
+                        <button class="red_button" id="capture-btn" style="vertical-align: bottom;">Capture > </button>
+                        <canvas id="canvas" width="160" height="120"></canvas>
+                    </div>
+                </div>
+                <div data-bind="visible: requestComment()">
+                    <p>Please leave your comment before confirm:</p>
+                    <textarea style="width:575px; height: 90px;" data-bind="value: comment"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <a class="red_button" data-bind="click: sign, enable: canSign, css: { disabled: !canSign() }" href="#">Continue</a>
+            <a class="btn close" data-bind="click: closeDialog" href="#">Close</a>
+        </div>
+    </div>
+</div>

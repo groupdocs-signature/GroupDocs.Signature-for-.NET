@@ -1,0 +1,40 @@
+﻿<div class="modal fade modal2" data-bind="modal: isVisible" data-keyboard="false" data-backdrop="static">
+    <div class="modal_inner_wrapper">
+        <a class="popclose" data-bind="click: closeDialog"></a>
+        <div class="modal_header">
+            <h3>Please enter your name</h3>
+        </div>
+        <div class="modal_content">
+            <div class="modal_input_wrap_left">
+                <p class="field_name">First name</p>
+                <input type="text" data-bind="value: signerName.firstName, valueUpdate: ['keyup']" />
+                <span data-bind="validationMessage: signerName.firstName" class="errorMessage"></span>
+                <br />
+                <p class="field_name">Last name</p>
+                <input type="text" data-bind="value: signerName.lastName, valueUpdate: ['keyup']" />
+                <span data-bind="validationMessage: signerName.lastName" class="errorMessage"></span>
+                <br/>
+                <p class="field_name">Email</p>
+                <input type="text" data-bind="value: signerName.email, valueUpdate: ['keyup'],enable:!userIdentedByEmail()" />
+                <span data-bind="validationMessage: signerName.email" class="errorMessage"></span>
+                <br />
+                <div data-bind="visible: requireUserAuthForSign() || requestUserAuthByPhoto()">
+                    <p style="white-space: pre-wrap" data-bind="text:captureInfoText, css:captureInfoTextCss" class="small_text"></p>
+                    <div data-bind="visible:canCapture()">
+                        <video autoplay id="video" width="160" height="120"></video>
+                        <button class="red_button" id="capture-btn" style="vertical-align: bottom;">Capture > </button>
+                        <canvas id="canvas" width="160" height="120"></canvas>
+                    </div>
+                </div>
+                <div data-bind="visible: requestComment()">
+                    <p>Please leave your comment before confirm:</p>
+                    <textarea style="width:575px; height: 90px;" data-bind="value: signerName.comment"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <a class="red_button" data-bind="click: setName, enable: signerName.isValid(), css: { disabled: !signerName.isValid() }" href="#">Continue</a>
+            <a class="grey_button right" data-bind="click: closeDialog" href="#">Close</a>
+        </div>
+    </div>
+</div>

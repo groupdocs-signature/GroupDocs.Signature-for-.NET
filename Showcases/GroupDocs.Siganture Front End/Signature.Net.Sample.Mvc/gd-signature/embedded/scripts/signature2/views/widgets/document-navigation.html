@@ -1,0 +1,8 @@
+﻿<div id="navigation-bar" class="left">
+    <span class="new_head_tools_btn h_t_i_nav1" data-bind="click: function () { selectPage(1); }"></span>
+    <span class="new_head_tools_btn h_t_i_nav2" data-bind="click: up"></span>
+    <input class="new_head_input" type="text" style="width: 17px;" data-bind="value: pageInd, event: { keyup: onKeyPress }">
+    <p class="new_head_of" data-bind="text: 'of ' + pageCount()"></p>
+    <span class="new_head_tools_btn h_t_i_nav3" data-bind="click: down"></span>
+    <span class="new_head_tools_btn h_t_i_nav4" data-bind="click: function () { selectPage(this.pageCount()); }"></span>
+</div>
