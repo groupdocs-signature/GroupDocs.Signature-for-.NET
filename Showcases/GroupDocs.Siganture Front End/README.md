@@ -1,6 +1,6 @@
 # ASP.Net MVC Front End Powered by GroupDocs.Signature
 
-This Application allows a user to sign documents, signature can be of different types (Type, Draw or Image signature). User can apply download or print signed file.
+This Application allows a user to sign documents, signature can be of different types (Type, Draw or Image signature). User can download or print signed file.
 
 # Pre-Requisites
 
