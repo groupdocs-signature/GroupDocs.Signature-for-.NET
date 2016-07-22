@@ -13,7 +13,9 @@ GroupDocs.Signature for .NET allows developers to write applications with abilit
 
 Directory | Description
 --------- | -----------
-[Examples](#)  | Contains the package of all .NET examples (C# & VB) and sample files that will help you learn how to use product features. 
+[Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Examples)  | Contains the package of all .NET examples (C# & VB) and sample files that will help you learn how to use product features. 
+[Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases)  | GroupDocs.Signature for .NET front end projects are the open source web based projects. These projects demonstrate the salient features of GroupDocs.Signature. 
+[Plugins](#)  | Contains the plugins related to GroupDocs.Signature 3.x for Visual Studio.
 
 ## Resources
 
