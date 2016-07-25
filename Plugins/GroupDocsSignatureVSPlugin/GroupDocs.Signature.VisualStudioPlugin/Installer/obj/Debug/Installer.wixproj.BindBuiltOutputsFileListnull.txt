@@ -1,0 +1,2 @@
+D:\GroupDocsSignatureVSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.msi
+D:\GroupDocsSignatureVSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.wixpdb
