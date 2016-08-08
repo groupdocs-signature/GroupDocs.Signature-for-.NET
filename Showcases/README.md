@@ -5,5 +5,5 @@ GroupDocs.Signature for .NET is a UI-Less back-end API. In order to seek impleme
 
 Directory | Description
 --------- | -----------
-[ASP.NET MVC Front End](https://github.com/atirtahirgroupdocs/GroupDocs.Signature-for-.NET/tree/master/Showcases/GroupDocs.Siganture%20Front%20End)  | It is an MVC application which demonstrate that how UI less GroupDocs.Signature 3.0.0 is being used to create a project for signing documents.
+[ASP.NET MVC Front End](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases/GroupDocs.Siganture%20Front%20End)  | It is an MVC application which demonstrate that how UI less GroupDocs.Signature 3.0.0 is being used to create a project for signing documents.
 

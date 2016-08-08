@@ -21,7 +21,7 @@ Directory | Description
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Signature for .NET](http://groupdocs.com/dot-net/electronic-signature-library)
-+ **Download:** [Download GroupDocs.Signature for .NET](#)
-+ **Documentation:** [GroupDocs.Signature for .NET Documentation](#)
-+ **Forum:** [GroupDocs.Signature for .NET Forum](#)
-+ **Blog:** [GroupDocs.Signature for .NET Blog](#)
++ **Download:** [Download GroupDocs.Signature for .NET](http://groupdocs.com/Community/files/8/.net-libraries/groupdocs_signature_for_.net/default.aspx)
++ **Documentation:** [GroupDocs.Signature for .NET Documentation](http://www.groupdocs.com/docs/display/signaturenet/Home)
++ **Forum:** [GroupDocs.Signature for .NET Forum](http://www.groupdocs.com/Community/forums/groupdocs.signature-product-family/6/showforum.aspx)
++ **Blog:** [GroupDocs.Signature for .NET Blog](http://www.groupdocs.com/blog/category/groupdocs-signature-product-family)
