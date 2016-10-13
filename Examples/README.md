@@ -13,5 +13,6 @@ This package contains C# and VB.NET Example Projects for [GroupDocs.Signature fo
 The package contains two projects, one for C# examples and other for Visual Basic examples. Follow the given steps to proceed with project build:
 * Extract the downloaded project and open the solution file in Visual Studio
 * Right click on solution and press "Enable NuGet package Restore"
-* Build the project
+* Build the project.
+
 For more details, visit  [How to Run Examples](http://www.groupdocs.com/docs/display/signaturenet/How+to+Run+Examples).
