@@ -180,9 +180,6 @@ D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupD
 D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb
 D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.exe.config
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.exe
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.pdb
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.dll
@@ -238,3 +235,6 @@ C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Exampl
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\ru\System.Spatial.resources.dll
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hans\System.Spatial.resources.dll
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hant\System.Spatial.resources.dll
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb

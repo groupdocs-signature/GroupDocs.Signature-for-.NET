@@ -195,12 +195,6 @@ D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupD
 D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hans\System.Spatial.resources.dll
 D:\OtherProducts\new release\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hant\System.Spatial.resources.dll
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.exe.config
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.exe
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.xml
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.pdb
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
-C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.exe
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.pdb
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.xml
@@ -257,3 +251,9 @@ C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Exampl
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\ru\System.Spatial.resources.dll
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hans\System.Spatial.resources.dll
 C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hant\System.Spatial.resources.dll
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.exe
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.xml
+C:\Users\atir\Desktop\Validate .NET Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.pdb
