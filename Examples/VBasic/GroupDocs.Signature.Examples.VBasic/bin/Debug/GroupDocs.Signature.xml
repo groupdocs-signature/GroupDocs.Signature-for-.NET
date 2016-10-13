@@ -4,6 +4,165 @@
         <name>GroupDocs.Signature</name>
     </assembly>
     <members>
+        <member name="T:GroupDocs.Signature.Domain.PositionInCellsDocument">
+            <summary>
+            Specifies a position in a Cells document.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.PositionInCellsDocument.ColumnNumber">
+            <summary>
+            A column number.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.PositionInCellsDocument.RowNumber">
+            <summary>
+            A row number.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DocumentDescription">
+            <summary>
+            Class DocumentInfoOptions.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            </summary>
+            <param name="guid">The unique identifier.</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            </summary>
+            <param name="guid">The unique identifier.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.Guid">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>The unique identifier.</value>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.Password">
+            <summary>
+            The password.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.Pages">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PageDescription">
+            <summary>
+             Document Page Description class
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.PageDescription.Width">
+            <summary>
+            Specify the Width of Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.PageDescription.Height">
+            <summary>
+            Specify the height of Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.PageDescription.PageNumber">
+            <summary>
+            Specify the Page Number
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DocumentViewType">
+            <summary>
+             Define Document Type
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentViewType.Unkown">
+            <summary>Indicates an error, unknown document type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentViewType.Pdf">
+            <summary>Pdf Document Type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentViewType.Words">
+            <summary>Words Document Type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentViewType.Slides">
+            <summary>Slides Document Type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DocumentViewType.Cells">
+            <summary>Cells Document Type.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SignatureType">
+            <summary>
+             Signature Type define the method to sign
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SignatureType.Unknown">
+            <summary>Indicates an error, unknown signature type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SignatureType.Text">
+            <summary>The Text Signature - put formatted string to document.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SignatureType.Image">
+            <summary>The Image Signature - put image to specified document location.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SignatureType.Digital">
+            <summary>The Digital Signature - sign document with digital key.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Engine.CellDrawFindingNearest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Engine.ViewingEngine">
+            <summary>
+            Contains methods for viewing documents in Web UI.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Engine.ViewingEngine.GetPageDescriptions(System.String)">
+            <summary>
+            Gets information about document pages: their sizes,
+            maximum page height, the width of a page with the maximum height.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <returns>An object of the DocumentDescription class</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Engine.ViewingEngine.GetDocumentPageImage(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Returns an image of a specified page.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <param name="width">A required width of images.</param>
+            <param name="quality">A required quality of images.</param>
+            <param name="pageIndex">The number of a page to get image for.</param>
+            <returns>An array of bytes representng the output image.</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Engine.ViewingEngine.GetPageSize(System.String,System.Int32,System.Double,System.Double,GroupDocs.Signature.Domain.PositionInCellsDocument)">
+            <summary>
+            Gets the size of a page of a document.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <param name="signaturePageNumber">The number of the page.</param>
+            <param name="signatureLocationX">The X coordinate of a signature for Cells files.</param>
+            <param name="signatureLocationY">The Y coordinate of a signature for Cells files.</param>
+            <param name="positionInCellsDocument">The row and column number of the nearest to the signature cell are returned in this object for Cells files.</param>
+            <returns>The size of a specified page for file types excluding Cells.</returns>
+        </member>
         <member name="T:GroupDocs.Signature.License">
             <summary>
             Create instanse of License to setup license file or stream
@@ -1127,6 +1286,44 @@
             <param name="saveOptions">Save Options</param>
             <returns>Returns Stream of signed document or string as file path to signed file</returns>
         </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.GetPageDescriptions(System.String)">
+            <summary>
+            Gets information about document pages: their sizes,
+            maximum page height, the width of a page with the maximum height.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <returns>An object of the DocumentDescription class</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.GetDocumentPageImage(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Returns an image of a specified page.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <param name="width">A required width of images.</param>
+            <param name="quality">A required quality of images.</param>
+            <param name="pageIndex">The number of a page to get image for.</param>
+            <returns>An array of bytes representng the output image.</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.GetPageSize(System.String,System.Int32,System.Double,System.Double,GroupDocs.Signature.Domain.PositionInCellsDocument)">
+            <summary>
+            Gets the size of a page of a document.
+            </summary>
+            <param name="guid">
+            The file unique identifier, full path for local storage e.g. c:\\storage\\document.txt, 
+            relative path e.g document.txt, url e.g. http://site.com/document.txt.
+            </param>
+            <param name="signaturePageNumber">The number of the page.</param>
+            <param name="signatureLocationX">The X coordinate of a signature for Cells files.</param>
+            <param name="signatureLocationY">The Y coordinate of a signature for Cells files.</param>
+            <param name="positionInCellsDocument">The row and column number of the nearest to the signature cell are returned in this object for Cells files.</param>
+            <returns>The size of a specified page for file types excluding Cells.</returns>
+        </member>
         <member name="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig">
             <summary>
             Signature Configuration with file location paths options
@@ -1564,6 +1761,11 @@
             </summary>
             <param name="outputType">Output type</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SaveOptions.OverwriteExistingFiles">
+            <summary>
+            Overwrite existing file with new output file. Otherwise new file will be created with number as suffix.
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SaveOptions.OutputType">
              <summary>
              Result type of the signature - String or Stream
@@ -1720,6 +1922,51 @@
         <member name="T:GroupDocs.Signature.Resources.MessageCode">
             <summary>
             Container for string based codes of messages entire library
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature</b> namespace provides classes for text, image and digital signatures of different document formats in your .NET application
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Config.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Config</b> namespace provides classes that allow to set Signature handler's configuration.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Domain</b> namespace provides classes for working with document representation
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Exception.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Exception</b> namespace provides classes to handle Signature exceptions
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Handler</b> namespace provides classes for input and output Data Handlers
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Input.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Handler.Input</b> namespace provides classes for cusomization of Input Data Handler
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Handler.Output.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Handler.Output</b> namespace provides classes for cusomization of Output Data Handler
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Licensing.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Licensing</b> namespace provides classes for licensing the Signature library
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.NamespaceDoc">
+            <summary>
+            The <b>GroupDocs.Signature.Options</b> namespace provides classes for Signature options
             </summary>
         </member>
     </members>
