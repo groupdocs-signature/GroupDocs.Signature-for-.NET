@@ -23,6 +23,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         public static void SignPdfDocumentWithText(string fileName)
         {
             //ExStart:signingandsavingpdfdocumentwithtext
+            float size = 100;
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -30,6 +31,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             var signOptions = new PdfSignTextOptions("coca cola");
             signOptions.Left = 100;
             signOptions.Top = 100;
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            signOptions.BackgroundColor = System.Drawing.Color.Black; 
+            signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             string fileExtension = Path.GetExtension(fileName);
             // save document
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
@@ -43,6 +47,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         public static void SignCellDocumentWithText(string fileName)
         {
             //ExStart:signingandsavingcellsdocumentwithtext
+            float size = 100;
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -56,6 +61,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Width = 100;
             // if you need to sign all sheets set it to true
             signOptions.SignAllPages = false;
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            signOptions.BackgroundColor = System.Drawing.Color.Black;
+            signOptions.BorderColor = System.Drawing.Color.Green;
+            signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             // sign first sheet
             signOptions.SheetNumber = 1; 
             string fileExtension = Path.GetExtension(fileName);
@@ -71,6 +80,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         {
             //ExStart:signingandsavingslidesdocumentwithtext
             SignatureConfig config = Utilities.GetConfigurations();
+            float size = 100;
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
             // setup text signature options 
@@ -79,6 +89,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            signOptions.BackgroundColor = System.Drawing.Color.Black;
+            signOptions.BorderColor = System.Drawing.Color.Green;
+            signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
@@ -92,6 +106,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         public static void SignWordDocumentWithText(string fileName)
         {
             //ExStart:signingandsavingworddocumentwithtext
+            float size = 5;
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -101,6 +116,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            signOptions.BackgroundColor = System.Drawing.Color.Black;
+            signOptions.BorderColor = System.Drawing.Color.Green;
+            signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
@@ -128,6 +147,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 200;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25};
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Left;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, signOptions, null);
@@ -150,6 +171,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.RowNumber = 10;
             signOptions.ColumnNumber = 10;
             signOptions.SignAllPages = true;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 8 };
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, signOptions, null);
@@ -172,6 +195,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 15 };
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, signOptions, null);
@@ -194,6 +219,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 500 };
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Right;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, signOptions, null);
@@ -359,6 +386,304 @@ namespace GroupDocs.Signature.Examples.CSharp
             string fileExtension = Path.GetExtension(inputFileName);
             Utilities.SaveFile(fileExtension, inputFileName, handler, null, signOptions, null);
             //ExEnd:customoutputhandler
+        }
+
+        #endregion
+
+        #region OpenPasswordProtectedDocuments
+        public static void GetPasswordProtectedDocs(string fileName)
+        {
+            //ExStart:GetPasswordProtectedDocs
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            var signOptions = new WordsSignTextOptions("John Smith");
+            // specify load options
+            LoadOptions loadOptions = new LoadOptions();
+            loadOptions.Password = "1234567890";
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:GetPasswordProtectedDocs
+        }
+        #endregion
+
+        #region SaveTextSignedOutputWithFormatOptions
+
+        /// <summary>
+        /// Signing a pdf document with text
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignPdfDocumentWithTextWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingpdfdocumentwithtext
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup text signature options 
+            var signOptions = new PdfSignTextOptions("coca cola");
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            string fileExtension = Path.GetExtension(fileName);
+            // save document
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:signingandsavingpdfdocumentwithtext
+        }
+
+        /// <summary>
+        /// Signing a cell document with text
+        /// </summary>
+        /// <param name="fileName">Name of the input filel</param>
+        public static void SignCellDocumentWithTextWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingcellsdocumentwithtext
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup text signature options
+            var signOptions = new CellsSignTextOptions("coca cola");
+            // text position
+            signOptions.RowNumber = 3;
+            signOptions.ColumnNumber = 6;
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = false;
+            // sign first sheet
+            signOptions.SheetNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:signingandsavingcellsdocumentwithtext
+        }
+
+        /// <summary>
+        /// Signing a slide document with text
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignSlideDocumentWithTextWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingslidesdocumentwithtext
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup text signature options 
+            var signOptions = new SlidesSignTextOptions("coca cola");
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:signingandsavingslidesdocumentwithtext
+        }
+
+        /// <summary>
+        /// Signing a word document with text
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignWordDocumentWithTextWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingworddocumentwithtext
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup text signature options
+            var signOptions = new WordsSignTextOptions("coca cola");
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:signingandsavingworddocumentwithtext
+        }
+
+
+        #endregion
+
+        #region SaveImageSignedOutputWithFormatOptions
+
+        /// <summary>
+        /// Signing a pdf document with image
+        /// </summary>
+        /// <param name="fileName">Name of the input filed</param>
+        public static void SignPdfDocumentWithImageWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingpdfdocumentwithimageWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup image signature options
+            var signOptions = new PdfSignImageOptions("sign.png");
+            // image position
+            signOptions.Left = 300;
+            signOptions.Top = 200;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
+            //ExEnd:signingandsavingpdfdocumentwithimageWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing a cell document with image
+        /// </summary>
+        /// <param name="fileName">Name of the inut file</param>
+        public static void SignCellDocumentWithImageWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingcelldocumentwithimageWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup image signature options
+            var signOptions = new CellsSignImageOptions("sign.png");
+            // image position
+            signOptions.RowNumber = 10;
+            signOptions.ColumnNumber = 10;
+            signOptions.SignAllPages = true;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
+            //ExEnd:signingandsavingcelldocumentwithimageWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing a slide document with image
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignSlideDocumentWithImageWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingslidedocumentwithimageWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup image signature options
+            var signOptions = new SlidesSignImageOptions("sign.png");
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
+            //ExEnd:signingandsavingslidedocumentwithimageWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing word document with image
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignWordDocumentWithImageWithSaveFormat(string fileName)
+        {
+            //ExStart:signingandsavingworddocumentwithimageWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup image signature options
+            var signOptions = new WordsSignImageOptions("sign.png");
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
+            //ExEnd:signingandsavingworddocumentwithimageWithSaveFormat
+        }
+
+        #endregion
+
+        #region SaveDigitalSignedOutputWithFormatOptions
+
+        /// <summary>
+        /// Signing a cell document with digital certificate
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignCellDocumentDigitallyWithSaveFormat(string fileName)
+        {
+            //ExStart:signingcelldocumentwithdigitalcertificateWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options
+            var signOptions = new CellsSignDigitalOptions("ali.pfx");
+            signOptions.Password = "";
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, null, signOptions);
+            //ExEnd:signingcelldocumentwithdigitalcertificateWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing a pdf document with digital certificate
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignPdfDocumentDigitallyWithSaveFormat(string fileName)
+        {
+            //ExStart:signingpdfdocumentwithdigitalcertificateWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options
+            var signOptions = new PdfSignDigitalOptions("acer.pfx", "sign.png");
+            signOptions.Password = null;
+            // image position
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, null, signOptions);
+            //ExEnd:signingpdfdocumentwithdigitalcertificateWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing a word document with digital certificate
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignWordDocumentDigitallyWithSaveFormat(string fileName)
+        {
+            //ExStart:signingworddocumentwithdigitalcertificateWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options
+            var signOptions = new WordsSignDigitalOptions("ali.pfx");
+            signOptions.Password = "";
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, null, signOptions);
+            //ExEnd:signingworddocumentwithdigitalcertificateWithSaveFormat
+        }
+
+        /// <summary>
+        /// Signing a slide document with digital certificate
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignSlideDocumentDigitallyWithSaveFormat(string fileName)
+        {
+            //ExStart:signingslidedocumentwithdigitalcertificateWithSaveFormat
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options
+            var signOptions = new SlidesSignDigitalOptions("ali.pfx");
+            signOptions.Password = "";
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 2;
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, null, signOptions);
+            //ExEnd:signingslidedocumentwithdigitalcertificateWithSaveFormat
         }
 
         #endregion

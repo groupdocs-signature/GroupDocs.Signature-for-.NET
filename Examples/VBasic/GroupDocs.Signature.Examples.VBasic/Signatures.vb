@@ -340,4 +340,297 @@ Public Class Signatures
 
 #End Region
 
+
+#Region "OpenPasswordProtectedDocuments"
+    ''' <summary>
+    ''' Load password protected documents 
+    ''' </summary>
+    ''' <param name="fileName">file name</param>
+    ''' <remarks></remarks>
+    Public Shared Sub GetPasswordProtectedDocs(fileName As String)
+        'ExStart:GetPasswordProtectedDocs
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        Dim signOptions = New WordsSignTextOptions("John Smith")
+        ' specify load options
+        Dim loadOptions As New LoadOptions()
+        loadOptions.Password = "1234567890"
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFile(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:GetPasswordProtectedDocs
+    End Sub
+#End Region
+
+
+#Region "SaveTextSignedOutputWithFormatOptions"
+
+    ''' <summary>
+    ''' Signing a pdf document with text
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignPdfDocumentWithTextWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingpdfdocumentwithtext
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup text signature options 
+        Dim signOptions = New PdfSignTextOptions("coca cola")
+        signOptions.Left = 100
+        signOptions.Top = 100
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        ' save document
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:signingandsavingpdfdocumentwithtext
+    End Sub
+
+    ''' <summary>
+    ''' Signing a cell document with text
+    ''' </summary>
+    ''' <param name="fileName">Name of the input filel</param>
+    Public Shared Sub SignCellDocumentWithTextWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingcellsdocumentwithtext
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup text signature options
+        Dim signOptions = New CellsSignTextOptions("coca cola")
+        ' text position
+        signOptions.RowNumber = 3
+        signOptions.ColumnNumber = 6
+        ' text rectangle size
+        signOptions.Height = 100
+        signOptions.Width = 100
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = False
+        ' sign first sheet
+        signOptions.SheetNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:signingandsavingcellsdocumentwithtext
+    End Sub
+
+    ''' <summary>
+    ''' Signing a slide document with text
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignSlideDocumentWithTextWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingslidesdocumentwithtext
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup text signature options 
+        Dim signOptions = New SlidesSignTextOptions("coca cola")
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:signingandsavingslidesdocumentwithtext
+    End Sub
+
+    ''' <summary>
+    ''' Signing a word document with text
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignWordDocumentWithTextWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingworddocumentwithtext
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup text signature options
+        Dim signOptions = New WordsSignTextOptions("coca cola")
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:signingandsavingworddocumentwithtext
+    End Sub
+
+
+#End Region
+
+#Region "SaveImageSignedOutputWithFormatOptions"
+
+    ''' <summary>
+    ''' Signing a pdf document with image
+    ''' </summary>
+    ''' <param name="fileName">Name of the input filed</param>
+    Public Shared Sub SignPdfDocumentWithImageWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingpdfdocumentwithimageWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup image signature options
+        Dim signOptions = New PdfSignImageOptions("sign.png")
+        ' image position
+        signOptions.Left = 300
+        signOptions.Top = 200
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, signOptions, Nothing)
+        'ExEnd:signingandsavingpdfdocumentwithimageWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing a cell document with image
+    ''' </summary>
+    ''' <param name="fileName">Name of the inut file</param>
+    Public Shared Sub SignCellDocumentWithImageWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingcelldocumentwithimageWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup image signature options
+        Dim signOptions = New CellsSignImageOptions("sign.png")
+        ' image position
+        signOptions.RowNumber = 10
+        signOptions.ColumnNumber = 10
+        signOptions.SignAllPages = True
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, signOptions, Nothing)
+        'ExEnd:signingandsavingcelldocumentwithimageWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing a slide document with image
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignSlideDocumentWithImageWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingslidedocumentwithimageWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup image signature options
+        Dim signOptions = New SlidesSignImageOptions("sign.png")
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, signOptions, Nothing)
+        'ExEnd:signingandsavingslidedocumentwithimageWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing word document with image
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignWordDocumentWithImageWithSaveFormat(fileName As String)
+        'ExStart:signingandsavingworddocumentwithimageWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup image signature options
+        Dim signOptions = New WordsSignImageOptions("sign.png")
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, signOptions, Nothing)
+        'ExEnd:signingandsavingworddocumentwithimageWithSaveFormat
+    End Sub
+
+#End Region
+
+#Region "SaveDigitalSignedOutputWithFormatOptions"
+
+    ''' <summary>
+    ''' Signing a cell document with digital certificate
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignCellDocumentDigitallyWithSaveFormat(fileName As String)
+        'ExStart:signingcelldocumentwithdigitalcertificateWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup digital signature options
+        Dim signOptions = New CellsSignDigitalOptions("ali.pfx")
+        signOptions.Password = ""
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, Nothing, signOptions)
+        'ExEnd:signingcelldocumentwithdigitalcertificateWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing a pdf document with digital certificate
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignPdfDocumentDigitallyWithSaveFormat(fileName As String)
+        'ExStart:signingpdfdocumentwithdigitalcertificateWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup digital signature options
+        Dim signOptions = New PdfSignDigitalOptions("acer.pfx", "sign.png")
+        signOptions.Password = Nothing
+        ' image position
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, Nothing, signOptions)
+        'ExEnd:signingpdfdocumentwithdigitalcertificateWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing a word document with digital certificate
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignWordDocumentDigitallyWithSaveFormat(fileName As String)
+        'ExStart:signingworddocumentwithdigitalcertificateWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup digital signature options
+        Dim signOptions = New WordsSignDigitalOptions("ali.pfx")
+        signOptions.Password = ""
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 1
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, Nothing, signOptions)
+        'ExEnd:signingworddocumentwithdigitalcertificateWithSaveFormat
+    End Sub
+
+    ''' <summary>
+    ''' Signing a slide document with digital certificate
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SignSlideDocumentDigitallyWithSaveFormat(fileName As String)
+        'ExStart:signingslidedocumentwithdigitalcertificateWithSaveFormat
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' setup digital signature options
+        Dim signOptions = New SlidesSignDigitalOptions("ali.pfx")
+        signOptions.Password = ""
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.Width = 100
+        signOptions.Height = 100
+        signOptions.DocumentPageNumber = 2
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFileWithFormat(fileExtension, fileName, handler, Nothing, Nothing, signOptions)
+        'ExEnd:signingslidedocumentwithdigitalcertificateWithSaveFormat
+    End Sub
+
+#End Region
+
+
 End Class

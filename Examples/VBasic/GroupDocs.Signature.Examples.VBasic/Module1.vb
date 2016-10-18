@@ -2,7 +2,7 @@
 
     Sub Main()
 
-        Utilities.ApplyLicense()
+        'Utilities.ApplyLicense()
 
         '#Region "WorkingWithTextSignature"
 
@@ -30,11 +30,11 @@
 
         '#Region "WorkingWithDigitalSignature"
 
-        Signatures.SignPdfDocumentDigitally("digital signatures.pdf")
+        'Signatures.SignPdfDocumentDigitally("digital signatures.pdf")
 
-        Signatures.SignCellDocumentDigitally("pie chart.xlsx")
+        'Signatures.SignCellDocumentDigitally("pie chart.xlsx")
 
-        Signatures.SignWordDocumentDigitally("getting started.docx")
+        'Signatures.SignWordDocumentDigitally("getting started.docx")
 
         Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
 
@@ -46,6 +46,50 @@
         'Signatures.CustomOutputHandler("digital signatures.pdf")
 
         '#End Region
+
+        '#Region "OpenPasswordProtectedDocuments"
+        'Signatures.GetPasswordProtectedDocs("getting started.docx")
+        '#End Region
+
+        'Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
+        'Region "SaveTextSignedFormatOptions"
+
+        'Signatures.SignPdfDocumentWithTextWithSaveFormat("digital signatures.pdf")
+
+        'Signatures.SignCellDocumentWithTextWithSaveFormat("pie chart.xlsx")
+
+        'Signatures.SignSlideDocumentWithTextWithSaveFormat("butterfly effect.pptx")
+
+        'Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx")
+
+        'End Region
+
+        'Region "SaveImageSignedFormatOptions"
+
+        'Signatures.SignPdfDocumentWithImageWithSaveFormat("digital signatures.pdf")
+
+        'Signatures.SignCellDocumentWithImageWithSaveFormat("pie chart.xlsx")
+
+        'Signatures.SignSlideDocumentWithImageWithSaveFormat("butterfly effect.pptx")
+
+        'Signatures.SignWordDocumentWithImageWithSaveFormat("getting started.docx")
+
+        'End Region
+
+        'Region "SaveDigitalSignedFormatOptions"
+
+        'Signatures.SignPdfDocumentDigitallyWithSaveFormat("digital signatures.pdf")
+
+        'Signatures.SignCellDocumentDigitallyWithSaveFormat("pie chart.xlsx")
+
+        'Signatures.SignWordDocumentDigitallyWithSaveFormat("getting started.docx")
+
+        'digital signatures are not supported yet for slides documents 
+        'Signatures.SignSlideDocumentDigitallyWithSaveFormat("butterfly effect.pptx")
+
+        'End Region
+
+
     End Sub
 
 

@@ -15,7 +15,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region WorkingWithTextSignature
 
-            //Signatures.SignPdfDocumentWithText("digital signatures.pdf");
+            Signatures.SignPdfDocumentWithText("digital signatures.pdf");
 
             //Signatures.SignCellDocumentWithText("pie chart.xlsx");
 
@@ -33,7 +33,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignSlideDocumentWithImage("butterfly effect.pptx");
 
-            Signatures.SignWordDocumentWithImage("getting started.docx");
+            //Signatures.SignWordDocumentWithImage("getting started.docx");
 
             #endregion
 
@@ -45,6 +45,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignWordDocumentDigitally("getting started.docx");
 
+            //digital signatures are not supported yet for slides documents 
             //Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
 
             #endregion
@@ -55,6 +56,50 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.CustomOutputHandler("digital signatures.pdf");
 
             #endregion
+
+            #region GetPasswordProtectedDocs
+            //Signatures.GetPasswordProtectedDocs("getting started.docx");
+            #endregion
+
+            //Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
+            #region SaveTextSignedFormatOptions
+
+            //Signatures.SignPdfDocumentWithTextWithSaveFormat("digital signatures.pdf");
+
+            //Signatures.SignCellDocumentWithTextWithSaveFormat("pie chart.xlsx");
+
+            //Signatures.SignSlideDocumentWithTextWithSaveFormat("butterfly effect.pptx");
+
+            Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx");
+
+            #endregion
+
+            #region SaveImageSignedFormatOptions
+
+            //Signatures.SignPdfDocumentWithImageWithSaveFormat("digital signatures.pdf");
+
+            //Signatures.SignCellDocumentWithImageWithSaveFormat("pie chart.xlsx");
+
+            //Signatures.SignSlideDocumentWithImageWithSaveFormat("butterfly effect.pptx");
+
+            //Signatures.SignWordDocumentWithImageWithSaveFormat("getting started.docx");
+
+            #endregion
+
+            #region SaveDigitalSignedFormatOptions
+
+            //Signatures.SignPdfDocumentDigitallyWithSaveFormat("digital signatures.pdf");
+
+            //Signatures.SignCellDocumentDigitallyWithSaveFormat("pie chart.xlsx");
+
+            //Signatures.SignWordDocumentDigitallyWithSaveFormat("getting started.docx");
+
+            //digital signatures are not supported yet for slides documents 
+            //Signatures.SignSlideDocumentDigitallyWithSaveFormat("butterfly effect.pptx");
+
+            #endregion
+             
+
         }
     }
 }

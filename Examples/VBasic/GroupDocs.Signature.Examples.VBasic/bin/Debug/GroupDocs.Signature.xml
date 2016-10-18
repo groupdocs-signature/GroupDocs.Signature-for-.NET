@@ -4,6 +4,197 @@
         <name>GroupDocs.Signature</name>
     </assembly>
     <members>
+        <member name="T:GroupDocs.Signature.Domain.CellsSaveFileFormat">
+            <summary>
+            Define different save file formats
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Default">
+            <summary>Save File Format will not be changed</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.CSV">
+            <summary>Saves the document in comma separated value format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Excel97To2003">
+            <summary>Saves the document in the Microsoft Excel 97 - 2003 file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xlsx">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xlsm">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xltx">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xltm">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xlam">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Pdf">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.ODS">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Xlsb">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.XPS">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.TIFF">
+            <summary>Saves the document as Tagged Image File Format (TIFF).</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.SVG">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Dif">
+            <summary>Saves the document as an Office file format.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.DashStyle">
+            <summary>
+            Represents style of dash drawing lines on documents
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.Dash">
+            <summary>Represent a dash line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.DashDot">
+            <summary>Represents a dash-dot line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.DashDotDot">
+            <summary>Represents a dash-dot-dot line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.DashLongDash">
+            <summary>Represents a long dash-short dash line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.DashLongDashDot">
+            <summary>Represents a long dash-short dash-dot line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.RoundDot">
+            <summary>Represents a round-dot line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.Solid">
+            <summary>Represent a solid line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.DashStyle.SquareDot">
+            <summary>Represents a square-dot line.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.ExtendedDashStyle">
+            <summary>
+            Represents style of dash drawing lines on documents
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.Default">
+            <summary>Represent a default solid line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.Solid">
+            <summary>Represent a solid line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.ShortDash">
+            <summary>Represent a short dash line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.ShortDot">
+            <summary>Represent a short dot line.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.ShortDashDot">
+            <summary>xxx</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.ShortDashDotDot">
+            <summary>xxx</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.Dot">
+            <summary>Represent a square dot style.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.Dash">
+            <summary>Represent a dash line style.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.LongDash">
+            <summary>Represent a long dash style.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.DashDot">
+            <summary>Dash short dash.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.LongDashDot">
+            <summary>Long dash short dash.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.LongDashDotDot">
+            <summary>Long dash short dash short dash.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfSaveFileFormat">
+            <summary>
+            Define different save file formats
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Default">
+            <summary>Save File Format will not be changed</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Pdf">
+            <summary>Saves the document as PDF (Adobe Portable Document) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Doc">
+            <summary>Saves the document in the Microsoft Word 97 - 2007 Document format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Xps">
+            <summary>Saves the document in the XPS (XML Paper Specification) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.DocX">
+            <summary>Saves the document as an Office Open XML WordprocessingML Document (macro-free).</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Svg">
+            <summary>Saves the document in the Svg (Scalable Vector Graphics) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Epub">
+            <summary>Saves the document in the IDPF EPUB format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Pptx">
+            <summary>Saves the document in the PowerPoint Open XML Presentation File Format</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SignatureFont">
+            <summary>
+            Create instanse of SignatureFont class to specify Font properties
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.SignatureFont.op_Implicit(System.Drawing.Font)~GroupDocs.Signature.Domain.SignatureFont">
+            <summary>
+            Convert System.Drawing.Font to SignatureFont
+            </summary>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.SignatureFont.#ctor">
+            <summary>
+            Create SignatureFont with default values
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignatureFont.FontFamily">
+            <summary>
+            Font Family Name
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignatureFont.FontSize">
+            <summary>
+            Font Size 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignatureFont.Bold">
+            <summary>
+            Apply Font Bold Style
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignatureFont.Italic">
+            <summary>
+            Apply Font Italic Style
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.SignatureFont.Underline">
+            <summary>
+            Apply Underline Style
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Domain.PositionInCellsDocument">
             <summary>
             Specifies a position in a Cells document.
@@ -21,23 +212,23 @@
         </member>
         <member name="T:GroupDocs.Signature.Domain.DocumentDescription">
             <summary>
-            Class DocumentInfoOptions.
+            Define Document Description properties
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Domain.DocumentDescription"/> class.
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Domain.DocumentDescription"/> class.
             </summary>
             <param name="guid">The unique identifier.</param>
         </member>
         <member name="M:GroupDocs.Signature.Domain.DocumentDescription.#ctor(System.String,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="!:DocumentInfoOptions"/> class.
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Domain.DocumentDescription"/> class.
             </summary>
             <param name="guid">The unique identifier.</param>
             <param name="password">The password.</param>
@@ -56,6 +247,21 @@
         <member name="P:GroupDocs.Signature.Domain.DocumentDescription.Pages">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.PageCount">
+            <summary>
+            Count of Pages in Document
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.WidthForMaxHeight">
+            <summary>
+            Specify Width for Max Height
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DocumentDescription.MaxPageHeight">
+            <summary>
+            Specify Max Page Height
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.PageDescription">
@@ -114,6 +320,130 @@
         </member>
         <member name="F:GroupDocs.Signature.Domain.SignatureType.Digital">
             <summary>The Digital Signature - sign document with digital key.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SlidesSaveFileFormat">
+            <summary>
+            Define different save file formats
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Default">
+            <summary>Save File Format will not be changed</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Pps">
+            <summary>Saves the document in the Microsoft PowerPoint presentation format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Ppt">
+            <summary>Saves the document in the Microsoft PowerPoint presentation format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Pdf">
+            <summary>Saves the document in Pdf format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Xps">
+            <summary>Saves the document in the XPS (XML Paper Specification) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Pptx">
+            <summary>Saves the document in the Microsoft PowerPoint Open XML Presentation File Format</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Ppsx">
+            <summary>Saves the document in the Microsoft PowerPoint Open XML Slide Show format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Tiff">
+            <summary>Renders a page or pages of the document and saves them into a single or multipage TIFF file.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Odp">
+            <summary>Saves the document in the OpenDocument Presentation format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Pptm">
+            <summary>Saves the document in the Open XML Document Presentation format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Ppsm">
+            <summary>Saves the document in the Microsoft PowerPoint Open XML Macro-Enabled Slide Show format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Potx">
+            <summary>Saves the document in the Microsoft PowerPoint template format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Potm">
+            <summary>Saves the document in the Microsoft Office Open XML Format Presentation Template with Macros Enabled format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Html">
+            <summary>Saves the document in the HTML format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Swf">
+            <summary>Saves the document in the SWF (Adobe Flash Player) format.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.WordsSaveFileFormat">
+            <summary>
+            Define different save file formats
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Default">
+            <summary>Save File Format will not be changed</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Doc">
+            <summary>Saves the document in the Microsoft Word 97 - 2007 Document format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Dot">
+            <summary>Saves the document in the Microsoft Word 97 - 2007 Template format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Docx">
+            <summary>Saves the document as an Office Open XML WordprocessingML Document (macro-free).</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Docm">
+            <summary>Saves the document as an Office Open XML WordprocessingML Macro-Enabled Document.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Dotx">
+            <summary>Saves the document as an Office Open XML WordprocessingML Template (macro-free).</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Dotm">
+            <summary> Saves the document as an Office Open XML WordprocessingML Macro-Enabled Template.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Rtf">
+            <summary>Saves the document in the RTF format. All characters above 7-bits are escaped as hexadecimal or Unicode characters.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.WordML">
+            <summary>Saves the document in the Microsoft Word 2003 WordprocessingML format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Pdf">
+            <summary>Saves the document as PDF (Adobe Portable Document) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Xps">
+            <summary>Saves the document in the XPS (XML Paper Specification) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Swf">
+            <summary>Saves the document in the SWF (Adobe Flash Player) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Ps">
+            <summary>Saves the document in the PS (PostScript) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Mhtml">
+            <summary>Saves the document in the MHTML (Web archive) format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Epub">
+            <summary>Saves the document in the IDPF EPUB format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Odt">
+            <summary>Saves the document as an ODF Text Document.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Ott">
+            <summary>Saves the document as an ODF Text Document Template.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Text">
+            <summary>Saves the document in the plain text format.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Tiff">
+            <summary>Renders a page or pages of the document and saves them into a single or multipage TIFF file.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Png">
+            <summary>Renders a page of the document and saves it as a PNG file.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Bmp">
+            <summary>Renders a page of the document and saves it as a BMP file.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Emf">
+            <summary>Renders a page of the document and saves it as a vector EMF (Enhanced Meta File) file.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsSaveFileFormat.Jpeg">
+            <summary>Renders a page of the document and saves it as a JPEG file.</summary>
         </member>
         <member name="T:GroupDocs.Signature.Engine.CellDrawFindingNearest">
             <summary>
@@ -226,12 +556,6 @@
             Gets the release date.
             </summary>
             <value>The release date.</value>
-        </member>
-        <member name="P:GroupDocs.Signature.Licensing.SignatureAssemblyConstants.Product">
-            <summary>
-            Gets the product.
-            </summary>
-            <value>The product.</value>
         </member>
         <member name="P:GroupDocs.Signature.Licensing.SignatureAssemblyConstants.Platform">
             <summary>
@@ -534,7 +858,7 @@
             <summary>
             Create Folder Description object with specified path
             </summary>
-            <param name="_Path">Path to folder</param>
+            <param name="path">Path to folder</param>
         </member>
         <member name="M:GroupDocs.Signature.Domain.FolderDescription.#ctor(System.String,System.String)">
             <summary>
@@ -675,7 +999,7 @@
             <summary>Excel 97 file format</summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlsx">
-            <summary></summary>
+            <summary>Excel file format</summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.SaveFileFormatType.Xlsm">
             <summary></summary>
@@ -849,16 +1173,6 @@
                 base.
             </summary>
         </member>
-        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Inside">
-            <summary>
-            Specifies that the object shall be inside of the horizontal alignment base.
-            </summary>
-        </member>
-        <member name="F:GroupDocs.Signature.Domain.VerticalAlignment.Outside">
-            <summary>
-            Specifies that the object shall be outside of the vertical alignment base.
-            </summary>
-        </member>
         <member name="T:GroupDocs.Signature.Domain.DocumentPart">
             <summary>
             Define Document Part type
@@ -927,16 +1241,16 @@
             <summary>
             Creates Signature Config with specified paths
             </summary>
-            <param name="_StoragePath">Storage Path for source files</param>
-            <param name="_OutputPath">Output path for signed documents</param>
-            <param name="_ImagesPath">Images path</param>
-            <param name="_CertificatesPath">Pth with digital certificates and keys</param>
+            <param name="storagePath">Storage Path for source files</param>
+            <param name="outputPath">Output path for signed documents</param>
+            <param name="imagesPath">Images path</param>
+            <param name="certificatesPath">Pth with digital certificates and keys</param>
         </member>
         <member name="M:GroupDocs.Signature.Config.SignatureConfig.Load(System.String)">
             <summary>
             Load Configuration from file
             </summary>
-            <param name="ConfigFileName">File with configuration</param>
+            <param name="configFileName">File with configuration</param>
             <returns></returns>
         </member>
         <member name="M:GroupDocs.Signature.Config.SignatureConfig.Save(System.String)">
@@ -1053,11 +1367,6 @@
         <member name="T:GroupDocs.Signature.Domain.ResourceInfo">
             <summary>
             Resource information data
-            </summary>
-        </member>
-        <member name="T:src.Domain.SignatureFormat">
-            <summary>
-            
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Exception.FileNotSupportedException">
@@ -1214,6 +1523,15 @@
             <param name="inputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> interface</param>
             <param name="outputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> interface</param>
         </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.#ctor(GroupDocs.Signature.Config.SignatureConfig,GroupDocs.Signature.Handler.Input.IInputDataHandler,GroupDocs.Signature.Handler.Output.IOutputDataHandler,GroupDocs.Signature.Domain.IFileNameCompositor)">
+            <summary>
+            Instantiate the SignatureHandler with custom <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> and <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> implementation
+            </summary>
+            <param name="signatureConfig">Instance of <see cref="P:GroupDocs.Signature.Handler.SignatureHandler.SignatureConfig"/></param>
+            <param name="inputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Input.IInputDataHandler"/> interface</param>
+            <param name="outputDataHandler">Custom implementation of <see cref="T:GroupDocs.Signature.Handler.Output.IOutputDataHandler"/> interface</param>
+            /// <param name="fileNameCompositor">Custom implementation of <see cref="T:GroupDocs.Signature.Domain.IFileNameCompositor"/> interface</param>
+        </member>
         <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Sign``1(System.String,GroupDocs.Signature.Options.SignOptions)">
             <summary>
             Sign the document from file quid with SignOptions, load and save options
@@ -1342,6 +1660,74 @@
         <member name="P:GroupDocs.Signature.Handler.SignatureHandler.DocumentProcessHandler">
             <summary>
             Trial Documents process handler to meet trial rules requirements
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Handler.SignatureHandler.FileNameCompositor">
+            <summary>
+            Input File Name compositor to compose output file name
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.CellsSaveOptions">
+            <summary>
+            Save opitons for Cells Documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SaveOptions">
+            <summary>
+            General signature save opitons class
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor">
+            <summary>
+            Create SaveOptions instance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create SaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.Boolean)">
+            <summary>
+            Create SaveOptions instance with specified Output Type and Overwrite files flag
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SaveOptions.OverwriteExistingFiles">
+            <summary>
+            Overwrite existing file with new output file. Otherwise new file will be created with number as suffix.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SaveOptions.OutputType">
+             <summary>
+             Result type of the signature - String or Stream
+            
+             default: Stream
+             </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSaveOptions.#ctor">
+            <summary>
+            Create CellsSaveOptions instance with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create CellsSaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.Boolean)">
+            <summary>
+            Create CellsSaveOptions instance with specified Output Type and Overwrite files flag
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSaveOptions.FileFormat">
+            <summary>
+            Specify save file format type
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.CellsSignDigitalOptions">
@@ -1498,12 +1884,6 @@
             </summary>
             <param name="DigitalCertificateFileName">File path to digital certificate</param>
         </member>
-        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.GetPKCS1">
-            <summary>
-            Get PKCS1 object from file
-            </summary>
-            <returns></returns>
-        </member>
         <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.DigitalCertificate">
             <summary>
             File Description of Digital Certificate
@@ -1512,11 +1892,6 @@
         <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Password">
             <summary>
             Password for Digital Signature
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Visible">
-            <summary>
-            Flag is digital signature is visible on document view
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Signature">
@@ -1549,7 +1924,7 @@
             <summary>
             Creates Signature Cells Image Option with image
             </summary>
-            <param name="_Image">Image Stream</param>
+            <param name="imageStream">Image Stream</param>
         </member>
         <member name="M:GroupDocs.Signature.Options.CellsSignImageOptions.#ctor(System.String)">
             <summary>
@@ -1623,6 +1998,41 @@
             Flag to put text of signature on all document pages
             </summary>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of text on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of text on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Margin">
+            <summary>
+            Gets the space, in pixels, that is specified by default between text and Document edges.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Font">
+            <summary>
+            Get Set Signature Font instance
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.ForeColor">
+            <summary>
+            Fore Color of Text Signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.BorderColor">
+            <summary>
+            Border color of Text SIgnature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.BackgroundColor">
+            <summary>
+            Background color of Text SIgnature
+            </summary>
+        </member>
         <member name="M:GroupDocs.Signature.Options.CellsSignTextOptions.#ctor">
             <summary>
             Creates Signature Cells Text Option
@@ -1647,6 +2057,26 @@
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.ColumnNumber">
             <summary>
             Cell Column Number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BorderDashStyle">
+            <summary>
+             Gets or sets the dash style for Border line.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BorderTransparency">
+            <summary>
+            Gets or sets the degree of Border transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BorderWeight">
+            <summary>
+            Returns or sets the weight of the line in units of pt. 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BackgroundTransparency">
+            <summary>
+            Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.LoadOptions">
@@ -1674,6 +2104,34 @@
             The output will be file path as string
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Options.PdfSaveOptions">
+            <summary>
+            Save opitons for Pdf Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSaveOptions.#ctor">
+            <summary>
+            Create PdfSaveOptions instance with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create PdfSaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.Boolean)">
+            <summary>
+            Create PdfSaveOptions instance with specified Output Type and Overwrite files flag
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSaveOptions.FileFormat">
+            <summary>
+            Specify save file format type
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.PdfSignDigitalOptions">
             <summary>
             Digital Signature Option for PDF Documents
@@ -1690,7 +2148,25 @@
             <summary>
             Creates PDF Digital Signature Option
             </summary>
-            <param name="_PFXFileDescriptio">File Descriptio of PFX Certificate</param>
+            <param name="pfxFileDescriptio">File Descriptio of PFX Certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.GetPKCS1">
+            <summary>
+            Get PKCS1 object from file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.GetPKCS7">
+            <summary>
+            Get PKCS7 object from file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.GetPKCS7Detached">
+            <summary>
+            Get PKCS7 object from file
+            </summary>
+            <returns></returns>
         </member>
         <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.Reason">
             <summary>
@@ -1707,6 +2183,16 @@
             Signature Location
             </summary>
         </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.Visible">
+            <summary>
+            Set Visibility of Signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignDigitalOptions.IsCertificate">
+            <summary>
+            Set if Signature is Certificate or Approval
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.PdfSignImageOptions">
             <summary>
             Image Signature Options for PDF Documents
@@ -1721,7 +2207,7 @@
             <summary>
             Creates Signature PDF Image Options with image
             </summary>
-            <param name="_Image">Image Stream</param>
+            <param name="imageStream">Image Stream</param>
         </member>
         <member name="M:GroupDocs.Signature.Options.PdfSignImageOptions.#ctor(System.String)">
             <summary>
@@ -1745,33 +2231,48 @@
             </summary>
             <param name="text">Text signture</param>
         </member>
-        <member name="T:GroupDocs.Signature.Options.SaveOptions">
+        <member name="M:GroupDocs.Signature.Options.PdfSignTextOptions.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
-            General signature save opitons class
+            Creates Signature PDF Text Option with image
+            </summary>
+            <param name="text">Text signture</param>
+            <param name="left">The x-coordinate of the left edge of this Text Signature</param>
+            <param name="top">The y-coordinate of the top edge of this Text Signature</param>
+            <param name="width">The width of Text Signature</param>
+            <param name="height">The height of Text Signature</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.Opacity">
+            <summary>
+            Border color of Text SIgnature
             </summary>
         </member>
-        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor">
+        <member name="T:GroupDocs.Signature.Options.SlidesSaveOptions">
             <summary>
-            Create SaveOptions instance
+            Save opitons for Slides Documents
             </summary>
         </member>
-        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+        <member name="M:GroupDocs.Signature.Options.SlidesSaveOptions.#ctor">
             <summary>
-            Create SaveOptions instance with specified Output Type
+            Create SlidesSaveOptions instance with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SlidesSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create SlidesSaveOptions instance with specified Output Type
             </summary>
             <param name="outputType">Output type</param>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SaveOptions.OverwriteExistingFiles">
+        <member name="M:GroupDocs.Signature.Options.SlidesSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.Boolean)">
             <summary>
-            Overwrite existing file with new output file. Otherwise new file will be created with number as suffix.
+            Create SlidesSaveOptions instance with specified Output Type and Overwrite files flag
             </summary>
+            <param name="outputType">Output type</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SaveOptions.OutputType">
-             <summary>
-             Result type of the signature - String or Stream
-            
-             default: Stream
-             </summary>
+        <member name="P:GroupDocs.Signature.Options.SlidesSaveOptions.FileFormat">
+            <summary>
+            Specify save file format type
+            </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.SlidesSignDigitalOptions">
             <summary>
@@ -1826,6 +2327,11 @@
             </summary>
             <param name="text">Text signature</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.BorderWeight">
+            <summary>
+            Returns or sets the weight of the line in units of pt. 
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.SlidesSignImageOptions">
             <summary>
             Image Signature Option for Slides Documents
@@ -1840,7 +2346,7 @@
             <summary>
             Creates Signature Slides Image Option with image
             </summary>
-            <param name="_Image">Image Stream</param>
+            <param name="imageStream">Image Stream</param>
         </member>
         <member name="M:GroupDocs.Signature.Options.SlidesSignImageOptions.#ctor(System.String)">
             <summary>
@@ -1864,6 +2370,34 @@
             Creates Words Digital Signature option with default parameters
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Options.WordsSaveOptions">
+            <summary>
+            Save opitons for Words Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSaveOptions.#ctor">
+            <summary>
+            Create WordsSaveOptions instance with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType)">
+            <summary>
+            Create WordsSaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.Boolean)">
+            <summary>
+            Create WordsSaveOptions instance with specified Output Type and Overwrite files flag
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSaveOptions.FileFormat">
+            <summary>
+            Specify save file format type
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.WordsSignImageOptions">
             <summary>
             Image Signature Option for Words Documents
@@ -1878,7 +2412,7 @@
             <summary>
             Creates Signature Words Image Option with image
             </summary>
-            <param name="_Image">Image Stream</param>
+            <param name="imageStream">Image Stream</param>
         </member>
         <member name="M:GroupDocs.Signature.Options.WordsSignImageOptions.#ctor(System.String)">
             <summary>
@@ -1910,6 +2444,36 @@
         <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.DocumentPart">
             <summary>
             Part of Document to locate Signature Text
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BorderTransparency">
+            <summary>
+            Gets or sets the degree of Border transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BorderWeight">
+            <summary>
+            Returns or sets the weight of the line in units of pt. 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BorderDashStyle">
+            <summary>
+             Gets or sets the dash style for Border line.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BackgroundTransparency">
+            <summary>
+            Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BorderOpacity">
+            <summary>
+            Defines the transparency. Valid range from 0 to 1, where 0 is fully transparent and 1 is fully opaque. 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BackgroundOpacity">
+            <summary>
+            Defines the transparency. Valid range from 0 to 1, where 0 is fully transparent and 1 is fully opaque. 
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadSignatures(GroupDocs.Signature.Domain.InputDataSource)">
