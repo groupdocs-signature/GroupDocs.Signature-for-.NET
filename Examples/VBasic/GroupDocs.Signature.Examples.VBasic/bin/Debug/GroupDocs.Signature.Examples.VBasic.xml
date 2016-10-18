@@ -76,6 +76,12 @@ GroupDocs.Signature.Examples.VBasic
  Custome output handling
  </summary>
 	<param name="inputFileName">Name of the input file</param>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.GetPasswordProtectedDocs(System.String)">
+	<summary>
+ Load password protected documents 
+ </summary>
+	<param name="fileName">file name</param>
+	<remarks></remarks>
 </member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentWithTextWithSaveFormat(System.String)">
 	<summary>
  Signing a pdf document with text
@@ -221,6 +227,22 @@ GroupDocs.Signature.Examples.VBasic
 </member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.ApplyLicense">
 	<summary>
  Set product's license
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetSrcDocFromAbsolutePath">
+	<summary>
+ Get source document from absolute path
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetSrcDocFromRelaticePath">
+	<summary>
+ Get source document from relative path
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetSrcDocFromUri">
+	<summary>
+ Get source document from URI
+ </summary>
+</member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.GetSrcDocFromStream">
+	<summary>
+ Get source document from Stream
  </summary>
 </member><member name="M:GroupDocs.Signature.Examples.VBasic.Utilities.SaveFile(System.String,System.String,GroupDocs.Signature.Handler.SignatureHandler,System.Object,System.Object,System.Object)">
 	<summary>

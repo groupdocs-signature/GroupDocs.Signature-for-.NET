@@ -341,6 +341,28 @@ Public Class Signatures
 #End Region
 
 
+#Region "OpenPasswordProtectedDocuments"
+    ''' <summary>
+    ''' Load password protected documents 
+    ''' </summary>
+    ''' <param name="fileName">file name</param>
+    ''' <remarks></remarks>
+    Public Shared Sub GetPasswordProtectedDocs(fileName As String)
+        'ExStart:GetPasswordProtectedDocs
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        Dim signOptions = New WordsSignTextOptions("John Smith")
+        ' specify load options
+        Dim loadOptions As New LoadOptions()
+        loadOptions.Password = "1234567890"
+        Dim fileExtension As String = Path.GetExtension(fileName)
+        Utilities.SaveFile(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
+        'ExEnd:GetPasswordProtectedDocs
+    End Sub
+#End Region
+
+
 #Region "SaveTextSignedOutputWithFormatOptions"
 
     ''' <summary>

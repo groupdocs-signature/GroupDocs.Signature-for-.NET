@@ -1,9 +1,9 @@
 ﻿Imports GroupDocs.Signature.Options
 Imports GroupDocs.Signature.Config
 Imports GroupDocs.Signature.Handler
-
+Imports System.IO
+'ExStart:completeclass
 Public Class Utilities
-
     'ExStart:commonutilitiesvb
     Public Const storagePath As String = "../../../../Data/Storage/"
     Public Const outputPath As String = "../../../../Data/Output/"
@@ -44,6 +44,86 @@ Public Class Utilities
         End Try
     End Sub
     'ExEnd:Applylicense
+#Region "GetSourceDocsFromDifferentResources"
+    ''' <summary>
+    ''' Get source document from absolute path
+    ''' </summary>
+    Public Shared Sub GetSrcDocFromAbsolutePath()
+        ' instantiating the signature handler without Signature Config object
+        Dim handler = New SignatureHandler()
+        ' setup image signature options
+        Dim signOptions = New PdfSignImageOptions("C:\signature.jpg")
+        ' sign document with image
+        Dim signedPath = handler.Sign(Of String)("C:\test.pdf", signOptions, New SaveOptions() With { _
+            .OutputType = OutputType.[String] _
+        })
+        Console.WriteLine("Signed file path is: " + signedPath)
+    End Sub
+
+    ''' <summary>
+    ''' Get source document from relative path
+    ''' </summary>
+    Public Shared Sub GetSrcDocFromRelaticePath()
+        Dim storagePath = "c:\Test\Storage"
+        Dim outputPath = "c:\Test\Output"
+        Dim imagesPath = "c:\Test\Images"
+        ' setup Signature configuration
+        Dim signConfig = New SignatureConfig() With { _
+            .StoragePath = storagePath, _
+            .OutputPath = outputPath, _
+            .ImagesPath = imagesPath _
+        }
+        ' instantiating the conversion handler
+        Dim handler = New SignatureHandler(signConfig)
+        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        Dim signOptions = New PdfSignImageOptions("signature.jpg")
+        ' sign document
+        Dim signedPath = handler.Sign(Of String)("test.pdf", signOptions, New SaveOptions() With { _
+            .OutputType = OutputType.[String] _
+        })
+        Console.WriteLine("Signed file path is: " + signedPath)
+    End Sub
+
+    ''' <summary>
+    ''' Get source document from URI
+    ''' </summary>
+    Public Shared Sub GetSrcDocFromUri()
+        ' setup Signature configuration
+        Dim signConfig = New SignatureConfig() With { _
+            .OutputPath = "c:\Test\Output" _
+        }
+        ' instantiating the signature handler without Signature Config object
+        Dim handler = New SignatureHandler(signConfig)
+        ' setup image signature options
+        Dim signOptions = New PdfSignImageOptions("http://groupdocs.com/images/banner/carousel2/conversion.png")
+        ' save options
+        Dim saveOptions = New SaveOptions(OutputType.[String])
+        ' sign document with image
+        Dim signedPath = handler.Sign(Of String)("https://www.adobe.com/content/dam/Adobe/en/feature-details/acrobatpro/pdfs/combine-multiple-documents-into-one-pdf-file.pdf", signOptions, saveOptions)
+        Console.WriteLine("Signed file path is: " + signedPath)
+    End Sub
+
+    ''' <summary>
+    ''' Get source document from Stream
+    ''' </summary>
+    Public Shared Sub GetSrcDocFromStream()
+        ' setup Signature configuration
+        Dim signConfig = New SignatureConfig() With { _
+            .OutputPath = "c:\Test\Output" _
+        }
+        ' instantiating the signature handler without Signature Config object
+        Dim handler = New SignatureHandler(signConfig)
+        ' setup image signature options
+        Dim signOptions = New PdfSignImageOptions("http://groupdocs.com/images/banner/carousel2/conversion.png")
+        ' save options
+        Dim saveOptions = New SaveOptions(OutputType.[String])
+        Using fileStream = New FileStream("C:\test.pdf", FileMode.Open, FileAccess.Read)
+            ' sign document with image
+            Dim signedPath = handler.Sign(Of String)(fileStream, signOptions, saveOptions)
+            Console.WriteLine("Signed file path is: " + signedPath)
+        End Using
+    End Sub
+#End Region
 
 
     ''' <summary>
@@ -298,5 +378,5 @@ Public Class Utilities
         End Try
         'ExEnd:SaveFileWithFormat
     End Sub
-
 End Class
+'ExEnd:completeclass

@@ -390,6 +390,23 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         #endregion
 
+        #region OpenPasswordProtectedDocuments
+        public static void GetPasswordProtectedDocs(string fileName)
+        {
+            //ExStart:GetPasswordProtectedDocs
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            var signOptions = new WordsSignTextOptions("John Smith");
+            // specify load options
+            LoadOptions loadOptions = new LoadOptions();
+            loadOptions.Password = "1234567890";
+            string fileExtension = Path.GetExtension(fileName);
+            Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
+            //ExEnd:GetPasswordProtectedDocs
+        }
+        #endregion
+
         #region SaveTextSignedOutputWithFormatOptions
 
         /// <summary>

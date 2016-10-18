@@ -11,6 +11,7 @@ using System.IO;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
+    //ExStart:completeclass
     public class Utilities
     {
         //ExStart:commonutilities
@@ -58,6 +59,92 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
         }
         //ExEnd:Applylicense
+
+        #region GetSourceDocsFromDifferentResources
+        /// <summary>
+        /// Get source document from absolute path
+        /// </summary>
+        public static void GetSrcDocFromAbsolutePath()
+        {
+            // instantiating the signature handler without Signature Config object
+            var handler = new SignatureHandler();
+            // setup image signature options
+            var signOptions = new PdfSignImageOptions(@"C:\signature.jpg");
+            // sign document with image
+            var signedPath = handler.Sign<string>(@"C:\test.pdf", signOptions, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Get source document from relative path
+        /// </summary>
+        public static void GetSrcDocFromRelaticePath()
+        {
+            var storagePath = @"c:\Test\Storage";
+            var outputPath = @"c:\Test\Output";
+            var imagesPath = @"c:\Test\Images";
+            // setup Signature configuration
+            var signConfig = new SignatureConfig
+            {
+                StoragePath = storagePath,
+                OutputPath = outputPath,
+                ImagesPath = imagesPath
+            };
+            // instantiating the conversion handler
+            var handler = new SignatureHandler(signConfig);
+            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            var signOptions = new PdfSignImageOptions("signature.jpg");
+            // sign document
+            var signedPath = handler.Sign<string>("test.pdf", signOptions, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Get source document from URI
+        /// </summary>
+        public static void GetSrcDocFromUri()
+        {
+            // setup Signature configuration
+            var signConfig = new SignatureConfig
+            {
+                OutputPath = @"c:\Test\Output"
+            };
+            // instantiating the signature handler without Signature Config object
+            var handler = new SignatureHandler(signConfig);
+            // setup image signature options
+            var signOptions = new PdfSignImageOptions(@"http://groupdocs.com/images/banner/carousel2/conversion.png");
+            // save options
+            var saveOptions = new SaveOptions(OutputType.String);
+            // sign document with image
+            var signedPath = handler.Sign<string>("https://www.adobe.com/content/dam/Adobe/en/feature-details/acrobatpro/pdfs/combine-multiple-documents-into-one-pdf-file.pdf", signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Get source document from Stream
+        /// </summary>
+        public static void GetSrcDocFromStream() 
+        {
+            // setup Signature configuration
+            var signConfig = new SignatureConfig
+            {
+                OutputPath = @"c:\Test\Output"
+            };
+            // instantiating the signature handler without Signature Config object
+            var handler = new SignatureHandler(signConfig);
+            // setup image signature options
+            var signOptions = new PdfSignImageOptions(@"http://groupdocs.com/images/banner/carousel2/conversion.png");
+            // save options
+            var saveOptions = new SaveOptions(OutputType.String);
+            using (var fileStream = new FileStream(@"C:\test.pdf", FileMode.Open, FileAccess.Read))
+            {
+                // sign document with image
+                var signedPath = handler.Sign<string>(fileStream, signOptions, saveOptions);
+                Console.WriteLine("Signed file path is: " + signedPath);
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Saves the output/signed file
@@ -201,7 +288,6 @@ namespace GroupDocs.Signature.Examples.CSharp
                         {
                             //ExStart:signingworddocwithtextandsaveformatoption
                             WordsSignTextOptions wordTextSignOptions = (WordsSignTextOptions)textSignOptions;
-                            //var wordTextSignedPath = handler.Sign<string>(fileName, wordTextSignOptions, new SaveOptions { OutputType = OutputType.String });
                             var wordTextSignedPath = handler.Sign<string>(fileName, wordTextSignOptions, new WordsSaveOptions {OutputType = OutputType.String, FileFormat = Domain.WordsSaveFileFormat.Dot});
                             //ExEnd:signingworddocwithtextandsaveformatoption
                         }
@@ -302,4 +388,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SaveFileWithFormat
         }
     }
+    //ExEnd:completeclass
 }
+

@@ -57,6 +57,10 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #endregion
 
+            #region GetPasswordProtectedDocs
+            //Signatures.GetPasswordProtectedDocs("getting started.docx");
+            #endregion
+
             //Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
             #region SaveTextSignedFormatOptions
 
@@ -66,7 +70,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignSlideDocumentWithTextWithSaveFormat("butterfly effect.pptx");
 
-            //Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx");
+            Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx");
 
             #endregion
 

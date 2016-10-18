@@ -36,7 +36,7 @@
 
         'Signatures.SignWordDocumentDigitally("getting started.docx")
 
-        'Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
+        Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
 
         '#End Region
 
@@ -47,6 +47,9 @@
 
         '#End Region
 
+        '#Region "OpenPasswordProtectedDocuments"
+        'Signatures.GetPasswordProtectedDocs("getting started.docx")
+        '#End Region
 
         'Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
         'Region "SaveTextSignedFormatOptions"
