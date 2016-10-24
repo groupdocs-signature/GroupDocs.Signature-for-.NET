@@ -267,6 +267,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 100;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            signOptions.Visible = true;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, null, signOptions);
