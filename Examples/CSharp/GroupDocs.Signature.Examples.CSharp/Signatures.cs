@@ -9,6 +9,7 @@ using GroupDocs.Signature.Handler;
 using System.IO;
 using GroupDocs.Signature.Handler.Input;
 using GroupDocs.Signature.Handler.Output;
+using GroupDocs.Signature.Domain;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -31,6 +32,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             var signOptions = new PdfSignTextOptions("coca cola");
             signOptions.Left = 100;
             signOptions.Top = 100;
+            //this feature is supported in 16.12.0
+            signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
+            //---------------------------
             signOptions.ForeColor = System.Drawing.Color.Red;
             signOptions.BackgroundColor = System.Drawing.Color.Black; 
             signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
@@ -59,6 +65,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             // text rectangle size
             signOptions.Height = 100;
             signOptions.Width = 100;
+            //this feature is supported in 16.12.0
+            signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 }; 
+            //----------------------------
             // if you need to sign all sheets set it to true
             signOptions.SignAllPages = false;
             signOptions.ForeColor = System.Drawing.Color.Red;
@@ -89,6 +100,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            //this feature is supported in 16.12.0
+            signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
+            //----------------------------
             signOptions.ForeColor = System.Drawing.Color.Red;
             signOptions.BackgroundColor = System.Drawing.Color.Black;
             signOptions.BorderColor = System.Drawing.Color.Green;
@@ -116,6 +132,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 10;
             signOptions.Width = 100;
             signOptions.Height = 100;
+            //this feature is supported in 16.12.0
+            signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
+            //----------------------------
             signOptions.ForeColor = System.Drawing.Color.Red;
             signOptions.BackgroundColor = System.Drawing.Color.Black;
             signOptions.BorderColor = System.Drawing.Color.Green;
@@ -268,6 +289,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Width = 100;
             signOptions.Height = 100;
             signOptions.Visible = true;
+            signOptions.SignAllPages = true;
+            signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, null, signOptions);
@@ -687,6 +711,109 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:signingslidedocumentwithdigitalcertificateWithSaveFormat
         }
 
+        #endregion
+
+        #region SetupMultipleSignatureOptions
+        //Multiple sign options Pdf documents 
+        public static void MultiplePdfSignOptoins()
+        {
+            //ExStart:multiplepdfsignoptions
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // define Signature Options Collection
+            var collection = new SignatureOptionsCollection();
+            // specify text option
+            var signTextOptions = new PdfSignTextOptions("Mr. John", 100, 100, 100, 100);
+            // add to collection
+            collection.Add(signTextOptions);
+            // specify image options
+            var signImageOptions = new PdfSignImageOptions("sign.png");
+            signImageOptions.Left = 200;
+            signImageOptions.Top = 200;
+            signImageOptions.Width = 100;
+            signImageOptions.Height = 100;
+            // add to collection
+            collection.Add(signImageOptions);
+            // specify digital options
+            var signDigitalOptions = new PdfSignDigitalOptions("acer.pfx");
+            signDigitalOptions.Password = "1234567890";
+            signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            // add to collection
+            collection.Add(signDigitalOptions);
+            // sign document
+            var signedPath = handler.Sign<string>("test.pdf", collection, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:multiplepdfsignoptions
+        }
+
+        //Multiple sign options Cells
+        public static void MultipleCellSignOptoins()
+        {
+            //ExStart:MultipleCellSignOptoins
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // define Signature Options Collection
+            var collection = new SignatureOptionsCollection();
+            // specify text option
+            var signTextOptions = new CellsSignTextOptions("some person");
+            // add to collection
+            collection.Add(signTextOptions);
+            // specify image options
+            var signImageOptions = new CellsSignImageOptions("sign.png");
+            signImageOptions.Left = 200;
+            signImageOptions.Top = 200;
+            signImageOptions.Width = 100;
+            signImageOptions.Height = 100;
+            // add to collection
+            collection.Add(signImageOptions);
+            // specify digital options
+            var signDigitalOptions = new CellsSignDigitalOptions("acer.pfx");
+            signDigitalOptions.Password = "1234567890";
+            signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            // add to collection
+            collection.Add(signDigitalOptions);
+            // sign document
+            var signedPath = handler.Sign<string>("test.xlsx", collection, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:MultipleCellSignOptoins
+        }
+        //Multiple sign options Word
+        public static void MultipleWordSignOptoins()
+        {
+            //ExStart:MultipleWordSignOptoins
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // define Signature Options Collection
+            var collection = new SignatureOptionsCollection();
+            // specify text option
+            var signTextOptions = new WordsSignTextOptions("some person");
+            // add to collection
+            collection.Add(signTextOptions);
+            // specify image options
+            var signImageOptions = new WordsSignImageOptions("sign.png");
+            signImageOptions.Left = 200;
+            signImageOptions.Top = 200;
+            signImageOptions.Width = 100;
+            signImageOptions.Height = 100;
+            // add to collection
+            collection.Add(signImageOptions);
+            // specify digital options
+            var signDigitalOptions = new WordsSignDigitalOptions("acer.pfx");
+            signDigitalOptions.Password = "1234567890";
+            signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            // add to collection
+            collection.Add(signDigitalOptions);
+            // sign document
+            var signedPath = handler.Sign<string>("test.docx", collection, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:MultipleWordSignOptoins
+        }
         #endregion
     }
 }

@@ -76,12 +76,6 @@ GroupDocs.Signature.Examples.VBasic
  Custome output handling
  </summary>
 	<param name="inputFileName">Name of the input file</param>
-</member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.GetPasswordProtectedDocs(System.String)">
-	<summary>
- Load password protected documents 
- </summary>
-	<param name="fileName">file name</param>
-	<remarks></remarks>
 </member><member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocumentWithTextWithSaveFormat(System.String)">
 	<summary>
  Signing a pdf document with text
