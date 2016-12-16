@@ -36,7 +36,7 @@
 
         'Signatures.SignWordDocumentDigitally("getting started.docx")
 
-        Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
+        'Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
 
         '#End Region
 
@@ -87,6 +87,11 @@
         'digital signatures are not supported yet for slides documents 
         'Signatures.SignSlideDocumentDigitallyWithSaveFormat("butterfly effect.pptx")
 
+        'End Region
+        'Region "SetupMultipleSignatureOptionsInPdf"
+        'Signatures.MultiplePdfSignOptoins()
+        'Signatures.MultipleCellSignOptoins()
+        'Signatures.MultipleWordSignOptoins()
         'End Region
 
 

@@ -10,12 +10,12 @@ namespace GroupDocs.Signature.Examples.CSharp
     {
         static void Main(string[] args)
         {
-            
-            //Utilities.ApplyLicense();
+
+            Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
-            Signatures.SignPdfDocumentWithText("digital signatures.pdf");
+            Signatures.SignPdfDocumentWithText("text.pdf");
 
             //Signatures.SignCellDocumentWithText("pie chart.xlsx");
 
@@ -70,7 +70,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignSlideDocumentWithTextWithSaveFormat("butterfly effect.pptx");
 
-            Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx");
+            //Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx");
 
             #endregion
 
@@ -98,7 +98,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignSlideDocumentDigitallyWithSaveFormat("butterfly effect.pptx");
 
             #endregion
-             
+
+            #region SetupMultipleSignatureOptionsInPdf
+            Signatures.MultiplePdfSignOptoins();
+            Signatures.MultipleCellSignOptoins();
+            Signatures.MultipleWordSignOptoins();
+            #endregion
+
 
         }
     }
