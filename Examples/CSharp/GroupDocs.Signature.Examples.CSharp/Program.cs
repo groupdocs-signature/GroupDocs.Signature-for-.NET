@@ -11,11 +11,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
 
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
-            Signatures.SignPdfDocumentWithText("text.pdf");
+            //Signatures.SignPdfDocumentWithText("text.pdf");
 
             //Signatures.SignCellDocumentWithText("pie chart.xlsx");
 
@@ -100,9 +100,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region SetupMultipleSignatureOptionsInPdf
-            Signatures.MultiplePdfSignOptoins();
-            Signatures.MultipleCellSignOptoins();
-            Signatures.MultipleWordSignOptoins();
+            //Signatures.MultiplePdfSignOptoins();
+            //Signatures.MultipleCellSignOptoins();
+            //Signatures.MultipleWordSignOptoins();
+            //Signatures.MultipleSlideSignOptoins();
             #endregion
 
 
