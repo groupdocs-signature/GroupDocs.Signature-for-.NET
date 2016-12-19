@@ -816,6 +816,43 @@ Public Class Signatures
         Console.WriteLine("Signed file path is: " + signedPath)
         'ExEnd:MultipleWordSignOptoins
     End Sub
+
+
+    'Multiple sign options slides
+    Public Shared Sub MultipleSlideSignOptoins()
+        'ExStart:multipleslidesignoptions
+        Dim config As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(config)
+        ' define Signature Options Collection
+        Dim collection = New SignatureOptionsCollection()
+        ' specify text option
+        Dim signTextOptions = New SlideSignTextOptions("Mr. John", 100, 100, 100, 100)
+        ' add to collection
+        collection.Add(signTextOptions)
+        ' specify image options
+        Dim signImageOptions = New SlideSignImageOptions("sign.png")
+        signImageOptions.Left = 200
+        signImageOptions.Top = 200
+        signImageOptions.Width = 100
+        signImageOptions.Height = 100
+        ' add to collection
+        collection.Add(signImageOptions)
+        ' specify digital options
+        Dim signDigitalOptions = New SlideSignDigitalOptions("acer.pfx")
+        signDigitalOptions.Password = "1234567890"
+        signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom
+        signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center
+        ' add to collection
+        collection.Add(signDigitalOptions)
+        ' sign document
+        Dim signedPath = handler.Sign(Of String)("butterfly effect.pptx", collection, New SaveOptions() With { _
+            .OutputType = OutputType.[String] _
+        })
+        Console.WriteLine("Signed file path is: " + signedPath)
+        'ExEnd:multipleslidesignoptions
+    End Sub
+
 #End Region
 
 

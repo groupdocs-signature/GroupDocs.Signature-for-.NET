@@ -814,6 +814,40 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:MultipleWordSignOptoins
         }
+
+        //Multiple sign options slides
+        public static void MultipleSlideSignOptoins()
+        {
+            //ExStart:multipleslidesignoptions
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // define Signature Options Collection
+            var collection = new SignatureOptionsCollection();
+            // specify text option
+            var signTextOptions = new SlideSignTextOptions("Mr. John", 100, 100, 100, 100);
+            // add to collection
+            collection.Add(signTextOptions);
+            // specify image options
+            var signImageOptions = new SlideSignImageOptions("sign.png");
+            signImageOptions.Left = 200;
+            signImageOptions.Top = 200;
+            signImageOptions.Width = 100;
+            signImageOptions.Height = 100;
+            // add to collection
+            collection.Add(signImageOptions);
+            // specify digital options
+            var signDigitalOptions = new SlideSignDigitalOptions("acer.pfx");
+            signDigitalOptions.Password = "1234567890";
+            signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            // add to collection
+            collection.Add(signDigitalOptions);
+            // sign document
+            var signedPath = handler.Sign<string>("butterfly effect.pptx", collection, new SaveOptions { OutputType = OutputType.String });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:multipleslidesignoptions
+        }
         #endregion
     }
 }

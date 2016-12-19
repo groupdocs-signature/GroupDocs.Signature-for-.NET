@@ -92,6 +92,7 @@
         'Signatures.MultiplePdfSignOptoins()
         'Signatures.MultipleCellSignOptoins()
         'Signatures.MultipleWordSignOptoins()
+        'Signatures.MultipleSlideSignOptoins()
         'End Region
 
 
