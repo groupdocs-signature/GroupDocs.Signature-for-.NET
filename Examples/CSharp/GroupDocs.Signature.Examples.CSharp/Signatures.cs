@@ -10,6 +10,7 @@ using System.IO;
 using GroupDocs.Signature.Handler.Input;
 using GroupDocs.Signature.Handler.Output;
 using GroupDocs.Signature.Domain;
+using System.Drawing;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -38,7 +39,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
             //---------------------------
             signOptions.ForeColor = System.Drawing.Color.Red;
-            signOptions.BackgroundColor = System.Drawing.Color.Black; 
+            signOptions.BackgroundColor = System.Drawing.Color.Black;
             signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             string fileExtension = Path.GetExtension(fileName);
             // save document
@@ -68,7 +69,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //this feature is supported in 16.12.0
             signOptions.VerticalAlignment = Domain.VerticalAlignment.Top;
             signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center;
-            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 }; 
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
             //----------------------------
             // if you need to sign all sheets set it to true
             signOptions.SignAllPages = false;
@@ -77,7 +78,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.BorderColor = System.Drawing.Color.Green;
             signOptions.Font = new Domain.SignatureFont { FontSize = size, FontFamily = "Comic Sans MS" };
             // sign first sheet
-            signOptions.SheetNumber = 1; 
+            signOptions.SheetNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
             //ExEnd:signingandsavingcellsdocumentwithtext
@@ -168,7 +169,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.Top = 200;
             signOptions.Width = 100;
             signOptions.Height = 100;
-            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25};
+            signOptions.Margin = new Domain.Padding { Top = 2, Left = 25 };
             signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Left;
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
@@ -556,7 +557,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <summary>
         /// Signing a cell document with image
         /// </summary>
-        /// <param name="fileName">Name of the inut file</param>
+        /// <param name="fileName">Name of the input file</param>
         public static void SignCellDocumentWithImageWithSaveFormat(string fileName)
         {
             //ExStart:signingandsavingcelldocumentwithimageWithSaveFormat
@@ -816,38 +817,313 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         //Multiple sign options slides
-        public static void MultipleSlideSignOptoins()
+        //public static void MultipleSlideSignOptoins()
+        //{
+        //    //ExStart:multipleslidesignoptions
+        //    SignatureConfig config = Utilities.GetConfigurations();
+        //    // instantiating the signature handler
+        //    var handler = new SignatureHandler(config);
+        //    // define Signature Options Collection
+        //    var collection = new SignatureOptionsCollection();
+        //    // specify text option
+        //    var signTextOptions = new SlideSignTextOptions("Mr. John", 100, 100, 100, 100);
+        //    // add to collection
+        //    collection.Add(signTextOptions);
+        //    // specify image options
+        //    var signImageOptions = new SlideSignImageOptions("sign.png");
+        //    signImageOptions.Left = 200;
+        //    signImageOptions.Top = 200;
+        //    signImageOptions.Width = 100;
+        //    signImageOptions.Height = 100;
+        //    // add to collection
+        //    collection.Add(signImageOptions);
+        //    // specify digital options
+        //    var signDigitalOptions = new SlideSignDigitalOptions("acer.pfx");
+        //    signDigitalOptions.Password = "1234567890";
+        //    signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
+        //    signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
+        //    // add to collection
+        //    collection.Add(signDigitalOptions);
+        //    // sign document
+        //    var signedPath = handler.Sign<string>("butterfly effect.pptx", collection, new SaveOptions { OutputType = OutputType.String });
+        //    Console.WriteLine("Signed file path is: " + signedPath);
+        //    //ExEnd:multipleslidesignoptions
+        //}
+        #endregion
+
+        #region SignatureAppearanceOptions
+
+        /// <summary>
+        /// Signs Pdf document with Text Signature as Image
+        /// </summary>
+        public static void SignPdfDocWithTextSignAsImage()
         {
-            //ExStart:multipleslidesignoptions
-            SignatureConfig config = Utilities.GetConfigurations();
-            // instantiating the signature handler
-            var handler = new SignatureHandler(config);
-            // define Signature Options Collection
-            var collection = new SignatureOptionsCollection();
-            // specify text option
-            var signTextOptions = new SlideSignTextOptions("Mr. John", 100, 100, 100, 100);
-            // add to collection
-            collection.Add(signTextOptions);
-            // specify image options
-            var signImageOptions = new SlideSignImageOptions("sign.png");
-            signImageOptions.Left = 200;
-            signImageOptions.Top = 200;
-            signImageOptions.Width = 100;
-            signImageOptions.Height = 100;
-            // add to collection
-            collection.Add(signImageOptions);
-            // specify digital options
-            var signDigitalOptions = new SlideSignDigitalOptions("acer.pfx");
-            signDigitalOptions.Password = "1234567890";
-            signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
-            signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
-            // add to collection
-            collection.Add(signDigitalOptions);
+            //ExStart:SignPdfDocWithTextSignAsImage
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            // setup colors settings
+            signOptions.BackgroundColor = System.Drawing.Color.Beige;
+            // setup text color
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            // setup Font options
+            signOptions.Font.Bold = true;
+            signOptions.Font.Italic = true;
+            signOptions.Font.Underline = true;
+            signOptions.Font.FontFamily = "Arial";
+            signOptions.Font.FontSize = 15;
+            //type of implementation
+            signOptions.SignatureImplementation = PdfTextSignatureImplementation.Image;
             // sign document
-            var signedPath = handler.Sign<string>("butterfly effect.pptx", collection, new SaveOptions { OutputType = OutputType.String });
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_TextSignatureAsImage" });
             Console.WriteLine("Signed file path is: " + signedPath);
-            //ExEnd:multipleslidesignoptions
+            //ExEnd:SignPdfDocWithTextSignAsImage
+        }
+
+        /// <summary>
+        /// Signs Pdf document with Text Signature as Annotation
+        /// </summary>
+        public static void SignPdfDocWithTextSignAsAnnotation()
+        {
+            //ExStart:SignPdfDocWithTextSignAsAnnotation
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            signOptions.Height = 200;
+            signOptions.Width = 200;
+            // setup colors settings
+            signOptions.BackgroundColor = System.Drawing.Color.Beige;
+            // setup text color
+            signOptions.ForeColor = System.Drawing.Color.Red;
+            // setup Font options
+            signOptions.Font.Bold = true;
+            signOptions.Font.Italic = true;
+            signOptions.Font.Underline = true;
+            signOptions.Font.FontFamily = "Arial";
+            signOptions.Font.FontSize = 15;
+            //type of implementation
+            signOptions.SignatureImplementation = PdfTextSignatureImplementation.Annotation;
+            // specify extended appearance options
+            PdfTextAnnotationAppearance appearance = new PdfTextAnnotationAppearance();
+            appearance.BorderColor = Color.Blue;
+            appearance.BorderEffect = PdfTextAnnotationBorderEffect.Cloudy;
+            appearance.BorderEffectIntensity = 2;
+            appearance.BorderStyle = PdfTextAnnotationBorderStyle.Dashed;
+            appearance.HCornerRadius = 10;
+            appearance.BorderWidth = 5;
+            appearance.Contents = signOptions.Text + " content description";
+            appearance.Subject = "Appearance Subject";
+            appearance.Title = "MrJohn Signature";
+            signOptions.Appearance = appearance;
+            // sign document
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_TextSignatureAsAnnotation" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPdfDocWithTextSignAsAnnotation
         }
         #endregion
+        #region SetVerificationOptions
+
+        /// <summary>
+        /// Verifies PDF Documents signed with Text Signature 
+        /// </summary>
+        public static void TextVerificationOfPdfDocument()
+        {
+            //ExStart:TextVerificationOfPdfDocument
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            String text = "John Smith, esquire";
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup image signature options with relative path - image file stores in config.ImagesPath folder
+            PdfSignTextOptions signOptions = new PdfSignTextOptions(text);
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            signOptions.DocumentPageNumber = 1;
+            // sign document
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Verification_Text" });
+            // setup digital verification options
+            PDFVerifyTextOptions verifyOptions = new PDFVerifyTextOptions(text);
+            verifyOptions.DocumentPageNumber = 1;
+
+            //verify document
+            VerificationResult result = handler.Verify(signedPath, verifyOptions);
+            Console.WriteLine("Verification result: " + result.IsValid);
+            //ExEnd:TextVerificationOfPdfDocument
+        }
+
+        /// <summary>
+        /// Verifies Cells Documents signed with .cer digital certificates 
+        /// </summary>
+        public static void DigitalVerificationOfCellsDocWithCerCertificateContainer()
+        {
+            //ExStart:DigitalVerificationOfCellsDocWithCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            CellsVerifyDigitalOptions verifyOptions = new CellsVerifyDigitalOptions("signtest.cer");
+            verifyOptions.Comments = "Test1";
+            verifyOptions.SignDateTimeFrom = new DateTime(2017, 1, 26, 14, 55, 07);
+            verifyOptions.SignDateTimeTo = new DateTime(2017, 1, 26, 14, 55, 09);
+
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.xlsx", verifyOptions);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfCellsDocWithCertificateContainer
+        }
+
+        /// <summary>
+        /// Digitally verifies cells document with .pfx certificate container
+        /// </summary>
+        public static void DigitalVerificationOfCellsDocWithPfxCertificateContainer()
+        {
+            //ExStart:DigitalVerificationOfCellsDocWithPfxCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            CellsVerifyDigitalOptions verifyOptions1 = new CellsVerifyDigitalOptions("signtest.pfx");
+            //password is needed to open .pfx certificate
+            verifyOptions1.Password = "123";
+            CellsVerifyDigitalOptions verifyOptions2 = new CellsVerifyDigitalOptions("signtest.cer");
+            VerifyOptionsCollection verifyOptionsCollection =
+                new VerifyOptionsCollection(new List<VerifyOptions>() { verifyOptions1, verifyOptions2 });
+
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.xlsx", verifyOptionsCollection);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfCellsDocWithPfxCertificateContainer
+        }
+
+        /// <summary>
+        /// Verifies pdf Documents signed with .cer digital certificates 
+        /// </summary>
+        public static void DigitalVerificationOfPdfWithCerContainer()
+        {
+            //ExStart:DigitalVerificationOfPdfWithCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            PDFVerifyDigitalOptions verifyOptions = new PDFVerifyDigitalOptions("ali.cer");
+            verifyOptions.Reason = "Test reason";
+            verifyOptions.Contact = "Test contact";
+            verifyOptions.Location = "Test location";
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.pdf", verifyOptions);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfPdfWithCertificateContainer
+        }
+
+
+        /// <summary>
+        /// Digitally verifies pdf document with .pfx certificate container
+        /// </summary>
+        public static void DigitalVerificationOfPdfWithPfxCertificateContainer()
+        {
+            //ExStart:DigitalVerificationOfPdfWithPfxCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            PDFVerifyDigitalOptions verifyOptions1 = new PDFVerifyDigitalOptions("ali.pfx");
+            //password is needed to open .pfx certificate
+            verifyOptions1.Password = "1234567890";
+            PDFVerifyDigitalOptions verifyOptions2 = new PDFVerifyDigitalOptions("ali.cer");
+            VerifyOptionsCollection verifyOptionsCollection =
+                new VerifyOptionsCollection(new List<VerifyOptions>() { verifyOptions1, verifyOptions2 });
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.pdf", verifyOptionsCollection);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfPdfWithPfxCertificateContainer
+        }
+
+        /// <summary>
+        /// Verifies word Documents signed with .cer digital certificates 
+        /// </summary>
+        public static void DigitalVerificationOfWordDocWithCerCertificateContainer()
+        {
+            //ExStart:DigitalVerificationOfWordDocWithCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            VerifyOptionsCollection verifyOptionsCollection = new VerifyOptionsCollection();
+            // setup digital verification options
+            WordsVerifyDigitalOptions verifyOptions = new WordsVerifyDigitalOptions("signtest.cer");
+            verifyOptions.Comments = "Test1";
+            verifyOptions.SignDateTimeFrom = new DateTime(2017, 1, 26, 14, 55, 57);
+            verifyOptions.SignDateTimeTo = new DateTime(2017, 1, 26, 14, 55, 59);
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.docx", verifyOptions);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfWordDocWithCertificateContainer
+        }
+
+
+        /// <summary>
+        /// Digitally verifies word document with .pfx certificate container
+        /// </summary>
+        public static void DigitalVerificationOfWordDocWithPfxCertificateContainer()
+        {
+            //ExStart:DigitalVerificationOfWordDocWithPfxCertificateContainer
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            WordsVerifyDigitalOptions verifyOptions1 = new WordsVerifyDigitalOptions("signtest.pfx");
+            //password is needed to open .pfx certificate
+            verifyOptions1.Password = "123";
+            WordsVerifyDigitalOptions verifyOptions2 = new WordsVerifyDigitalOptions("signtest.cer");
+            VerifyOptionsCollection verifyOptionsCollection =
+                new VerifyOptionsCollection(new List<VerifyOptions>() { verifyOptions1, verifyOptions2 });
+            //verify document
+            VerificationResult result = handler.Verify("digital signatures.docx", verifyOptionsCollection);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfWordDocWithPfxCertificateContainer
+        }
+
+        #endregion
+
+        /// <summary>
+        /// OUtput file name can be set in saveoptions
+        /// </summary>
+        public static void SetOutputFileName()
+        {
+            //ExStart:SetOutputFileName
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SignOptions signOptions = new CellsSignTextOptions("John Smith");
+            // specify load options
+            LoadOptions loadOptions = new LoadOptions();
+            // specify save options
+            CellsSaveOptions saveOptions = new CellsSaveOptions()
+            { OutputType = OutputType.String, OutputFileName = "FileWithDifferentFileName" };
+            // sign document
+            string signedPath = handler.Sign<string>("pie chart.xlsx", signOptions, loadOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetOutputFileName
+        }
+
+
     }
 }

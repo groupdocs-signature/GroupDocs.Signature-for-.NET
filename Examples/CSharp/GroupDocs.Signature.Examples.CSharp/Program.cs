@@ -61,7 +61,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.GetPasswordProtectedDocs("getting started.docx");
             #endregion
 
-            //Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
+            //Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version or greater
             #region SaveTextSignedFormatOptions
 
             //Signatures.SignPdfDocumentWithTextWithSaveFormat("digital signatures.pdf");
@@ -106,7 +106,25 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.MultipleSlideSignOptoins();
             #endregion
 
+            //Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+            #region VerificationOptions
+            //Signatures.TextVerificationOfPdfDocument();
+            //Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer();
+            //Signatures.DigitalVerificationOfCellsDocWithPfxCertificateContainer();
+            //Signatures.DigitalVerificationOfPdfWithCerContainer();
+            //Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer();
+            //Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer();
+            //Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer();
+            #endregion
 
+            //Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+            #region SignatureAppearnaceoptions
+            //Signatures.SignPdfDocWithTextSignAsImage();
+            //Signatures.SignPdfDocWithTextSignAsAnnotation();
+            #endregion
+
+            //Signatures.SetOutputFileName();
+            Console.ReadKey();
         }
     }
 }

@@ -4,6 +4,241 @@
         <name>GroupDocs.Signature</name>
     </assembly>
     <members>
+        <member name="T:GroupDocs.Signature.Domain.DigitalCertificateHelper">
+            <summary>
+            Digital Certificate
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.GetCertificate(GroupDocs.Signature.Config.SignatureConfig,System.String,System.Boolean)">
+            <summary>
+            Get X509Certificate to validate signature
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.LoadCertificate(System.String,GroupDocs.Signature.Config.SignatureConfig,System.String)">
+            <summary>
+            Loads Certificate from FileDescription
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.LoadCertificate(System.IO.Stream,System.String)">
+            <summary>
+            Loads Certificate from Stream
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.GetCertificateHolder(GroupDocs.Signature.Config.SignatureConfig,System.String)">
+            <summary>
+            Returns Aspose.Words.CertificateHolder instance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.GetPkcs1(GroupDocs.Signature.Config.SignatureConfig,System.String)">
+            <summary>
+            Returns Aspose.Pdf.Forms.PKCS1 instance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.GetPkcs7(GroupDocs.Signature.Config.SignatureConfig,System.String)">
+            <summary>
+            Returns Aspose.Pdf.Forms.PKCS7 instance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Domain.DigitalCertificateHelper.GetPkcs7Detached(GroupDocs.Signature.Config.SignatureConfig,System.String)">
+            <summary>
+            Returns Aspose.Pdf.Forms.PKCS7Detached instance
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalCertificateHelper.CertificateGuid">
+            <summary>
+            File Guid of Digital Certificate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.DigitalCertificateHelper.CertificateStream">
+            <summary>
+            Stream of Digital Certificate
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextAnnotationBorderEffect">
+            <summary>
+            Describes effect which should be applied to the border of the Pdf Text Annotations.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderEffect.None">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderEffect.Cloudy">
+            <summary>
+            The border will appear "cloudy".
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle">
+            <summary>
+            Describes style of the Pdf Text Annotation border.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle.Solid">
+            <summary>
+            Solid border.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle.Dashed">
+            <summary>
+            Dashed border.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle.Beveled">
+            <summary>
+            Beveled border.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle.Inset">
+            <summary>
+            Inset border.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationBorderStyle.Underline">
+            <summary>
+            Underlined border.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextAnnotationType">
+            <summary>
+            Describes enumeration of Pdf Text Annotation Types.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Text">
+            <summary>
+            Text annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Circle">
+            <summary>
+            Circle annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Polygon">
+            <summary>
+            Polygon annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.PolyLine">
+            <summary>
+            PolyLine annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Line">
+            <summary>
+            Line annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Square">
+            <summary>
+            Square annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.FreeText">
+            <summary>
+            Free text annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Highlight">
+            <summary>
+            Highlight annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Underline">
+            <summary>
+            Underline annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Squiggly">
+            <summary>
+            Squiggle annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.StrikeOut">
+            <summary>
+            Strikeout annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Caret">
+            <summary>
+            Caret annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Ink">
+            <summary>
+            Ink annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Link">
+            <summary>
+            Link annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Popup">
+            <summary>
+            Popup annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.FileAttachment">
+            <summary>
+            File attachment annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Sound">
+            <summary>
+            Sound annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Movie">
+            <summary>
+            Movie annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Screen">
+            <summary>
+            Screen annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Widget">
+            <summary>
+            Widget annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Watermark">
+            <summary>
+            Watermark annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.TrapNet">
+            <summary>
+            Trap network annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.PrinterMark">
+            <summary>
+            Printer mark annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Redaction">
+            <summary>
+            Redaction annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Stamp">
+            <summary>
+            Rubber stamp annotation type.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.RichMedia">
+            <summary>
+            Rich media annotation type
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextAnnotationType.Unknown">
+            <summary>
+            Unknown annotation.
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Domain.CellsSaveFileFormat">
             <summary>
             Define different save file formats
@@ -53,6 +288,81 @@
         </member>
         <member name="F:GroupDocs.Signature.Domain.CellsSaveFileFormat.Dif">
             <summary>Saves the document as an Office file Format.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.MeasureType">
+            <summary>
+            Specifies vertical alignment of element on Document Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.MeasureType.Pixels">
+            <summary>
+            Pixels.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.MeasureType.Percents">
+            <summary>
+            Percents of page size.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.VerificationResult">
+            <summary>
+            Instance to keep results of verification process
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.VerificationResult.IsValid">
+            <summary>
+            Returns true if Verification process was successful otherwise false
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.VerificationCodes">
+            <summary>
+            Container for integer codes of verification results
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.VerificationError.Code">
+            <summary>
+            Unique Verification Error Code
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.VerificationError.Property">
+            <summary>
+            Property of verification object (Text, Title, Subject, Certificate etc)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.VerificationError.Message">
+            <summary>
+            Verification Error Message Result explanation
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.WordsTextSignatureImplementation">
+            <summary>
+            Specifies type of implementation for cells Text Signature
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsTextSignatureImplementation.TextStamp">
+            <summary>
+            Text Signature as Label object on Cells sheet
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.WordsTextSignatureImplementation.TextAsImage">
+            <summary>
+            Text Signature as Image object on Cells sheet
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.SlidesTextSignatureImplementation">
+            <summary>
+            Specifies type of implementation for cells Text Signature
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesTextSignatureImplementation.TextStamp">
+            <summary>
+            Text Signature as Label object on Cells sheet
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.SlidesTextSignatureImplementation.TextAsImage">
+            <summary>
+            Text Signature as Image object on Cells sheet
+            </summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.DashStyle">
             <summary>
@@ -124,6 +434,21 @@
         <member name="F:GroupDocs.Signature.Domain.ExtendedDashStyle.LongDashDotDot">
             <summary>Long dash short dash short dash.</summary>
         </member>
+        <member name="T:GroupDocs.Signature.Domain.CellsTextSignatureImplementation">
+            <summary>
+            Specifies type of implementation for cells Text Signature
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsTextSignatureImplementation.TextStamp">
+            <summary>
+            Text Signature as Label object on Cells sheet
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.CellsTextSignatureImplementation.TextAsImage">
+            <summary>
+            Text Signature as Image object on Cells sheet
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Domain.PdfSaveFileFormat">
             <summary>
             Define different save file formats
@@ -152,6 +477,26 @@
         </member>
         <member name="F:GroupDocs.Signature.Domain.PdfSaveFileFormat.Pptx">
             <summary>Saves the document in the PowerPoint Open XML Presentation File Format</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextSignatureImplementation">
+            <summary>
+            Specifies type of implementation for Pdf Text Signature
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextSignatureImplementation.Stamp">
+            <summary>
+            Text Signature as Text Stamp object on PDF Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextSignatureImplementation.Image">
+            <summary>
+            Text Signature as Image object on PDF Page
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextSignatureImplementation.Annotation">
+            <summary>
+            Text Signature as Text Annotation object on PDF Page
+            </summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.SignatureFont">
             <summary>
@@ -370,6 +715,23 @@
         </member>
         <member name="F:GroupDocs.Signature.Domain.SlidesSaveFileFormat.Swf">
             <summary>Saves the document in the SWF (Adobe Flash Player) Format.</summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.VerificationType">
+            <summary>
+             Verification Type define the method to sign
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerificationType.Unknown">
+            <summary>Indicates an error, unknown Verification type.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerificationType.Text">
+            <summary>The Text Verification - put formatted string to document.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerificationType.Image">
+            <summary>The Image Verification - put image to specified document location.</summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.VerificationType.Digital">
+            <summary>The Digital Verification - sign document with digital key.</summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.WordsSaveFileFormat">
             <summary>
@@ -680,6 +1042,11 @@
             </summary>
             <param name="all">The number of pixels to be used for padding for all edges.</param>
         </member>
+        <member name="M:GroupDocs.Signature.Domain.Padding.Clone">
+            <summary>
+            Gets a copy of this object.
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Domain.Padding.All">
             <summary>
             Gets or sets the padding value for all the edges.
@@ -784,12 +1151,6 @@
         <member name="M:GroupDocs.Signature.Domain.DigitalSignature.LoadDigitalSignatures">
             <summary>
             Load Digital Signatures from system X509 Certificates Store
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GroupDocs.Signature.Domain.DigitalSignature.GetAsposeDigitalSignature(System.String,System.String)">
-            <summary>
-            Convert Certificate to Aspose Digital Signature
             </summary>
             <returns></returns>
         </member>
@@ -927,13 +1288,13 @@
             <summary>Center resize</summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.ResizeType.LanczosResample">
-            <summary>Lanczo Resample</summary>
+            <summary>LanczosResample</summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.ResizeType.NearestNeighbourResample">
-            <summary>Nearest Neighbour Resample</summary>
+            <summary>NearestNeighbourResample</summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.ResizeType.AdaptiveResample">
-            <summary>Adaptive Resample</summary>
+            <summary>AdaptiveResample</summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.RotateFlipType">
             <summary>
@@ -1677,6 +2038,74 @@
             <param name="saveOptions">Save Options</param>
             <returns>Returns Stream of signed document or string as file path to signed file</returns>
         </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.String,GroupDocs.Signature.Options.VerifyOptions)">
+            <summary>
+            Verify the document from file guid with VerifyOptions
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="verifyOptions">Signature Verification Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.String,GroupDocs.Signature.Options.VerifyOptions,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Verify the document from file quid with VerifyOptions and specified Load Options
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="verifyOptions">Signature Verification Options</param>
+            <param name="loadOptions">Load Document Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.IO.Stream,GroupDocs.Signature.Options.VerifyOptions)">
+            <summary>
+            Verify the document from stream with VerifyOptions
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="verifyOptions">Signature Verification Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.IO.Stream,GroupDocs.Signature.Options.VerifyOptions,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Verify the document from stream with VerifyOptions
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="verifyOptions">Signature Verification Options</param>
+            <param name="loadOptions">Load Document Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.String,GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Verify the document from file quid with list of VerifyOptions
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="collection">Collection of Verification Options. Instance of <see cref="T:GroupDocs.Signature.Options.VerifyOptionsCollection"/></param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.String,GroupDocs.Signature.Options.VerifyOptionsCollection,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Verify the document from file quid with list of VerifyOptions
+            </summary>
+            <param name="guid">File guid</param>
+            <param name="collection">Collection of Verification Options. Instance of <see cref="T:GroupDocs.Signature.Options.VerifyOptionsCollection"/></param>
+            <param name="loadOptions">Load Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.IO.Stream,GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Verify the document from file quid with list of VerifyOptions
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="collection">Collection of Verification Options. Instance of <see cref="T:GroupDocs.Signature.Options.VerifyOptionsCollection"/></param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Handler.SignatureHandler.Verify(System.IO.Stream,GroupDocs.Signature.Options.VerifyOptionsCollection,GroupDocs.Signature.Options.LoadOptions)">
+            <summary>
+            Verify the document from file quid with list of VerifyOptions
+            </summary>
+            <param name="stream">Input Stream</param>
+            <param name="collection">Collection of Verification Options. Instance of <see cref="T:GroupDocs.Signature.Options.VerifyOptionsCollection"/></param>
+            <param name="loadOptions">Load Options</param>
+            <returns>Returns instance of <see cref="T:GroupDocs.Signature.Domain.VerificationResult"/>. Property VerificationResult.IsValid returns true if verification process was successful</returns>
+        </member>
         <member name="M:GroupDocs.Signature.Handler.SignatureHandler.GetPageDescriptions(System.String)">
             <summary>
             Gets information about document pages: their sizes,
@@ -1740,6 +2169,31 @@
             Input File Name compositor to compose output file name
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Options.ImageAppearance">
+            <summary>
+            Describes appearance of Signature as Image object
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.SignatureAppearance">
+            <summary>
+            Signature Appearance - keeps additional options for alternative implementations of Signature Appearance on Document Page
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignatureAppearance.#ctor">
+            <summary>
+            Creates default Signature Option
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignatureAppearance.Options">
+            <summary>
+            Parent Signature Options
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PdfImageAppearance">
+            <summary>
+            Describes appearance of Pdf Signature as Image object on Document Page
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.CellsSaveOptions">
             <summary>
             Save options for Cells Documents
@@ -1768,6 +2222,21 @@
             <param name="outputType">Output type</param>
             <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
         </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.String)">
+            <summary>
+            Create SaveOptions instance with specified Output Type
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="outputFileName">Output file name</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SaveOptions.#ctor(GroupDocs.Signature.Options.OutputType,System.String,System.Boolean)">
+            <summary>
+            Create SaveOptions instance with specified Output Type and Overwrite files flag
+            </summary>
+            <param name="outputType">Output type</param>
+            <param name="outputFileName">Output file name</param>
+            <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SaveOptions.OverwriteExistingFiles">
             <summary>
             Overwrite existing file with new output file. Otherwise new file will be created with number as suffix.
@@ -1779,6 +2248,11 @@
             
              default: Stream
              </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SaveOptions.OutputFileName">
+            <summary>
+            Output file name
+            </summary>
         </member>
         <member name="M:GroupDocs.Signature.Options.CellsSaveOptions.#ctor">
             <summary>
@@ -1797,6 +2271,11 @@
             </summary>
             <param name="outputType">Output type</param>
             <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSaveOptions.Password">
+            <summary>
+            Specify Word Document password
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSaveOptions.FileFormat">
             <summary>
@@ -1828,9 +2307,19 @@
             Creates default Signature Option
             </summary>
         </member>
+        <member name="M:GroupDocs.Signature.Options.SignOptions.Release">
+            <summary>
+            Virtual method to clean up Resources after each Sign method
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SignOptions.DocumentPageNumber">
             <summary>
             Document Page Number
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignOptions.Appearance">
+            <summary>
+            Signature Appearance
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignOptions.SignatureConfig">
@@ -1878,6 +2367,41 @@
             </summary>
             <param name="imageStream">Image stream to close</param>
         </member>
+        <member name="M:GroupDocs.Signature.Options.SignImageOptions.Release">
+            <summary>
+            Override method to clean up Resources after each Sign method
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Left">
+            <summary>
+            Left X position of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Top">
+            <summary>
+            Top Y Position of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Width">
+            <summary>
+            Width of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Height">
+            <summary>
+            Height of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.LocationMeasureType">
+            <summary>
+            Location intent for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.SizeMeasureType">
+            <summary>
+            Size of Image measurement type for Width and Height properties
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.ImageFileName">
             <summary>
             Get and Set Image File Name
@@ -1888,29 +2412,15 @@
             Get or set Image stream of option
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Width">
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Margin">
             <summary>
-            Width of image
+            Gets the space that is specified by default between Image and Document edges.
+            (works if horizontal or vertical alignment is specified) 
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Height">
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.MarginMeasureType">
             <summary>
-            Height of image on destination
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Left">
-            <summary>
-            X position of image on destination
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Top">
-            <summary>
-            Y Position
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.SignAllPages">
-            <summary>
-            Flag to put image of signature on all document pages
+            Margin measurement type 
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.VerticalAlignment">
@@ -1923,9 +2433,9 @@
             Horizontal alignment of Image on Document Page
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.Margin">
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.SignAllPages">
             <summary>
-            Gets the space, in pixels, that is specified by default between Image and Document edges.
+            Flag to put image of signature on all document pages
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.Rectangle">
@@ -1939,37 +2449,52 @@
             </summary>
             
         </member>
-        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(GroupDocs.Signature.Domain.DigitalSignature)">
-            <summary>
-            Signature Digital Options
-            </summary>
-            <param name="signature">Digital Signature</param>
-        </member>
         <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(System.String)">
             <summary>
-            Creates Digital Signature option with given digital certificate file
+            Creates Digital Signature option with given digital certificate guid
             </summary>
-            <param name="DigitalCertificateFileName">File path to digital certificate</param>
+            <param name="certificateGuid">File guid to digital certificate</param>
         </member>
-        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.#ctor(System.IO.Stream)">
             <summary>
-            Creates Digital Signature option with given digital certificate file
+            Creates Digital Signature option with given certificate stream
             </summary>
-            <param name="DigitalCertificateFileName">File path to digital certificate</param>
+            <param name="certificateStream">Stream of Digital Certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.SignDigitalOptions.GetAsposeDigitalSignature">
+            <summary>
+            Convert Certificate to Aspose Digital Signature
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Password">
+            <summary>
+            Password of Digital Certificate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Signature">
+            <summary>
+            Digital Signature properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Certificate">
+            <summary>
+            Get X509Certificate2 Certificate from Certificate Guid or Stream
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.DigitalCertificate">
             <summary>
             File Description of Digital Certificate
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Password">
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.CertificateGuid">
             <summary>
-            Password for Digital Signature
+            File Guid of Digital Certificate
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.Signature">
+        <member name="P:GroupDocs.Signature.Options.SignDigitalOptions.CertificateStream">
             <summary>
-            Digital Signature properties
+            Stream of Digital Certificate
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Options.CellsSignDigitalOptions.#ctor">
@@ -1982,6 +2507,12 @@
             Creates Cells Digital Signature options with given digital certificate
             </summary>
             <param name="pathToPfx">Digital Certificate file</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsSignDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Cells Digital Signature options with given digital certificate stream
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
         </member>
         <member name="T:GroupDocs.Signature.Options.CellsSignImageOptions">
             <summary>
@@ -2005,6 +2536,37 @@
             </summary>
             <param name="guid">Image file identifier</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.LocationMeasureType">
+            <summary>
+            Location Measure Type for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.SizeMeasureType">
+            <summary>
+            Size of Image measurement type for Width and Height properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.MarginMeasureType">
+            <summary>
+            Margin measurement type 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.Left">
+            <summary>
+            Left intent columns (works if horizontal alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.Top">
+            <summary>
+            Top intent rows (works if vertical alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.Margin">
+            <summary>
+            Gets intents of columns and rows that
+            (works if horizontal or vertical alignment is specified) 
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.SheetNumber">
             <summary>
             Sheet number
@@ -2012,12 +2574,12 @@
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.RowNumber">
             <summary>
-            Cell Row Number
+            Cell Row Number - value starts from zero
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignImageOptions.ColumnNumber">
             <summary>
-            Cell Column Number
+            Cell Column Number - value starts from zero
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.CellsSignTextOptions">
@@ -2043,27 +2605,33 @@
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Text">
             <summary>
-            X position of text on destination
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Left">
-            <summary>
-            X position of text on destination
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Top">
-            <summary>
-            Y Position
+            Text of signature
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Width">
             <summary>
-            Width of Text
+            Width of Text shape
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Height">
             <summary>
-            Height of Text
+            Height of Text shape
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Left">
+            <summary>
+            Left intent (works if horizontal alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Top">
+            <summary>
+            Top intent (works if vertical alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Margin">
+            <summary>
+            Gets the space that is specified by default between Sign and Document edges.
+            (works if horizontal or vertical alignment is specified) 
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.SignAllPages">
@@ -2081,11 +2649,6 @@
             Horizontal alignment of Image on Document Page
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Margin">
-            <summary>
-            Gets the space, in pixels, that is specified by default between Image and Document edges.
-            </summary>
-        </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Font">
             <summary>
             Get Set Signature Font instance
@@ -2098,12 +2661,12 @@
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.BorderColor">
             <summary>
-            Border color of Text SIgnature
+            Border color of Text Signature
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.BackgroundColor">
             <summary>
-            Background color of Text SIgnature
+            Background color of Text Signature
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Options.CellsSignTextOptions.#ctor">
@@ -2117,6 +2680,22 @@
             </summary>
             <param name="text">Text signature</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.Left">
+            <summary>
+            Left intent columns (works if horizontal alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.Top">
+            <summary>
+            Top intent rows (works if vertical alignment is not specified)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.Margin">
+            <summary>
+            Gets intents of columns and rows that
+            (works if horizontal or vertical alignment is specified) 
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.SheetNumber">
             <summary>
             Sheet number
@@ -2124,12 +2703,17 @@
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.RowNumber">
             <summary>
-            Cell Row Number
+            Cell Row Number - value starts from zero
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.ColumnNumber">
             <summary>
-            Cell Column Number
+            Cell Column Number - value starts from zero
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BorderVisiblity">
+            <summary>
+            Border visibility of Text Signature
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BorderDashStyle">
@@ -2150,6 +2734,120 @@
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.BackgroundTransparency">
             <summary>
             Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.SignatureImplementation">
+            <summary>
+            Type of text signature implementation
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.WordsVerifyDigitalOptions">
+            <summary>
+            Words Verify Digital Options - keeps options to verify Digital Signature of Words Documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyDigitalOptions">
+            <summary>
+            Verify Digital Options - keeps options to verify Digital Signature of Document
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyOptions">
+            <summary>
+            Verify Options - keeps options to verify document
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptions.#ctor">
+            <summary>
+            Creates default Signature Option
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptions.Release">
+            <summary>
+            Virtual method to clean up Resources after each Verify method
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptions.Validate">
+            <summary>
+            Virtual method to validate options fields before Verify method
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptions.IsValid">
+            <summary>
+            Valid property flag
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptions.SignatureConfig">
+            <summary>
+            Signature Configuration to access images and certificates files
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyDigitalOptions.#ctor">
+            <summary>
+            Creates Digital Verification Option with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Digital Verification Option with given digital certificate guid
+            </summary>
+            <param name="certificateGuid">File path to digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Digital Verification Option with given certificate stream
+            </summary>
+            <param name="certificateStream">Certificate's stream</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyDigitalOptions.Certificate">
+            <summary>
+            Get X509Certificate2 Certificate from Certificate Guid or Stream
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyDigitalOptions.Password">
+            <summary>
+            Password of Digital Certificate if required
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyDigitalOptions.CertificateGuid">
+            <summary>
+            File Guid of Digital Certificate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyDigitalOptions.CertificateStream">
+            <summary>
+            Stream of Digital Certificate
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.#ctor">
+            <summary>
+            Creates Words Digital Signature Verification Option with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Words Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateGuid">Digital Certificate file</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Words Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.Comments">
+            <summary>
+            Comments of Digital Signature to validate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.SignDateTimeFrom">
+            <summary>
+            Date and time range of Digital Signature to validate. Nullable value will be ignored.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsVerifyDigitalOptions.SignDateTimeTo">
+            <summary>
+            Date and time range of Digital Signature to validate. Nullable value will be ignored.
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.LoadOptions">
@@ -2200,6 +2898,11 @@
             <param name="outputType">Output type</param>
             <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSaveOptions.Password">
+            <summary>
+            Specify PDF password
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.PdfSaveOptions.FileFormat">
             <summary>
             Specify save file Format type
@@ -2217,13 +2920,26 @@
             <param name="pfxFileName">File Description of PFX Certificate</param>
             <param name="appearenceImageFileName">File Description of Signature Appearance image</param>
         </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Creates PDF Digital Signature Option
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
+            <param name="appearenceImageFileName">File Description of Signature Appearance image</param>
+        </member>
         <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
             <summary>
             Creates PDF Digital Signature Option
             </summary>
-            <param name="pfxFileDescriptio">File Description of PFX Certificate</param>
+            <param name="pfxFileDescription">File Description of PFX Certificate</param>
         </member>
-        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.GetPkcs1">
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates PDF Digital Signature Option
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfSignDigitalOptions.GetPKCS1">
             <summary>
             Get PKCS1 object from file
             </summary>
@@ -2288,6 +3004,76 @@
             </summary>
             <param name="guid">Image file identifier</param>
         </member>
+        <member name="T:GroupDocs.Signature.Options.PdfTextAnnotationAppearance">
+            <summary>
+            Describes appearance of Pdf Text Annotation object (Title, Subject, Content)
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.#ctor">
+            <summary>
+            Creates Pdf Signature Text Annotation Appearance object
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates Pdf Signature Text Annotation with specified values (title, subject, contents)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.Contents">
+            <summary>
+            Gets or sets content of annotation object
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.Subject">
+            <summary>
+            Gets or sets Subject representing description of the object.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.Title">
+            <summary>
+            Gets or sets a Title that will be displayed in title bar of annotation object
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.BorderColor">
+            <summary>
+            Border color of Text Annotation
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.BorderWidth">
+            <summary>
+            Gets or sets the width of the border line
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.BorderStyle">
+            <summary>
+            Gets or sets border style.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.BorderEffect">
+            <summary>
+            Gets or sets border effect.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.BorderEffectIntensity">
+            <summary>
+            Gets or sets border effect intensity. Valid range of value is [0..2].
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.HCornerRadius">
+            <summary>
+            Gets or sets horizontal corner radius.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.VCornerRadius">
+            <summary>
+            Gets or sets vertical corner radius.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationAppearance.AnnotationType">
+            <summary>
+            Gets or sets type of annotation.
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.PdfSignTextOptions">
             <summary>
             Text Signature Options for PDF Documents
@@ -2314,11 +3100,142 @@
             <param name="width">The width of Text Signature</param>
             <param name="height">The height of Text Signature</param>
         </member>
-        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.Opacity">
+        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.SignatureID">
             <summary>
-            Gets or sets a value to indicate the Signature Opacity. The value is from 0.0 to 1.0
-            By default the value is 1.0.
-            </summary>  
+            Set Unique ID of Text Signature. It can be used in Signature Verification options
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.SignatureImplementation">
+            <summary>
+            Type of text signature implementation
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.CellsVerifyDigitalOptions">
+            <summary>
+            Cells Verify Digital Options - keeps options to verify Digital Signature of Cells Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.#ctor">
+            <summary>
+            Creates Cells Digital Signature Verification Option with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Cells Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateGuid">Digital Certificate file</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Cells Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.Comments">
+            <summary>
+            Comments of Digital Signature to validate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.SignDateTimeFrom">
+            <summary>
+            Date and time range of Digital Signature to validate. Nullable value will be ignored.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsVerifyDigitalOptions.SignDateTimeTo">
+            <summary>
+            Date and time range of Digital Signature to validate. Nullable value will be ignored.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PDFVerifyDigitalOptions">
+            <summary>
+            Pdf Verify Digital Options - keeps options to verify Digital Signature of Pdf Documents
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.#ctor">
+            <summary>
+            Creates PDF Digital Signature Verification Option with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates PDF Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateGuid">Digital Certificate file</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates PDF Digital Signature Verification Option with given digital certificate
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.Reason">
+            <summary>
+            Reason of Digital Signature to validate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.Contact">
+            <summary>
+            Signature Contact to validate
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PDFVerifyDigitalOptions.Location">
+            <summary>
+            Signature Location to validate
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PDFVerifyTextOptions">
+            <summary>
+            Pdf Verify Text Options - keeps options to verify Text Signature of Pdf Document
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyTextOptions">
+            <summary>
+            Verify Text Options - keeps options to verify Text Signature of Document
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyTextOptions.Text">
+            <summary>
+            Specify Signature Text if it should be verified
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyTextOptions.DocumentPageNumber">
+            <summary>
+            Document Page Number to be verified. If property is not set - all Pages of Document will be verified for first occurrence
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyTextOptions.VerifyAllPages">
+            <summary>
+            Flag to verify each Document Page
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyTextOptions.#ctor">
+            <summary>
+            Creates instance of PDFVerifyTextOptions with default values
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyTextOptions.#ctor(System.String)">
+            <summary>
+            Creates instance of PDFVerifyTextOptions with Text property to verify
+            </summary>
+            <param name="text">Text to be verified</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyTextOptions.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates instance of PDFVerifyTextOptions with Text property and Signature ID to verify
+            </summary>
+            <param name="text">Text to be verified</param>
+            <param name="signatureID">Whole value of Signature ID to be verified with Text</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PDFVerifyTextOptions.SignatureID">
+            <summary>
+            Specify Text Signature ID more than zero if it should be verified
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PDFVerifyTextOptions.SignatureImplementation">
+            <summary>
+            Type of Signature to be verified ( only TextStamp is supported)
+            </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.SignatureOptionsCollection">
             <summary>
@@ -2362,7 +3279,7 @@
         </member>
         <member name="M:GroupDocs.Signature.Options.SignatureOptionsCollection.GetListOptions(GroupDocs.Signature.Domain.SignatureType)">
             <summary>
-            
+            Returns List of Signature Options per given Signature Type
             </summary>
             <param name="signatureType"></param>
             <returns></returns>
@@ -2394,6 +3311,11 @@
             </summary>
             <param name="outputType">Output type</param>
             <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSaveOptions.Password">
+            <summary>
+            Specify Word Document password
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SlidesSaveOptions.FileFormat">
             <summary>
@@ -2458,6 +3380,11 @@
             Returns or sets the weight of the line in units of pt. 
             </summary>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.SignatureImplementation">
+            <summary>
+            Type of text signature implementation
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.SlidesSignImageOptions">
             <summary>
             Image Signature Option for Slides Documents
@@ -2480,21 +3407,101 @@
             </summary>
             <param name="imageFileName">Image File Name</param>
         </member>
+        <member name="T:GroupDocs.Signature.Options.SlidesVerifyTextOptions">
+            <summary>
+            Slides Verify Text Options - keeps options to verify Text Signature of Slides Document
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyImageOptions">
+            <summary>
+            Verify Image Options - keeps options to verify Image Signature of Document
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyOptionsCollection">
+            <summary>
+            Collection of Verify Options - keeps list of options to verify the document
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.#ctor">
+            <summary>
+            Create VerifyOptionsCollection instance with empty list
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.#ctor(GroupDocs.Signature.Options.VerifyOptions)">
+            <summary>
+            Create VerifyatureOptionsCollection instance with one Verify Options value
+            </summary>
+            <param name="options">Verify Options to be added in list</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.#ctor(System.Collections.Generic.List{GroupDocs.Signature.Options.VerifyOptions})">
+            <summary>
+            Create VerifyOptionsCollection instance with list of Verify Options objects
+            </summary>
+            <param name="items">List of Verify Options items</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.Add(GroupDocs.Signature.Options.VerifyOptions)">
+            <summary>
+            Adds an VerifyOptions object to collection.
+            </summary>
+            <param name="options">The Verify Options to be added to collection</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.Remove(GroupDocs.Signature.Options.VerifyOptions)">
+            <summary>
+            Removes an VerifyOptions object from collection.
+            </summary>
+            <param name="options">The Verify Options to be removed from collection</param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.ReviewItems">
+            <summary>
+            Review Items to separate by Verify Type
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyOptionsCollection.GetListOptions(GroupDocs.Signature.Domain.SignatureType)">
+            <summary>
+            
+            </summary>
+            <param name="signatureType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptionsCollection.Items">
+            <summary>
+            List of Verify Options records
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptionsCollection.IsValid">
+            <summary>
+            Returns summary value of all collection items. If at least one has Valid as false then return values is false. 
+            If all items were verified successfully then return value is true.
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.WordsSignDigitalOptions">
             <summary>
             Digital Signature Option for Words Documents
             </summary>
         </member>
-        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
-            <summary>
-            Creates Words Digital Signature option with given digital certificate file
-            </summary>
-            <param name="CertificateFile">File path to digital certificate</param>
-        </member>
         <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor">
             <summary>
             Creates Words Digital Signature option with default parameters
             </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor(System.String)">
+            <summary>
+            Creates Words Digital Signature option with given digital certificate file guid
+            </summary>
+            <param name="certificateGuid">File guid to digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor(GroupDocs.Signature.Domain.FileDescription)">
+            <summary>
+            Creates Words Digital Signature option with given digital certificate file
+            </summary>
+            <param name="certificateFileDescription">File Description instance of digital certificate</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.WordsSignDigitalOptions.#ctor(System.IO.Stream)">
+            <summary>
+            Creates Words Digital Signature option with given digital certificate stream
+            </summary>
+            <param name="certificateStream">Digital Certificate stream</param>
         </member>
         <member name="T:GroupDocs.Signature.Options.WordsSaveOptions">
             <summary>
@@ -2518,6 +3525,11 @@
             </summary>
             <param name="outputType">Output type</param>
             <param name="overwriteExistingFlag">Flag if files with same file name should be overwritten</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSaveOptions.Password">
+            <summary>
+            Specify Word Document password
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.WordsSaveOptions.FileFormat">
             <summary>
@@ -2587,11 +3599,6 @@
              Gets or sets the dash style for Border line.
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BackgroundTransparency">
-            <summary>
-            Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
-            </summary>
-        </member>
         <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BorderOpacity">
             <summary>
             Defines the transparency. Valid range from 0 to 1, where 0 is fully transparent and 1 is fully opaque. 
@@ -2602,6 +3609,21 @@
             Defines the transparency. Valid range from 0 to 1, where 0 is fully transparent and 1 is fully opaque. 
             </summary>
         </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.BackgroundTransparency">
+            <summary>
+            Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.WordsSignTextOptions.SignatureImplementation">
+            <summary>
+            Type of text signature implementation
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.WordsVerifyTextOptions">
+            <summary>
+            Words Verify Text Options - keeps options to verify Text Signature of Words Documents
+            </summary>
+        </member>
         <member name="M:GroupDocs.Signature.Provider.GlobalProvider`1.LoadContext(GroupDocs.Signature.Options.SignatureOptionsCollection)">
             <summary>
             Load Signature Context before signing, load document, add new custom data etc
@@ -2609,14 +3631,99 @@
             <param name="collection"></param>
             <returns></returns>
         </member>
+        <member name="M:GroupDocs.Signature.Provider.GlobalProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Signature Context before signing, load document, add new custom data etc
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.GlobalProvider`1.GetValidations(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Returns Validations before processing document verification
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.GlobalProvider`1.Verify(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Cells Workbook from Verification Options Collection
+            </summary>
+            <param name="optionsCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Cells Verification Context before load document and verify it
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.GetValidations(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Returns Validations before processing document verification
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.GetDocumentVerification(GroupDocs.Signature.Domain.VerificationType)">
+            <summary>
+            Returns Verifications according to verificationType
+            </summary>
+            <param name="verificationType"></param>
+            <returns></returns>
+        </member>
         <member name="T:GroupDocs.Signature.Provider.CellsSignatureContext">
             <summary>
             CellsSignatureContext instance to keep all required data for signing Cells documents
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Provider.CellsVerificationContext">
+            <summary>
+            CellsVerificationContext instance to keep all required data for Cells documents verifications
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.PDFProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Pdf Document from Verification Options Collection
+            </summary>
+            <param name="optionsCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.PDFProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Pdf Verification Context before load document and verify it
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.PDFProvider`1.GetValidations(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Returns Validations before processing document verification
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Provider.Pdf.PdfSignatureCompositor">
+            <summary>
+            Internal static class with static methods for different compositors and implementations of IDocumentSignatureCompositor, IDocumentSignatureImplementation
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Provider.PdfSignatureContext">
             <summary>
             PdfSignatureContext instance to keep all required data for signing PDF documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Provider.PdfVerificationContext">
+            <summary>
+            PdfVerificationContext instance to keep all required data for PDF documents verifications
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadSignatures(GroupDocs.Signature.Domain.InputDataSource)">
@@ -2626,9 +3733,69 @@
             <param name="inputDataSource">Source file description</param>
             <returns>List of Digital Signatures in document</returns>
         </member>
+        <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Slides Presentation from Verification Options Collection
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Pdf Verification Context before load document and verify it
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.GetValidations(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Returns Validations before processing document verification
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
         <member name="T:GroupDocs.Signature.Provider.SlidesSignatureContext">
             <summary>
             SlidesSignatureContext instance to keep all required data for signing Slides documents
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Provider.SlidesVerificationContext">
+            <summary>
+            SlidesVerificationContext instance to keep all required data for Slides documents verifications
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Words Document from Verification Options Collection
+            </summary>
+            <param name="optionsCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Load Words Verification Context before load document and verify it
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.GetValidations(GroupDocs.Signature.Options.VerifyOptionsCollection)">
+            <summary>
+            Returns Validations before processing document verification
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.GetDocumentVerification(GroupDocs.Signature.Domain.VerificationType)">
+            <summary>
+            Returns Verification according to verificationType
+            </summary>
+            <param name="verificationType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Provider.WordsVerificationContext">
+            <summary>
+            WordsVerificationContext instance to keep all required data for Words documents verifications
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Provider.WordsSignatureContext">

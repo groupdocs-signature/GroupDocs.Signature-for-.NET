@@ -5,6 +5,7 @@ Imports System.IO
 Imports GroupDocs.Signature.Config
 Imports GroupDocs.Signature.Handler.Input
 Imports GroupDocs.Signature.Domain
+Imports System.Drawing
 
 Public Class Signatures
 
@@ -28,16 +29,16 @@ Public Class Signatures
         'this feature is supported in 16.12.0
         signOptions.VerticalAlignment = Domain.VerticalAlignment.Top
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 25 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 25
         }
         '---------------------------
         signOptions.ForeColor = System.Drawing.Color.Red
         signOptions.BackgroundColor = System.Drawing.Color.Black
-        signOptions.Font = New Domain.SignatureFont() With { _
-            .FontSize = size, _
-            .FontFamily = "Comic Sans MS" _
+        signOptions.Font = New Domain.SignatureFont() With {
+            .FontSize = size,
+            .FontFamily = "Comic Sans MS"
         }
         Dim fileExtension As String = Path.GetExtension(fileName)
         ' save document
@@ -66,9 +67,9 @@ Public Class Signatures
         'this feature is supported in 16.12.0
         signOptions.VerticalAlignment = Domain.VerticalAlignment.Top
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 25 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 25
         }
         '----------------------------
         ' if you need to sign all sheets set it to true
@@ -76,9 +77,9 @@ Public Class Signatures
         signOptions.ForeColor = System.Drawing.Color.Red
         signOptions.BackgroundColor = System.Drawing.Color.Black
         signOptions.BorderColor = System.Drawing.Color.Green
-        signOptions.Font = New Domain.SignatureFont() With { _
-            .FontSize = size, _
-            .FontFamily = "Comic Sans MS" _
+        signOptions.Font = New Domain.SignatureFont() With {
+            .FontSize = size,
+            .FontFamily = "Comic Sans MS"
         }
         ' sign first sheet
         signOptions.SheetNumber = 1
@@ -106,17 +107,17 @@ Public Class Signatures
         'this feature is supported in 16.12.0
         signOptions.VerticalAlignment = Domain.VerticalAlignment.Top
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 25 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 25
         }
         '----------------------------
         signOptions.ForeColor = System.Drawing.Color.Red
         signOptions.BackgroundColor = System.Drawing.Color.Black
         signOptions.BorderColor = System.Drawing.Color.Green
-        signOptions.Font = New Domain.SignatureFont() With { _
-            .FontSize = size, _
-            .FontFamily = "Comic Sans MS" _
+        signOptions.Font = New Domain.SignatureFont() With {
+            .FontSize = size,
+            .FontFamily = "Comic Sans MS"
         }
         signOptions.DocumentPageNumber = 1
         Dim fileExtension As String = Path.GetExtension(fileName)
@@ -143,17 +144,17 @@ Public Class Signatures
         'this feature is supported in 16.12.0
         signOptions.VerticalAlignment = Domain.VerticalAlignment.Top
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 25 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 25
         }
         '----------------------------
         signOptions.ForeColor = System.Drawing.Color.Red
         signOptions.BackgroundColor = System.Drawing.Color.Black
         signOptions.BorderColor = System.Drawing.Color.Green
-        signOptions.Font = New Domain.SignatureFont() With { _
-            .FontSize = size, _
-            .FontFamily = "Comic Sans MS" _
+        signOptions.Font = New Domain.SignatureFont() With {
+            .FontSize = size,
+            .FontFamily = "Comic Sans MS"
         }
         signOptions.DocumentPageNumber = 1
         Dim fileExtension As String = Path.GetExtension(fileName)
@@ -181,9 +182,9 @@ Public Class Signatures
         signOptions.Top = 200
         signOptions.Width = 100
         signOptions.Height = 100
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 25 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 25
         }
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Left
         signOptions.DocumentPageNumber = 1
@@ -207,9 +208,9 @@ Public Class Signatures
         signOptions.RowNumber = 10
         signOptions.ColumnNumber = 10
         signOptions.SignAllPages = True
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 8 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 8
         }
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
         signOptions.DocumentPageNumber = 1
@@ -233,9 +234,9 @@ Public Class Signatures
         signOptions.Top = 10
         signOptions.Width = 100
         signOptions.Height = 100
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 15 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 15
         }
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Center
         signOptions.DocumentPageNumber = 1
@@ -259,9 +260,9 @@ Public Class Signatures
         signOptions.Top = 10
         signOptions.Width = 100
         signOptions.Height = 100
-        signOptions.Margin = New Domain.Padding() With { _
-            .Top = 2, _
-            .Left = 500 _
+        signOptions.Margin = New Domain.Padding() With {
+            .Top = 2,
+            .Left = 500
         }
         signOptions.HorizontalAlignment = Domain.HorizontalAlignment.Right
         signOptions.DocumentPageNumber = 1
@@ -741,8 +742,8 @@ Public Class Signatures
         ' add to collection
         collection.Add(signDigitalOptions)
         ' sign document
-        Dim signedPath = handler.Sign(Of String)("test.pdf", collection, New SaveOptions() With { _
-            .OutputType = OutputType.[String] _
+        Dim signedPath = handler.Sign(Of String)("test.pdf", collection, New SaveOptions() With {
+            .OutputType = OutputType.[String]
         })
         Console.WriteLine("Signed file path is: " + signedPath)
         'ExEnd:multiplepdfsignoptions
@@ -776,8 +777,8 @@ Public Class Signatures
         ' add to collection
         collection.Add(signDigitalOptions)
         ' sign document
-        Dim signedPath = handler.Sign(Of String)("test.xlsx", collection, New SaveOptions() With { _
-            .OutputType = OutputType.[String] _
+        Dim signedPath = handler.Sign(Of String)("test.xlsx", collection, New SaveOptions() With {
+            .OutputType = OutputType.[String]
         })
         Console.WriteLine("Signed file path is: " + signedPath)
         'ExEnd:MultipleCellSignOptoins
@@ -810,50 +811,331 @@ Public Class Signatures
         ' add to collection
         collection.Add(signDigitalOptions)
         ' sign document
-        Dim signedPath = handler.Sign(Of String)("test.docx", collection, New SaveOptions() With { _
-            .OutputType = OutputType.[String] _
+        Dim signedPath = handler.Sign(Of String)("test.docx", collection, New SaveOptions() With {
+            .OutputType = OutputType.[String]
         })
         Console.WriteLine("Signed file path is: " + signedPath)
         'ExEnd:MultipleWordSignOptoins
     End Sub
 
 
-    'Multiple sign options slides
-    Public Shared Sub MultipleSlideSignOptoins()
-        'ExStart:multipleslidesignoptions
-        Dim config As SignatureConfig = Utilities.GetConfigurations()
-        ' instantiating the signature handler
-        Dim handler = New SignatureHandler(config)
-        ' define Signature Options Collection
-        Dim collection = New SignatureOptionsCollection()
-        ' specify text option
-        Dim signTextOptions = New SlideSignTextOptions("Mr. John", 100, 100, 100, 100)
-        ' add to collection
-        collection.Add(signTextOptions)
-        ' specify image options
-        Dim signImageOptions = New SlideSignImageOptions("sign.png")
-        signImageOptions.Left = 200
-        signImageOptions.Top = 200
-        signImageOptions.Width = 100
-        signImageOptions.Height = 100
-        ' add to collection
-        collection.Add(signImageOptions)
-        ' specify digital options
-        Dim signDigitalOptions = New SlideSignDigitalOptions("acer.pfx")
-        signDigitalOptions.Password = "1234567890"
-        signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom
-        signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center
-        ' add to collection
-        collection.Add(signDigitalOptions)
+    ''Multiple sign options slides
+    'Public Shared Sub MultipleSlideSignOptoins()
+    '    'ExStart:multipleslidesignoptions
+    '    Dim config As SignatureConfig = Utilities.GetConfigurations()
+    '    ' instantiating the signature handler
+    '    Dim handler = New SignatureHandler(config)
+    '    ' define Signature Options Collection
+    '    Dim collection = New SignatureOptionsCollection()
+    '    ' specify text option
+    '    Dim signTextOptions = New SlideSignTextOptions("Mr. John", 100, 100, 100, 100)
+    '    ' add to collection
+    '    collection.Add(signTextOptions)
+    '    ' specify image options
+    '    Dim signImageOptions = New SlideSignImageOptions("sign.png")
+    '    signImageOptions.Left = 200
+    '    signImageOptions.Top = 200
+    '    signImageOptions.Width = 100
+    '    signImageOptions.Height = 100
+    '    ' add to collection
+    '    collection.Add(signImageOptions)
+    '    ' specify digital options
+    '    Dim signDigitalOptions = New SlideSignDigitalOptions("acer.pfx")
+    '    signDigitalOptions.Password = "1234567890"
+    '    signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom
+    '    signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center
+    '    ' add to collection
+    '    collection.Add(signDigitalOptions)
+    '    ' sign document
+    '    Dim signedPath = handler.Sign(Of String)("butterfly effect.pptx", collection, New SaveOptions() With { _
+    '        .OutputType = OutputType.[String] _
+    '    })
+    '    Console.WriteLine("Signed file path is: " + signedPath)
+    '    'ExEnd:multipleslidesignoptions
+    'End Sub
+
+#End Region
+
+
+#Region "SignatureAppearanceOptions"
+
+    ''' <summary>
+    ''' Signs Pdf document with Text Signature as Image
+    ''' </summary>
+    Public Shared Sub SignPdfDocWithTextSignAsImage()
+        'ExStart:SignPdfDocWithTextSignAsImage
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        ' setup colors settings
+        signOptions.BackgroundColor = System.Drawing.Color.Beige
+        ' setup text color
+        signOptions.ForeColor = System.Drawing.Color.Red
+        ' setup Font options
+        signOptions.Font.Bold = True
+        signOptions.Font.Italic = True
+        signOptions.Font.Underline = True
+        signOptions.Font.FontFamily = "Arial"
+        signOptions.Font.FontSize = 15
+        'type of implementation
+        signOptions.SignatureImplementation = PdfTextSignatureImplementation.Image
         ' sign document
-        Dim signedPath = handler.Sign(Of String)("butterfly effect.pptx", collection, New SaveOptions() With { _
-            .OutputType = OutputType.[String] _
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+        .OutputType = OutputType.[String],
+        .OutputFileName = "Pdf_TextSignatureAsImage"
         })
-        Console.WriteLine("Signed file path is: " + signedPath)
-        'ExEnd:multipleslidesignoptions
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPdfDocWithTextSignAsImage
+    End Sub
+
+    ''' <summary>
+    ''' Signs Pdf document with Text Signature as Annotation
+    ''' </summary>
+    Public Shared Sub SignPdfDocWithTextSignAsAnnotation()
+        'ExStart:SignPdfDocWithTextSignAsAnnotation
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.Height = 200
+        signOptions.Width = 200
+        ' setup colors settings
+        signOptions.BackgroundColor = System.Drawing.Color.Beige
+        ' setup text color
+        signOptions.ForeColor = System.Drawing.Color.Red
+        ' setup Font options
+        signOptions.Font.Bold = True
+        signOptions.Font.Italic = True
+        signOptions.Font.Underline = True
+        signOptions.Font.FontFamily = "Arial"
+        signOptions.Font.FontSize = 15
+        'type of implementation
+        signOptions.SignatureImplementation = PdfTextSignatureImplementation.Annotation
+        ' specify extended appearance options
+        Dim appearance As New PdfTextAnnotationAppearance()
+        appearance.BorderColor = Color.Blue
+        appearance.BorderEffect = PdfTextAnnotationBorderEffect.Cloudy
+        appearance.BorderEffectIntensity = 2
+        appearance.BorderStyle = PdfTextAnnotationBorderStyle.Dashed
+        appearance.HCornerRadius = 10
+        appearance.BorderWidth = 5
+        appearance.Contents = signOptions.Text + " content description"
+        appearance.Subject = "Appearance Subject"
+        appearance.Title = "MrJohn Signature"
+        signOptions.Appearance = appearance
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+        .OutputType = OutputType.[String],
+        .OutputFileName = "Pdf_TextSignatureAsAnnotation"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPdfDocWithTextSignAsAnnotation
+    End Sub
+#End Region
+
+#Region "SetVerificationOptions"
+
+    ''' <summary>
+    ''' Verifies PDF Documents signed with Text Signature 
+    ''' </summary>
+    Public Shared Sub TextVerificationOfPdfDocument()
+        'ExStart:TextVerificationOfPdfDocument
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        Dim text As [String] = "John Smith, esquire"
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup image signature options with relative path - image file stores in config.ImagesPath folder
+        Dim signOptions As New PdfSignTextOptions(text)
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.DocumentPageNumber = 1
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_Documents_Verification_Text"
+        })
+        ' setup digital verification options
+        Dim verifyOptions As New PDFVerifyTextOptions(text)
+        verifyOptions.DocumentPageNumber = 1
+
+        'verify document
+        Dim result As VerificationResult = handler.Verify(signedPath, verifyOptions)
+        Console.WriteLine("Verification result: " + result.IsValid)
+        'ExEnd:TextVerificationOfPdfDocument
+    End Sub
+
+    ''' <summary>
+    ''' Verifies Cells Documents signed with .cer digital certificates 
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfCellsDocWithCerCertificateContainer()
+        'ExStart:DigitalVerificationOfCellsDocWithCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New CellsVerifyDigitalOptions("signtest.cer")
+        verifyOptions.Comments = "Test1"
+        verifyOptions.SignDateTimeFrom = New DateTime(2017, 1, 26, 14, 55, 7)
+        verifyOptions.SignDateTimeTo = New DateTime(2017, 1, 26, 14, 55, 9)
+
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.xlsx", verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfCellsDocWithCertificateContainer
+    End Sub
+
+    ''' <summary>
+    ''' Digitally verifies cells document with .pfx certificate container
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfCellsDocWithPfxCertificateContainer()
+        'ExStart:DigitalVerificationOfCellsDocWithPfxCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions1 As New CellsVerifyDigitalOptions("signtest.pfx")
+        'password is needed to open .pfx certificate
+        verifyOptions1.Password = "123"
+        Dim verifyOptions2 As New CellsVerifyDigitalOptions("signtest.cer")
+        Dim verifyOptionsCollection As New VerifyOptionsCollection(New List(Of VerifyOptions)() From {
+            verifyOptions1,
+            verifyOptions2
+        })
+
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.xlsx", verifyOptionsCollection)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfCellsDocWithPfxCertificateContainer
+    End Sub
+
+    ''' <summary>
+    ''' Verifies pdf Documents signed with .cer digital certificates 
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfPdfWithCerContainer()
+        'ExStart:DigitalVerificationOfPdfWithCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New PDFVerifyDigitalOptions("ali.cer")
+        verifyOptions.Reason = "Test reason"
+        verifyOptions.Contact = "Test contact"
+        verifyOptions.Location = "Test location"
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.pdf", verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfPdfWithCertificateContainer
+    End Sub
+
+
+    ''' <summary>
+    ''' Digitally verifies pdf document with .pfx certificate container
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfPdfWithPfxCertificateContainer()
+        'ExStart:DigitalVerificationOfPdfWithPfxCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions1 As New PDFVerifyDigitalOptions("ali.pfx")
+        'password is needed to open .pfx certificate
+        verifyOptions1.Password = "1234567890"
+        Dim verifyOptions2 As New PDFVerifyDigitalOptions("ali.cer")
+        Dim verifyOptionsCollection As New VerifyOptionsCollection(New List(Of VerifyOptions)() From {
+            verifyOptions1,
+            verifyOptions2
+        })
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.pdf", verifyOptionsCollection)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfPdfWithPfxCertificateContainer
+    End Sub
+
+    ''' <summary>
+    ''' Verifies word Documents signed with .cer digital certificates 
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfWordDocWithCerCertificateContainer()
+        'ExStart:DigitalVerificationOfWordDocWithCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+
+        Dim verifyOptionsCollection As New VerifyOptionsCollection()
+        ' setup digital verification options
+        Dim verifyOptions As New WordsVerifyDigitalOptions("signtest.cer")
+        verifyOptions.Comments = "Test1"
+        verifyOptions.SignDateTimeFrom = New DateTime(2017, 1, 26, 14, 55, 57)
+        verifyOptions.SignDateTimeTo = New DateTime(2017, 1, 26, 14, 55, 59)
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.docx", verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfWordDocWithCertificateContainer
+    End Sub
+
+
+    ''' <summary>
+    ''' Digitally verifies word document with .pfx certificate container
+    ''' </summary>
+    Public Shared Sub DigitalVerificationOfWordDocWithPfxCertificateContainer()
+        'ExStart:DigitalVerificationOfWordDocWithPfxCertificateContainer
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions1 As New WordsVerifyDigitalOptions("signtest.pfx")
+        'password is needed to open .pfx certificate
+        verifyOptions1.Password = "123"
+        Dim verifyOptions2 As New WordsVerifyDigitalOptions("signtest.cer")
+        Dim verifyOptionsCollection As New VerifyOptionsCollection(New List(Of VerifyOptions)() From {
+            verifyOptions1,
+            verifyOptions2
+        })
+        'verify document
+        Dim result As VerificationResult = handler.Verify("digital signatures.docx", verifyOptionsCollection)
+        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        'ExEnd:DigitalVerificationOfWordDocWithPfxCertificateContainer
     End Sub
 
 #End Region
+
+
+    ''' <summary>
+    ''' OUtput file name can be set in saveoptions
+    ''' </summary>
+    Public Shared Sub SetOutputFileName()
+        'ExStart:SetOutputFileName
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As SignOptions = New CellsSignTextOptions("John Smith")
+        ' specify load options
+        Dim loadOptions As New LoadOptions()
+        ' specify save options
+        Dim saveOptions As New CellsSaveOptions() With {
+        .OutputType = OutputType.[String],
+        .OutputFileName = "FileWithDifferentFileName"
+        }
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("pie chart.xlsx", signOptions, loadOptions, saveOptions)
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SetOutputFileName
+    End Sub
+
 
 
 
