@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         //ExStart:commonutilities
         public const string storagePath = "../../../../Data/Storage/";
         public const string outputPath = "../../../../Data/Output/";
-        public const string licensePath = "../../../../Data/Storage/GroupDocs.Total.lic";
+        public const string licensePath = "D:/Aspose Projects/License/GroupDocs.Total.lic";
         public const string imagePath = "../../../../Data/Images/";
         public const string certificatePath = "../../../../Data/Certificates/";
         //ExEnd:commonutilities
@@ -288,7 +288,7 @@ namespace GroupDocs.Signature.Examples.CSharp
                         {
                             //ExStart:signingworddocwithtextandsaveformatoption
                             WordsSignTextOptions wordTextSignOptions = (WordsSignTextOptions)textSignOptions;
-                            var wordTextSignedPath = handler.Sign<string>(fileName, wordTextSignOptions, new WordsSaveOptions {OutputType = OutputType.String, FileFormat = Domain.WordsSaveFileFormat.Dot});
+                            var wordTextSignedPath = handler.Sign<string>(fileName, wordTextSignOptions, new WordsSaveOptions {OutputType = OutputType.String, FileFormat = Domain.WordsSaveFileFormat.Pdf});
                             //ExEnd:signingworddocwithtextandsaveformatoption
                         }
                         else if (textSignOptions == null && imageSignOptions != null)

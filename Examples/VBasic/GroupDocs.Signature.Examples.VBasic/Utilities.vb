@@ -7,7 +7,7 @@ Public Class Utilities
     'ExStart:commonutilitiesvb
     Public Const storagePath As String = "../../../../Data/Storage/"
     Public Const outputPath As String = "../../../../Data/Output/"
-    Public Const licensePath As String = "../../../../Data/Storage/GroupDocs.Total.lic"
+    Public Const licensePath As String = "D:/Aspose Projects/License/GroupDocs.Total.lic"
     Public Const imagePath As String = "../../../../Data/Images/"
     Public Const certificatePath As String = "../../../../Data/Certificates/"
     'ExEnd:commonutilitiesvb

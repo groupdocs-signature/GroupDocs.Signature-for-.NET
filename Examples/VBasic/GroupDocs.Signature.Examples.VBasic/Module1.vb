@@ -4,7 +4,7 @@
 
         'Utilities.ApplyLicense()
 
-        '#Region "WorkingWithTextSignature"
+#Region "WorkingWithTextSignature"
 
         'Signatures.SignPdfDocumentWithText("digital signatures.pdf")
 
@@ -14,9 +14,9 @@
 
         'Signatures.SignWordDocumentWithText("getting started.docx")
 
-        '#End Region
+#End Region
 
-        '#Region "WorkingWithImageSignature"
+#Region "WorkingWithImageSignature"
 
         'Signatures.SignPdfDocumentWithImage("digital signatures.pdf")
 
@@ -26,9 +26,9 @@
 
         'Signatures.SignWordDocumentWithImage("getting started.docx")
 
-        '#End Region
+#End Region
 
-        '#Region "WorkingWithDigitalSignature"
+#Region "WorkingWithDigitalSignature"
 
         'Signatures.SignPdfDocumentDigitally("digital signatures.pdf")
 
@@ -38,21 +38,21 @@
 
         'Signatures.SignSlideDocumentDigitally("butterfly effect.pptx")
 
-        '#End Region
+#End Region
 
-        '#Region "Azure"
+#Region "Azure"
 
         'Signatures.CustomInputHandler("digital signatures.pdf")
         'Signatures.CustomOutputHandler("digital signatures.pdf")
 
-        '#End Region
+#End Region
 
-        '#Region "OpenPasswordProtectedDocuments"
+#Region "OpenPasswordProtectedDocuments"
         'Signatures.GetPasswordProtectedDocs("getting started.docx")
-        '#End Region
+#End Region
 
         'Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
-        'Region "SaveTextSignedFormatOptions"
+#Region "SaveTextSignedFormatOptions"
 
         'Signatures.SignPdfDocumentWithTextWithSaveFormat("digital signatures.pdf")
 
@@ -62,9 +62,9 @@
 
         'Signatures.SignWordDocumentWithTextWithSaveFormat("getting started.docx")
 
-        'End Region
+#End Region
 
-        'Region "SaveImageSignedFormatOptions"
+#Region "SaveImageSignedFormatOptions"
 
         'Signatures.SignPdfDocumentWithImageWithSaveFormat("digital signatures.pdf")
 
@@ -74,9 +74,9 @@
 
         'Signatures.SignWordDocumentWithImageWithSaveFormat("getting started.docx")
 
-        'End Region
+#End Region
 
-        'Region "SaveDigitalSignedFormatOptions"
+#Region "SaveDigitalSignedFormatOptions"
 
         'Signatures.SignPdfDocumentDigitallyWithSaveFormat("digital signatures.pdf")
 
@@ -87,13 +87,33 @@
         'digital signatures are not supported yet for slides documents 
         'Signatures.SignSlideDocumentDigitallyWithSaveFormat("butterfly effect.pptx")
 
-        'End Region
-        'Region "SetupMultipleSignatureOptionsInPdf"
+#End Region
+#Region "SetupMultipleSignatureOptionsInPdf"
         'Signatures.MultiplePdfSignOptoins()
         'Signatures.MultipleCellSignOptoins()
         'Signatures.MultipleWordSignOptoins()
         'Signatures.MultipleSlideSignOptoins()
-        'End Region
+#End Region
+
+
+        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+#Region "VerificationOptions"
+        'Signatures.TextVerificationOfPdfDocument()
+        'Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer()
+        'Signatures.DigitalVerificationOfCellsDocWithPfxCertificateContainer()
+        'Signatures.DigitalVerificationOfPdfWithCerContainer()
+        'Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer()
+        'Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer()
+        'Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer()
+#End Region
+
+        '        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+#Region "SignatureAppearnaceoptions"
+        'Signatures.SignPdfDocWithTextSignAsImage()
+        'Signatures.SignPdfDocWithTextSignAsAnnotation()
+#End Region
+
+        'Signatures.SetOutputFileName()
 
 
     End Sub
