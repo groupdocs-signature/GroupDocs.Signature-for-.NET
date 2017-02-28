@@ -861,6 +861,7 @@ Public Class Signatures
 
     ''' <summary>
     ''' Signs Pdf document with Text Signature as Image
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub SignPdfDocWithTextSignAsImage()
         'ExStart:SignPdfDocWithTextSignAsImage
@@ -884,8 +885,8 @@ Public Class Signatures
         signOptions.SignatureImplementation = PdfTextSignatureImplementation.Image
         ' sign document
         Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
-        .OutputType = OutputType.[String],
-        .OutputFileName = "Pdf_TextSignatureAsImage"
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_TextSignatureAsImage"
         })
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:SignPdfDocWithTextSignAsImage
@@ -893,6 +894,7 @@ Public Class Signatures
 
     ''' <summary>
     ''' Signs Pdf document with Text Signature as Annotation
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub SignPdfDocWithTextSignAsAnnotation()
         'ExStart:SignPdfDocWithTextSignAsAnnotation
@@ -932,18 +934,156 @@ Public Class Signatures
         signOptions.Appearance = appearance
         ' sign document
         Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
-        .OutputType = OutputType.[String],
-        .OutputFileName = "Pdf_TextSignatureAsAnnotation"
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_TextSignatureAsAnnotation"
         })
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:SignPdfDocWithTextSignAsAnnotation
     End Sub
-#End Region
 
+    ''' <summary>
+    ''' Signs Pdf document with Text Signature as Sticker
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub SignPdfDocWithTextSignatureAsSticker()
+        'ExStart:SignPdfDocWithTextSignatureAsSticker
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup signature options
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        signOptions.Left = 10
+        signOptions.Top = 10
+        signOptions.HorizontalAlignment = HorizontalAlignment.Right
+        signOptions.VerticalAlignment = VerticalAlignment.Bottom
+        signOptions.Margin = New Padding(10)
+        signOptions.BackgroundColor = Color.Red
+        signOptions.Opacity = 0.5
+        'type of implementation
+        signOptions.SignatureImplementation = PdfTextSignatureImplementation.Sticker
+        ' an appearance customizes more specific options
+        Dim appearance As New PdfTextStickerAppearance()
+        signOptions.Appearance = appearance
+        ' text content of an sticker
+        appearance.Title = "Title"
+        appearance.Subject = "Subject"
+        appearance.Contents = "Contents"
+        ' is sticker opened by default
+        appearance.Opened = False
+        ' an icon of a sticker on a page
+        appearance.Icon = PdfTextStickerIcon.Star
+        'If custom appearance is not set there will be used DefaultAppearance
+        'User can change any parameter of DefaultAppearance
+        'PdfTextStickerAppearance.DefaultAppearance.Title = "Title";
+        'PdfTextStickerAppearance.DefaultAppearance.Subject = "Subject";
+        'PdfTextStickerAppearance.DefaultAppearance.Contents = "Contents";
+        'PdfTextStickerAppearance.DefaultAppearance.Opened = false;
+        'PdfTextStickerAppearance.DefaultAppearance.State = PdfTextStickerState.Completed;
+        'PdfTextStickerAppearance.DefaultAppearance.Icon = PdfTextStickerIcon.Note;
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_TextSignatureAsSticker"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPdfDocWithTextSignatureAsSticker
+    End Sub
+
+    ''' <summary>
+    ''' Adds Rotation to Text Signature appearance
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub AddRotationToTextSignatureAppearance()
+        'ExStart:AddRotationToTextSignatureAppearance
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup appearance options
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        signOptions.Font.FontSize = 32
+        signOptions.BackgroundColor = Color.BlueViolet
+        signOptions.ForeColor = Color.Orange
+        signOptions.Left = 200
+        signOptions.Top = 200
+        ' setup rotation
+        signOptions.RotationAngle = 48
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_Text_Rotation"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:AddRotationToTextSignatureAppearance
+    End Sub
+
+    ''' <summary>
+    ''' Adds Transparency and Rotation to Text Signature appearance for Slides
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub AddTransparencyRotationToTextSignatureForSlides()
+        'ExStart:AddTransparencyRotationToTextSignatureForSlides
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup appearance options
+        Dim signOptions As New SlidesSignTextOptions("John Smith")
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.Width = 200
+        signOptions.Height = 200
+        signOptions.ForeColor = Color.Orange
+        signOptions.BackgroundColor = Color.BlueViolet
+        signOptions.BorderColor = Color.Orange
+        signOptions.BorderWeight = 5
+        ' setup rotation
+        signOptions.RotationAngle = 48
+        ' setup transparency
+        signOptions.BackgroundTransparency = 0.4
+        signOptions.BorderTransparency = 0.8
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("butterfly effect.pptx", signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Slides_Text_Transparency_Rotation"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd: AddTransparencyRotationToTextSignatureForSlides
+    End Sub
+
+    ''' <summary>
+    ''' Adds Rotation to Image Signature appearance
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub AddRotationToImageSignatureAppearance()
+        'ExStart:AddRotationToImageSignatureAppearance
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        'setup size and position
+        Dim signOptions As New PdfSignImageOptions("signature.jpg")
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.Width = 200
+        signOptions.Height = 200
+        ' setup rotation
+        signOptions.RotationAngle = 48
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)("text.pdf", signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_Image_Rotation"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:AddRotationToImageSignatureAppearance
+    End Sub
+#End Region
 #Region "SetVerificationOptions"
 
     ''' <summary>
     ''' Verifies PDF Documents signed with Text Signature 
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub TextVerificationOfPdfDocument()
         'ExStart:TextVerificationOfPdfDocument
@@ -974,6 +1114,7 @@ Public Class Signatures
 
     ''' <summary>
     ''' Verifies Cells Documents signed with .cer digital certificates 
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub DigitalVerificationOfCellsDocWithCerCertificateContainer()
         'ExStart:DigitalVerificationOfCellsDocWithCertificateContainer
@@ -989,12 +1130,13 @@ Public Class Signatures
 
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.xlsx", verifyOptions)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfCellsDocWithCertificateContainer
     End Sub
 
     ''' <summary>
     ''' Digitally verifies cells document with .pfx certificate container
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub DigitalVerificationOfCellsDocWithPfxCertificateContainer()
         'ExStart:DigitalVerificationOfCellsDocWithPfxCertificateContainer
@@ -1014,12 +1156,13 @@ Public Class Signatures
 
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.xlsx", verifyOptionsCollection)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfCellsDocWithPfxCertificateContainer
     End Sub
 
     ''' <summary>
     ''' Verifies pdf Documents signed with .cer digital certificates 
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub DigitalVerificationOfPdfWithCerContainer()
         'ExStart:DigitalVerificationOfPdfWithCertificateContainer
@@ -1034,13 +1177,14 @@ Public Class Signatures
         verifyOptions.Location = "Test location"
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.pdf", verifyOptions)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfPdfWithCertificateContainer
     End Sub
 
 
     ''' <summary>
     ''' Digitally verifies pdf document with .pfx certificate container
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub DigitalVerificationOfPdfWithPfxCertificateContainer()
         'ExStart:DigitalVerificationOfPdfWithPfxCertificateContainer
@@ -1059,7 +1203,7 @@ Public Class Signatures
         })
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.pdf", verifyOptionsCollection)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfPdfWithPfxCertificateContainer
     End Sub
 
@@ -1081,13 +1225,14 @@ Public Class Signatures
         verifyOptions.SignDateTimeTo = New DateTime(2017, 1, 26, 14, 55, 59)
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.docx", verifyOptions)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfWordDocWithCertificateContainer
     End Sub
 
 
     ''' <summary>
     ''' Digitally verifies word document with .pfx certificate container
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
     ''' </summary>
     Public Shared Sub DigitalVerificationOfWordDocWithPfxCertificateContainer()
         'ExStart:DigitalVerificationOfWordDocWithPfxCertificateContainer
@@ -1106,11 +1251,81 @@ Public Class Signatures
         })
         'verify document
         Dim result As VerificationResult = handler.Verify("digital signatures.docx", verifyOptionsCollection)
-        Console.WriteLine("Signed file verification result: " + result.IsValid.ToString)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
         'ExEnd:DigitalVerificationOfWordDocWithPfxCertificateContainer
     End Sub
 
+    ''' <summary>
+    ''' Verifies PDF Document signed with Text Signature Sticker
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub VerifyPdfDocumentSignedWithTextSignatureSticker()
+        'ExStart:VerifyPdfDocumentSignedWithTextSignatureSticker
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New PDFVerifyTextOptions()
+        ' specify verification type
+        verifyOptions.SignatureImplementation = PdfTextSignatureImplementation.Sticker
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "Contents"
+        ' create Verify Extensions
+        Dim extensions As New PdfTextStickerVerifyExtensions()
+        'If verify option is set, then appropriate property of Sticker must be equals
+        extensions.Contents = "Contents"
+        extensions.Subject = "Subject"
+        extensions.Title = "Title"
+        extensions.Icon = PdfTextStickerIcon.Cross
+        ' set extensions to verification options
+        verifyOptions.Extensions = extensions
+        'verify document
+        Dim result As VerificationResult = handler.Verify("test_text_sticker.pdf", verifyOptions)
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyPdfDocumentSignedWithTextSignatureSticker
+    End Sub
+
+    ''' <summary>
+    ''' Verifies PDF Document signed with Text Signature Annotation
+    ''' This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+    ''' </summary>
+    Public Shared Sub VerifyPdfDocumentSignedWithTextSignatureAnnotation()
+        'ExStart:VerifyPdfDocumentSignedWithTextSignatureAnnotation
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New PDFVerifyTextOptions()
+        ' specify verification type
+        verifyOptions.SignatureImplementation = PdfTextSignatureImplementation.Annotation
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "John Smith_1"
+        ' create Verify Extensions
+        Dim extensions As New PdfTextAnnotationVerifyExtensions()
+        'If verify option is set, then appropriate property of Annotation must be equals
+        extensions.Contents = "John Smith_1"
+        extensions.Subject = "John Smith_2"
+        extensions.Title = "John Smith_3"
+        ' set extensions to verification options
+        verifyOptions.Extensions = extensions
+        'verify document
+        Dim result As VerificationResult = handler.Verify("test_text_annotation.pdf", verifyOptions)
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyPdfDocumentSignedWithTextSignatureAnnotation
+    End Sub
+
 #End Region
+
 
 
     ''' <summary>

@@ -54,6 +54,88 @@
             Stream of Digital Certificate
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Domain.IAlignment">
+            <summary>
+            Interface describes alignment of Signature area on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IAlignment.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of Image on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IAlignment.VerticalAlignment">
+            <summary>
+            Vertical alignment of Image on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IAlignment.Margin">
+            <summary>
+            Gets the space that is specified by default between Image and Document edges.
+            (works if horizontal or vertical alignment is specified) 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IAlignment.MarginMeasureType">
+            <summary>
+            Margin measurement type 
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.IOpacity">
+            <summary>
+            Interface defines Opacity property for Signature area on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IOpacity.Opacity">
+            <summary>
+            Gets or sets a value to indicate the Signature Opacity. The value is from 0.0 to 1.0
+            By default the value is 1.0.
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.IRectangle">
+            <summary>
+            Interface defines properties for Signature area on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.Left">
+            <summary>
+            Left X position of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.Top">
+            <summary>
+            Top Y Position of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.Width">
+            <summary>
+            Width of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.Height">
+            <summary>
+            Height of Image on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.LocationMeasureType">
+            <summary>
+            Location intent for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRectangle.SizeMeasureType">
+            <summary>
+            Size of Signature area measurement type for Width and Height properties
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.IRotation">
+            <summary>
+            Interface defines properties for Signature Rotation
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Domain.IRotation.RotationAngle">
+            <summary>
+            Rotation angle clockwise
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Domain.PdfTextAnnotationBorderEffect">
             <summary>
             Describes effect which should be applied to the border of the Pdf Text Annotations.
@@ -239,6 +321,11 @@
             Unknown annotation.
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Domain.SignatureArea">
+            <summary>
+            Internal class to change values based on logic rules
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Domain.CellsSaveFileFormat">
             <summary>
             Define different save file formats
@@ -291,7 +378,7 @@
         </member>
         <member name="T:GroupDocs.Signature.Domain.MeasureType">
             <summary>
-            Specifies vertical alignment of element on Document Page
+            Specifies measure units on document page
             </summary>
         </member>
         <member name="F:GroupDocs.Signature.Domain.MeasureType.Pixels">
@@ -496,6 +583,12 @@
         <member name="F:GroupDocs.Signature.Domain.PdfTextSignatureImplementation.Annotation">
             <summary>
             Text Signature as Text Annotation object on PDF Page
+            Annotation will be visible only in Licensed versions
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextSignatureImplementation.Sticker">
+            <summary>
+            Text Signature as Sticker object on PDF Page
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Domain.SignatureFont">
@@ -979,6 +1072,11 @@
         <member name="F:GroupDocs.Signature.Licensing.TrialRules.TRIAL_MESSAGE_COLOR">
             <summary>
             Trial Message Color
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Licensing.TrialRules.ASPOSE_PDF_TRIAL_PAGES_LIMIT">
+            <summary>
+            Trial Message Font Size
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Licensing.TrialRules.IsInTrialMode">
@@ -1606,7 +1704,7 @@
             <param name="storagePath">Storage Path for source files</param>
             <param name="outputPath">Output path for signed documents</param>
             <param name="imagesPath">Images path</param>
-            <param name="certificatesPath">Pth with digital certificates and keys</param>
+            <param name="certificatesPath">Path with digital certificates and keys</param>
         </member>
         <member name="M:GroupDocs.Signature.Config.SignatureConfig.Load(System.String)">
             <summary>
@@ -2169,6 +2267,374 @@
             Input File Name compositor to compose output file name
             </summary>
         </member>
+        <member name="T:Dynabic.Metered.BillingGateway">
+             <summary>
+             This is the primary interface to the BanckleBilling Gateway.
+             </summary>
+             <remarks>
+             This class interacts with:
+             <ul>
+             <li><see cref="T:Dynabic.Metered.SubscriptionService">Subscriptions</see></li>
+             </ul>  
+             </remarks>
+             <example>
+             Quick Start Example:
+             <code>
+             using System
+             using BanckleBilling
+            
+             namespace BanckleBillingExample
+             {
+                 class Program
+                 {
+                     static void Main(string[] args)
+                     {
+                         var gateway = new BillingGateway
+                         {
+                             Environment = Environment.PRODUCTION,
+                             PublicKey = "a_public_key",
+                             PrivateKey = "a_private_key"
+                         }
+            
+                         var request = new SubscriptionRequest
+                         {
+                             ProductId = 11,
+                             ...
+                             CustomerRequest = new CustomerRequest
+                             {
+                                 Name = "John Doe",
+                                 ...
+                             }
+                         }
+            
+                         SubscriptionResponse subscription = gateway.Subscription.Create(request)
+            
+                         Console.WriteLine(String.Format("Subscription ID: {0}", subscription.Id))
+                         Console.WriteLine(String.Format("Status: {0}", subscription.Status))
+                     }
+                 }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Dynabic.Metered.Crypto.RemoveUtf8BomIfPresent(System.String)">
+            <summary>
+            Remove the UTF8 BOM, if present (BILLING-757)
+            this causes the client/server signatures to not correspond, 
+            although the content and the key are identical
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.MeteredState">
+            <summary>
+            Represents possible metered states.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.MeteredState.Evaluation">
+            <summary>
+            The metered is evaluation
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.MeteredState.Paid">
+            <summary>
+            The metered is a paid customer.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Metered">
+            <summary>
+            Provides methods to set metered key.
+            </summary>
+            <example>
+            In this example, an attempt will be made to set metered public and private key
+            
+            <ms>
+            <code>
+            [C#]
+            
+            Metered matered = new Metered();
+            matered.SetMeteredKey("PublicKey", "PrivateKey");
+            
+            
+            [Visual Basic]
+            
+            Dim matered As Metered = New Metered
+            matered.SetMeteredKey("PublicKey", "PrivateKey")
+            </code>
+            </ms>
+            
+            <java>
+            the component jar file:
+            <code>
+            Metered matered = new Metered();
+            matered.setMeteredKey("PublicKey", "PrivateKey");
+            </code>
+            </java>
+            
+            </example>
+        </member>
+        <member name="M:GroupDocs.Signature.Metered.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Metered.SetMeteredKey(System.String,System.String)">
+            <summary>
+            Sets metered public and private key
+            </summary>
+            <param name="publicKey">public key</param>
+            <param name="privateKey">private key</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Metered.GetConsumptionQuantity">
+            <summary>
+            Gets consumption quantity
+            </summary>
+            <returns>consumption quantity</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.MeteredCountService">
+            <summary>
+            This internal class is used to handle customer's consumption data, the unit is MB.
+            </summary>
+            <example>
+            In this example, an attempt will be made to increase of 9MB on customer consumption data.
+            
+            <ms>
+            <code>
+            [C#]
+            
+            MeteredCountService.Instance.IncreaseCount(9);
+            
+            </code>
+            </ms>
+            </example>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredCountService.IncreaseCount(System.Double)">
+            <summary>
+            Increase customer consumption data, and try to upload data
+            </summary>
+            <param name="count">increased quantities, in unit of MB</param>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredCountService.IncreaseCount(System.Decimal,System.Boolean)">
+            <summary>
+            Increase customer consumption data
+            </summary>
+            <param name="count">increased quantities, in unit of MB</param>
+            <param name="isSend">whether upload data</param>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredCountService.GetAndResetCount">
+            <summary>
+            Gets and Resets customer consumption data
+            </summary>
+            <returns>quantities of customer consumption data</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.MeteredBillingService">
+            <summary>
+            This internal class is used to handle customer's metered state
+            </summary>
+            <example>
+            In this example, an attempt will be check customer's metered state.
+            
+            <ms>
+            <code>
+            [C#]
+            
+            MeteredState materedState = MeteredBillingService.GetMeteredState();
+            
+            </code>
+            </ms>
+            </example>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredBillingService.Setkey(System.String,System.String)">
+            <summary>
+            Sets the subscription public and private key
+            </summary>
+            <param name="subscriptionPublicKey">subscription public key</param>
+            <param name="subscriptionPrivateKey">subscription private key</param>
+            <returns></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredBillingService.GetMeteredState">
+            <summary>
+            Gets metered state
+            </summary>
+            <returns>metered state</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.MeteredBillingService.UploadCustomerData">
+            <summary>
+            Uploads customer consumption data
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.PricingPlan">
+            <summary>
+            Represents basic information about a PricingPlan
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.PricingPlan.Id">
+            <summary>
+            Id of the PricingPlan record
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.PricingPlan.Name">
+            <summary>
+            Name of the PricingPlan
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.PricingPlan.ProductItemsList">
+            <summary>
+            A list of ProductItems represented as a collection of ProductItemRequest objects
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.PricingPlanList">
+            <summary>
+            A list of PricingPlans
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.Product">
+            <summary>
+            Represents a Product.
+            </summary> 
+        </member>
+        <member name="P:Dynabic.Metered.Product.Id">
+            <summary>
+            Product's unique identifier
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Product.Name">
+            <summary>
+            Name of the Product
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Product.PricingPlans">
+            <summary>
+            A list of Pricing Plans represented as a collection of PricingPlanRequest objects
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.ProductItem">
+            <summary>
+            Product Item
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.ProductItem.Id">
+            <summary>
+            ProductItem's unique identifier. It is generated and managed by database
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.ProductItem.Name">
+            <summary>
+            Name of the ProductItem
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.ProductItemList">
+            <summary>
+            A list of ProductItems
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.ProductList">
+            <summary>
+            A list of Products
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.Subscription">
+            <summary>
+            Represents a Subscription
+            (Customers make Subscriptions to Products)
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Subscription.ProductId">
+            <summary>
+            Id of the Product for which the Customer subscribed
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Subscription.ProductPricingPlanId">
+            <summary>
+            Id of the PricingPlan selected in the Subscription
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Subscription.Product">
+            <summary>
+            Product for which the Customer subscribed.
+            If a ProductId is provided, this Product will be ignored
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Subscription.SubscriptionItems">
+            <summary>
+            Gets or sets the subscription items.
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.Subscription.Status">
+            <summary>
+            Actual status of the Subscription
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.SubscriptionId">
+            <summary>
+            The subscription identifier
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.ProductItemId">
+            <summary>
+            The product item identifier
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.Quantity">
+            <summary>
+            The value of the quantity
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.UpdateDescription">
+            <summary>
+            The update details
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.UnitName">
+            <summary>
+            The unit name
+            </summary>
+        </member>
+        <member name="P:Dynabic.Metered.SubscriptionItem.IsQuantityAccumulated">
+            <summary>
+            Whether this item is an accumulator. When set to true it
+            will influence the way subscription items are updated.
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.SubscriptionItemList">
+            <summary>
+            A lists of the subscription's components.
+            </summary>
+        </member>
+        <member name="T:Dynabic.Metered.SubscriptionService">
+            <summary>
+            Provides operations for creating, finding, updating, searching, and deleting subscriptions
+            </summary>
+        </member>
+        <member name="M:Dynabic.Metered.SubscriptionService.GetSubscription(System.Int64)">
+            <summary>
+            Get Subscription
+            </summary>
+            <param name="id">ID of the Subscription</param>
+            <returns>Subscription</returns>
+        </member>
+        <member name="M:Dynabic.Metered.SubscriptionService.UpdateSubscriptionItems(System.Int64,Dynabic.Metered.SubscriptionItemList)">
+            <summary>
+            Updates the subscription item.
+            </summary>
+            <param name="id"> The Id of the Subscription </param>
+            <param name="items">The subscription items.</param>
+        </member>
+        <member name="M:Dynabic.Metered.SubscriptionService.GetSubscriptionItems(System.Int64)">
+            <summary>
+            Gets the subscription items.
+            </summary>
+            <param name="id">The subscription id.</param>
+            <returns>SubscriptionItemList</returns>
+        </member>
+        <member name="T:Dynabic.Metered.SubscriptionsList">
+            <summary>
+            A list of Subscriptions represented as a collection of SubscriptionResponse objects
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.ImageAppearance">
             <summary>
             Describes appearance of Signature as Image object
@@ -2181,7 +2647,7 @@
         </member>
         <member name="M:GroupDocs.Signature.Options.SignatureAppearance.#ctor">
             <summary>
-            Creates default Signature Option
+            Creates default Signature Appearance
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignatureAppearance.Options">
@@ -2192,6 +2658,153 @@
         <member name="T:GroupDocs.Signature.Options.PdfImageAppearance">
             <summary>
             Describes appearance of Pdf Signature as Image object on Document Page
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PdfTextStickerAppearance">
+            <summary>
+            Describes appearance of Pdf Text Annotation Sticker object and popup window of sticker.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfTextStickerAppearance.#ctor">
+            <summary>
+            Creates Pdf Signature Text Annotation Appearance object
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.DefaultAppearance">
+            <summary>
+            Gets default appearance for sticker. These properties are applied as default if 
+            Options.SignatureAppearance property is not specified.
+            The properties could be changed by user any time
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.Title">
+            <summary>
+            Gets or sets title of popup window.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.Subject">
+            <summary>
+            Gets or sets subject.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.Contents">
+            <summary>
+            Gets or sets the contents of popup window.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.Opened">
+            <summary>
+            Setup if sticker popup window will be opened by default.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerAppearance.Icon">
+            <summary>
+            Gets or sets the icon of sticker
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextStickerIcon">
+            <summary>
+            Describes enumeration of Pdf Text Annotation Sticker Icon appearance.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Note">
+            <summary>
+            Note icon.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Comment">
+            <summary>
+            Comment icon.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Key">
+            <summary>
+            Key icon.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Help">
+            <summary>
+            Help icon.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.NewParagraph">
+            <summary>
+            New Paragraph icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Paragraph">
+            <summary>
+            Paragraph icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Insert">
+            <summary>
+            Insert icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Check">
+            <summary>
+            Check icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Cross">
+            <summary>
+            Cross icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Circle">
+            <summary>
+            Circle icon
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerIcon.Star">
+            <summary>
+            Star icon
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Domain.PdfTextStickerState">
+            <summary>
+            Describes enumeration of Pdf Text Annotation Sticker States.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Undefined">
+            <summary>
+            Undefined state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Marked">
+            <summary>
+            Marked state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Unmarked">
+            <summary>
+            Unmarked state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Accepted">
+            <summary>
+            Accepted state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Rejected">
+            <summary>
+            Rejected state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Cancelled">
+            <summary>
+            Cancelled state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.Completed">
+            <summary>
+            Completed state.
+            </summary>
+        </member>
+        <member name="F:GroupDocs.Signature.Domain.PdfTextStickerState.None">
+            <summary>
+            No state.
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.CellsSaveOptions">
@@ -2402,6 +3015,11 @@
             Size of Image measurement type for Width and Height properties
             </summary>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.RotationAngle">
+            <summary>
+            Rotation angle clockwise
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.ImageFileName">
             <summary>
             Get and Set Image File Name
@@ -2410,6 +3028,16 @@
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.ImageStream">
             <summary>
             Get or set Image stream of option
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of Image on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignImageOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of Image on Document Page
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.Margin">
@@ -2421,16 +3049,6 @@
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.MarginMeasureType">
             <summary>
             Margin measurement type 
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.VerticalAlignment">
-            <summary>
-            Vertical alignment of Image on Document Page
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignImageOptions.HorizontalAlignment">
-            <summary>
-            Horizontal alignment of Image on Document Page
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignImageOptions.SignAllPages">
@@ -2608,24 +3226,54 @@
             Text of signature
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Width">
-            <summary>
-            Width of Text shape
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Height">
-            <summary>
-            Height of Text shape
-            </summary>
-        </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Left">
             <summary>
-            Left intent (works if horizontal alignment is not specified)
+            Left X position of Signature on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType property)
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Top">
             <summary>
-            Top intent (works if vertical alignment is not specified)
+            Top Y Position of Signature on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> LocationMeasureType property)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Width">
+            <summary>
+            Width of Signature area on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType property)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.Height">
+            <summary>
+            Height of Signature are on Document Page in Measure values (pixels or percent see <see cref="T:GroupDocs.Signature.Domain.MeasureType"/> SizeMeasureType property)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.LocationMeasureType">
+            <summary>
+            Location intent for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.SizeMeasureType">
+            <summary>
+            Size of Signature area measurement type for Width and Height properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.RotationAngle">
+            <summary>
+            Rotation angle clockwise
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.SignAllPages">
+            <summary>
+            Flag to put text of signature on all document pages
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of Signature area on Document Page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of Signature area on Document Page
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Margin">
@@ -2634,19 +3282,9 @@
             (works if horizontal or vertical alignment is specified) 
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.SignAllPages">
+        <member name="P:GroupDocs.Signature.Options.SignTextOptions.MarginMeasureType">
             <summary>
-            Flag to put text of signature on all document pages
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.VerticalAlignment">
-            <summary>
-            Vertical alignment of Image on Document Page
-            </summary>
-        </member>
-        <member name="P:GroupDocs.Signature.Options.SignTextOptions.HorizontalAlignment">
-            <summary>
-            Horizontal alignment of Image on Document Page
+            Margin measurement type 
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SignTextOptions.Font">
@@ -2679,6 +3317,21 @@
             Creates Signature Cells Text Option with text
             </summary>
             <param name="text">Text signature</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.LocationMeasureType">
+            <summary>
+            Location Measure Type for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.SizeMeasureType">
+            <summary>
+            Size of Image measurement type for Width and Height properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.MarginMeasureType">
+            <summary>
+            Margin measurement type 
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.CellsSignTextOptions.Left">
             <summary>
@@ -2741,6 +3394,83 @@
             Type of text signature implementation
             </summary>
         </member>
+        <member name="T:GroupDocs.Signature.Options.PdfTextAnnotationVerifyExtensions">
+            <summary>
+            Describes extensions of verification of Pdf Text Annotation object
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.VerifyExtensions">
+            <summary>
+            Verify Extensions - keeps additional verification options for alternative implementations of Signature on Document Page
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.VerifyExtensions.#ctor">
+            <summary>
+            Creates default Verify Extensions
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyExtensions.Options">
+            <summary>
+            Parent Verify Options
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfTextAnnotationVerifyExtensions.#ctor">
+            <summary>
+            Creates Pdf Text Annotation Signature Verification Extensions with empty values
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationVerifyExtensions.Title">
+            <summary>
+            Title of Text Annotation to be verified.
+            Not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationVerifyExtensions.Subject">
+            <summary>
+            Subject of Text Annotation to be verified.
+            Not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextAnnotationVerifyExtensions.Contents">
+            <summary>
+            Contents of Text Annotation to be verified.
+            Not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions">
+            <summary>
+            Describes extensions of verification of Pdf Sticker object
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions.#ctor">
+            <summary>
+            Creates Pdf Text Sticker Signature Verification Extensions with empty values
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions.Title">
+            <summary>
+            Title of Sticker to be verified.
+            Value will not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions.Subject">
+            <summary>
+            Subject of Sticker to be verified.
+            Value will not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions.Contents">
+            <summary>
+            Contents of Sticker to be verified.
+            Value will not be verified if equals empty string or null.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfTextStickerVerifyExtensions.Icon">
+            <summary>
+            Icon of Sticker to be verified.
+            Value will not be verified if equals null.
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Options.WordsVerifyDigitalOptions">
             <summary>
             Words Verify Digital Options - keeps options to verify Digital Signature of Words Documents
@@ -2779,6 +3509,16 @@
         <member name="P:GroupDocs.Signature.Options.VerifyOptions.SignatureConfig">
             <summary>
             Signature Configuration to access images and certificates files
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptions.DocumentPageNumber">
+            <summary>
+            Document Page Number to be verified. If property is not set - all Pages of Document will be verified for first occurrence
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.VerifyOptions.Extensions">
+            <summary>
+            Additional extensions for alternative signature options verification
             </summary>
         </member>
         <member name="M:GroupDocs.Signature.Options.VerifyDigitalOptions.#ctor">
@@ -2855,9 +3595,14 @@
             Load document options
             </summary>
         </member>
+        <member name="M:GroupDocs.Signature.Options.LoadOptions.#ctor">
+            <summary>
+            Creates Load Options
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.LoadOptions.Password">
             <summary>
-            Set password to remove protection from protected document
+            Get and set password of protected Document
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.OutputType">
@@ -3100,6 +3845,17 @@
             <param name="width">The width of Text Signature</param>
             <param name="height">The height of Text Signature</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.Opacity">
+            <summary>
+            Gets or sets a value to indicate the Signature Opacity. The value is from 0.0 to 1.0
+            By default the value is 1.0.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.ProperOpacity">
+            <summary>
+            Gets opacity from 0.0 to 1.0
+            </summary>  
+        </member>
         <member name="P:GroupDocs.Signature.Options.PdfSignTextOptions.SignatureID">
             <summary>
             Set Unique ID of Text Signature. It can be used in Signature Verification options
@@ -3199,11 +3955,6 @@
             Specify Signature Text if it should be verified
             </summary>
         </member>
-        <member name="P:GroupDocs.Signature.Options.VerifyTextOptions.DocumentPageNumber">
-            <summary>
-            Document Page Number to be verified. If property is not set - all Pages of Document will be verified for first occurrence
-            </summary>
-        </member>
         <member name="P:GroupDocs.Signature.Options.VerifyTextOptions.VerifyAllPages">
             <summary>
             Flag to verify each Document Page
@@ -3227,6 +3978,13 @@
             <param name="text">Text to be verified</param>
             <param name="signatureID">Whole value of Signature ID to be verified with Text</param>
         </member>
+        <member name="M:GroupDocs.Signature.Options.PDFVerifyTextOptions.#ctor(System.String,GroupDocs.Signature.Domain.PdfTextSignatureImplementation)">
+            <summary>
+            Creates instance of PDFVerifyTextOptions with Text property to verify
+            </summary>
+            <param name="text">Text to be verified</param>
+            <param name="implementation">Signature Implementation type</param>
+        </member>
         <member name="P:GroupDocs.Signature.Options.PDFVerifyTextOptions.SignatureID">
             <summary>
             Specify Text Signature ID more than zero if it should be verified
@@ -3234,7 +3992,7 @@
         </member>
         <member name="P:GroupDocs.Signature.Options.PDFVerifyTextOptions.SignatureImplementation">
             <summary>
-            Type of Signature to be verified ( only TextStamp is supported)
+            Type of Signature to be verified
             </summary>
         </member>
         <member name="T:GroupDocs.Signature.Options.SignatureOptionsCollection">
@@ -3375,9 +4133,19 @@
             </summary>
             <param name="text">Text signature</param>
         </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.BackgroundTransparency">
+            <summary>
+            Gets or sets the degree of Background transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.BorderWeight">
             <summary>
             Returns or sets the weight of the line in units of pt. 
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.BorderTransparency">
+            <summary>
+            Gets or sets the degree of Border transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear).
             </summary>
         </member>
         <member name="P:GroupDocs.Signature.Options.SlidesSignTextOptions.SignatureImplementation">
@@ -3652,13 +4420,6 @@
             <param name="collection"></param>
             <returns></returns>
         </member>
-        <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
-            <summary>
-            Load Cells Workbook from Verification Options Collection
-            </summary>
-            <param name="optionsCollection"></param>
-            <returns></returns>
-        </member>
         <member name="M:GroupDocs.Signature.Provider.CellsProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
             <summary>
             Load Cells Verification Context before load document and verify it
@@ -3685,17 +4446,15 @@
             CellsSignatureContext instance to keep all required data for signing Cells documents
             </summary>
         </member>
+        <member name="M:GroupDocs.Signature.Provider.SignatureContext.SaveDocument">
+            <summary>
+            Virtual method to save documents from context
+            </summary>
+        </member>
         <member name="T:GroupDocs.Signature.Provider.CellsVerificationContext">
             <summary>
             CellsVerificationContext instance to keep all required data for Cells documents verifications
             </summary>
-        </member>
-        <member name="M:GroupDocs.Signature.Provider.PDFProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
-            <summary>
-            Load Pdf Document from Verification Options Collection
-            </summary>
-            <param name="optionsCollection"></param>
-            <returns></returns>
         </member>
         <member name="M:GroupDocs.Signature.Provider.PDFProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
             <summary>
@@ -3733,14 +4492,6 @@
             <param name="inputDataSource">Source file description</param>
             <returns>List of Digital Signatures in document</returns>
         </member>
-        <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
-            <summary>
-            Load Slides Presentation from Verification Options Collection
-            </summary>
-            <param name="collection"></param>
-            <returns></returns>
-            
-        </member>
         <member name="M:GroupDocs.Signature.Provider.SlidesProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
             <summary>
             Load Pdf Verification Context before load document and verify it
@@ -3764,13 +4515,6 @@
             <summary>
             SlidesVerificationContext instance to keep all required data for Slides documents verifications
             </summary>
-        </member>
-        <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.LoadDocument(GroupDocs.Signature.Options.VerifyOptionsCollection)">
-            <summary>
-            Load Words Document from Verification Options Collection
-            </summary>
-            <param name="optionsCollection"></param>
-            <returns></returns>
         </member>
         <member name="M:GroupDocs.Signature.Provider.WordsProvider`1.LoadContext(GroupDocs.Signature.Options.VerifyOptionsCollection)">
             <summary>
