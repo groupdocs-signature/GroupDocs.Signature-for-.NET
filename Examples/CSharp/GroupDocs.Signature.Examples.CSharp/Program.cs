@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
 
-            //Utilities.ApplyLicense();
+            Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -106,7 +106,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.MultipleSlideSignOptoins();
             #endregion
 
-            //Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
             #region VerificationOptions
             //Signatures.TextVerificationOfPdfDocument();
             //Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer();
@@ -115,12 +114,17 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer();
             //Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer();
             //Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer();
+            //Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation();
+            //Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker();
             #endregion
 
-            //Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
             #region SignatureAppearnaceoptions
             //Signatures.SignPdfDocWithTextSignAsImage();
             //Signatures.SignPdfDocWithTextSignAsAnnotation();
+            //Signatures.SignPdfDocWithTextSignatureAsSticker();
+            //Signatures.AddRotationToTextSignatureAppearance();
+            //Signatures.AddTransparencyRotationToTextSignatureForSlides();
+            //Signatures.AddRotationToImageSignatureAppearance();
             #endregion
 
             //Signatures.SetOutputFileName();

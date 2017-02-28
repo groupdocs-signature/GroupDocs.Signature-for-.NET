@@ -96,7 +96,7 @@
 #End Region
 
 
-        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+
 #Region "VerificationOptions"
         'Signatures.TextVerificationOfPdfDocument()
         'Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer()
@@ -105,12 +105,19 @@
         'Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer()
         'Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer()
         'Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer()
+        'Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation()
+        'Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker()
 #End Region
 
-        '        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+
 #Region "SignatureAppearnaceoptions"
         'Signatures.SignPdfDocWithTextSignAsImage()
         'Signatures.SignPdfDocWithTextSignAsAnnotation()
+        'Signatures.SignPdfDocWithTextSignatureAsSticker()
+        'Signatures.AddRotationToTextSignatureAppearance()
+        'Signatures.AddTransparencyRotationToTextSignatureForSlides()
+        'Signatures.AddRotationToImageSignatureAppearance()
+
 #End Region
 
         'Signatures.SetOutputFileName()
