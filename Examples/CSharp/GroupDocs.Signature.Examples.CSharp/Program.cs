@@ -10,8 +10,8 @@ namespace GroupDocs.Signature.Examples.CSharp
     {
         static void Main(string[] args)
         {
-
-            Utilities.ApplyLicense();
+            //Uncomment the below line to apply license
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
