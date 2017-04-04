@@ -284,36 +284,67 @@ GroupDocs.Signature.Examples.VBasic
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocWithTextSignAsImage">
  <summary>
  Signs Pdf document with Text Signature as Image
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocWithTextSignAsAnnotation">
  <summary>
  Signs Pdf document with Text Signature as Annotation
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SignPdfDocWithTextSignatureAsSticker">
+ <summary>
+ Signs Pdf document with Text Signature as Sticker
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.AddRotationToTextSignatureAppearance">
+ <summary>
+ Adds Rotation to Text Signature appearance
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.AddTransparencyRotationToTextSignatureForSlides">
+ <summary>
+ Adds Transparency and Rotation to Text Signature appearance for Slides
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.AddRotationToImageSignatureAppearance">
+ <summary>
+ Adds Rotation to Image Signature appearance
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.TextVerificationOfPdfDocument">
  <summary>
  Verifies PDF Documents signed with Text Signature 
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer">
  <summary>
  Verifies Cells Documents signed with .cer digital certificates 
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfCellsDocWithPfxCertificateContainer">
  <summary>
  Digitally verifies cells document with .pfx certificate container
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfPdfWithCerContainer">
  <summary>
  Verifies pdf Documents signed with .cer digital certificates 
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer">
  <summary>
  Digitally verifies pdf document with .pfx certificate container
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer">
@@ -324,6 +355,19 @@ GroupDocs.Signature.Examples.VBasic
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer">
  <summary>
  Digitally verifies word document with .pfx certificate container
+ This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker">
+ <summary>
+ Verifies PDF Document signed with Text Signature Sticker
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
+ </summary>
+</member>
+<member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation">
+ <summary>
+ Verifies PDF Document signed with Text Signature Annotation
+ This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
  </summary>
 </member>
 <member name="M:GroupDocs.Signature.Examples.VBasic.Signatures.SetOutputFileName">

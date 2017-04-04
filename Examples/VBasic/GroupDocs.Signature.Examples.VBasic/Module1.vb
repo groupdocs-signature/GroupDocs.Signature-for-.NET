@@ -26,6 +26,8 @@
 
         'Signatures.SignWordDocumentWithImage("getting started.docx")
 
+        'Signatures.SetOpacityImageSignature("getting started.docx")
+
 #End Region
 
 #Region "WorkingWithDigitalSignature"
@@ -96,7 +98,7 @@
 #End Region
 
 
-        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+
 #Region "VerificationOptions"
         'Signatures.TextVerificationOfPdfDocument()
         'Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer()
@@ -105,12 +107,23 @@
         'Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer()
         'Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer()
         'Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer()
+        'Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation()
+        'Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker()
+        'Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx")
+        'Signatures.VerifySlidesDocumentSignedWithTextSignature("butterfly effect.pptx")
+        'Signatures.VerifyWordDocumentSignedWithTextSignature("getting started.docx")
 #End Region
 
-        '        'Following feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+
 #Region "SignatureAppearnaceoptions"
         'Signatures.SignPdfDocWithTextSignAsImage()
         'Signatures.SignPdfDocWithTextSignAsAnnotation()
+        'Signatures.SignPdfDocWithTextSignatureAsSticker()
+        'Signatures.AddRotationToTextSignatureAppearance()
+        'Signatures.AddTransparencyRotationToTextSignatureForSlides()
+        'Signatures.AddRotationToImageSignatureAppearance()
+        'Signatures.SignArbitraryPages("text.pdf")
+
 #End Region
 
         'Signatures.SetOutputFileName()

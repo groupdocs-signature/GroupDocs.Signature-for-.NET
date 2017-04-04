@@ -320,10 +320,6 @@ D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Exa
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\ru\System.Spatial.resources.dll
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hans\System.Spatial.resources.dll
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hant\System.Spatial.resources.dll
-D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
-D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
-D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache
-D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.xml
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.exe.config
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.exe
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\GroupDocs.Signature.Examples.VBasic.pdb
@@ -381,5 +377,9 @@ D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signat
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\ru\System.Spatial.resources.dll
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hans\System.Spatial.resources.dll
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\bin\Debug\zh-Hant\System.Spatial.resources.dll
+D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbprojResolveAssemblyReference.cache
+D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.Resources.resources
+D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.vbproj.GenerateResource.Cache
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.exe
+D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.xml
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\VBasic\GroupDocs.Signature.Examples.VBasic\obj\Debug\GroupDocs.Signature.Examples.VBasic.pdb
