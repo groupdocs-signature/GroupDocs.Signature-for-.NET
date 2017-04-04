@@ -985,7 +985,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Signs Pdf document with Text Signature as Sticker
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void SignPdfDocWithTextSignatureAsSticker(string fileName)
+=======
+        public static void SignPdfDocWithTextSignatureAsSticker()
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         {
             //ExStart:SignPdfDocWithTextSignatureAsSticker
             // setup Signature configuration
@@ -1023,7 +1027,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             //PdfTextStickerAppearance.DefaultAppearance.State = PdfTextStickerState.Completed;
             //PdfTextStickerAppearance.DefaultAppearance.Icon = PdfTextStickerIcon.Note;
             // sign document
+<<<<<<< HEAD
             string signedPath = handler.Sign<string>(fileName, signOptions,
+=======
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_TextSignatureAsSticker" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignPdfDocWithTextSignatureAsSticker
@@ -1033,7 +1041,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Adds Rotation to Text Signature appearance
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void AddRotationToTextSignatureAppearance(string fileName)
+=======
+        public static void AddRotationToTextSignatureAppearance()
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         {
             //ExStart:AddRotationToTextSignatureAppearance
             // setup Signature configuration
@@ -1050,7 +1062,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             // setup rotation
             signOptions.RotationAngle = 48;
             // sign document
+<<<<<<< HEAD
             string signedPath = handler.Sign<string>(fileName, signOptions,
+=======
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Text_Rotation" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:AddRotationToTextSignatureAppearance
@@ -1060,7 +1076,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Adds Transparency and Rotation to Text Signature appearance for Slides
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void AddTransparencyRotationToTextSignatureForSlides(string fileName)
+=======
+        public static void AddTransparencyRotationToTextSignatureForSlides()
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         {
             //ExStart:AddTransparencyRotationToTextSignatureForSlides
             // setup Signature configuration
@@ -1083,18 +1103,29 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.BackgroundTransparency = 0.4;
             signOptions.BorderTransparency = 0.8;
             // sign document
+<<<<<<< HEAD
             string signedPath = handler.Sign<string>(fileName, signOptions,
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Text_Transparency_Rotation" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd: AddTransparencyRotationToTextSignatureForSlides
+=======
+            string signedPath = handler.Sign<string>("butterfly effect.pptx", signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Text_Transparency_Rotation" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+                //ExEnd: AddTransparencyRotationToTextSignatureForSlides
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         }
 
         /// <summary>
         /// Adds Rotation to Image Signature appearance
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void AddRotationToImageSignatureAppearance(string fileName)
         {
+=======
+        public static void AddRotationToImageSignatureAppearance() {
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
             //ExStart:AddRotationToImageSignatureAppearance
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -1109,11 +1140,16 @@ namespace GroupDocs.Signature.Examples.CSharp
             // setup rotation
             signOptions.RotationAngle = 48;
             // sign document
+<<<<<<< HEAD
             string signedPath = handler.Sign<string>(fileName, signOptions,
+=======
+            string signedPath = handler.Sign<string>("text.pdf", signOptions,
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Image_Rotation" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:AddRotationToImageSignatureAppearance
         }
+<<<<<<< HEAD
 
         /// <summary>
         /// Specification of arbitrary pages of Document for processing signature or verification
@@ -1149,6 +1185,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignArbitraryPages
         }
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         #endregion
         #region SetVerificationOptions
 
@@ -1329,7 +1367,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Verifies PDF Document signed with Text Signature Sticker
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void VerifyPdfDocumentSignedWithTextSignatureSticker(string fileName)
+=======
+        public static void VerifyPdfDocumentSignedWithTextSignatureSticker()
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         {
             //ExStart:VerifyPdfDocumentSignedWithTextSignatureSticker
             // setup Signature configuration
@@ -1356,7 +1398,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             // set extensions to verification options
             verifyOptions.Extensions = extensions;
             //verify document
+<<<<<<< HEAD
             VerificationResult result = handler.Verify(fileName, verifyOptions);
+=======
+            VerificationResult result = handler.Verify("test_text_sticker.pdf", verifyOptions);
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyPdfDocumentSignedWithTextSignatureSticker
         }
@@ -1365,7 +1411,11 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Verifies PDF Document signed with Text Signature Annotation
         /// This feature is supported in GroupDocs.Signature for .NET 17.02.0 version or greater
         /// </summary>
+<<<<<<< HEAD
         public static void VerifyPdfDocumentSignedWithTextSignatureAnnotation(string fileName)
+=======
+        public static void VerifyPdfDocumentSignedWithTextSignatureAnnotation()
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         {
             //ExStart:VerifyPdfDocumentSignedWithTextSignatureAnnotation
             // setup Signature configuration
@@ -1391,11 +1441,16 @@ namespace GroupDocs.Signature.Examples.CSharp
             // set extensions to verification options
             verifyOptions.Extensions = extensions;
             //verify document
+<<<<<<< HEAD
             VerificationResult result = handler.Verify(fileName, verifyOptions);
+=======
+            VerificationResult result = handler.Verify("test_text_annotation.pdf", verifyOptions);
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyPdfDocumentSignedWithTextSignatureAnnotation
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Verification of Cells Document signed with Text Signature
         /// Feature is supported in version 17.03 or greater
@@ -1456,6 +1511,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:VerifySlidesDocumentSignedWithTextSignature
         }
 
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
         #endregion
 
         /// <summary>

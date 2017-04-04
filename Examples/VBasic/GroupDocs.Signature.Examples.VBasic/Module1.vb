@@ -123,7 +123,6 @@
         'Signatures.AddTransparencyRotationToTextSignatureForSlides()
         'Signatures.AddRotationToImageSignatureAppearance()
         'Signatures.SignArbitraryPages("text.pdf")
-
 #End Region
 
         'Signatures.SetOutputFileName()

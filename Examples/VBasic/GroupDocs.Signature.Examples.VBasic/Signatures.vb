@@ -1127,6 +1127,7 @@ Public Class Signatures
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:AddRotationToImageSignatureAppearance
     End Sub
+<<<<<<< HEAD
 
 
 
@@ -1164,6 +1165,8 @@ Public Class Signatures
     End Sub
 
 
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
 #End Region
 #Region "SetVerificationOptions"
 
@@ -1410,6 +1413,7 @@ Public Class Signatures
         'ExEnd:VerifyPdfDocumentSignedWithTextSignatureAnnotation
     End Sub
 
+<<<<<<< HEAD
 
     ''' <summary>
     ''' Verification of Cells Document signed with Text Signature
@@ -1469,6 +1473,8 @@ Public Class Signatures
     End Sub
 
 
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
 #End Region
 
 
