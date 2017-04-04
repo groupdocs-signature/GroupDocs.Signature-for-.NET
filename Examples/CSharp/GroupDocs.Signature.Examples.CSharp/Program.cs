@@ -35,6 +35,8 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignWordDocumentWithImage("getting started.docx");
 
+            //Signatures.SetOpacityImageSignature("getting started.docx");
+
             #endregion
 
             #region WorkingWithDigitalSignature
@@ -47,6 +49,8 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //digital signatures are not supported yet for slides documents 
             //Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
+
+
 
             #endregion
 
@@ -107,24 +111,28 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region VerificationOptions
-            //Signatures.TextVerificationOfPdfDocument();
-            //Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer();
-            //Signatures.DigitalVerificationOfCellsDocWithPfxCertificateContainer();
-            //Signatures.DigitalVerificationOfPdfWithCerContainer();
-            //Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer();
-            //Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer();
-            //Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer();
-            //Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation();
-            //Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker();
+            //Signatures.TextVerificationOfPdfDocument("text.pdf");
+            //Signatures.DigitalVerificationOfCellsDocWithCerCertificateContainer("digital signatures.xlsx");
+            //Signatures.DigitalVerificationOfCellsDocWithPfxCertificateContainer("digital signatures.xlsx");
+            //Signatures.DigitalVerificationOfPdfWithCerContainer("digital signatures.pdf");
+            //Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer("digital signatures.pdf");
+            //Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer("digital signatures.docx");
+            //Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer("digital signatures.docx");
+            //Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation("test_text_annotation.pdf");
+            //Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker("test_text_sticker.pdf");
+            //Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx");
+            //Signatures.VerifySlidesDocumentSignedWithTextSignature("butterfly effect.pptx");
+            //Signatures.VerifyWordDocumentSignedWithTextSignature("getting started.docx");
             #endregion
 
             #region SignatureAppearnaceoptions
-            //Signatures.SignPdfDocWithTextSignAsImage();
-            //Signatures.SignPdfDocWithTextSignAsAnnotation();
-            //Signatures.SignPdfDocWithTextSignatureAsSticker();
-            //Signatures.AddRotationToTextSignatureAppearance();
-            //Signatures.AddTransparencyRotationToTextSignatureForSlides();
-            //Signatures.AddRotationToImageSignatureAppearance();
+            //Signatures.SignPdfDocWithTextSignAsImage("text.pdf");
+            //Signatures.SignPdfDocWithTextSignAsAnnotation("text.pdf");
+            //Signatures.SignPdfDocWithTextSignatureAsSticker("text.pdf");
+            //Signatures.AddRotationToTextSignatureAppearance("text.pdf");
+            //Signatures.AddTransparencyRotationToTextSignatureForSlides("butterfly effect.pptx");
+            //Signatures.AddRotationToImageSignatureAppearance("text.pdf");
+            //Signatures.SignArbitraryPages("text.pdf");
             #endregion
 
             //Signatures.SetOutputFileName();

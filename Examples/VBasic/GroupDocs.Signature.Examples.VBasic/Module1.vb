@@ -26,6 +26,8 @@
 
         'Signatures.SignWordDocumentWithImage("getting started.docx")
 
+        'Signatures.SetOpacityImageSignature("getting started.docx")
+
 #End Region
 
 #Region "WorkingWithDigitalSignature"
@@ -107,6 +109,9 @@
         'Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer()
         'Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation()
         'Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker()
+        'Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx")
+        'Signatures.VerifySlidesDocumentSignedWithTextSignature("butterfly effect.pptx")
+        'Signatures.VerifyWordDocumentSignedWithTextSignature("getting started.docx")
 #End Region
 
 
@@ -117,7 +122,7 @@
         'Signatures.AddRotationToTextSignatureAppearance()
         'Signatures.AddTransparencyRotationToTextSignatureForSlides()
         'Signatures.AddRotationToImageSignatureAppearance()
-
+        'Signatures.SignArbitraryPages("text.pdf")
 #End Region
 
         'Signatures.SetOutputFileName()

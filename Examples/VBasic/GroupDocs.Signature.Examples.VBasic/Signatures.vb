@@ -271,6 +271,37 @@ Public Class Signatures
         'ExEnd:signingandsavingworddocumentwithimage
     End Sub
 
+
+
+    ''' <summary>
+    ''' Setting Opacity to Image Signature appearance for Words Documents
+    ''' Feature is supported by version 17.03 or greater
+    ''' </summary>
+    ''' <param name="fileName">Name of the input file</param>
+    Public Shared Sub SetOpacityImageSignature(fileName As String)
+        'ExStart:SetOpacityImageSignature
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the signature handler
+        Dim handler = New SignatureHandler(signConfig)
+        'setup size and position
+        Dim signOptions As New WordsSignImageOptions("signature.jpg")
+        signOptions.Left = 100
+        signOptions.Top = 100
+        signOptions.Width = 200
+        signOptions.Height = 200
+        ' setup rotation
+        signOptions.RotationAngle = 48
+        ' setup opacity
+        signOptions.Opacity = 0.28
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+     .OutputType = OutputType.[String],
+     .OutputFileName = "Words_Image_Rotation_Opacity"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SetOpacityImageSignature
+    End Sub
+
 #End Region
 
 #Region "WorkingWithDigitalSignatures"
@@ -280,15 +311,33 @@ Public Class Signatures
     ''' </summary>
     ''' <param name="fileName">Name of the input file</param>
     Public Shared Sub SignCellDocumentDigitally(fileName As String)
+
         'ExStart:signingcelldocumentwithdigitalcertificate
         Dim config As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the signature handler
         Dim handler = New SignatureHandler(config)
-        ' setup digital signature options
-        Dim signOptions = New CellsSignDigitalOptions("ali.pfx")
-        signOptions.Password = ""
-        Dim fileExtension As String = Path.GetExtension(fileName)
-        Utilities.SaveFile(fileExtension, fileName, handler, Nothing, Nothing, signOptions)
+        'Image appearance, opacity and rotation are supported starting from version 17.03
+        ' FileStream blocks opened file while it is not disposed so, before 
+        ' using .pfx file for another purposes FileStream should be disposed
+        Dim certificateStream As Stream = New FileStream("Ali.pfx", FileMode.Open)
+        ' setup digital signature options with image appearance
+        Dim signOptions As New CellsSignDigitalOptions(certificateStream, "signature.jpg")
+        signOptions.Signature.Comments = "Test comment"
+        signOptions.Signature.SignTime = New DateTime(2017, 1, 25, 10, 41, 54)
+        signOptions.Password = "1234567890"
+        ' setup opacity and rotation
+        signOptions.Opacity = 0.48
+        signOptions.RotationAngle = 45
+        'put image signature only on the last page
+        signOptions.PagesSetup.LastPage = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+         .OutputType = OutputType.[String],
+         .OutputFileName = "SignedForVerification"
+        })
+        'File stream must be disposed after signing
+        certificateStream.Dispose()
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:signingcelldocumentwithdigitalcertificate
     End Sub
 
@@ -1078,6 +1127,46 @@ Public Class Signatures
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:AddRotationToImageSignatureAppearance
     End Sub
+<<<<<<< HEAD
+
+
+
+    ''' <summary>
+    ''' Specification of arbitrary pages of Document for processing signature or verification
+    ''' Feature is supported in version 17.03 or greater
+    ''' </summary>
+    Public Shared Sub SignArbitraryPages(fileName As String)
+        'ExStart:SignArbitraryPages
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options of signature
+        Dim signOptions As New PdfSignImageOptions("signature.jpg")
+        ' setup image size
+        signOptions.Width = 100
+        signOptions.Height = 100
+        ' setup pages to sign
+        signOptions.PagesSetup.FirstPage = True
+        signOptions.PagesSetup.EvenPages = True
+        signOptions.PagesSetup.PageNumbers.Add(1)
+        signOptions.PagesSetup.LastPage = False
+        ' specify load options
+        Dim loadOptions As New LoadOptions()
+        ' specify save options
+        Dim saveOptions As New CellsSaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "ArbitraryPagesOfDocument"
+        }
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, loadOptions, saveOptions)
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignArbitraryPages
+    End Sub
+
+
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
 #End Region
 #Region "SetVerificationOptions"
 
@@ -1324,6 +1413,68 @@ Public Class Signatures
         'ExEnd:VerifyPdfDocumentSignedWithTextSignatureAnnotation
     End Sub
 
+<<<<<<< HEAD
+
+    ''' <summary>
+    ''' Verification of Cells Document signed with Text Signature
+    ''' Feature is supported in version 17.03 or greater
+    ''' </summary>
+    Public Shared Sub VerifyCellDocumentSignedWithTextSignature(fileName As String)
+        'ExStart:VerifyCellDocumentSignedWithTextSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New CellsVerifyTextOptions("John Smith")
+        verifyOptions.PagesSetup.LastPage = True
+        'verify document
+        Dim result As VerificationResult = handler.Verify(fileName, verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
+        'ExEnd:VerifyCellDocumentSignedWithTextSignature
+    End Sub
+
+    ''' <summary>
+    ''' Verification of Words Document signed with Text Signature
+    ''' Feature is supported in version 17.03 or greater
+    ''' </summary>
+    Public Shared Sub VerifyWordDocumentSignedWithTextSignature(fileName As String)
+        'ExStart:VerifyWordDocumentSignedWithTextSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New WordsVerifyTextOptions("John Smith")
+        verifyOptions.PagesSetup.FirstPage = True
+        'verify document
+        Dim result As VerificationResult = handler.Verify(fileName, verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
+        'ExEnd:VerifyWordDocumentSignedWithTextSignature
+    End Sub
+
+    ''' <summary>
+    ''' Verification of Slides Document signed with Text Signature
+    ''' Feature is supported in version 17.03 or greater
+    ''' </summary>
+    Public Shared Sub VerifySlidesDocumentSignedWithTextSignature(fileName As String)
+        'ExStart:VerifySlidesDocumentSignedWithTextSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New SlidesVerifyTextOptions("John Smith")
+        verifyOptions.PagesSetup.FirstPage = True
+        'verify document
+        Dim result As VerificationResult = handler.Verify(fileName, verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
+        'ExEnd:VerifySlidesDocumentSignedWithTextSignature
+    End Sub
+
+
+=======
+>>>>>>> 86b598ff3ccc5bcab9d48dbdab1b31db5df52cea
 #End Region
 
 
