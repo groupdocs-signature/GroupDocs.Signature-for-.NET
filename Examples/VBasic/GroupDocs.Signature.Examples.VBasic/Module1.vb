@@ -51,6 +51,8 @@
 
 #Region "OpenPasswordProtectedDocuments"
         'Signatures.GetPasswordProtectedDocs("getting started.docx")
+        'Signatures.ManipulatePasswordWithSaveOptions("pie chart.xlsx")
+
 #End Region
 
         'Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version
@@ -112,6 +114,7 @@
         'Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx")
         'Signatures.VerifySlidesDocumentSignedWithTextSignature("butterfly effect.pptx")
         'Signatures.VerifyWordDocumentSignedWithTextSignature("getting started.docx")
+        'Signatures.VerifyWordsDocWithTextSignatureToFormTextField("getting started.docx")
 #End Region
 
 
@@ -122,10 +125,16 @@
         'Signatures.AddRotationToTextSignatureAppearance("text.pdf")
         'Signatures.AddTransparencyRotationToTextSignatureForSlides("butterfly effect.pptx")
         'Signatures.AddRotationToImageSignatureAppearance("text.pdf")
+        'Signatures.ImageSignatureAppearanceExtendedoptions("getting started.docx")
         'Signatures.SignArbitraryPages("text.pdf")
+        'Signatures.SpecifyDifferentMeasureUnitsForPDFTextSignature("text.pdf")
+        'Signatures.SignPDFDocsWithTextSignatureAsWatermark("text.pdf")
+        'Signatures.SignWordsDocsWithTextSignToFormTextField("getting started.docx")
 #End Region
 
         'Signatures.SetOutputFileName()
+        'Signatures.GetDocumentInfo("text.pdf")
+
 
 
     End Sub

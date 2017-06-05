@@ -11,6 +11,7 @@ using GroupDocs.Signature.Handler.Input;
 using GroupDocs.Signature.Handler.Output;
 using GroupDocs.Signature.Domain;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -478,6 +479,85 @@ namespace GroupDocs.Signature.Examples.CSharp
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
             //ExEnd:GetPasswordProtectedDocs
+        }
+
+        /// <summary>
+        /// Shows how to manipulate password i-e open protected doc,change password etc with SaveOptions
+        /// Feature is supported in version 17.04 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ManipulatePasswordWithSaveOptions(string fileName)
+        {
+            try
+            {
+                //ExStart:ManipulatePasswordWithSaveOptions
+                // setup Signature configuration
+                SignatureConfig config = Utilities.GetConfigurations();
+                string password_1 = "1234567890";
+                string password_2 = "0987654321";
+
+                // instantiating the signature handler
+                var handler = new SignatureHandler(config);
+                // setup options with text of signature
+                SignOptions signOptions = new CellsSignTextOptions("John Smith");
+                // specify load options
+                LoadOptions loadOptions = new LoadOptions();
+                // specify save options
+                SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String };
+
+                //Sign document and save it without password
+                //Set signed document name
+                saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_WithoutPassword";
+                string signedDocumentWithoutPassword = handler.Sign<string>(fileName, signOptions, loadOptions, saveOptions);
+
+                //Since we'll be using the documents created during code execution during next steps, so we'll use the output path in the configurations
+                config.StoragePath = Utilities.outputPath;
+                //Sign document and save it with new password
+                //Set signed document name
+                saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_NewPassword";
+                //Add password to save options
+                saveOptions.Password = password_1;
+                //Sign document with new password
+                string signedDocumentWithPassword = handler.Sign<string>(Path.GetFileName(signedDocumentWithoutPassword), signOptions, loadOptions, saveOptions);
+
+                //Sign document and save it with original password
+                //Set signed document name
+                saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_OriginalPassword";
+                //Add password to load options to have ability to open document
+                loadOptions.Password = password_1;
+                //Set saveOptions to use password from loadOptions
+                saveOptions.UseOriginalPassword = true;
+                saveOptions.Password = String.Empty;
+                //Sign document with original password
+                string signedDocumentWithOriginalPassword = handler.Sign<string>(Path.GetFileName(signedDocumentWithPassword), signOptions, loadOptions, saveOptions);
+
+                //Sign document and save it with another password
+                //Set signed document name
+                saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_AnotherPassword";
+                //Add password to load options to have ability to open document
+                loadOptions.Password = password_1;
+                //Set saveOptions to use another password
+                saveOptions.UseOriginalPassword = false;
+                saveOptions.Password = password_2;
+                //Sign document with another password
+                string signedDocumentWithAnotherPassword = handler.Sign<string>(Path.GetFileName(signedDocumentWithOriginalPassword), signOptions, loadOptions, saveOptions);
+
+                //Sign document and save it without password
+                //Set signed document name
+                saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_RemovedPassword";
+                //Add password to load options to have ability to open document
+                loadOptions.Password = password_2;
+                //Set saveOptions with empty password
+                saveOptions.UseOriginalPassword = false;
+                saveOptions.Password = String.Empty;
+                //Sign document with removed password
+                string signedDocumentWithRemovedPassword = handler.Sign<string>(Path.GetFileName(signedDocumentWithAnotherPassword), signOptions, loadOptions, saveOptions);
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("ERROR processing the examples.\n\n" + ex.Message);
+            }
+            //ExEnd:ManipulatePasswordWithSaveOptions
         }
         #endregion
 
@@ -1116,6 +1196,51 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         /// <summary>
+        /// Shows how to add extended options to Image Signature appearance
+        /// This feature is suppored in version 17.04 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ImageSignatureAppearanceExtendedoptions(string fileName)
+        {
+            //ExStart:ImageSignatureAppearanceExtendedoptions
+            try
+            {
+                // setup Signature configuration
+                SignatureConfig signConfig = Utilities.GetConfigurations();
+                // instantiating the conversion handler
+                SignatureHandler handler = new SignatureHandler(signConfig);
+                //setup size and position
+                WordsSignImageOptions signOptions = new WordsSignImageOptions("signature.jpg");
+                signOptions.Left = 100;
+                signOptions.Top = 100;
+                signOptions.Width = 200;
+                signOptions.Height = 200;
+                // setup rotation
+                signOptions.RotationAngle = 48;
+                // setup opacity
+                signOptions.Opacity = 0.88;
+                //setup additional image appearance
+                ImageAppearance imageAppearance = new ImageAppearance();
+                imageAppearance.Brightness = 1.2f;
+                imageAppearance.Grayscale = true;
+                imageAppearance.BorderDashStyle = ExtendedDashStyle.Dot;
+                imageAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+                imageAppearance.BorderWeight = 5;
+                signOptions.Appearance = imageAppearance;
+
+                // sign document
+                string signedPath = handler.Sign<string>(fileName, signOptions,
+                    new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_Image_Rotation_Opacity" });
+                Console.WriteLine("Signed file path is: " + signedPath);
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:ImageSignatureAppearanceExtendedoptions
+        }
+
+        /// <summary>
         /// Specification of arbitrary pages of Document for processing signature or verification
         /// Feature is supported in version 17.03 or greater
         /// </summary>
@@ -1148,6 +1273,85 @@ namespace GroupDocs.Signature.Examples.CSharp
             string signedPath = handler.Sign<string>(fileName, signOptions, loadOptions, saveOptions);
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignArbitraryPages
+        }
+
+        /// <summary>
+        /// Shows how to sign PDF documents with text signature as watermark
+        /// Feature is supporyted by version 17.05 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFDocsWithTextSignatureAsWatermark(string fileName) {
+            //ExStart:SignPDFDocsWithTextSignatureAsWatermark
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup text signature options
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            //type of implementation
+            signOptions.SignatureImplementation = PdfTextSignatureImplementation.Watermark;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_TextSignatureWatermark" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFDocsWithTextSignatureAsWatermark
+        }
+
+        /// <summary>
+        /// Shows how to specify different Measure Unit Types for PDF Text Signature
+        /// Feature is supporyted by version 17.05 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SpecifyDifferentMeasureUnitsForPDFTextSignature(string fileName)
+        {
+            //ExStart:SpecifyDifferentMeasureUnitsForPDFTextSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options and try locate signature at top right corner
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            signOptions.ForeColor = Color.Red;
+            //setup text position on a page in 5 centimeters from top 
+            signOptions.LocationMeasureType = MeasureType.Millimeters;
+            signOptions.Top = 50;
+            //setup signature area size in pixels
+            signOptions.SizeMeasureType = MeasureType.Pixels;
+            signOptions.Width = 200;
+            signOptions.Height = 100;
+            //setup signature margins and horizontal alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Right;
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Right = 10;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DifferentMeasureUnitTypes" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SpecifyDifferentMeasureUnitsForPDFTextSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign Words Documents with Text Signature to form text field
+        /// Feature is supporyted by version 17.05 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsDocsWithTextSignToFormTextField(string fileName) {
+            //ExStart:SignWordsDocsWithTextSignToFormTextField
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup text signature options
+            WordsSignTextOptions signOptions = new WordsSignTextOptions("John Smith");
+            signOptions.SignatureImplementation = WordsTextSignatureImplementation.TextToFormField;
+            signOptions.FormTextFieldType = WordsFormTextFieldType.RichText;
+            signOptions.FormTextFieldTitle = "RT";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_FormFields" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsDocsWithTextSignToFormTextField
         }
         #endregion
         #region SetVerificationOptions
@@ -1455,6 +1659,32 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file verification result: " + result.IsValid);
             //ExEnd:VerifySlidesDocumentSignedWithTextSignature
         }
+        
+        /// <summary>
+        /// Shows how to Verify Words Document signed with Text Signature to form text field
+        /// Feature is supported in version 17.05 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyWordsDocWithTextSignatureToFormTextField(string fileName) {
+            //ExStart:VerifyWordsDocWithTextSignatureToFormTextField
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup digital verification options
+            WordsVerifyTextOptions verifyOptions = new WordsVerifyTextOptions();
+            // specify other options
+            // text
+            verifyOptions.Text = "John Smith";
+            // type of text field
+            verifyOptions.FormTextFieldType = WordsFormTextFieldType.AllTextTypes;
+            // title of text field
+            verifyOptions.FormTextFieldTitle = "RT";
+            //verify document
+            VerificationResult result = handler.Verify(fileName, verifyOptions);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:VerifyWordsDocWithTextSignatureToFormTextField
+        }
 
         #endregion
 
@@ -1478,6 +1708,37 @@ namespace GroupDocs.Signature.Examples.CSharp
             string signedPath = handler.Sign<string>("pie chart.xlsx", signOptions, loadOptions, saveOptions);
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SetOutputFileName
+        }
+
+        /// <summary>
+        /// Shows how to obtain information about documents
+        /// Feature is supported in version 17.05 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void GetDocumentInfo(string fileName) {
+            //ExStart:GetDocumentInfo
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // Document description
+            DocumentDescription docInfo = handler.GetDocumentDescription(fileName);
+            Console.WriteLine("Document " + docInfo.Guid + " contains " + docInfo.PageCount + " pages");
+            Console.WriteLine("Width of first page is " + docInfo.Pages.FirstOrDefault().Width);
+            // Image from specified page
+            byte[] bytesImage = handler.GetPageImage(fileName, 1);
+            MemoryStream memoryStream = new MemoryStream(bytesImage);
+            using (Image image = Image.FromStream(memoryStream))
+            {
+                // Make something with image   
+                Console.WriteLine("Height of image is " + image.Height);
+                image.Save(@"c:\Aspose\Test\Output\ImageFromPage.png", ImageFormat.Png);
+            }
+            memoryStream.Dispose();
+            // Page size
+            Size pageSize = handler.GetDocumentPageSize(@"c:\Aspose\Test\Storage\test.pdf", 1);
+            Console.WriteLine("Page size is " + pageSize.Height + " x " + pageSize.Width);
+            //ExEnd:GetDocumentInfo
         }
 
 
