@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-            //Utilities.ApplyLicense();
+            Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -50,8 +50,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //digital signatures are not supported yet for slides documents 
             //Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
 
-
-
             #endregion
 
             #region Azure
@@ -63,6 +61,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region GetPasswordProtectedDocs
             //Signatures.GetPasswordProtectedDocs("getting started.docx");
+            //Signatures.ManipulatePasswordWithSaveOptions("pie chart.xlsx");
             #endregion
 
             //Following feature is supported in GroupDocs.Signature for .NET 16.10.0 version or greater
@@ -123,6 +122,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx");
             //Signatures.VerifySlidesDocumentSignedWithTextSignature("butterfly effect.pptx");
             //Signatures.VerifyWordDocumentSignedWithTextSignature("getting started.docx");
+            //Signatures.VerifyWordsDocWithTextSignatureToFormTextField("getting started.docx");
             #endregion
 
             #region SignatureAppearnaceoptions
@@ -132,10 +132,15 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.AddRotationToTextSignatureAppearance("text.pdf");
             //Signatures.AddTransparencyRotationToTextSignatureForSlides("butterfly effect.pptx");
             //Signatures.AddRotationToImageSignatureAppearance("text.pdf");
+            //Signatures.ImageSignatureAppearanceExtendedoptions("getting started.docx");
             //Signatures.SignArbitraryPages("text.pdf");
+            //Signatures.SpecifyDifferentMeasureUnitsForPDFTextSignature("text.pdf");
+            //Signatures.SignPDFDocsWithTextSignatureAsWatermark("text.pdf");
+            //Signatures.SignWordsDocsWithTextSignToFormTextField("getting started.docx");
             #endregion
 
             //Signatures.SetOutputFileName();
+            //Signatures.GetDocumentInfo("text.pdf");
             Console.ReadKey();
         }
     }

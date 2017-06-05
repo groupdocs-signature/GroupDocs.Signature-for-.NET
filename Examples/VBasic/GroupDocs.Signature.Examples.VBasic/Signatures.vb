@@ -6,6 +6,7 @@ Imports GroupDocs.Signature.Config
 Imports GroupDocs.Signature.Handler.Input
 Imports GroupDocs.Signature.Domain
 Imports System.Drawing
+Imports System.Drawing.Imaging
 
 Public Class Signatures
 
@@ -491,6 +492,85 @@ Public Class Signatures
         Utilities.SaveFile(fileExtension, fileName, handler, signOptions, Nothing, Nothing)
         'ExEnd:GetPasswordProtectedDocs
     End Sub
+
+
+    ''' <summary>
+    ''' Shows how to manipulate password i-e open protected doc,change password etc with SaveOptions
+    ''' Feature is supported in version 17.04 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub ManipulatePasswordWithSaveOptions(fileName As String)
+        Try
+            'ExStart:ManipulatePasswordWithSaveOptions
+            ' setup Signature configuration
+            Dim config As SignatureConfig = Utilities.GetConfigurations()
+            Dim password_1 As String = "1234567890"
+            Dim password_2 As String = "0987654321"
+
+            ' instantiating the signature handler
+            Dim handler = New SignatureHandler(config)
+            ' setup options with text of signature
+            Dim signOptions As SignOptions = New CellsSignTextOptions("John Smith")
+            ' specify load options
+            Dim loadOptions As New LoadOptions()
+            ' specify save options
+            Dim saveOptions As New SaveOptions() With {
+                .OutputType = OutputType.[String]
+            }
+
+            'Sign document and save it without password
+            'Set signed document name
+            saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_WithoutPassword"
+            Dim signedDocumentWithoutPassword As String = handler.Sign(Of String)(fileName, signOptions, loadOptions, saveOptions)
+
+            'Since we'll be using the documents created during code execution during next steps, so we'll use the output path in the configurations
+            config.StoragePath = Utilities.outputPath
+            'Sign document and save it with new password
+            'Set signed document name
+            saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_NewPassword"
+            'Add password to save options
+            saveOptions.Password = password_1
+            'Sign document with new password
+            Dim signedDocumentWithPassword As String = handler.Sign(Of String)(Path.GetFileName(signedDocumentWithoutPassword), signOptions, loadOptions, saveOptions)
+
+            'Sign document and save it with original password
+            'Set signed document name
+            saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_OriginalPassword"
+            'Add password to load options to have ability to open document
+            loadOptions.Password = password_1
+            'Set saveOptions to use password from loadOptions
+            saveOptions.UseOriginalPassword = True
+            saveOptions.Password = [String].Empty
+            'Sign document with original password
+            Dim signedDocumentWithOriginalPassword As String = handler.Sign(Of String)(Path.GetFileName(signedDocumentWithPassword), signOptions, loadOptions, saveOptions)
+
+            'Sign document and save it with another password
+            'Set signed document name
+            saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_AnotherPassword"
+            'Add password to load options to have ability to open document
+            loadOptions.Password = password_1
+            'Set saveOptions to use another password
+            saveOptions.UseOriginalPassword = False
+            saveOptions.Password = password_2
+            'Sign document with another password
+            Dim signedDocumentWithAnotherPassword As String = handler.Sign(Of String)(Path.GetFileName(signedDocumentWithOriginalPassword), signOptions, loadOptions, saveOptions)
+
+            'Sign document and save it without password
+            'Set signed document name
+            saveOptions.OutputFileName = "WorkWithPasswordProtectedDocuments_RemovedPassword"
+            'Add password to load options to have ability to open document
+            loadOptions.Password = password_2
+            'Set saveOptions with empty password
+            saveOptions.UseOriginalPassword = False
+            saveOptions.Password = [String].Empty
+            'Sign document with removed password
+            Dim signedDocumentWithRemovedPassword As String = handler.Sign(Of String)(Path.GetFileName(signedDocumentWithAnotherPassword), signOptions, loadOptions, saveOptions)
+        Catch ex As System.Exception
+            Console.WriteLine("ERROR processing the examples." & vbLf & vbLf + ex.Message)
+        End Try
+        'ExEnd:ManipulatePasswordWithSaveOptions
+    End Sub
+
 #End Region
 
 #Region "SaveTextSignedOutputWithFormatOptions"
@@ -1129,6 +1209,51 @@ Public Class Signatures
     End Sub
 
 
+
+    ''' <summary>
+    ''' Shows how to add extended options to Image Signature appearance
+    ''' This feature is suppored in version 17.04 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub ImageSignatureAppearanceExtendedoptions(fileName As String)
+        'ExStart:ImageSignatureAppearanceExtendedoptions
+        Try
+            ' setup Signature configuration
+            Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+            ' instantiating the conversion handler
+            Dim handler As New SignatureHandler(signConfig)
+            'setup size and position
+            Dim signOptions As New WordsSignImageOptions("signature.jpg")
+            signOptions.Left = 100
+            signOptions.Top = 100
+            signOptions.Width = 200
+            signOptions.Height = 200
+            ' setup rotation
+            signOptions.RotationAngle = 48
+            ' setup opacity
+            signOptions.Opacity = 0.88
+            'setup additional image appearance
+            Dim imageAppearance As New ImageAppearance()
+            imageAppearance.Brightness = 1.2F
+            imageAppearance.Grayscale = True
+            imageAppearance.BorderDashStyle = ExtendedDashStyle.Dot
+            imageAppearance.BorderColor = System.Drawing.Color.OrangeRed
+            imageAppearance.BorderWeight = 5
+            signOptions.Appearance = imageAppearance
+
+            ' sign document
+            Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+                .OutputType = OutputType.[String],
+                .OutputFileName = "Words_Image_Rotation_Opacity"
+            })
+            Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        Catch ex As System.Exception
+            Console.WriteLine(ex.Message)
+        End Try
+        'ExEnd:ImageSignatureAppearanceExtendedoptions
+    End Sub
+
+
     ''' <summary>
     ''' Specification of arbitrary pages of Document for processing signature or verification
     ''' Feature is supported in version 17.03 or greater
@@ -1161,6 +1286,92 @@ Public Class Signatures
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
         'ExEnd:SignArbitraryPages
     End Sub
+
+
+    ''' <summary>
+    ''' Shows how to sign PDF documents with text signature as watermark
+    ''' Feature is supporyted by version 17.05 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignPDFDocsWithTextSignatureAsWatermark(fileName As String)
+        'ExStart:SignPDFDocsWithTextSignatureAsWatermark
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup text signature options
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        'type of implementation
+        signOptions.SignatureImplementation = PdfTextSignatureImplementation.Watermark
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_TextSignatureWatermark"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPDFDocsWithTextSignatureAsWatermark
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to specify different Measure Unit Types for PDF Text Signature
+    ''' Feature is supporyted by version 17.05 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SpecifyDifferentMeasureUnitsForPDFTextSignature(fileName As String)
+        'ExStart:SpecifyDifferentMeasureUnitsForPDFTextSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+
+        ' setup text signature options and try locate signature at top right corner
+        Dim signOptions As New PdfSignTextOptions("John Smith")
+        signOptions.ForeColor = Color.Red
+        'setup text position on a page in 5 centimeters from top 
+        signOptions.LocationMeasureType = MeasureType.Millimeters
+        signOptions.Top = 50
+        'setup signature area size in pixels
+        signOptions.SizeMeasureType = MeasureType.Pixels
+        signOptions.Width = 200
+        signOptions.Height = 100
+        'setup signature margins and horizontal alignment
+        signOptions.HorizontalAlignment = HorizontalAlignment.Right
+        signOptions.MarginMeasureType = MeasureType.Percents
+        signOptions.Margin.Right = 10
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "DifferentMeasureUnitTypes"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SpecifyDifferentMeasureUnitsForPDFTextSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign Words Documents with Text Signature to form text field
+    ''' Feature is supporyted by version 17.05 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignWordsDocsWithTextSignToFormTextField(fileName As String)
+        'ExStart:SignWordsDocsWithTextSignToFormTextField
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup text signature options
+        Dim signOptions As New WordsSignTextOptions("John Smith")
+        signOptions.SignatureImplementation = WordsTextSignatureImplementation.TextToFormField
+        signOptions.FormTextFieldType = WordsFormTextFieldType.RichText
+        signOptions.FormTextFieldTitle = "RT"
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Words_FormFields"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignWordsDocsWithTextSignToFormTextField
+    End Sub
+
 
 
 #End Region
@@ -1467,6 +1678,34 @@ Public Class Signatures
     End Sub
 
 
+    ''' <summary>
+    ''' Shows how to Verify Words Document signed with Text Signature to form text field
+    ''' Feature is supported in version 17.05 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub VerifyWordsDocWithTextSignatureToFormTextField(fileName As String)
+        'ExStart:VerifyWordsDocWithTextSignatureToFormTextField
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup digital verification options
+        Dim verifyOptions As New WordsVerifyTextOptions()
+        ' specify other options
+        ' text
+        verifyOptions.Text = "John Smith"
+        ' type of text field
+        verifyOptions.FormTextFieldType = WordsFormTextFieldType.AllTextTypes
+        ' title of text field
+        verifyOptions.FormTextFieldTitle = "RT"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(fileName, verifyOptions)
+        Console.WriteLine("Signed file verification result: " + result.IsValid)
+        'ExEnd:VerifyWordsDocWithTextSignatureToFormTextField
+    End Sub
+
+
+
 #End Region
 
 
@@ -1495,6 +1734,35 @@ Public Class Signatures
     End Sub
 
 
+    ''' <summary>
+    ''' Shows how to obtain information about documents
+    ''' Feature is supported in version 17.05 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub GetDocumentInfo(fileName As String)
+        'ExStart:GetDocumentInfo
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' Document description
+        Dim docInfo As DocumentDescription = handler.GetDocumentDescription(fileName)
+        Console.WriteLine("Document " + docInfo.Guid + " contains " + docInfo.PageCount + " pages")
+        Console.WriteLine("Width of first page is " + docInfo.Pages.FirstOrDefault().Width)
+        ' Image from specified page
+        Dim bytesImage As Byte() = handler.GetPageImage(fileName, 1)
+        Dim memoryStream As New MemoryStream(bytesImage)
+        Using image__1 As Image = Image.FromStream(memoryStream)
+            ' Make something with image   
+            Console.WriteLine("Height of image is " + image__1.Height)
+            image__1.Save("c:\Aspose\Test\Output\ImageFromPage.png", ImageFormat.Png)
+        End Using
+        memoryStream.Dispose()
+        ' Page size
+        Dim pageSize As Size = handler.GetDocumentPageSize("c:\Aspose\Test\Storage\test.pdf", 1)
+        Console.WriteLine("Page size is " + pageSize.Height + " x " + pageSize.Width)
+        'ExEnd:GetDocumentInfo
+    End Sub
 
 
 End Class
