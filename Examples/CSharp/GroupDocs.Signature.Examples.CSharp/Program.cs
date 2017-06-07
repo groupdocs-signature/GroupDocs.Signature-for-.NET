@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
