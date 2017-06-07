@@ -297,6 +297,7 @@ D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Exa
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hans\System.Spatial.resources.dll
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hant\System.Spatial.resources.dll
 D:\GitRepos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
+D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.exe.config
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.exe
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\GroupDocs.Signature.Examples.CSharp.pdb
@@ -353,6 +354,5 @@ D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signat
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\ru\System.Spatial.resources.dll
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hans\System.Spatial.resources.dll
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hant\System.Spatial.resources.dll
-D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
 D:\Aspose Projects\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb

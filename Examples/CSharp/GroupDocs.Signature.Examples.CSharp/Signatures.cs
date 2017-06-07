@@ -1309,6 +1309,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig signConfig = Utilities.GetConfigurations();
             // instantiating the conversion handler
             SignatureHandler handler = new SignatureHandler(signConfig);
+            
 
             // setup text signature options and try locate signature at top right corner
             PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
