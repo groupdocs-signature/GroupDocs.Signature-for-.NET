@@ -1765,4 +1765,503 @@ Public Class Signatures
     End Sub
 
 
+
+#Region "working with barcode signatures"
+    ''' <summary>
+    ''' Shows how to use bar code types in sign options
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub UsingBarCodeTypes(fileName As String)
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        'ExStart:UsingBarCodeTypes
+        ' setup text signature options
+        Dim signOptions = New PdfBarcodeSignOptions()
+        ' barcode type
+        signOptions.EncodeType = BarcodeTypes.EAN14
+        ' signature text
+        signOptions.Text = "12345678901234"
+        ' text position
+        signOptions.HorizontalAlignment = HorizontalAlignment.Right
+        signOptions.VerticalAlignment = VerticalAlignment.Bottom
+        'ExEnd:UsingBarCodeTypes
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "BarCode_Document"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign cells document with barcode options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignCellsDocumentWithBarCodeOptions(fileName As String)
+        'ExStart:SignCellsDocumentWithBarCodeOptions
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New CellsBarcodeSignOptions("12345678")
+        ' barcode type
+        signOptions.EncodeType = BarcodeTypes.Code39Standard
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Cells_Documents_BarCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignCellsDocumentWithBarCodeOptions
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign pdf document with barcode options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignPdfDocumentWithBarCodeOptions(fileName As String)
+        'ExStart:SignPdfDocumentWithBarCodeOptions
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New PdfBarcodeSignOptions("12345678")
+        ' barcode type
+        signOptions.EncodeType = BarcodeTypes.Code39Standard
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_Documents_BarCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPdfDocumentWithBarCodeOptions
+    End Sub
+
+
+    ''' <summary>
+    ''' Shows how to sign sildes document with barcode options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignSlidesDocumentWithBarCodeOptions(fileName As String)
+        'ExStart:SignSlidesDocumentWithBarCodeOptions
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New SlidesBarcodeSignOptions("12345678")
+        ' barcode type
+        signOptions.EncodeType = BarcodeTypes.Code39Extended
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Slides_Documents_BarCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignSlidesDocumentWithBarCodeOptions
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign words document with barcode options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignWordsDocumentWithBarCodeOptions(fileName As String)
+        'ExStart:SignWordsDocumentWithBarCodeOptions
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New WordsBarcodeSignOptions("12345678")
+        ' barcode type
+        signOptions.EncodeType = BarcodeTypes.Code39Extended
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Words_Documents_BarCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignWordsDocumentWithBarCodeOptions
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verify Cells documents signed with barcode signature
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    Public Shared Sub VerifyCellsDocumentsSignedWithBarcodeSignature(cellsFileName As String)
+        'ExStart:VerifyCellsDocumentsSignedWithBarcodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New CellsVerifyBarcodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' barcode type
+        verifyOptions.EncodeType = BarcodeTypes.Code39Standard
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(cellsFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyCellsDocumentsSignedWithBarcodeSignature
+    End Sub
+
+
+    ''' <summary>
+    ''' Shows how to verify pdf documents signed with barcode signature
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub VerifyPdfDocumentsSignedWithBarcodeSignature(PdfFileName As String)
+        'ExStart:VerifyPdfDocumentsSignedWithBarcodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New PDFVerifyBarcodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' barcode type
+        verifyOptions.EncodeType = BarcodeTypes.Code39Standard
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(PdfFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyPdfDocumentsSignedWithBarcodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verify slides documents signed with barcode signature
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub VerifySlidesDocumentsSignedWithBarcodeSignature(slidesFileName As String)
+        'ExStart:VerifySlidesDocumentsSignedWithBarcodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New SlidesVerifyBarcodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' barcode type
+        verifyOptions.EncodeType = BarcodeTypes.Code39Standard
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(slidesFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifySlidesDocumentsSignedWithBarcodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verify words documents signed with barcode signature
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub VerifyWordsDocumentsSignedWithBarcodeSignature(wordsFileName As String)
+        'ExStart:VerifyWordsDocumentsSignedWithBarcodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New WordsVerifyBarcodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' barcode type
+        verifyOptions.EncodeType = BarcodeTypes.Code39Standard
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(wordsFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyWordsDocumentsSignedWithBarcodeSignature
+    End Sub
+#End Region
+
+#Region "working with QR-code signatures"
+
+    ''' <summary>
+    ''' Shows how to add QR-code in sign options
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub AddingQRCode(fileName As String)
+        'ExStart:AddingQRCode
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup text signature options
+        Dim signOptions = New PdfQRCodeSignOptions()
+        'QR-code type
+        signOptions.EncodeType = QRCodeTypes.QR
+        ' signature text
+        signOptions.Text = "12345678901234"
+        ' text position
+        signOptions.HorizontalAlignment = HorizontalAlignment.Right
+        signOptions.VerticalAlignment = VerticalAlignment.Bottom
+        'ExEnd:AddingQRCode
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "QRCode_Document"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign cells document with QR-code options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignCellsDocumentWithQrCodeSignature(fileName As String)
+        'ExStart:SignCellsDocumentWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New CellsQRCodeSignOptions("12345678")
+        ' QR-code type
+        signOptions.EncodeType = QRCodeTypes.Aztec
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Cells_Documents_QRCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignCellsDocumentWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign pdf document with QR-code options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignPdfDocumentWithQrCodeSignature(fileName As String)
+        'ExStart:SignPdfDocumentWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New PdfQRCodeSignOptions("12345678")
+        ' QR-code type
+        signOptions.EncodeType = QRCodeTypes.Aztec
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Pdf_Documents_QRCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignPdfDocumentWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign slides document with QR-code options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignSlidesDocumentWithQrCodeSignature(fileName As String)
+        'ExStart:SignSlidesDocumentWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New SlidesQRCodeSignOptions("12345678")
+        ' QR-code type
+        signOptions.EncodeType = QRCodeTypes.Aztec
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Slides_Documents_QRCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignSlidesDocumentWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to sign words document with QR-code options
+    ''' This feature is availabale in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub SignWordsDocumentWithQrCodeSignature(fileName As String)
+        'ExStart:SignWordsDocumentWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup options with text of signature
+        Dim signOptions As New WordsQRCodeSignOptions("12345678")
+        ' QR-code type
+        signOptions.EncodeType = QRCodeTypes.Aztec
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
+        ' sign document
+        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+            .OutputType = OutputType.[String],
+            .OutputFileName = "Words_Documents_QRCode"
+        })
+        Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:SignWordsDocumentWithQrCodeSignature
+    End Sub
+
+
+    ''' <summary>
+    ''' Shows how to verfiry cells documents signed with QR code signature
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="cellsFileName"></param>
+    Public Shared Sub VerifyCellsDocumentSignedWithQrCodeSignature(cellsFileName As String)
+        'ExStart:VerifyCellsDocumentSignedWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New CellsVerifyQRCodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' QR-code type
+        verifyOptions.EncodeType = QRCodeTypes.Aztec
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(cellsFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyCellsDocumentSignedWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verfiry Pdf documents signed with QR code signature
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="pdfFileName"></param>
+    Public Shared Sub VerifyPdfDocumentSignedWithQrCodeSignature(pdfFileName As String)
+        'ExStart:VerifyPdfDocumentSignedWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New PDFVerifyQRCodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' QR-code type
+        verifyOptions.EncodeType = QRCodeTypes.Aztec
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(pdfFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyPdfDocumentSignedWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verfiry Slides documents signed with QR code signature
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="slidesFileName"></param>
+    Public Shared Sub VerifySlidesDocumentSignedWithQrCodeSignature(slidesFileName As String)
+        'ExStart:VerifySlidesDocumentSignedWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New SlidesVerifyQRCodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' QR-code type
+        verifyOptions.EncodeType = QRCodeTypes.Aztec
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(slidesFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifySlidesDocumentSignedWithQrCodeSignature
+    End Sub
+
+    ''' <summary>
+    ''' Shows how to verfiry Words documents signed with QR code signature
+    ''' Feature is supported in version 17.06 or greater
+    ''' </summary>
+    ''' <param name="wordsFileName"></param>
+    Public Shared Sub VerifyWordsDocumentSignedWithQrCodeSignature(wordsFileName As String)
+        'ExStart:VerifyWordsDocumentSignedWithQrCodeSignature
+        ' setup Signature configuration
+        Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
+        ' instantiating the conversion handler
+        Dim handler As New SignatureHandler(signConfig)
+        ' setup verification options
+        Dim verifyOptions As New WordsVerifyQRCodeOptions()
+        ' verify only page with specified number
+        verifyOptions.DocumentPageNumber = 1
+        ' verify all pages of a document if true
+        verifyOptions.VerifyAllPages = True
+        ' QR-code type
+        verifyOptions.EncodeType = QRCodeTypes.Aztec
+        'If verify option Text is set, it will be searched in Title, Subject and Contents
+        verifyOptions.Text = "12345678"
+        'verify document
+        Dim result As VerificationResult = handler.Verify(wordsFileName, verifyOptions)
+
+        Console.WriteLine("Verification result is: " + result.IsValid)
+        'ExEnd:VerifyWordsDocumentSignedWithQrCodeSignature
+    End Sub
+#End Region
+
+
 End Class
