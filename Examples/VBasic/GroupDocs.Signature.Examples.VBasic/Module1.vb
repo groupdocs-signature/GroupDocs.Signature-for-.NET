@@ -132,6 +132,30 @@
         'Signatures.SignWordsDocsWithTextSignToFormTextField("getting started.docx")
 #End Region
 
+#Region "WorkingWithBarcodeSignatures"
+        'Signatures.UsingBarCodeTypes("text.pdf")
+        'Signatures.SignCellsDocumentWithBarCodeOptions("pie chart.xlsx")
+        'Signatures.SignPdfDocumentWithBarCodeOptions("text.pdf")
+        'Signatures.SignSlidesDocumentWithBarCodeOptions("butterfly effect.pptx")
+        'Signatures.SignWordsDocumentWithBarCodeOptions("getting started.docx")
+        'Signatures.VerifyCellsDocumentsSignedWithBarcodeSignature("pie chart.xlsx")
+        'Signatures.VerifyPdfDocumentsSignedWithBarcodeSignature("text.pdf")
+        'Signatures.VerifySlidesDocumentsSignedWithBarcodeSignature("butterfly effect.pptx")
+        'Signatures.VerifyWordsDocumentsSignedWithBarcodeSignature("getting started.docx")
+#End Region
+
+#Region "WorkingWithQRcodeSignatures"
+        'Signatures.AddingQRCode("text.pdf")
+        'Signatures.SignCellsDocumentWithQrCodeSignature("pie chart.xlsx")
+        'Signatures.SignPdfDocumentWithQrCodeSignature("text.pdf")
+        'Signatures.SignSlidesDocumentWithQrCodeSignature("butterfly effect.pptx")
+        'Signatures.SignWordsDocumentWithQrCodeSignature("getting started.docx")
+        'Signatures.VerifyCellsDocumentSignedWithQrCodeSignature("pie chart.xlsx")
+        'Signatures.VerifySlidesDocumentSignedWithQrCodeSignature("butterfly effect.pptx")
+        'Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf")
+        'Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx")
+#End Region
+
         'Signatures.SetOutputFileName()
         'Signatures.GetDocumentInfo("text.pdf")
 

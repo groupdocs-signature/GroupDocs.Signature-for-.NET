@@ -569,7 +569,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignPdfDocumentWithTextWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingpdfdocumentwithtext
+            //ExStart:SignPdfDocumentWithTextWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -580,7 +580,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             string fileExtension = Path.GetExtension(fileName);
             // save document
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
-            //ExEnd:signingandsavingpdfdocumentwithtext
+            //ExEnd:SignPdfDocumentWithTextWithSaveFormat
         }
 
         /// <summary>
@@ -589,7 +589,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input filel</param>
         public static void SignCellDocumentWithTextWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingcellsdocumentwithtext
+            //ExStart:SignCellDocumentWithTextWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -607,7 +607,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.SheetNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
-            //ExEnd:signingandsavingcellsdocumentwithtext
+            //ExEnd:SignCellDocumentWithTextWithSaveFormat
         }
 
         /// <summary>
@@ -616,7 +616,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignSlideDocumentWithTextWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingslidesdocumentwithtext
+            //ExStart:SignSlideDocumentWithTextWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -629,7 +629,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
-            //ExEnd:signingandsavingslidesdocumentwithtext
+            //ExEnd:SignSlideDocumentWithTextWithSaveFormat
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignWordDocumentWithTextWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingworddocumentwithtext
+            //ExStart:SignWordDocumentWithTextWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -651,7 +651,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, signOptions, null, null);
-            //ExEnd:signingandsavingworddocumentwithtext
+            //ExEnd:SignWordDocumentWithTextWithSaveFormat
         }
 
 
@@ -665,7 +665,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input filed</param>
         public static void SignPdfDocumentWithImageWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingpdfdocumentwithimageWithSaveFormat
+            //ExStart:SignPdfDocumentWithImageWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -679,7 +679,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
-            //ExEnd:signingandsavingpdfdocumentwithimageWithSaveFormat
+            //ExEnd:SignPdfDocumentWithImageWithSaveFormat
         }
 
         /// <summary>
@@ -688,7 +688,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignCellDocumentWithImageWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingcelldocumentwithimageWithSaveFormat
+            //ExStart:SignCellDocumentWithImageWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -701,7 +701,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
-            //ExEnd:signingandsavingcelldocumentwithimageWithSaveFormat
+            //ExEnd:SignCellDocumentWithImageWithSaveFormat
         }
 
         /// <summary>
@@ -710,7 +710,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignSlideDocumentWithImageWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingslidedocumentwithimageWithSaveFormat
+            //ExStart:SignSlideDocumentWithImageWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -723,7 +723,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
-            //ExEnd:signingandsavingslidedocumentwithimageWithSaveFormat
+            //ExEnd:SignSlideDocumentWithImageWithSaveFormat
         }
 
         /// <summary>
@@ -732,7 +732,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// <param name="fileName">Name of the input file</param>
         public static void SignWordDocumentWithImageWithSaveFormat(string fileName)
         {
-            //ExStart:signingandsavingworddocumentwithimageWithSaveFormat
+            //ExStart:SignWordDocumentWithImageWithSaveFormat
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             var handler = new SignatureHandler(config);
@@ -745,7 +745,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.DocumentPageNumber = 1;
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFileWithFormat(fileExtension, fileName, handler, null, signOptions, null);
-            //ExEnd:signingandsavingworddocumentwithimageWithSaveFormat
+            //ExEnd:SignWordDocumentWithImageWithSaveFormat
         }
 
         #endregion
@@ -1280,7 +1280,8 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Feature is supporyted by version 17.05 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void SignPDFDocsWithTextSignatureAsWatermark(string fileName) {
+        public static void SignPDFDocsWithTextSignatureAsWatermark(string fileName)
+        {
             //ExStart:SignPDFDocsWithTextSignatureAsWatermark
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -1309,7 +1310,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignatureConfig signConfig = Utilities.GetConfigurations();
             // instantiating the conversion handler
             SignatureHandler handler = new SignatureHandler(signConfig);
-            
+
 
             // setup text signature options and try locate signature at top right corner
             PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
@@ -1337,7 +1338,8 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Feature is supporyted by version 17.05 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void SignWordsDocsWithTextSignToFormTextField(string fileName) {
+        public static void SignWordsDocsWithTextSignToFormTextField(string fileName)
+        {
             //ExStart:SignWordsDocsWithTextSignToFormTextField
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -1660,13 +1662,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file verification result: " + result.IsValid);
             //ExEnd:VerifySlidesDocumentSignedWithTextSignature
         }
-        
+
         /// <summary>
         /// Shows how to Verify Words Document signed with Text Signature to form text field
         /// Feature is supported in version 17.05 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void VerifyWordsDocWithTextSignatureToFormTextField(string fileName) {
+        public static void VerifyWordsDocWithTextSignatureToFormTextField(string fileName)
+        {
             //ExStart:VerifyWordsDocWithTextSignatureToFormTextField
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -1716,7 +1719,8 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Feature is supported in version 17.05 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void GetDocumentInfo(string fileName) {
+        public static void GetDocumentInfo(string fileName)
+        {
             //ExStart:GetDocumentInfo
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -1742,6 +1746,499 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:GetDocumentInfo
         }
 
+        #region working with barcode signatures
+        /// <summary>
+        /// Shows how to use bar code types in sign options
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void UsingBarCodeTypes(string fileName)
+        {
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            //ExStart:UsingBarCodeTypes
+            // setup text signature options
+            var signOptions = new PdfBarcodeSignOptions();
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.EAN14;
+            // signature text
+            signOptions.Text = "12345678901234";
+            // text position
+            signOptions.HorizontalAlignment = HorizontalAlignment.Right;
+            signOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            //ExEnd:UsingBarCodeTypes
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "BarCode_Document" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Shows how to sign cells document with barcode options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsDocumentWithBarCodeOptions(string fileName)
+        {
+            //ExStart:SignCellsDocumentWithBarCodeOptions
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsBarcodeSignOptions signOptions = new CellsBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Standard;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_Documents_BarCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsDocumentWithBarCodeOptions
+        }
+
+        /// <summary>
+        /// Shows how to sign pdf document with barcode options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPdfDocumentWithBarCodeOptions(string fileName)
+        {
+            //ExStart:SignPdfDocumentWithBarCodeOptions
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfBarcodeSignOptions signOptions = new PdfBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Standard;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_BarCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPdfDocumentWithBarCodeOptions
+        }
+
+
+        /// <summary>
+        /// Shows how to sign sildes document with barcode options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesDocumentWithBarCodeOptions(string fileName)
+        {
+            //ExStart:SignSlidesDocumentWithBarCodeOptions
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesBarcodeSignOptions signOptions = new SlidesBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Extended;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Documents_BarCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesDocumentWithBarCodeOptions
+        }
+
+        /// <summary>
+        /// Shows how to sign words document with barcode options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsDocumentWithBarCodeOptions(string fileName)
+        {
+            //ExStart:SignWordsDocumentWithBarCodeOptions
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsBarcodeSignOptions signOptions = new WordsBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Extended;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_Documents_BarCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsDocumentWithBarCodeOptions
+        }
+
+        /// <summary>
+        /// Shows how to verify Cells documents signed with barcode signature
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        public static void VerifyCellsDocumentsSignedWithBarcodeSignature(string cellsFileName)
+        {
+            //ExStart:VerifyCellsDocumentsSignedWithBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            CellsVerifyBarcodeOptions verifyOptions = new CellsVerifyBarcodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // barcode type
+            verifyOptions.EncodeType = BarcodeTypes.Code39Standard;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(cellsFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyCellsDocumentsSignedWithBarcodeSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to verify pdf documents signed with barcode signature
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyPdfDocumentsSignedWithBarcodeSignature(string PdfFileName)
+        {
+            //ExStart:VerifyPdfDocumentsSignedWithBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            PDFVerifyBarcodeOptions verifyOptions = new PDFVerifyBarcodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // barcode type
+            verifyOptions.EncodeType = BarcodeTypes.Code39Standard;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(PdfFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyPdfDocumentsSignedWithBarcodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to verify slides documents signed with barcode signature
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifySlidesDocumentsSignedWithBarcodeSignature(string slidesFileName)
+        {
+            //ExStart:VerifySlidesDocumentsSignedWithBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            SlidesVerifyBarcodeOptions verifyOptions = new SlidesVerifyBarcodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // barcode type
+            verifyOptions.EncodeType = BarcodeTypes.Code39Standard;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(slidesFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifySlidesDocumentsSignedWithBarcodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to verify words documents signed with barcode signature
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyWordsDocumentsSignedWithBarcodeSignature(string wordsFileName)
+        {
+            //ExStart:VerifyWordsDocumentsSignedWithBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            WordsVerifyBarcodeOptions verifyOptions = new WordsVerifyBarcodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // barcode type
+            verifyOptions.EncodeType = BarcodeTypes.Code39Standard;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(wordsFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyWordsDocumentsSignedWithBarcodeSignature
+        }
+        #endregion
+
+        #region working with QR-code signatures
+
+        /// <summary>
+        /// Shows how to add QR-code in sign options
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AddingQRCode(string fileName)
+        {
+            //ExStart:AddingQRCode
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup text signature options
+            var signOptions = new PdfQRCodeSignOptions();
+            //QR-code type
+            signOptions.EncodeType = QRCodeTypes.QR;
+            // signature text
+            signOptions.Text = "12345678901234";
+            // text position
+            signOptions.HorizontalAlignment = HorizontalAlignment.Right;
+            signOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            //ExEnd:AddingQRCode
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "QRCode_Document" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Shows how to sign cells document with QR-code options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsDocumentWithQrCodeSignature(string cellsFileName)
+        {
+            //ExStart:SignCellsDocumentWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsQRCodeSignOptions signOptions = new CellsQRCodeSignOptions("12345678");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(cellsFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_Documents_QRCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsDocumentWithQrCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign pdf document with QR-code options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPdfDocumentWithQrCodeSignature(string pdfFileName)
+        {
+            //ExStart:SignPdfDocumentWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions("12345678");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(pdfFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_QRCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPdfDocumentWithQrCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign slides document with QR-code options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesDocumentWithQrCodeSignature(string slidesFileName)
+        {
+            //ExStart:SignSlidesDocumentWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesQRCodeSignOptions signOptions = new SlidesQRCodeSignOptions("12345678");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(slidesFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Documents_QRCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesDocumentWithQrCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign words document with QR-code options
+        /// This feature is availabale in version 17.06 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsDocumentWithQrCodeSignature(string wordsFileName)
+        {
+            //ExStart:SignWordsDocumentWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsQRCodeSignOptions signOptions = new WordsQRCodeSignOptions("12345678");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(wordsFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_Documents_QRCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsDocumentWithQrCodeSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to verfiry cells documents signed with QR code signature
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="cellsFileName"></param>
+        public static void VerifyCellsDocumentSignedWithQrCodeSignature(string cellsFileName)
+        {
+            //ExStart:VerifyCellsDocumentSignedWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            CellsVerifyQRCodeOptions verifyOptions = new CellsVerifyQRCodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // QR-code type
+            verifyOptions.EncodeType = QRCodeTypes.Aztec;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(cellsFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyCellsDocumentSignedWithQrCodeSignature
+        }
+        
+        /// <summary>
+        /// Shows how to verfiry Pdf documents signed with QR code signature
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="pdfFileName"></param>
+        public static void VerifyPdfDocumentSignedWithQrCodeSignature(string pdfFileName) {
+            //ExStart:VerifyPdfDocumentSignedWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            PDFVerifyQRCodeOptions verifyOptions = new PDFVerifyQRCodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // QR-code type
+            verifyOptions.EncodeType = QRCodeTypes.Aztec;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(pdfFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyPdfDocumentSignedWithQrCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to verfiry Slides documents signed with QR code signature
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="slidesFileName"></param>
+        public static void VerifySlidesDocumentSignedWithQrCodeSignature(string slidesFileName)
+        {
+            //ExStart:VerifySlidesDocumentSignedWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            SlidesVerifyQRCodeOptions verifyOptions = new SlidesVerifyQRCodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // QR-code type
+            verifyOptions.EncodeType = QRCodeTypes.Aztec;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(slidesFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifySlidesDocumentSignedWithQrCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to verfiry Words documents signed with QR code signature
+        /// Feature is supported in version 17.06 or greater
+        /// </summary>
+        /// <param name="wordsFileName"></param>
+        public static void VerifyWordsDocumentSignedWithQrCodeSignature(string wordsFileName)
+        {
+            //ExStart:VerifyWordsDocumentSignedWithQrCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup verification options
+            WordsVerifyQRCodeOptions verifyOptions = new WordsVerifyQRCodeOptions();
+            // verify only page with specified number
+            verifyOptions.DocumentPageNumber = 1;
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            // QR-code type
+            verifyOptions.EncodeType = QRCodeTypes.Aztec;
+            //If verify option Text is set, it will be searched in Title, Subject and Contents
+            verifyOptions.Text = "12345678";
+            //verify document
+            VerificationResult result = handler.Verify(wordsFileName, verifyOptions);
+
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyWordsDocumentSignedWithQrCodeSignature
+        }
+        #endregion
 
     }
 }
