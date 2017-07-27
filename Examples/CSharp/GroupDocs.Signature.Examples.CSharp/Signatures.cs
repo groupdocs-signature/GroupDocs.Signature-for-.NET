@@ -844,7 +844,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         #region SetupMultipleSignatureOptions
         //Multiple sign options Pdf documents 
-        public static void MultiplePdfSignOptoins()
+        public static void MultiplePdfSignOptions(string fileName)
         {
             //ExStart:multiplepdfsignoptions
             SignatureConfig config = Utilities.GetConfigurations();
@@ -866,19 +866,19 @@ namespace GroupDocs.Signature.Examples.CSharp
             collection.Add(signImageOptions);
             // specify digital options
             var signDigitalOptions = new PdfSignDigitalOptions("acer.pfx");
-            signDigitalOptions.Password = "1234567890";
+            //signDigitalOptions.Password = "1234567890";
             signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
             signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
             // add to collection
             collection.Add(signDigitalOptions);
             // sign document
-            var signedPath = handler.Sign<string>("test.pdf", collection, new SaveOptions { OutputType = OutputType.String });
+            var signedPath = handler.Sign<string>(fileName, collection, new SaveOptions { OutputType = OutputType.String });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:multiplepdfsignoptions
         }
 
         //Multiple sign options Cells
-        public static void MultipleCellSignOptoins()
+        public static void MultipleCellSignOptions(string fileName)
         {
             //ExStart:MultipleCellSignOptoins
             SignatureConfig config = Utilities.GetConfigurations();
@@ -900,18 +900,19 @@ namespace GroupDocs.Signature.Examples.CSharp
             collection.Add(signImageOptions);
             // specify digital options
             var signDigitalOptions = new CellsSignDigitalOptions("acer.pfx");
-            signDigitalOptions.Password = "1234567890";
+            ////add a password if the document is password protected
+            //signDigitalOptions.Password = "1234567890";
             signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
             signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
             // add to collection
             collection.Add(signDigitalOptions);
             // sign document
-            var signedPath = handler.Sign<string>("test.xlsx", collection, new SaveOptions { OutputType = OutputType.String });
+            var signedPath = handler.Sign<string>(fileName, collection, new SaveOptions { OutputType = OutputType.String });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:MultipleCellSignOptoins
         }
         //Multiple sign options Word
-        public static void MultipleWordSignOptoins()
+        public static void MultipleWordSignOptions(string fileName)
         {
             //ExStart:MultipleWordSignOptoins
             SignatureConfig config = Utilities.GetConfigurations();
@@ -933,19 +934,20 @@ namespace GroupDocs.Signature.Examples.CSharp
             collection.Add(signImageOptions);
             // specify digital options
             var signDigitalOptions = new WordsSignDigitalOptions("acer.pfx");
-            signDigitalOptions.Password = "1234567890";
+            //add a password if the document is password protected
+            //signDigitalOptions.Password = "1234567890";
             signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
             signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
             // add to collection
             collection.Add(signDigitalOptions);
             // sign document
-            var signedPath = handler.Sign<string>("test.docx", collection, new SaveOptions { OutputType = OutputType.String });
+            var signedPath = handler.Sign<string>(fileName, collection, new SaveOptions { OutputType = OutputType.String });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:MultipleWordSignOptoins
         }
 
         //Multiple sign options slides
-        //public static void MultipleSlideSignOptoins()
+        //public static void MultipleSlideSignOptions(string fileName)
         //{
         //    //ExStart:multipleslidesignoptions
         //    SignatureConfig config = Utilities.GetConfigurations();
@@ -967,13 +969,14 @@ namespace GroupDocs.Signature.Examples.CSharp
         //    collection.Add(signImageOptions);
         //    // specify digital options
         //    var signDigitalOptions = new SlideSignDigitalOptions("acer.pfx");
+        //    //add a password if the document is password protected
         //    signDigitalOptions.Password = "1234567890";
         //    signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
         //    signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
         //    // add to collection
         //    collection.Add(signDigitalOptions);
         //    // sign document
-        //    var signedPath = handler.Sign<string>("butterfly effect.pptx", collection, new SaveOptions { OutputType = OutputType.String });
+        //    var signedPath = handler.Sign<string>(fileName, collection, new SaveOptions { OutputType = OutputType.String });
         //    Console.WriteLine("Signed file path is: " + signedPath);
         //    //ExEnd:multipleslidesignoptions
         //}
