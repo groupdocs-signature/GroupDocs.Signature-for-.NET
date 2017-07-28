@@ -2155,13 +2155,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyCellsDocumentSignedWithQrCodeSignature
         }
-        
+
         /// <summary>
         /// Shows how to verfiry Pdf documents signed with QR code signature
         /// Feature is supported in version 17.06 or greater
         /// </summary>
         /// <param name="pdfFileName"></param>
-        public static void VerifyPdfDocumentSignedWithQrCodeSignature(string pdfFileName) {
+        public static void VerifyPdfDocumentSignedWithQrCodeSignature(string pdfFileName)
+        {
             //ExStart:VerifyPdfDocumentSignedWithQrCodeSignature
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
@@ -2241,6 +2242,241 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyWordsDocumentSignedWithQrCodeSignature
         }
+        #endregion
+
+        #region working with Stamp signatures
+        
+        /// <summary>
+        /// Shows how to add stamp line in sign options
+        /// Feature is supported in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AddingStampLine(string fileName)
+        {
+            //ExStart:AddingStampLine
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup text signature options
+            PdfStampSignOptions signOptions = new PdfStampSignOptions();
+
+            //Outer line
+            StampLine line = new StampLine();
+            line.Text = "John Smith";
+            signOptions.OuterLines.Add(line);
+            //ExEnd:AddingStampLine
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "StampLine_Document" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+        }
+
+        /// <summary>
+        /// Shows how to sign cells document with stamp signature options
+        /// This feature is availabale in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsDocumentWithStampSignature(string cellsFileName)
+        {
+            //ExStart:SignCellsDocumentWithStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsStampSignOptions signOptions = new CellsStampSignOptions();
+            signOptions.Height = 120;
+            signOptions.Width = 300;
+            //Inner square lines
+            StampLine line0 = new StampLine();
+            line0.Text = "John";
+            line0.TextBottomIntent = 0;
+            line0.TextColor = Color.MediumVioletRed;
+            line0.OuterBorder.Color = Color.DarkSlateBlue;
+            line0.InnerBorder.Color = Color.DarkSlateBlue;
+            line0.InnerBorder.Style = ExtendedDashStyle.Dash;
+            line0.Font.FontSize = 20;
+            line0.Font.Bold = true;
+            line0.Height = 40;
+            signOptions.InnerLines.Add(line0);
+            StampLine line1 = new StampLine();
+            line1.Text = "Smith";
+            line1.TextBottomIntent = 0;
+            line1.TextColor = Color.MediumVioletRed;
+            line1.InnerBorder.Color = Color.DarkSlateBlue;
+            line1.Font.FontSize = 20;
+            line1.Font.Bold = true;
+            line1.Height = 40;
+            signOptions.InnerLines.Add(line1);
+
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(cellsFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_Documents_Stamp" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsDocumentWithStampSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign pdf document with Stamp signature options
+        /// This feature is availabale in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPdfDocumentWithStampSignature(string pdfFileName)
+        {
+            //ExStart:SignPdfDocumentWithStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            //All examples for Cells, PDF, Slides and Words Stamp Signatures are different
+            // setup options with text of signature
+            PdfStampSignOptions signOptions = new PdfStampSignOptions();
+            signOptions.Height = 300;
+            signOptions.Width = 300;
+            //Outer round lines
+            StampLine line0 = new StampLine();
+            line0.Text = " * European Union * European Union  * European Union  * European Union  * European Union  * ";
+            line0.Font.FontSize = 12;
+            line0.Height = 22;
+            line0.TextBottomIntent = 6;
+            line0.TextColor = Color.WhiteSmoke;
+            line0.BackgroundColor = Color.DarkSlateBlue;
+            signOptions.OuterLines.Add(line0);
+            StampLine line1 = new StampLine();
+            line1.Height = 2;
+            line1.BackgroundColor = Color.White;
+            signOptions.OuterLines.Add(line1);
+            StampLine line2 = new StampLine();
+            line2.Text = "* Entrepreneur * Entrepreneur ** Entrepreneur * Entrepreneur *";
+            line2.TextColor = Color.DarkSlateBlue;
+            line2.Font.FontSize = 15;
+            line2.Height = 30;
+            line2.TextBottomIntent = 8;
+            line2.InnerBorder.Color = Color.DarkSlateBlue;
+            line2.OuterBorder.Color = Color.DarkSlateBlue;
+            line2.InnerBorder.Style = ExtendedDashStyle.Dot;
+            signOptions.OuterLines.Add(line2);
+            //Inner square lines
+            StampLine line3 = new StampLine();
+            line3.Text = "John";
+            line3.TextColor = Color.MediumVioletRed;
+            line3.Font.FontSize = 20;
+            line3.Font.Bold = true;
+            line3.Height = 40;
+            signOptions.InnerLines.Add(line3);
+            StampLine line4 = new StampLine();
+            line4.Text = "Smith";
+            line4.TextColor = Color.MediumVioletRed;
+            line4.Font.FontSize = 20;
+            line4.Font.Bold = true;
+            line4.Height = 40;
+            signOptions.InnerLines.Add(line4);
+            StampLine line5 = new StampLine();
+            line5.Text = "SSN 1230242424";
+            line5.TextColor = Color.MediumVioletRed;
+            line5.Font.FontSize = 12;
+            line5.Font.Bold = true;
+            line5.Height = 40;
+            signOptions.InnerLines.Add(line5);
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            // sign document
+            string signedPath = handler.Sign<string>(pdfFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Stamp" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPdfDocumentWithStampSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign slides document with stamp signature options
+        /// This feature is availabale in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesDocumentWithStampSignature(string slidesFileName)
+        {
+            //ExStart:SignSlidesDocumentWithStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesStampSignOptions signOptions = new SlidesStampSignOptions();
+            signOptions.Height = 200;
+            signOptions.Width = 400;
+            //Outer round lines
+            StampLine line0 = new StampLine();
+            line0.Text = " * John * Smith  * John * Smith  * John * Smith  * John * Smith  * John * Smith * John * Smith *  John * Smith * ";
+            line0.Font.FontSize = 12;
+            line0.Height = 22;
+            line0.TextBottomIntent = 6;
+            line0.TextColor = Color.WhiteSmoke;
+            line0.BackgroundColor = Color.DarkSlateBlue;
+            signOptions.OuterLines.Add(line0);
+            //Inner square lines
+            StampLine line1 = new StampLine();
+            line1.Text = "John Smith";
+            line1.TextColor = Color.MediumVioletRed;
+            line1.Font.FontSize = 24;
+            line1.Font.Bold = true;
+            line1.Height = 100;
+            signOptions.InnerLines.Add(line1);
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+            signOptions.Opacity = 0.8;
+            // sign document
+            string signedPath = handler.Sign<string>(slidesFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Documents_Stamp" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesDocumentWithStampSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign words document with stamp signature options
+        /// This feature is availabale in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsDocumentWithStampSignature(string wordsFileName)
+        {
+            //ExStart:SignWordsDocumentWithStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsStampSignOptions signOptions = new WordsStampSignOptions();
+            signOptions.Height = 300;
+            signOptions.Width = 300;
+            signOptions.ImageGuid = "stamp.jpg";
+            signOptions.BackgroundColor = Color.Aqua;
+
+            //Inner square lines
+            StampLine line0 = new StampLine();
+            line0.Text = "John";
+            line0.TextColor = Color.MediumVioletRed;
+            line0.Font.FontSize = 20;
+            line0.Font.Bold = true;
+            line0.Height = 40;
+            signOptions.InnerLines.Add(line0);
+            StampLine line1 = new StampLine();
+            line1.Text = "Smith";
+            line1.TextColor = Color.MediumVioletRed;
+            line1.Font.FontSize = 20;
+            line1.Font.Bold = true;
+            line1.Height = 40;
+            signOptions.InnerLines.Add(line1);
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
+
+            // sign document
+            string signedPath = handler.Sign<string>(wordsFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_Documents_Stamp" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsDocumentWithStampSignature
+        }
+
         #endregion
 
     }

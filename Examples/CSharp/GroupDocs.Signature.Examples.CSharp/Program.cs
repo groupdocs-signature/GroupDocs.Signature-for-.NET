@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-            //Utilities.ApplyLicense();
+            Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -161,6 +161,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifySlidesDocumentSignedWithQrCodeSignature("butterfly effect.pptx");
             //Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf");
             //Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx");
+            #endregion
+
+            #region WorkingWithStampSignatures
+            //Signatures.AddingStampLine("text.pdf");
+            //Signatures.SignCellsDocumentWithStampSignature("pie chart.xlsx");
+            //Signatures.SignPdfDocumentWithStampSignature("text.pdf");
+            //Signatures.SignSlidesDocumentWithStampSignature("butterfly effect.pptx");
+            //Signatures.SignWordsDocumentWithStampSignature("getting started.docx");
             #endregion
 
             //Signatures.SetOutputFileName();
