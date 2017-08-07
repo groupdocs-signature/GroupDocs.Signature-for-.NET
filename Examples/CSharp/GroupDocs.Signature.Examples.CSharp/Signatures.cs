@@ -2247,29 +2247,80 @@ namespace GroupDocs.Signature.Examples.CSharp
         #region working with Stamp signatures
         
         /// <summary>
-        /// Shows how to add stamp line in sign options
+        /// Shows how to add stamp signature to pdf documents
         /// Feature is supported in version 17.07 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void AddingStampLine(string fileName)
+        public static void AddingStampSignature(string fileName)
         {
-            //ExStart:AddingStampLine
+            //ExStart:AddingStampSignature
             // setup Signature configuration
             SignatureConfig signConfig = Utilities.GetConfigurations();
             // instantiating the conversion handler
             SignatureHandler handler = new SignatureHandler(signConfig);
             // setup text signature options
-            PdfStampSignOptions signOptions = new PdfStampSignOptions();
+            var signOptions = new PdfStampSignOptions();
 
-            //Outer line
-            StampLine line = new StampLine();
-            line.Text = "John Smith";
-            signOptions.OuterLines.Add(line);
-            //ExEnd:AddingStampLine
+            // OuterLines property contains list of StampLine object that describe Ring with Height, colored, borders
+            // setup first external line of Stamp
+            var line0 = new StampLine();
+            line0.Text = " * European Union * European Union  * European Union  * European Union  * European Union  * ";
+            line0.Font.FontSize = 12;
+            line0.Height = 22;
+            line0.TextBottomIntent = 6;
+            line0.TextColor = Color.WhiteSmoke;
+            line0.BackgroundColor = Color.DarkSlateBlue;
+            signOptions.OuterLines.Add(line0);
+            // draw another stamp ring - specify only thin 2 pixels White part
+            var line1 = new StampLine();
+            line1.Height = 2;
+            line1.BackgroundColor = Color.White;
+            signOptions.OuterLines.Add(line1);
+
+            // add another Stamp ring
+            var line2 = new StampLine();
+            line2.Text = "* Entrepreneur * Entrepreneur ** Entrepreneur * Entrepreneur *";
+            line2.TextColor = Color.DarkSlateBlue;
+            line2.Font.FontSize = 15;
+            line2.Height = 30;
+            line2.TextBottomIntent = 8;
+            line2.InnerBorder.Color = Color.DarkSlateBlue;
+            line2.OuterBorder.Color = Color.DarkSlateBlue;
+            line2.InnerBorder.Style = ExtendedDashStyle.Dot;
+            signOptions.OuterLines.Add(line2);
+
+            //Inner square lines - horizontal lines inside the rings
+            var line3 = new StampLine();
+            line3.Text = "John";
+            line3.TextColor = Color.MediumVioletRed;
+            line3.Font.FontSize = 20;
+            line3.Font.Bold = true;
+            line3.Height = 40;
+            signOptions.InnerLines.Add(line3);
+
+            var line4 = new StampLine();
+            line4.Text = "Smith";
+            line4.TextColor = Color.MediumVioletRed;
+            line4.Font.FontSize = 20;
+            line4.Font.Bold = true;
+            line4.Height = 40;
+            signOptions.InnerLines.Add(line4);
+
+            var line5 = new StampLine();
+            line5.Text = "SSN 1230242424";
+            line5.TextColor = Color.MediumVioletRed;
+            line5.Font.FontSize = 12;
+            line5.Font.Bold = true;
+            line5.Height = 40;
+            signOptions.InnerLines.Add(line5);
+
+            // if you need to sign all sheets set it to true
+            signOptions.SignAllPages = true;
             // sign document
-            string signedPath = handler.Sign<string>(fileName, signOptions,
-                new SaveOptions { OutputType = OutputType.String, OutputFileName = "StampLine_Document" });
+            string signedPath = handler.Sign<string>("test.pdf", signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Stamp" });
             Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:AddingStampSignature
         }
 
         /// <summary>

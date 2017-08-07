@@ -2267,31 +2267,83 @@ Public Class Signatures
 #Region "working with Stamp signatures"
 
     ''' <summary>
-    ''' Shows how to add stamp line in sign options
+    ''' Shows how to add stamp signature to pdf documents
     ''' Feature is supported in version 17.07 or greater
     ''' </summary>
     ''' <param name="fileName"></param>
-    Public Shared Sub AddingStampLine(fileName As String)
-        'ExStart:AddingStampLine
+    Public Shared Sub AddingStampSignature(fileName As String)
+        'ExStart:AddingStampSignature
         ' setup Signature configuration
         Dim signConfig As SignatureConfig = Utilities.GetConfigurations()
         ' instantiating the conversion handler
         Dim handler As New SignatureHandler(signConfig)
         ' setup text signature options
-        Dim signOptions As New PdfStampSignOptions()
+        Dim signOptions = New PdfStampSignOptions()
 
-        'Outer line
-        Dim line As New StampLine()
-        line.Text = "John Smith"
-        signOptions.OuterLines.Add(line)
-        'ExEnd:AddingStampLine
+        ' OuterLines property contains list of StampLine object that describe Ring with Height, colored, borders
+        ' setup first external line of Stamp
+        Dim line0 = New StampLine()
+        line0.Text = " * European Union * European Union  * European Union  * European Union  * European Union  * "
+        line0.Font.FontSize = 12
+        line0.Height = 22
+        line0.TextBottomIntent = 6
+        line0.TextColor = Color.WhiteSmoke
+        line0.BackgroundColor = Color.DarkSlateBlue
+        signOptions.OuterLines.Add(line0)
+        ' draw another stamp ring - specify only thin 2 pixels White part
+        Dim line1 = New StampLine()
+        line1.Height = 2
+        line1.BackgroundColor = Color.White
+        signOptions.OuterLines.Add(line1)
+
+        ' add another Stamp ring
+        Dim line2 = New StampLine()
+        line2.Text = "* Entrepreneur * Entrepreneur ** Entrepreneur * Entrepreneur *"
+        line2.TextColor = Color.DarkSlateBlue
+        line2.Font.FontSize = 15
+        line2.Height = 30
+        line2.TextBottomIntent = 8
+        line2.InnerBorder.Color = Color.DarkSlateBlue
+        line2.OuterBorder.Color = Color.DarkSlateBlue
+        line2.InnerBorder.Style = ExtendedDashStyle.Dot
+        signOptions.OuterLines.Add(line2)
+
+        'Inner square lines - horizontal lines inside the rings
+        Dim line3 = New StampLine()
+        line3.Text = "John"
+        line3.TextColor = Color.MediumVioletRed
+        line3.Font.FontSize = 20
+        line3.Font.Bold = True
+        line3.Height = 40
+        signOptions.InnerLines.Add(line3)
+
+        Dim line4 = New StampLine()
+        line4.Text = "Smith"
+        line4.TextColor = Color.MediumVioletRed
+        line4.Font.FontSize = 20
+        line4.Font.Bold = True
+        line4.Height = 40
+        signOptions.InnerLines.Add(line4)
+
+        Dim line5 = New StampLine()
+        line5.Text = "SSN 1230242424"
+        line5.TextColor = Color.MediumVioletRed
+        line5.Font.FontSize = 12
+        line5.Font.Bold = True
+        line5.Height = 40
+        signOptions.InnerLines.Add(line5)
+
+        ' if you need to sign all sheets set it to true
+        signOptions.SignAllPages = True
         ' sign document
-        Dim signedPath As String = handler.Sign(Of String)(fileName, signOptions, New SaveOptions() With {
+        Dim signedPath As String = handler.Sign(Of String)("test.pdf", signOptions, New SaveOptions() With {
             .OutputType = OutputType.[String],
-            .OutputFileName = "StampLine_Document"
+            .OutputFileName = "Pdf_Documents_Stamp"
         })
         Console.WriteLine(Convert.ToString("Signed file path is: ") & signedPath)
+        'ExEnd:AddingStampSignature
     End Sub
+
 
     ''' <summary>
     ''' Shows how to sign cells document with stamp signature options

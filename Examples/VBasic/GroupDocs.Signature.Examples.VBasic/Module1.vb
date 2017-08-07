@@ -157,7 +157,7 @@
 #End Region
 
 #Region "WorkingWithStampSignatures"
-        'Signatures.AddingStampLine("text.pdf")
+        'Signatures.AddingStampSignature("text.pdf")
         'Signatures.SignCellsDocumentWithStampSignature("pie chart.xlsx")
         'Signatures.SignPdfDocumentWithStampSignature("text.pdf")
         'Signatures.SignSlidesDocumentWithStampSignature("butterfly effect.pptx")
