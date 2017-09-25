@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -149,6 +149,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyPdfDocumentsSignedWithBarcodeSignature("text.pdf");
             //Signatures.VerifySlidesDocumentsSignedWithBarcodeSignature("butterfly effect.pptx");
             //Signatures.VerifyWordsDocumentsSignedWithBarcodeSignature("getting started.docx");
+            //Signatures.VerifyImagesDocumentsSignedWithBarcodeSignature("DocImages_BarCode.png");
             #endregion
 
             #region WorkingWithQRcodeSignatures
@@ -161,6 +162,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifySlidesDocumentSignedWithQrCodeSignature("butterfly effect.pptx");
             //Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf");
             //Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx");
+            //Signatures.VerifyImagesDocumentsSignedWithQRcodeSignature("DocImages_QRCode.png");
             #endregion
 
             #region WorkingWithStampSignatures
@@ -173,6 +175,20 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SetOutputFileName();
             //Signatures.GetDocumentInfo("text.pdf");
+
+            //working with image documents
+            //image documents are supported from version 17.8.0 onwards
+            //Signatures.SignImageDocumentWithTextSignatureAsImage("ImageDocument.png");
+            //Signatures.SignImageDocumentWithBarCode("ImageDocument.png");
+            //Signatures.SignImageDocumentWithQRCode("ImageDocument.png");
+            //Signatures.SignImageDocumentWithStampSignature("ImageDocument.png");
+            //Signatures.SaveSignedImagesDocumentsWithDifferentOutputType("ImageDocument.png");
+            //Signatures.ApplyTransperancyRotationToTextSignatureImagesDocument("ImageDocument.png");
+            //Signatures.SignImagesDocumentsWithTextSignatureAsWatermark("ImageDocument.png");
+            //Signatures.SignImagesDocumentWithImageSignature("ImageDocument.png");
+            //Signatures.ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature("ImageDocument.png");
+            //Signatures.ImageDocumentMarginAlignmentForImageSignature("ImageDocument.png");
+            //Signatures.ImageDocumentImageSignatureExtendedOptions("ImageDocument.png");
             Console.ReadKey();
         }
     }

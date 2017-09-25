@@ -1994,6 +1994,48 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyWordsDocumentsSignedWithBarcodeSignature
         }
+
+
+        /// <summary>
+        /// Shows how to verify images documents signed with barcode signature
+        /// This feature is availabale in version 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyImagesDocumentsSignedWithBarcodeSignature(string imagesFileName)
+        {
+            //ExStart:VerifyImagesDocumentsSignedWithBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            VerifyOptionsCollection collection = new VerifyOptionsCollection();
+
+            // setup verification options Code39Standard
+            ImagesVerifyBarcodeOptions verifyOptions = new ImagesVerifyBarcodeOptions();
+            verifyOptions.EncodeType = BarcodeTypes.Code39Standard;
+            verifyOptions.MatchType = TextMatchType.Exact;
+            verifyOptions.Text = "12345678";
+            collection.Add(verifyOptions);
+
+            // setup verification options DutchKIX
+            verifyOptions = new ImagesVerifyBarcodeOptions();
+            verifyOptions.EncodeType = BarcodeTypes.DutchKIX;
+            verifyOptions.MatchType = TextMatchType.StartsWith;
+            verifyOptions.Text = "1234";
+            collection.Add(verifyOptions);
+
+            // setup verification options DatabarLimited
+            verifyOptions = new ImagesVerifyBarcodeOptions();
+            verifyOptions.EncodeType = BarcodeTypes.DatabarLimited;
+            verifyOptions.MatchType = TextMatchType.Contains;
+            verifyOptions.Text = "5678";
+            collection.Add(verifyOptions);
+
+            //verify document
+            VerificationResult result = handler.Verify(imagesFileName, collection);
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyImagesDocumentsSignedWithBarcodeSignature
+        }
         #endregion
 
         #region working with QR-code signatures
@@ -2242,10 +2284,52 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyWordsDocumentSignedWithQrCodeSignature
         }
+
+        /// <summary>
+        /// Shows how to verify images documents signed with QR-code signature
+        /// This feature is availabale in version 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyImagesDocumentsSignedWithQRcodeSignature(string imagesFileName)
+        {
+            //ExStart:VerifyImagesDocumentsSignedWithQRcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            VerifyOptionsCollection collection = new VerifyOptionsCollection();
+
+            // setup verification options Aztec
+            ImagesVerifyQRCodeOptions verifyOptions = new ImagesVerifyQRCodeOptions();
+            verifyOptions.EncodeType = QRCodeTypes.Aztec;
+            verifyOptions.MatchType = TextMatchType.Exact;
+            verifyOptions.Text = "12345678";
+            collection.Add(verifyOptions);
+
+            // setup verification options DataMatrix
+            verifyOptions = new ImagesVerifyQRCodeOptions();
+            verifyOptions.EncodeType = QRCodeTypes.DataMatrix;
+            verifyOptions.MatchType = TextMatchType.StartsWith;
+            verifyOptions.Text = "1234";
+            collection.Add(verifyOptions);
+
+            // setup verification options QR
+            verifyOptions = new ImagesVerifyQRCodeOptions();
+            verifyOptions.EncodeType = QRCodeTypes.QR;
+            verifyOptions.MatchType = TextMatchType.Contains;
+            verifyOptions.Text = "5678";
+            collection.Add(verifyOptions);
+
+            //verify document
+            VerificationResult result = handler.Verify(imagesFileName, collection);
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyImagesDocumentsSignedWithQRcodeSignature
+        }
         #endregion
 
         #region working with Stamp signatures
-        
+
         /// <summary>
         /// Shows how to add stamp signature to pdf documents
         /// Feature is supported in version 17.07 or greater
@@ -2529,6 +2613,494 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         #endregion
+
+
+        /// <summary>
+        /// Shows how to sign Images document with Text Signature as image
+        /// Feature is supported in version 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImageDocumentWithTextSignatureAsImage(string fileName)
+        {
+            //ExStart:SignImageDocumentWithTextSignatureAsImage
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            ImagesSignTextOptions signOptions = new ImagesSignTextOptions("John Smith");
+            signOptions.Left = 10;
+            signOptions.Top = 10;
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.DocumentPageNumber = 1;
+            // setup background settings
+            signOptions.BackgroundColor = Color.Beige;
+            signOptions.BackgroundTransparency = 0.5;
+
+            // setup border settings
+            signOptions.BorderColor = Color.Black;
+            signOptions.BorderDashStyle = ExtendedDashStyle.LongDash;
+            signOptions.BorderWeight = 1.2;
+            signOptions.BorderTransparency = 0.5;
+
+            // setup text color
+            signOptions.ForeColor = Color.Red;
+            // setup Font options
+            signOptions.Font.Bold = true;
+            signOptions.Font.Italic = true;
+            signOptions.Font.Underline = true;
+            signOptions.Font.FontFamily = "Arial";
+            signOptions.Font.FontSize = 15;
+
+            // type of implementation
+            signOptions.SignatureImplementation = ImagesTextSignatureImplementation.TextAsImage;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_Text_AsImage" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImageDocumentWithTextSignatureAsImage
+        }
+
+        /// <summary>
+        /// Shows how to sign Images document with Barcode Signature
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImageDocumentWithBarCode(string fileName)
+        {
+            //ExStart:SignImageDocumentWithBarCode
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+
+            // barcode type Code39Standard
+            ImagesBarcodeSignOptions signOptions = new ImagesBarcodeSignOptions("12345678");
+            signOptions.EncodeType = BarcodeTypes.Code39Standard;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            collection.Add(signOptions);
+
+            // barcode type DutchKIX
+            signOptions = new ImagesBarcodeSignOptions("12345678");
+            signOptions.EncodeType = BarcodeTypes.DutchKIX;
+            signOptions.Top = 300;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            collection.Add(signOptions);
+
+            // barcode type DatabarLimited
+            signOptions = new ImagesBarcodeSignOptions("12345678");
+            signOptions.EncodeType = BarcodeTypes.DatabarLimited;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            signOptions.Top = 600;
+            collection.Add(signOptions);
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, collection,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_BarCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImageDocumentWithBarCode
+        }
+
+        /// <summary>
+        /// Shows how to sign Images document with QR-code Signature
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImageDocumentWithQRCode(string fileName)
+        {
+            //ExStart:SignImageDocumentWithQrCode
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+
+            // QRCode type Aztec
+            ImagesQRCodeSignOptions signOptions = new ImagesQRCodeSignOptions("12345678");
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            collection.Add(signOptions);
+
+            // QRCode type DataMatrix
+            signOptions = new ImagesQRCodeSignOptions("12345678");
+            signOptions.EncodeType = QRCodeTypes.DataMatrix;
+            signOptions.Top = 300;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            collection.Add(signOptions);
+
+            // QRCode type QR
+            signOptions = new ImagesQRCodeSignOptions("12345678");
+            signOptions.EncodeType = QRCodeTypes.QR;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            signOptions.Top = 600;
+            collection.Add(signOptions);
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, collection,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_QRCode" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImageDocumentWithQrCode
+        }
+
+        /// <summary>
+        /// Shows how to sign Images document with Stamp Signature
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImageDocumentWithStampSignature(string fileName)
+        {
+            //ExStart:SignImageDocumentWithStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options
+            ImagesStampSignOptions signOptions = new ImagesStampSignOptions();
+            signOptions.Height = 300;
+            signOptions.Width = 300;
+            signOptions.BackgroundColor = Color.DarkOrange;
+            signOptions.BackgroundColorCropType = StampBackgroundCropType.OuterArea; //This feature is supported starting from version 17.08
+            signOptions.ImageGuid = "stamp.jpg";
+            signOptions.BackgroundImageCropType = StampBackgroundCropType.InnerArea; //This feature is supported starting from version 17.08
+
+            //Outer round lines
+            StampLine line0 = new StampLine();
+            line0.Text = "* European Union *";
+            line0.TextRepeatType = StampTextRepeatType.FullTextRepeat; //This feature is supported starting from version 17.08
+            line0.Font.FontSize = 12;
+            line0.Height = 22;
+            line0.TextBottomIntent = 6;
+            line0.TextColor = Color.WhiteSmoke;
+            line0.BackgroundColor = Color.DarkSlateBlue;
+            signOptions.OuterLines.Add(line0);
+
+            StampLine line1 = new StampLine();
+            line1.Height = 2;
+            line1.BackgroundColor = Color.White;
+            signOptions.OuterLines.Add(line1);
+
+            StampLine line2 = new StampLine();
+            line2.Text = "* Entrepreneur *";
+            line2.TextRepeatType = StampTextRepeatType.FullTextRepeat; //This feature is supported starting from version 17.08
+            line2.TextColor = Color.DarkSlateBlue;
+            line2.Font.FontSize = 15;
+            line2.Height = 30;
+            line2.TextBottomIntent = 8;
+            line2.InnerBorder.Color = Color.DarkSlateBlue;
+            line2.OuterBorder.Color = Color.DarkSlateBlue;
+            line2.InnerBorder.Style = ExtendedDashStyle.Dot;
+            signOptions.OuterLines.Add(line2);
+
+            //Inner square lines
+            StampLine line3 = new StampLine();
+            line3.Text = "John";
+            line3.TextColor = Color.MediumVioletRed;
+            line3.Font.FontSize = 20;
+            line3.Font.Bold = true;
+            line3.Height = 40;
+            signOptions.InnerLines.Add(line3);
+
+            StampLine line4 = new StampLine();
+            line4.Text = "Smith";
+            line4.TextColor = Color.MediumVioletRed;
+            line4.Font.FontSize = 20;
+            line4.Font.Bold = true;
+            line4.Height = 40;
+            signOptions.InnerLines.Add(line4);
+
+            StampLine line5 = new StampLine();
+            line5.Text = "SSN 1230242424";
+            line5.TextColor = Color.MediumVioletRed;
+            line5.Font.FontSize = 12;
+            line5.Font.Bold = true;
+            line5.Height = 40;
+            signOptions.InnerLines.Add(line5);
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_Stamp" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImageDocumentWithStampSignature
+        }
+
+        /// <summary>
+        /// Shows how to save signed Images Documents with different output file type
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SaveSignedImagesDocumentsWithDifferentOutputType(string fileName)
+        {
+            //ExStart:SaveSignedImagesDocumentsWithDifferentOutputType
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            SignOptions signOptions = new ImagesSignTextOptions("John Smith");
+
+            //Webp
+            ImagesSaveOptions optionsWebp = new ImagesSaveOptions();
+            optionsWebp.OutputType = OutputType.String;
+            optionsWebp.FileFormat = ImagesSaveFileFormat.Webp;
+            optionsWebp.OutputFileName = "Images_WithDifferentOutputFileType_Webp";
+            string signedPath = handler.Sign<string>(fileName, signOptions, optionsWebp);
+
+            // save to Jpeg format with specific options
+            JpegSaveOptions saveOptionsJpeg = new JpegSaveOptions();
+            saveOptionsJpeg.OutputType = OutputType.String;
+            saveOptionsJpeg.ColorType = JpegCompressionColorMode.Cmyk;
+            saveOptionsJpeg.CompressionType = JpegCompressionMode.Progressive;
+            saveOptionsJpeg.OutputFileName = "Images_WithDifferentOutputFileType_Jpeg";
+            signedPath = handler.Sign<string>(fileName, signOptions, saveOptionsJpeg);
+
+            // save to Bmp format with specific options
+            BmpSaveOptions saveOptionsBmp = new BmpSaveOptions();
+            saveOptionsBmp.OutputType = OutputType.String;
+            saveOptionsBmp.Compression = BitmapCompression.Rgb;
+            saveOptionsBmp.HorizontalResolution = 120;
+            saveOptionsBmp.VerticalResolution = 120;
+            saveOptionsBmp.OutputFileName = "Images_WithDifferentOutputFileType_Bmp";
+            signedPath = handler.Sign<string>(fileName, signOptions, saveOptionsBmp);
+
+            // save to Tiff format with specific options
+            TiffSaveOptions saveOptionsTiff = new TiffSaveOptions();
+            saveOptionsTiff.OutputType = OutputType.String;
+            saveOptionsTiff.ExpectedTiffFormat = TiffFormat.TiffCcitRle;
+            saveOptionsTiff.OutputFileName = "Images_WithDifferentOutputFileType_Tiff";
+            signedPath = handler.Sign<string>(fileName, signOptions, saveOptionsTiff);
+            //ExEnd:SaveSignedImagesDocumentsWithDifferentOutputType
+        }
+
+
+        /// <summary>
+        /// Shows how to apply transperancy and rotation to Text signature in Images document
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ApplyTransperancyRotationToTextSignatureImagesDocument(string fileName)
+        {
+            //ExStart:ApplyTransperancyRotationToTextSignatureImagesDocument
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup appearance options
+            ImagesSignTextOptions signOptions = new ImagesSignTextOptions("John Smith");
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+            signOptions.ForeColor = Color.Orange;
+            signOptions.BackgroundColor = Color.BlueViolet;
+
+            // setup rotation
+            signOptions.RotationAngle = 90;
+
+            // setup transparency
+            signOptions.BackgroundTransparency = 0.4;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_Text_Transparency_Rotation" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ApplyTransperancyRotationToTextSignatureImagesDocument
+        }
+
+        /// <summary>
+        /// Shows how to save signed Images Documents with different output file type
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImagesDocumentsWithTextSignatureAsWatermark(string fileName)
+        {
+            //ExStart:SignImagesDocumentsWithTextSignatureAsWatermark
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            ImagesSignTextOptions signOptions = new ImagesSignTextOptions("John Smith");
+            signOptions.Font.FontSize = 64; signOptions.Font.Bold = true;
+            signOptions.Font.Italic = true;
+            signOptions.Font.Underline = true;
+            signOptions.Opacity = 0.7;
+            signOptions.ForeColor = Color.BlueViolet;
+            // type of implementation
+            signOptions.SignatureImplementation = ImagesTextSignatureImplementation.Watermark;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_TextSignatureWatermark" }); Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImagesDocumentsWithTextSignatureAsWatermark
+        }
+
+        /// <summary>
+        /// Shows how to sign image documents with image signature
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImagesDocumentWithImageSignature(string fileName)
+        {
+
+            //ExStart:SignImagesDocumentWithImageSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup image signature options
+            ImagesSignImageOptions signOptions = new ImagesSignImageOptions("signature.jpg");
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_ImageSignature" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImagesDocumentWithImageSignature
+        }
+
+        /// <summary>
+        /// Shows how to specify margins and alignment for image signature appearance in image documents
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ImageDocumentMarginAlignmentForImageSignature(string fileName)
+        {
+            //ExStart:ImageDocumentMarginAlignmentForImageSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup image signature options
+            ImagesSignImageOptions signOptions = new ImagesSignImageOptions("signature.jpg");
+
+            // specify horizontal alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            // specify vertical alignment
+            signOptions.VerticalAlignment = VerticalAlignment.Bottom;
+
+            // specify Margin
+            signOptions.Margin = new Padding(10);
+            // specify separate left margin value
+            signOptions.Margin.Left = 20;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_ImageSignature_MarginsAndAlignment" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ImageDocumentMarginAlignmentForImageSignature
+        }
+
+        /// <summary>
+        /// Shows how to Specify Adjustment Size, Margins and Intents of Image Signature in an image document
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature(string fileName)
+        {
+            //ExStart:ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+
+            //Percents
+            // setup image signature options
+            ImagesSignImageOptions signOptionsPercents = new ImagesSignImageOptions("signature.jpg");
+            // specify Size
+            signOptionsPercents.Height = 25;
+            signOptionsPercents.Width = 25;
+            // specify size in percents of page size
+            signOptionsPercents.SizeMeasureType = MeasureType.Percents;
+            // specify Margin
+            signOptionsPercents.Margin = new Padding(10);
+            // specify margin in percents of page size
+            signOptionsPercents.MarginMeasureType = MeasureType.Percents;
+            // specify Intents
+            signOptionsPercents.Top = 50;
+            signOptionsPercents.Left = 20;
+            // specify intents in percents of page size
+            signOptionsPercents.LocationMeasureType = MeasureType.Percents;
+            collection.Add(signOptionsPercents);
+
+            //Millimeters
+            // setup image signature options
+            ImagesSignImageOptions signOptionsMillimeters = new ImagesSignImageOptions("signature.jpg");
+            // specify Size
+            signOptionsMillimeters.Height = 50;
+            signOptionsMillimeters.Width = 50;
+            // specify size in millimeters
+            signOptionsMillimeters.SizeMeasureType = MeasureType.Millimeters;
+            // specify Margin
+            signOptionsMillimeters.HorizontalAlignment = HorizontalAlignment.Right;
+            signOptionsMillimeters.VerticalAlignment = VerticalAlignment.Bottom;
+            signOptionsMillimeters.Margin = new Padding(20);
+            // specify margin in millimeters
+            signOptionsMillimeters.MarginMeasureType = MeasureType.Millimeters;
+            collection.Add(signOptionsMillimeters);
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, collection,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_ImageSignature_Adjustment" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to add extended options to Image signature appearance in an image document
+        /// Feature is supported in versin 17.8.0 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ImageDocumentImageSignatureExtendedOptions(string fileName) {
+            //ExStart:ImageDocumentImageSignatureExtendedOptions
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            //setup size and position
+            ImagesSignImageOptions signOptions = new ImagesSignImageOptions("signature.jpg");
+            signOptions.Left = 100;
+            signOptions.Top = 100;
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+
+            // setup rotation
+            signOptions.RotationAngle = 48;
+            // setup opacity
+            signOptions.Opacity = 0.88;
+            //setup additional image appearance
+            ImageAppearance imageAppearance = new ImageAppearance();
+            imageAppearance.Brightness = 1.2f;
+            imageAppearance.Grayscale = true;
+            imageAppearance.BorderDashStyle = ExtendedDashStyle.Dot;
+            imageAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            imageAppearance.BorderWeight = 5;
+            signOptions.Appearance = imageAppearance;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Images_Image_Rotation_Opacity" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ImageDocumentImageSignatureExtendedOptions
+        }
+
 
     }
 }
