@@ -13,7 +13,7 @@ GroupDocs.Signature for .NET allows developers to write applications with abilit
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Examples)  | Contains the package of all .NET examples (C# & VB) and sample files that will help you learn how to use product features. 
+[Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Examples)  | Contains the package of all .NET examples and sample files that will help you learn how to use product features. 
 [Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases)  | GroupDocs.Signature for .NET front end projects are the open source web based projects. These projects demonstrate the salient features of GroupDocs.Signature. 
 [Plugins](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Plugins)  | Contains the plugins related to GroupDocs.Signature 3.x for Visual Studio.
 
@@ -23,5 +23,5 @@ Directory | Description
 + **Product Home:** [GroupDocs.Signature for .NET](https://www.groupdocs.com/products/signature/net)
 + **Download:** [Download GroupDocs.Signature for .NET](https://downloads.groupdocs.com/signature/net)
 + **Documentation:** [GroupDocs.Signature for .NET Documentation](https://docs.groupdocs.com/display/signaturenet/Home)
-+ **Forum:** [GroupDocs.Signature for .NET Forum](http://www.groupdocs.com/Community/forums/groupdocs.signature-product-family/6/showforum.aspx)
++ **Forum:** [GroupDocs.Signature for .NET Forum](https://forum.groupdocs.com/c/signature)
 + **Blog:** [GroupDocs.Signature for .NET Blog](https://blog.groupdocs.com/category/groupdocs-signature-product-family/)
