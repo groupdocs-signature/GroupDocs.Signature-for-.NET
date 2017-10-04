@@ -295,8 +295,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Image appearance, opacity and rotation are supported starting from version 17.03
             // FileStream blocks opened file while it is not disposed so, before 
             // using .pfx file for another purposes FileStream should be disposed
-            Stream certificateStream = new FileStream("Ali.pfx",
-                FileMode.Open);
+            Stream certificateStream = new FileStream("Ali.pfx",FileMode.Open);
             // setup digital signature options with image appearance
             CellsSignDigitalOptions signOptions = new CellsSignDigitalOptions(certificateStream, "signature.jpg");
             signOptions.Signature.Comments = "Test comment";
@@ -392,6 +391,129 @@ namespace GroupDocs.Signature.Examples.CSharp
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, null, null, signOptions);
             //ExEnd:signingslidedocumentwithdigitalcertificate
+        }
+
+        /// <summary>
+        /// Digital signing Words Documents with Signature Line
+        /// This feature is supported starting from version 17.10
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignWordDocumentDigitallywithSignatureAppearance(string fileName)
+        {
+            //ExStart:SignWordDocumentDigitallywithSignatureAppearance
+            
+            // setup Signature configuration
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options with image appearance
+            WordsSignDigitalOptions signOptions = new WordsSignDigitalOptions("acer.pfx", "signature.jpg");
+            signOptions.Signature.Comments = "Test comment";
+            signOptions.Signature.SignTime = DateTime.Now;
+            signOptions.Password = "";
+
+            // Setup signature line appearance.
+            // This appearance will add Signature Line on the first page.
+            // Could be useful for .docx, .doc and .odt files.
+            signOptions.Appearance = new DigitalSignatureAppearance("John Smith", "Title", "jonny@test.com");
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions {
+                    OutputType = OutputType.String,
+                    OutputFileName = "SignatureLineWords"
+                });
+            //ExEnd:SignWordDocumentDigitallywithSignatureAppearance
+        }
+
+        /// <summary>
+        /// Digital signing Cells Documents with Signature Line
+        /// This feature is supported starting from version 17.10
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignCellDocumentDigitallywithSignatureAppearance(string fileName)
+        {
+            //ExStart:SignCellDocumentDigitallywithSignatureAppearance
+            
+            // setup Signature configuration
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+            // setup digital signature options with image appearance
+            CellsSignDigitalOptions signOptions = new CellsSignDigitalOptions("acer.pfx", "signature.jpg");
+            signOptions.Signature.Comments = "Test comment";
+            signOptions.Signature.SignTime = DateTime.Now;
+            signOptions.Password = "";
+            signOptions.Width = 300;
+            signOptions.Height = 150;
+
+            // Setup signature line appearance.
+            // This appearance will add Signature Line on the first page.
+            // Could be useful for .docx, .doc and .odt files.
+            signOptions.Appearance = new DigitalSignatureAppearance("John Smith", "Title", "jonny@test.com");
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions
+                {
+                    OutputType = OutputType.String,
+                    OutputFileName = "SignatureLineCells"
+                });
+            //ExEnd:SignCellDocumentDigitallywithSignatureAppearance
+        }
+
+        /// <summary>
+        /// Specify different Stretch mode to locate Signature Area along page width or height
+        /// New Stretch property is supported starting from version 17.10
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignPDFDocumentwithStretchMode(string fileName)
+        {
+            //ExStart:SignPDFDocumentwithStretchMode
+            
+            // setup Signature configuration
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            var handler = new SignatureHandler(config);
+
+            // Specify Signature Options collection
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+
+            // setup first text signature options
+            PdfSignTextOptions signTextOptions = new PdfSignTextOptions("Mr.John Smith", 0, 0, 50, 50);
+            // locate options at top of page along all page width with some margins
+            signTextOptions.Stretch = StretchMode.PageWidth;
+            signTextOptions.VerticalAlignment = VerticalAlignment.Top;
+            signTextOptions.Margin = new Padding(50);
+            signTextOptions.SignAllPages = true;
+            // add Options to collection
+            collection.Add(signTextOptions);
+            // setup second barcode signature options
+            PdfBarcodeSignOptions signBrcdOptions = new PdfBarcodeSignOptions("12345678", 0, 0, 100, 40);
+            signBrcdOptions.EncodeType = BarcodeTypes.Code39Standard;
+            // locate options at bottom of page along all width with some margins
+            signBrcdOptions.Stretch = StretchMode.PageWidth;
+            signBrcdOptions.VerticalAlignment = VerticalAlignment.Bottom;
+            signBrcdOptions.SignAllPages = true;
+            // add Options to collection
+            collection.Add(signBrcdOptions);
+            // setup third image signature options
+            var signImageOptions = new PdfSignImageOptions("sign.png");
+            // locate options at right side of page along all height with some margins
+            signImageOptions.Stretch = StretchMode.PageHeight;
+            signImageOptions.HorizontalAlignment = HorizontalAlignment.Right;
+            signImageOptions.Margin = new Padding(5);
+            signImageOptions.SignAllPages = true;
+            // add Options to collection
+            collection.Add(signImageOptions);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, collection,
+                new SaveOptions
+                {
+                    OutputType = OutputType.String,
+                    OutputFileName = "OtherOperations_StretchingOnDocumentPage"
+                });
+            //ExEnd:SignPDFDocumentwithStretchMode
         }
 
         #endregion
@@ -3101,6 +3223,82 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:ImageDocumentImageSignatureExtendedOptions
         }
 
+        /// <summary>
+        /// Export Cells document as image
+        /// Feature is supported in versin 17.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ExportCellsDocumentAsImage(string fileName)
+        {
+            //ExStart:ExportCellsDocumentAsImage
+            
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
 
+            // setup options with text of signature
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+            // text position
+            signOptions.RowNumber = 2;
+            signOptions.ColumnNumber = 2;
+            signOptions.SignAllPages = true;
+
+            //Export to image options
+            ExportImageSaveOptions exSaveOptions = new ExportImageSaveOptions(ImagesSaveFileFormat.Png);
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "CellsExportAsImage";
+            //set pages border style
+            exSaveOptions.BorderColor = Color.Brown;
+            exSaveOptions.BorderWeight = 5;
+            exSaveOptions.BorderDashStyle = ExtendedDashStyle.ShortDash;
+            //export only odd pages
+            exSaveOptions.PagesSetup.OddPages = true;
+            //set number of columns in result image
+            exSaveOptions.PageColumns = 3;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ExportCellsDocumentAsImage
+        }
+
+        /// <summary>
+        /// Export Cells document as image
+        /// Feature is supported in versin 17.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ExportCellsDocumentAsMultiPageTiff(string fileName)
+        {
+            //ExStart:ExportCellsDocumentAsMultiPageTiff
+            
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options with text of signature
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+            // text position
+            signOptions.RowNumber = 2;
+            signOptions.ColumnNumber = 2;
+            signOptions.SignAllPages = true;
+
+            //Export to image options
+            ExportImageSaveOptions exSaveOptions = new ExportImageSaveOptions(ImagesSaveFileFormat.Tiff);
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "CellsExportAsMultipageImage";
+
+            //export all pages
+            exSaveOptions.ExportAllPages = true;
+
+            //Create multi-page tiff image
+            exSaveOptions.TiffMultipage = true;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:ExportCellsDocumentAsMultiPageTiff
+        }
     }
 }
