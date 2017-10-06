@@ -50,6 +50,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             //digital signatures are not supported yet for slides documents 
             //Signatures.SignSlideDocumentDigitally("butterfly effect.pptx");
 
+            //Signatures.SignWordDocumentDigitallywithSignatureAppearance("getting started.docx");
+
+            //Signatures.SignCellDocumentDigitallywithSignatureAppearance("pie chart.xlsx");
+
+            //Signatures.SignPDFDocumentwithStretchMode("digital signatures.pdf");
+
             #endregion
 
             #region Azure
@@ -189,6 +195,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature("ImageDocument.png");
             //Signatures.ImageDocumentMarginAlignmentForImageSignature("ImageDocument.png");
             //Signatures.ImageDocumentImageSignatureExtendedOptions("ImageDocument.png");
+
+            //Signatures.ExportCellsDocumentAsImage("pie chart.xlsx");
+
+            //Signatures.ExportCellsDocumentAsMultiPageTiff("pie chart.xlsx");
+
             Console.ReadKey();
         }
     }

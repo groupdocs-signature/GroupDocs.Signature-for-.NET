@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         //ExStart:commonutilities
         public const string storagePath = "../../../../Data/Storage/";
         public const string outputPath = "../../../../Data/Output/";
-        public const string licensePath = "D:/Aspose Projects/License/GroupDocs.Total.lic";
+        public const string licensePath = "E:/GroupDocs.Total.lic";
         public const string imagePath = "../../../../Data/Images/";
         public const string certificatePath = "../../../../Data/Certificates/";
         //ExEnd:commonutilities
