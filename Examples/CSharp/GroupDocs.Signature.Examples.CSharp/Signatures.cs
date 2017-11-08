@@ -3300,5 +3300,193 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:ExportCellsDocumentAsMultiPageTiff
         }
+        /// <summary>
+        /// Sign PDF with Signature Process Event
+        /// Feature is supported in versin 17.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithSignatureProcessEvents(string fileName)
+        {
+            //ExStart:signDocumentWithSignatureProcessEvents
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup signature option
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+            signOptions.SignAllPages = true;
+            //
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "Process_Events" };
+            //
+            handler.SignatureStarted += delegate (object sender, ProcessStartEventArgs args)
+            {
+                Console.WriteLine("Signature process of {0} started at {1}", args.Guid, args.Started.ToString("f"));
+            };
+            handler.SignatureProgress += delegate (object sender, ProcessProgressEventArgs args)
+            {
+                Console.WriteLine("Singing of {0} progress: {1} %. Since start process spent {2} mlsec", args.Guid, args.Progress, args.Ticks);
+            };
+            handler.SignatureCompleted += delegate (object sender, ProcessCompleteEventArgs args)
+            {
+                Console.WriteLine("Singing of {0} completed at {1}. Process took {2} mlsec", args.Guid, args.Completed.ToString("f"), args.Ticks);
+            };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:signDocumentWithSignatureProcessEvents
+        }
+
+        /// <summary>
+        /// Verify PDF with Verification Process Event
+        /// Feature is supported in versin 17.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyDocumentWithVerificationProcessEvents(string fileName)
+        {
+            //ExStart:VerifyDocumentWithVerificationProcessEvents
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup signature option
+            PDFVerifyTextOptions verifyOptions = new PDFVerifyTextOptions("John Smith");
+            // text rectangle size
+            verifyOptions.VerifyAllPages = true;
+            //
+            handler.VerificationStarted += delegate (object sender, ProcessStartEventArgs args)
+            {
+                Console.WriteLine("Verification process of {0} started at {1}", args.Guid, args.Started.ToString("f"));
+            };
+            handler.VerificationProgress += delegate (object sender, ProcessProgressEventArgs args)
+            {
+                Console.WriteLine("Verification of {0} progress: {1} %. Since start process spent {2} mlsec", args.Guid, args.Progress, args.Ticks);
+            };
+            handler.VerificationCompleted += delegate (object sender, ProcessCompleteEventArgs args)
+            {
+                Console.WriteLine("Verification of {0} completed at {1}. Process took {2} mlsec", args.Guid, args.Completed.ToString("f"), args.Ticks);
+            };
+
+            // verify document
+            VerificationResult result = handler.Verify(fileName, verifyOptions);
+            Console.WriteLine("Verification result: " + result.IsValid);
+            //ExEnd:VerifyDocumentWithVerificationProcessEvents
+        }
+
+        /// <summary>
+        /// Search Digital Signature in PDF Documents
+        /// Feature is supported in versin 17.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchDigitalSignatureInPDFDocuments(string fileName)
+        {
+            //ExStart:SearchDigitalSignatureInPDFDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options with text of signature
+            PdfSearchDigitalOptions searchOptions = new PdfSearchDigitalOptions();
+            // Search Document for Signatures
+            string guid = fileName;
+            SearchResult searchResult = handler.Search(guid, searchOptions);
+            Console.WriteLine("Source file {0} contains {1} digital signature(s)", guid, searchResult.Signatures.Count);
+            foreach (BaseSignature signature in searchResult.Signatures)
+            {
+                PDFDigitalSignature pdfSign = (signature as PDFDigitalSignature);
+                if (pdfSign != null)
+                {
+                    Console.WriteLine("\t >> Digital signature from {0}. Contact: {1}. Valid {2}", pdfSign.SignTime, pdfSign.ContactInfo, pdfSign.IsValid);
+                }
+            }
+            //ExEnd:SearchDigitalSignatureInPDFDocuments
+        }
+
+        /// <summary>
+        /// Search Digital Signature in System
+        /// Feature is supported in versin 17.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchDigitalSignatureInSystem()
+        {
+            //ExStart:SearchDigitalSignatureInSystem
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // load Digital Signature registered in system
+            List<DigitalSignature> signatures = DigitalSignature.LoadDigitalSignatures();
+            foreach (DigitalSignature signature in signatures)
+            {
+                if (signature.Certificate != null)
+                {
+                    var certificate = signature.Certificate;
+                    Console.WriteLine("\nCertificate: {0}, {1}, {2}", certificate.Subject, certificate.SerialNumber, certificate.Version);
+                }
+            }
+            //ExEnd:SearchDigitalSignatureInSystem
+        }
+
+        /// <summary>
+        /// Sign Cell Document with Text Signature Appearence
+        /// Feature is supported in versin 17.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellDocumentWithTextSignatureAppearence(string fileName)
+        {
+            //ExStart:SignCellDocumentWithTextSignatureAppearence
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options with text of signature
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+            signOptions.VerticalAlignment = VerticalAlignment.None;
+            signOptions.HorizontalAlignment = HorizontalAlignment.None;
+            signOptions.ColumnNumber = 2;
+            signOptions.RowNumber = 3;
+            signOptions.Width = 300;
+            signOptions.Height = 100;
+
+            // setup background settings
+            signOptions.BackgroundColor = System.Drawing.Color.Yellow;
+            signOptions.BackgroundTransparency = 0.5;
+
+            //setup border settings
+            signOptions.BorderColor = System.Drawing.Color.DarkOrange;
+            signOptions.BorderWeight = 1.2;
+            signOptions.BorderTransparency = 0.5;
+            signOptions.BorderDashStyle = GroupDocs.Signature.Domain.DashStyle.DashLongDashDot;
+            signOptions.BorderVisiblity = true;
+            signOptions.BorderWeight = 2;
+
+            // setup text color
+            signOptions.ForeColor = System.Drawing.Color.Blue;
+            // setup Font options
+            signOptions.Font.Bold = true;
+            signOptions.Font.Italic = true;
+            signOptions.Font.Underline = true;
+            signOptions.Font.Strikeout = true;
+            signOptions.Font.FontFamily = "Arial";
+            signOptions.Font.FontSize = 25;
+
+            //setup type of signature shape (could appears differently for various document types)
+            //This feature is supported starting from version 17.11
+            signOptions.ShapeType = CellsTextShapeType.UpRibbon;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_TextSignatureAppearance" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellDocumentWithTextSignatureAppearence
+        }
     }
 }

@@ -197,8 +197,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.ImageDocumentImageSignatureExtendedOptions("ImageDocument.png");
 
             //Signatures.ExportCellsDocumentAsImage("pie chart.xlsx");
+            // Signatures.ExportCellsDocumentAsMultiPageTiff("pie chart.xlsx");
 
-            //Signatures.ExportCellsDocumentAsMultiPageTiff("pie chart.xlsx");
+            // Signatures.SignDocumentWithSignatureProcessEvents("text.pdf");
+            // Signatures.VerifyDocumentWithVerificationProcessEvents("text.pdf");
+            // Signatures.SearchDigitalSignatureInPDFDocuments("text.pdf");
+            // Signatures.SearchDigitalSignatureInSystem();
+            // Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
 
             Console.ReadKey();
         }
