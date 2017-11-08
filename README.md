@@ -20,7 +20,7 @@ Directory | Description
 ## Resources
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
-+ **Product Home:** [GroupDocs.Signature for .NET](https://www.groupdocs.com/products/signature/net)
++ **Product Home:** [GroupDocs.Signature for .NET](https://products.groupdocs.com/signature/net)
 + **Download:** [Download GroupDocs.Signature for .NET](https://downloads.groupdocs.com/signature/net)
 + **Documentation:** [GroupDocs.Signature for .NET Documentation](https://docs.groupdocs.com/display/signaturenet/Home)
 + **Forum:** [GroupDocs.Signature for .NET Forum](https://forum.groupdocs.com/c/signature)
