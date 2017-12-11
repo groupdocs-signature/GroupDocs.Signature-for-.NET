@@ -156,6 +156,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifySlidesDocumentsSignedWithBarcodeSignature("butterfly effect.pptx");
             //Signatures.VerifyWordsDocumentsSignedWithBarcodeSignature("getting started.docx");
             //Signatures.VerifyImagesDocumentsSignedWithBarcodeSignature("DocImages_BarCode.png");
+
+            //Signatures.SetColorsForBarcodeSignature("text.pdf");
+            //Signatures.SetInnerMarginAndTextAlignmentsForBarcodeSignature("text.pdf");
+
             #endregion
 
             #region WorkingWithQRcodeSignatures
@@ -169,6 +173,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf");
             //Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx");
             //Signatures.VerifyImagesDocumentsSignedWithQRcodeSignature("DocImages_QRCode.png");
+
+            //Signatures.SetColorAndLogoForQRCodeSignature("text.pdf");
+            //Signatures.SetInnerMarginsAndTextAlignmentForQRCodeSignature("text.pdf");
             #endregion
 
             #region WorkingWithStampSignatures
@@ -182,7 +189,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SetOutputFileName();
             //Signatures.GetDocumentInfo("text.pdf");
 
-            //working with image documents
+            #region WorkingWithImageDocument
             //image documents are supported from version 17.8.0 onwards
             //Signatures.SignImageDocumentWithTextSignatureAsImage("ImageDocument.png");
             //Signatures.SignImageDocumentWithBarCode("ImageDocument.png");
@@ -195,15 +202,17 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.ImageDocumentAdjustmentSizeMarginsIntentOfImageSignature("ImageDocument.png");
             //Signatures.ImageDocumentMarginAlignmentForImageSignature("ImageDocument.png");
             //Signatures.ImageDocumentImageSignatureExtendedOptions("ImageDocument.png");
-
             //Signatures.ExportCellsDocumentAsImage("pie chart.xlsx");
-            // Signatures.ExportCellsDocumentAsMultiPageTiff("pie chart.xlsx");
+            //Signatures.ExportCellsDocumentAsMultiPageTiff("pie chart.xlsx");
+            #endregion
 
-            // Signatures.SignDocumentWithSignatureProcessEvents("text.pdf");
-            // Signatures.VerifyDocumentWithVerificationProcessEvents("text.pdf");
-            // Signatures.SearchDigitalSignatureInPDFDocuments("text.pdf");
-            // Signatures.SearchDigitalSignatureInSystem();
-            // Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
+            //Signatures.SignDocumentWithSignatureProcessEvents("text.pdf");
+            //Signatures.VerifyDocumentWithVerificationProcessEvents("text.pdf");
+            //Signatures.SearchDigitalSignatureInPDFDocuments("text.pdf");
+            //Signatures.SearchDigitalSignatureInSystem();
+            //Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
+
+            //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
 
             Console.ReadKey();
         }
