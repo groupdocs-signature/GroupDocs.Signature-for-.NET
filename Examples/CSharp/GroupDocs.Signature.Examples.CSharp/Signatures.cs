@@ -988,7 +988,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             collection.Add(signImageOptions);
             // specify digital options
             var signDigitalOptions = new PdfSignDigitalOptions("acer.pfx");
-            //signDigitalOptions.Password = "1234567890";
             signDigitalOptions.VerticalAlignment = VerticalAlignment.Bottom;
             signDigitalOptions.HorizontalAlignment = HorizontalAlignment.Center;
             // add to collection
@@ -2158,6 +2157,63 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyImagesDocumentsSignedWithBarcodeSignature
         }
+
+        /// <summary>
+        /// Shows how to set various colors for barcode signature
+        /// This feature is availabale in version 17.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetColorsForBarcodeSignature(string fileName)
+        {
+            //ExStart:SetColorsForBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfBarcodeSignOptions signOptions = new PdfBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Standard;
+            // set background color (optionally)
+            //This feature is supported starting from version 17.11
+            signOptions.BackgroundColor = Color.OrangeRed;
+            // set fore color (optionally)
+            //This feature is supported starting from version 17.12
+            signOptions.ForeColor = Color.Green;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                    new SaveOptions { OutputType = OutputType.String, OutputFileName = "BarCode_Colors" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetColorsForBarcodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to set inner margins and text alignments for barcode signature
+        /// This feature is availabale in version 17.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetInnerMarginAndTextAlignmentsForBarcodeSignature(string fileName)
+        {
+            //ExStart:SetInnerMarginAndTextAlignmentsForBarcodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfBarcodeSignOptions signOptions = new PdfBarcodeSignOptions("12345678");
+            // barcode type
+            signOptions.EncodeType = BarcodeTypes.Code39Standard;
+            // set intents from edges (optionally)
+            signOptions.InnerMargins = new Padding(5, 25, 20, 10); //This feature is supported starting from version 17.12
+                                                                   // set code text alignment (optionally)
+            signOptions.CodeTextAlignment = CodeTextAlignment.Right; //This feature is supported starting from version 17.12
+                                                                     // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "BarCode_Margins_Alignments" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetInnerMarginAndTextAlignmentsForBarcodeSignature
+        }
+
         #endregion
 
         #region working with QR-code signatures
@@ -2448,6 +2504,64 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Verification result is: " + result.IsValid);
             //ExEnd:VerifyImagesDocumentsSignedWithQRcodeSignature
         }
+
+        /// <summary>
+        /// Shows how to set various colors and logo for QRCode signature
+        /// This feature is availabale in version 17.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetColorAndLogoForQRCodeSignature(string fileName)
+        {
+            //ExStart:SetColorAndLogoForQRCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions("12345678");
+            // QRcode type
+            signOptions.EncodeType = QRCodeTypes.QR;
+            // set background color (optionally)
+            signOptions.BackgroundColor = Color.OrangeRed; //This feature is supported starting from version 17.11
+                                                           // set fore color (optionally)
+            signOptions.ForeColor = Color.Green; //This feature is supported starting from version 17.12
+                                                 //set logo image (optionally)
+            signOptions.LogoGuid = signConfig.ImagesPath+ "//sign.PNG"; //This feature is supported starting from version 17.12
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                    new SaveOptions { OutputType = OutputType.String, OutputFileName = "QRCode_Colors" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetColorAndLogoForQRCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to set inner margins and text alignments for QRCode signature
+        /// This feature is availabale in version 17.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetInnerMarginsAndTextAlignmentForQRCodeSignature(string fileName)
+        {
+            //ExStart:SetInnerMarginsAndTextAlignmentForQRCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions("12345678");
+            // QRcode type
+            signOptions.EncodeType = QRCodeTypes.Aztec;
+            // set intents from edges (optionally)
+            signOptions.InnerMargins = new Padding(5, 25, 20, 10); //This feature is supported starting from version 17.12
+                                                                   // set code text alignment (optionally)
+            signOptions.CodeTextAlignment = CodeTextAlignment.Right; //This feature is supported starting from version 17.12
+                                                                     // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "QRCode_Margins_Alignments" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetInnerMarginsAndTextAlignmentForQRCodeSignature
+        }
+
+
         #endregion
 
         #region working with Stamp signatures
@@ -3487,6 +3601,47 @@ namespace GroupDocs.Signature.Examples.CSharp
             string signedPath = handler.Sign<string>(fileName, signOptions, new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_TextSignatureAppearance" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignCellDocumentWithTextSignatureAppearence
+        }
+
+        /// <summary>
+        /// Shows how to enumerate all options inside collection
+        /// This feature is availabale in version 17.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void EnumerateAllOptionsInsideCollection(string fileName)
+        {
+            //ExStart:EnumerateAllOptionsInsideCollection
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // define Signature Options Collection
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+            // specify text option
+            PdfSignTextOptions signTextOptionsFirst = new PdfSignTextOptions("Mr. John First");
+            signTextOptionsFirst.Left = 0;
+            // add to collection
+            collection.Add(signTextOptionsFirst);
+            // specify digital options
+            PdfSignDigitalOptions signDigitalOptions = new PdfSignDigitalOptions("acer.pfx");
+            // add to collection
+            collection.Add(signDigitalOptions);
+            // specify text option
+            PdfSignTextOptions signTextOptionsSecond = new PdfSignTextOptions("Mr. John Second");
+            signTextOptionsSecond.Left = 0;
+            signTextOptionsSecond.Top = 100;
+            // add to collection
+            collection.Add(signTextOptionsSecond);
+            //  walk through all items in collection
+            foreach (SignOptions signOptions in collection)
+            {
+                // do special code here to change signOptions
+                // sign document
+                string signedPath = handler.Sign<string>(fileName, signOptions,new SaveOptions { OutputType = OutputType.String});
+                Console.WriteLine("Signed file path is: " + signedPath);
+            }
+           
+            //ExEnd:EnumerateAllOptionsInsideCollection
         }
     }
 }
