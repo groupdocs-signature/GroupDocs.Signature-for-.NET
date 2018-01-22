@@ -12,6 +12,7 @@ using GroupDocs.Signature.Handler.Output;
 using GroupDocs.Signature.Domain;
 using System.Drawing;
 using System.Drawing.Imaging;
+using GroupDocs.Signature.Domain.Extensions;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -147,6 +148,42 @@ namespace GroupDocs.Signature.Examples.CSharp
             string fileExtension = Path.GetExtension(fileName);
             Utilities.SaveFile(fileExtension, fileName, handler, signOptions, null, null);
             //ExEnd:signingandsavingworddocumentwithtext
+        }
+
+        /// <summary>
+        /// Signing a slide document with text using TextShadow Additional option
+        /// Feature is supported by version 18.1 or greater
+        /// </summary>
+        /// <param name="fileName">Name of the input file</param>
+        public static void SignSlideDocumentWithTextShadow(string fileName)
+        {
+            //ExStart:SignSlideDocumentWithTextShadow
+            SignatureConfig config = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(config);
+
+            // set up text signature options
+            SlidesSignTextOptions signOptions = new SlidesSignTextOptions("John Smith");
+            signOptions.Width = 300;
+            signOptions.Height = 300;
+            signOptions.Font.FontSize = 48;
+
+            // set up shadow options for text
+            TextShadow shadow = new TextShadow();
+            shadow.Color = Color.OrangeRed;
+            shadow.Angle = 135;
+            shadow.Blur = 5;
+            shadow.Distance = 4;
+            shadow.Transparency = 0.2;
+
+            //add text shadow to additional options
+            signOptions.Extensions.Add(shadow);
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "AdditionalOptions_TextShadow" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlideDocumentWithTextShadow
         }
 
         #endregion
@@ -1870,6 +1907,30 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:GetDocumentInfo
         }
 
+        /// <summary>
+        /// Shows how to obtain information about documents when documents provided by URL
+        /// Feature is supported in version 18.1 or greater
+        /// </summary>
+        public static void GetDocumentInfoFromURL()
+        {
+            //ExStart:GetDocumentInfoFromURL
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // Document description
+            DocumentDescription docInfo = handler.GetDocumentDescription(@"https://www.dropbox.com/s/bzx1xm68zd0c910/PieChart.docx?dl=1");
+            Console.WriteLine("Document " + docInfo.Guid + " contains " + docInfo.PageCount + " pages");
+            Console.WriteLine("File format is " + docInfo.FileFormat);
+            Console.WriteLine("File extension is  " + docInfo.Extension);
+            Console.WriteLine("Date created is " + docInfo.DateCreated);
+            Console.WriteLine("Date modified is " + docInfo.DateModified);
+            Console.WriteLine("Password to open file is " + docInfo.Password);
+            Console.WriteLine("File size in bytes is " + docInfo.Size);
+            Console.WriteLine("Width of first page is " + docInfo.Pages.FirstOrDefault().Width);
+            //ExEnd:GetDocumentInfoFromURL
+        }
+
         #region working with barcode signatures
         /// <summary>
         /// Shows how to use bar code types in sign options
@@ -3453,6 +3514,47 @@ namespace GroupDocs.Signature.Examples.CSharp
             string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:signDocumentWithSignatureProcessEvents
+        }
+
+        /// <summary>
+        /// Sign PDF with Extended Signature Process Event
+        /// Feature is supported in versin 18.1 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithExtendedSignatureProcessEvents(string fileName)
+        {
+            //ExStart:SignDocumentWithExtendedSignatureProcessEvents
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup signature option
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+            signOptions.SignAllPages = true;
+            //
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "Process_Events" };
+            //
+            handler.SignatureStarted += delegate (object sender, ProcessStartEventArgs args)
+            {
+                Console.WriteLine("Processing of {0} signatures for {1} started at {2}", args.TotalSignatures, args.Guid, args.Started.ToString("f"));
+            };
+            handler.SignatureProgress += delegate (object sender, ProcessProgressEventArgs args)
+            {
+                Console.WriteLine("Singing of {0} progress: {1} %. Processed {2} signatures. Since start process spent {3} mlsec", args.Guid, args.Progress, args.ProcessedSignatures, args.Ticks);
+            };
+            handler.SignatureCompleted += delegate (object sender, ProcessCompleteEventArgs args)
+            {
+                Console.WriteLine("Singing of {0} completed at {1}. Processing of {2} signatures took {3} mlsec", args.Guid, args.Completed.ToString("f"), args.TotalSignatures, args.Ticks);
+            };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignDocumentWithExtendedSignatureProcessEvents
         }
 
         /// <summary>
