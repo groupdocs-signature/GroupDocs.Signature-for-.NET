@@ -151,13 +151,13 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         /// <summary>
-        /// Signing a slide document with text using TextShadow Additional option
-        /// Feature is supported by version 18.1 or greater
+        /// Signing a slide document with text using TextShadow Extension
+        /// Feature is supported by version 18.1.1 or greater
         /// </summary>
         /// <param name="fileName">Name of the input file</param>
-        public static void SignSlideDocumentWithTextShadow(string fileName)
+        public static void SignSlideDocumentWithTextShadowExtension(string fileName)
         {
-            //ExStart:SignSlideDocumentWithTextShadow
+            //ExStart:SignSlideDocumentWithTextShadowExtension
             SignatureConfig config = Utilities.GetConfigurations();
             // instantiating the signature handler
             SignatureHandler handler = new SignatureHandler(config);
@@ -176,14 +176,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             shadow.Distance = 4;
             shadow.Transparency = 0.2;
 
-            //add text shadow to additional options
+            //add text shadow to signature extensions
             signOptions.Extensions.Add(shadow);
 
             // sign document
             string signedPath = handler.Sign<string>(fileName, signOptions,
-                new SaveOptions { OutputType = OutputType.String, OutputFileName = "AdditionalOptions_TextShadow" });
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignatureExtensions_TextShadow" });
             Console.WriteLine("Signed file path is: " + signedPath);
-            //ExEnd:SignSlideDocumentWithTextShadow
+            //ExEnd:SignSlideDocumentWithTextShadowExtension
         }
 
         #endregion
