@@ -23,6 +23,8 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignWordDocumentWithText("getting started.docx");
 
+            //Signatures.SignSlideDocumentWithTextShadow("butterfly effect.pptx");
+
             #endregion
 
             #region WorkingWithImageSignature
@@ -188,6 +190,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SetOutputFileName();
             //Signatures.GetDocumentInfo("text.pdf");
+            //Signatures.GetDocumentInfoFromURL();
 
             #region WorkingWithImageDocument
             //image documents are supported from version 17.8.0 onwards
@@ -211,6 +214,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SearchDigitalSignatureInPDFDocuments("text.pdf");
             //Signatures.SearchDigitalSignatureInSystem();
             //Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
+
+            //Signatures.SignDocumentWithExtendedSignatureProcessEvents("text.pdf");
 
             //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
 

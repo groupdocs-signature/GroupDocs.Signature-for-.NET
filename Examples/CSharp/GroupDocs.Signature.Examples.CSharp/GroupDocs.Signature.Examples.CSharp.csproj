@@ -35,9 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Signature, Version=17.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GroupDocs.Signature.17.12.0\lib\GroupDocs.Signature.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="GroupDocs.Signature">
+      <HintPath>C:\Users\Muhammad.Sami\Downloads\GroupDocs.Signature_for_.NET\distribution\GroupDocs.Signature for .NET\bin\GroupDocs.Signature.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
