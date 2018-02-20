@@ -16,13 +16,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region WorkingWithTextSignature
 
             //Signatures.SignPdfDocumentWithText("text.pdf");
-
             //Signatures.SignCellDocumentWithText("pie chart.xlsx");
-
             //Signatures.SignSlideDocumentWithText("butterfly effect.pptx");
-
             //Signatures.SignWordDocumentWithText("getting started.docx");
-
             //Signatures.SignSlideDocumentWithTextShadow("butterfly effect.pptx");
 
             #endregion
@@ -158,9 +154,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifySlidesDocumentsSignedWithBarcodeSignature("butterfly effect.pptx");
             //Signatures.VerifyWordsDocumentsSignedWithBarcodeSignature("getting started.docx");
             //Signatures.VerifyImagesDocumentsSignedWithBarcodeSignature("DocImages_BarCode.png");
-
             //Signatures.SetColorsForBarcodeSignature("text.pdf");
             //Signatures.SetInnerMarginAndTextAlignmentsForBarcodeSignature("text.pdf");
+
+            //Signatures.SearchBarCodeSignaturesInPDF("text.pdf");
+            //Signatures.SearchBarCodeSignaturesInCells("pie chart.xlsx");
+            //Signatures.SearchBarCodeSignaturesInImages("DocImages_QRCode.png");
+            //Signatures.SearchBarCodeSignaturesInSlides("butterfly effect.pptx");
+            //Signatures.SearchBarCodeSignaturesInWords("getting started.docx");
 
             #endregion
 
@@ -175,6 +176,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf");
             //Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx");
             //Signatures.VerifyImagesDocumentsSignedWithQRcodeSignature("DocImages_QRCode.png");
+
+            //Signatures.SearchQRCodeSignaturesInPDF("text.pdf");
+            //Signatures.SearchQRCodeSignaturesInCells("pie chart.xlsx");
+            //Signatures.SearchQRCodeSignaturesInImages("DocImages_QRCode.png");
+            //Signatures.SearchQRCodeSignaturesInSlides("butterfly effect.pptx");
+            //Signatures.SearchQRCodeSignaturesInWords("getting started.docx");
 
             //Signatures.SetColorAndLogoForQRCodeSignature("text.pdf");
             //Signatures.SetInnerMarginsAndTextAlignmentForQRCodeSignature("text.pdf");
@@ -214,12 +221,22 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SearchDigitalSignatureInPDFDocuments("text.pdf");
             //Signatures.SearchDigitalSignatureInSystem();
             //Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
-
             //Signatures.SignDocumentWithExtendedSignatureProcessEvents("text.pdf");
+
+            //Signatures.SearchBarcodeSignatureWithProcessEvents("text.pdf");
 
             //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
 
-            Console.ReadKey();
+            #region working with Brushes
+            
+            //Signatures.SetupSolidBrushForSignatureBackground("text.pdf");
+            //Signatures.SetupLinearGrdiantBrushForSignatureBackground("pie chart.xlsx");
+            //Signatures.SetupRadialGrdiantBrushForSignatureBackground("text.pdf");
+            //Signatures.SetupTextureBrushForSignatureBackground("butterfly effect.pptx");
+
+            #endregion
+
+        Console.ReadKey();
         }
     }
 }
