@@ -2841,6 +2841,134 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         /// <summary>
+        /// Shows how to set custom QRCode Data
+        /// This feature is availabale in version 18.3 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithCustomQRCodeData(string fileName)
+        {
+            //ExStart:SignDocumentWithCustomQRCodeData
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup custom object instance with required data
+            DocumentSignature docSignature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = "Mr.Sherlock",
+                Signed = DateTime.Now,
+                DataFactor = 0.67M
+            };
+            // setup options
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions();
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.QR;
+
+            // setup Data property with custom object
+            signOptions.Data = docSignature;
+            // save Options
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "CustomSignature" };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignDocumentWithCustomQRCodeData
+        }
+
+        /// <summary>
+        /// Shows how to sign document with embedded VCard object to QR-Code Signature.
+        /// This feature is availabale in version 18.3 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithEmbeddedVCardObjectToQRCode(string fileName)
+        {
+            //ExStart:SignDocumentWithEmbeddedVCardObjectToQRCode
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Setup VCard object
+            VCard vcard = new VCard()
+            {
+                FirstName = "Sherlock",
+                MidddleName = "",
+                LastName = "Holmes",
+                Initials = "Mr.",
+                Company = "Watson Inc.",
+                JobTitle = "Detective",
+                HomePhone = "",
+                WorkPhone = "",
+                Email = "",
+                Url = "http://sherlockholmes.com/",
+                BirthDay = new DateTime(1854, 1, 6)
+            };
+            // Setup Address of Contant details
+            vcard.HomeAddress = new Address()
+            {
+                Street = "221B Baker Street",
+                City = "London",
+                State = "NW",
+                ZIP = "NW16XE",
+                Country = "England"
+            };
+            // setup options
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions();
+            // setup QR-code type and size
+            signOptions.EncodeType = QRCodeTypes.QR;
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+
+            // setup Data property to VCard instance
+            signOptions.Data = vcard;
+            // setup SaveOptions
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "VCardData" };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignDocumentWithEmbeddedVCardObjectToQRCode
+        }
+
+        /// <summary>
+        /// Shows how to sign document with embedded Email object to QR-Code Signature.
+        /// This feature is availabale in version 18.3 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithEmbeddedEmailObjectToQRCode(string fileName)
+        {
+            //ExStart:SignDocumentWithEmbeddedEmailObjectToQRCode
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Setup Email object
+            Email email = new Email()
+            {
+                Address = "watson@sherlockholmes.com",
+                Subject = "Welcome email",
+                Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            };
+
+            // setup options
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions();
+            // setup QR-code type and size
+            signOptions.EncodeType = QRCodeTypes.QR;
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+
+            // setup Data property to Email instance
+            signOptions.Data = email;
+            // setup SaveOptions
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "EmailData" };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignDocumentWithEmbeddedEmailObjectToQRCode
+        }
+
+        /// <summary>
         /// Shows how to search  QR Code signatures in PDF document
         /// This feature is availabale in version 18.2 or greater
         /// </summary>
@@ -3056,6 +3184,79 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
             //ExEnd:SearchQRCodeSignaturesInWords
         }
+
+        /// <summary>
+        /// Shows how to search  Custome Object from signed PDF document
+        /// This feature is availabale in version 18.2 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomObjectFromSignedPDF(string fileName)
+        {
+            //ExStart:SearchCustomObjectFromSignedPDF
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchQRCodeOptions searchOptions = new PdfSearchQRCodeOptions();
+            // specify as true to search all pages of a document
+            searchOptions.SearchAllPages = false;
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            foreach (BaseSignature signature in result.Signatures)
+            {
+                PdfQRCodeSignature qrCodeSignature = signature as PdfQRCodeSignature;
+                if (qrCodeSignature != null)
+                {
+                    Console.WriteLine("Found QRCode signature: {0} with text {1}", qrCodeSignature.EncodeType.TypeName, qrCodeSignature.Text);
+                    DocumentSignature docSignature = qrCodeSignature.GetData<DocumentSignature>();
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                          docSignature.ID, docSignature.Author, docSignature.DataFactor, docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomObjectFromSignedPDF
+        }
+
+        /// <summary>
+        /// Shows how to search  standard  Vcard and Email object from signed PDF document
+        /// This feature is availabale in version 18.2 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchStandardVCardAndEmailObjectFromSignedPDF(string fileName)
+        {
+            //ExStart:SearchStandardVCardAndEmailObjectFromSignedPDF
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchQRCodeOptions searchOptions = new PdfSearchQRCodeOptions();
+            // specify as true to search all pages of a document
+            searchOptions.SearchAllPages = false;
+
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            foreach (BaseSignature signature in result.Signatures)
+            {
+                PdfQRCodeSignature qrCodeSignature = signature as PdfQRCodeSignature;
+                if (qrCodeSignature != null)
+                {
+                    Console.WriteLine("Found QRCode signature: {0} with text {1}", qrCodeSignature.EncodeType.TypeName, qrCodeSignature.Text);
+                    VCard vcard = qrCodeSignature.GetData<VCard>();
+                    if (vcard != null)
+                    {
+                        Console.WriteLine("Found VCard signature: {0} {1} from {2}. Email: {3}", vcard.FirstName, vcard.LastName, vcard.Company, vcard.Email);
+                    }
+                }
+            }
+            //ExEnd:SearchStandardVCardAndEmailObjectFromSignedPDF
+        }
+
         #endregion
 
         #region working with Stamp signatures
@@ -3341,7 +3542,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignWordsDocumentWithStampSignature
         }
-
         #endregion
 
 
@@ -3564,6 +3764,80 @@ namespace GroupDocs.Signature.Examples.CSharp
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_Stamp" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignImageDocumentWithStampSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign pdf document with Stamp signature using stamp types options
+        /// This feature is availabale in version 17.07 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImageWithStampSignatureUsingStampType(string ImageFileName)
+        {
+            //ExStart:SignImageWithStampSignatureUsingStampType
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options
+            ImagesStampSignOptions signOptions = new ImagesStampSignOptions();
+            // setup other properties
+            signOptions.Top = 300;
+            signOptions.Left = 255;
+            signOptions.Height = 150;
+            signOptions.Width = 250;
+            signOptions.StampType = StampTypes.Round;
+            signOptions.ImageGuid = "stamp.jpg";
+            //Outer round lines
+            StampLine line00 = new StampLine();
+            line00.Height = 18;
+            line00.OuterBorder.Weight = 6;
+            line00.OuterBorder.Color = Color.RoyalBlue;
+            line00.InnerBorder.Weight = 6;
+            line00.InnerBorder.Color = Color.CornflowerBlue;
+            line00.BackgroundColor = Color.White;
+            signOptions.OuterLines.Add(line00);
+
+            StampLine line01 = new StampLine();
+            line01.Height = 20;
+            line01.Text = "INTERNATIONAL AIRPORT";
+            line01.TextColor = Color.CadetBlue;
+            line01.Font.FontSize = 10;
+            line01.TextBottomIntent = 5;
+            line01.InnerBorder.Weight = 1;
+            line01.InnerBorder.Color = Color.CadetBlue;
+            signOptions.OuterLines.Add(line01);
+
+            //Inner square lines
+            StampLine line02 = new StampLine();
+            line02.Text = "DEPARTURE";
+            line02.TextColor = Color.DarkRed;
+            line02.Font.FontSize = 14;
+            line02.TextBottomIntent = 10;
+            line02.Font.Bold = true;
+            line02.Height = 30;
+            signOptions.InnerLines.Add(line02);
+
+            StampLine line03 = new StampLine();
+            line03.Text = "03.03.2003";
+            line03.TextColor = Color.Brown;
+            line03.Font.FontSize = 12;
+            line03.Font.Bold = true;
+            line03.Height = 20;
+            signOptions.InnerLines.Add(line03);
+
+            // sign document with round stamp
+            string signedPath = handler.Sign<string>(ImageFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_StampRound" });
+
+            //change type of stamp
+            signOptions.StampType = StampTypes.Square;
+
+            // sign document with square stamp
+            signedPath = handler.Sign<string>(ImageFileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "DocImages_StampSquare" });
+
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImageWithStampSignatureUsingStampType
         }
 
         /// <summary>
