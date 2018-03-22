@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-            //Utilities.ApplyLicense();
+           // Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -176,15 +176,20 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyPdfDocumentSignedWithQrCodeSignature("text.pdf");
             //Signatures.VerifyWordsDocumentSignedWithQrCodeSignature("getting started.docx");
             //Signatures.VerifyImagesDocumentsSignedWithQRcodeSignature("DocImages_QRCode.png");
-
             //Signatures.SearchQRCodeSignaturesInPDF("text.pdf");
             //Signatures.SearchQRCodeSignaturesInCells("pie chart.xlsx");
             //Signatures.SearchQRCodeSignaturesInImages("DocImages_QRCode.png");
             //Signatures.SearchQRCodeSignaturesInSlides("butterfly effect.pptx");
             //Signatures.SearchQRCodeSignaturesInWords("getting started.docx");
-
             //Signatures.SetColorAndLogoForQRCodeSignature("text.pdf");
             //Signatures.SetInnerMarginsAndTextAlignmentForQRCodeSignature("text.pdf");
+
+            //Signatures.SignDocumentWithCustomQRCodeData("text.pdf");
+            //Signatures.SignDocumentWithEmbeddedVCardObjectToQRCode("text.pdf");
+            //Signatures.SignDocumentWithEmbeddedEmailObjectToQRCode("text.pdf");
+            //Signatures.SearchCustomObjectFromSignedPDF("text.pdf");
+            //Signatures.SearchStandardVCardAndEmailObjectFromSignedPDF("text.pdf");
+
             #endregion
 
             #region WorkingWithStampSignatures
@@ -192,7 +197,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignCellsDocumentWithStampSignature("pie chart.xlsx");
             //Signatures.SignPdfDocumentWithStampSignature("text.pdf");
             //Signatures.SignSlidesDocumentWithStampSignature("butterfly effect.pptx");
-            //Signatures.SignWordsDocumentWithStampSignature("getting started.docx");
+            //Signatures.SignWordsDocumentWithStampSignature("getting started.docx");            
             #endregion
 
             //Signatures.SetOutputFileName();
@@ -205,6 +210,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignImageDocumentWithBarCode("ImageDocument.png");
             //Signatures.SignImageDocumentWithQRCode("ImageDocument.png");
             //Signatures.SignImageDocumentWithStampSignature("ImageDocument.png");
+
+            //Signatures.SignImageWithStampSignatureUsingStampType("DocImages_QRCode.png");
+
             //Signatures.SaveSignedImagesDocumentsWithDifferentOutputType("ImageDocument.png");
             //Signatures.ApplyTransperancyRotationToTextSignatureImagesDocument("ImageDocument.png");
             //Signatures.SignImagesDocumentsWithTextSignatureAsWatermark("ImageDocument.png");
@@ -228,7 +236,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
 
             #region working with Brushes
-            
+
             //Signatures.SetupSolidBrushForSignatureBackground("text.pdf");
             //Signatures.SetupLinearGrdiantBrushForSignatureBackground("pie chart.xlsx");
             //Signatures.SetupRadialGrdiantBrushForSignatureBackground("text.pdf");
@@ -236,7 +244,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #endregion
 
-        Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
