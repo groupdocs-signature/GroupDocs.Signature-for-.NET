@@ -3187,7 +3187,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         /// <summary>
         /// Shows how to search  Custome Object from signed PDF document
-        /// This feature is availabale in version 18.2 or greater
+        /// This feature is availabale in version 18.3 or greater
         /// </summary>
         /// <param name="fileName"></param>
         public static void SearchCustomObjectFromSignedPDF(string fileName)
@@ -3223,7 +3223,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         /// <summary>
         /// Shows how to search  standard  Vcard and Email object from signed PDF document
-        /// This feature is availabale in version 18.2 or greater
+        /// This feature is availabale in version 18.3 or greater
         /// </summary>
         /// <param name="fileName"></param>
         public static void SearchStandardVCardAndEmailObjectFromSignedPDF(string fileName)
@@ -3768,7 +3768,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         /// <summary>
         /// Shows how to sign pdf document with Stamp signature using stamp types options
-        /// This feature is availabale in version 17.07 or greater
+        /// This feature is availabale in version 18.3 or greater
         /// </summary>
         /// <param name="fileName"></param>
         public static void SignImageWithStampSignatureUsingStampType(string ImageFileName)
