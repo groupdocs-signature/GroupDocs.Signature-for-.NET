@@ -1,3 +1,5 @@
+> ## *Showcases in this directory are not updated and maintained anymore. The source code is kept here for reference only. For latest updates, checkout our [new and feature-rich sample applications](https://github.com/groupdocs-signature).*
+
 # ASP.Net MVC Front End Powered by GroupDocs.Signature
 
 This Application allows a user to sign documents, signature can be of different types (Type, Draw or Image signature). User can download or print signed file.
