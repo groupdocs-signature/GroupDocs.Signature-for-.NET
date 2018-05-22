@@ -17,11 +17,13 @@ Directory | Description
 [Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases)  | GroupDocs.Signature for .NET front end projects are the open source web based projects. These projects demonstrate the salient features of GroupDocs.Signature. 
 [Plugins](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Plugins)  | Contains the plugins related to GroupDocs.Signature 3.x for Visual Studio.
 
-## Resources
+# Resources
 
-+ **Website:** [www.groupdocs.com](http://www.groupdocs.com)
-+ **Product Home:** [GroupDocs.Signature for .NET](https://products.groupdocs.com/signature/net)
-+ **Download:** [Download GroupDocs.Signature for .NET](https://downloads.groupdocs.com/signature/net)
++ **Website:** [www.groupdocs.com](https://www.groupdocs.com/)
++ **Product Home:** [GroupDocs.Signature for .NET](https://products.groupdocs.com/signature/net) 
++ **API Reference:** [GroupDocs.Signature for .NET API Reference](https://apireference.groupdocs.com/net/signature)
 + **Documentation:** [GroupDocs.Signature for .NET Documentation](https://docs.groupdocs.com/display/signaturenet/Home)
-+ **Forum:** [GroupDocs.Signature for .NET Forum](https://forum.groupdocs.com/c/signature)
++ **Installation:** [GroupDocs.Signature for .NET NuGet Package](https://www.nuget.org/packages/GroupDocs.Signature/)
++ **Free Support:** [GroupDocs.Signature for .NET Free Support Forum](https://forum.groupdocs.com/c/signature)
++ **Paid Support:** [GroupDocs.Signature for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
 + **Blog:** [GroupDocs.Signature for .NET Blog](https://blog.groupdocs.com/category/groupdocs-signature-product-family/)
