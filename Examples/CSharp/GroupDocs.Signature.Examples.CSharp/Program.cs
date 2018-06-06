@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             //Uncomment the below line to apply license
-           // Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
 
             #region WorkingWithTextSignature
 
@@ -183,12 +183,16 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SearchQRCodeSignaturesInWords("getting started.docx");
             //Signatures.SetColorAndLogoForQRCodeSignature("text.pdf");
             //Signatures.SetInnerMarginsAndTextAlignmentForQRCodeSignature("text.pdf");
-
             //Signatures.SignDocumentWithCustomQRCodeData("text.pdf");
             //Signatures.SignDocumentWithEmbeddedVCardObjectToQRCode("text.pdf");
             //Signatures.SignDocumentWithEmbeddedEmailObjectToQRCode("text.pdf");
             //Signatures.SearchCustomObjectFromSignedPDF("text.pdf");
             //Signatures.SearchStandardVCardAndEmailObjectFromSignedPDF("text.pdf");
+
+            //Signatures.EncryptionOfTextPropertyOfQRCodeSignature("text.pdf");
+            //Signatures.SearchOriginalTextFromEncryptedQRCodeSignature("text.pdf");
+            //Signatures.SignedDocumentWithCustomEncryptedQRCodeText("text.pdf");
+            //Signatures.SignedDocumentWithCustomEncryptedQRCodeData("text.pdf");
 
             #endregion
 
@@ -230,9 +234,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SearchDigitalSignatureInSystem();
             //Signatures.SignCellDocumentWithTextSignatureAppearence("pie chart.xlsx");
             //Signatures.SignDocumentWithExtendedSignatureProcessEvents("text.pdf");
-
             //Signatures.SearchBarcodeSignatureWithProcessEvents("text.pdf");
-
             //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
 
             #region working with Brushes

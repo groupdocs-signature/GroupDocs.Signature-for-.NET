@@ -3257,6 +3257,137 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SearchStandardVCardAndEmailObjectFromSignedPDF
         }
 
+        /// <summary>
+        /// Shows how to encrypt Text property of QR-Code Signature in PDF document
+        /// This feature is availabale in version 18.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void EncryptionOfTextPropertyOfQRCodeSignature(string fileName)
+        {
+            //ExStart:EncryptionOfTextPropertyOfQRCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encrypter = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions("This is private text to be secured.");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.QR;
+            // specify text encryption
+            signOptions.DataEncryption = encrypter;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedQRCodeTextEncrypted.pdf" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:EncryptionOfTextPropertyOfQRCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to search original text from Encrypted QRCode Signature in PDF document
+        /// This feature is availabale in version 18.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchOriginalTextFromEncryptedQRCodeSignature(string fileName)
+        {
+            //ExStart:SearchOriginalTextFromEncryptedQRCodeSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup key and pasphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encrypter = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+            // setup search options
+            PdfSearchQRCodeOptions searchOptions = new PdfSearchQRCodeOptions();
+            // specify as true to search all pages of a document
+            searchOptions.SearchAllPages = false;
+            // setup encrypter to retrieve original text
+            searchOptions.DataEncryption = encrypter;
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            foreach (BaseSignature signature in result.Signatures)
+            {
+                PdfQRCodeSignature qrCodeSignature = signature as PdfQRCodeSignature;
+                if (qrCodeSignature != null)
+                {
+                    Console.WriteLine("Found QRCode signature: {0} with text {1}", qrCodeSignature.EncodeType.TypeName, qrCodeSignature.Text);
+                }
+            }
+            //ExEnd:SearchOriginalTextFromEncryptedQRCodeSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign document with custome encrypted text of QR-Code Signature in PDF document
+        /// This feature is availabale in version 18.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignedDocumentWithCustomEncryptedQRCodeText(string fileName)
+        {
+            //ExStart:SignedDocumentWithCustomEncryptedQRCodeText
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // create data encryption
+            IDataEncryption encrypter = new CustomXOREncryption();
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions("This is private text to be secured.");
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.QR;
+            // specify text encryption
+            signOptions.DataEncryption = encrypter;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedQRCodeTextCustomEncrypted.pdf" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignedDocumentWithCustomEncryptedQRCodeText
+        }
+
+        /// <summary>
+        /// Shows how to sign document with custome encrypted data of QR-Code Signature in PDF document
+        /// This feature is availabale in version 18.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignedDocumentWithCustomEncryptedQRCodeData(string fileName)
+        {
+            //ExStart:SignedDocumentWithCustomEncryptedQRCodeData
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+
+            // setup options with text of signature
+            PdfQRCodeSignOptions signOptions = new PdfQRCodeSignOptions();
+            // QR-code type
+            signOptions.EncodeType = QRCodeTypes.QR;
+            signOptions.DataEncryption = new CustomXOREncryption();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            // specify Data object instance
+            signOptions.Data = signature;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedQRCodeDataEncrypted.pdf" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignedDocumentWithCustomEncryptedQRCodeData
+        }
+
+
         #endregion
 
         #region working with Stamp signatures
@@ -4630,5 +4761,18 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         #endregion
+    }
+
+    internal class CustomXOREncryption : IDataEncryption
+    {
+        public string Decode(string source)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Encode(string source)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
