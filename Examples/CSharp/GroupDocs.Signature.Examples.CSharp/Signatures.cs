@@ -186,6 +186,149 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignSlideDocumentWithTextShadowExtension
         }
 
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of Text signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetTextSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetTextSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Specify Signature Options 
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetTextSignaturePositionOnCells
+        }
+
+        /// <summary>
+        /// Shows how to sign Cell document with alignment of Text inside Text Signature
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AlignTextSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:AlignTextSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options with text of signature
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+
+            // set text alignment inside signature (This feature is supported starting from version 18.06)
+            signOptions.TextHorizontalAlignment = TextHorizontalAlignment.Center;
+            signOptions.TextVerticalAlignment = TextVerticalAlignment.Center;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_AlignTextInTextSignature" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:AlignTextSignaturePositionOnCells
+        }
+
+        /// <summary>
+        /// Shows how to sign PDF with alignment of Text inside Text Signature
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AlignTextSignaturePositionOnPDF(string fileName)
+        {
+            //ExStart:AlignTextSignaturePositionOnPDF
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith");
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+            //type of implementation
+            signOptions.SignatureImplementation = PdfTextSignatureImplementation.Image;
+            // set text alignment inside signature (This feature is supported starting from version 18.06)
+            signOptions.TextHorizontalAlignment = TextHorizontalAlignment.Center;
+            signOptions.TextVerticalAlignment = TextVerticalAlignment.Center;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_AlignTextInTextSignature" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:AlignTextSignaturePositionOnPDF
+        }
+
+        /// <summary>
+        /// Shows how to sign Slide document with alignment of Text inside Text Signature
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AlignTextSignaturePositionOnSlides(string fileName)
+        {
+            //ExStart:AlignTextSignaturePositionOnSlides
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            SlidesSignTextOptions signOptions = new SlidesSignTextOptions("John Smith");
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            // set text alignment inside signature (This feature is supported starting from version 18.06)
+            signOptions.TextHorizontalAlignment = TextHorizontalAlignment.Center;
+            signOptions.TextVerticalAlignment = TextVerticalAlignment.Center;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_AlignTextInTextSignature" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:AlignTextSignaturePositionOnSlides
+        }
+
+        /// <summary>
+        /// Shows how to sign Word document with alignment of Text inside Text Signature
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void AlignTextSignaturePositionOnWords(string fileName)
+        {
+            //ExStart:AlignTextSignaturePositionOnWords
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup text signature options
+            WordsSignTextOptions signOptions = new WordsSignTextOptions("John Smith");
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            // type of implementation
+            signOptions.SignatureImplementation = WordsTextSignatureImplementation.TextAsImage;
+            // set text alignment inside signature (This feature is supported starting from version 18.06)
+            signOptions.TextHorizontalAlignment = TextHorizontalAlignment.Center;
+            signOptions.TextVerticalAlignment = TextVerticalAlignment.Center;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Words_AlignTextInTextSignature" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:AlignTextSignaturePositionOnWords
+        }
+
         #endregion
 
         #region WorkingWithImageSignature
@@ -315,6 +458,31 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SetOpacityImageSignature
         }
 
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of Image signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetImageSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetImageSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Specify Signature Options 
+            CellsSignImageOptions signOptions = new CellsSignImageOptions("signature.jpg");
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetImageSignaturePositionOnCells
+        }
         #endregion
 
         #region WorkingWithDigitalSignatures
@@ -497,7 +665,7 @@ namespace GroupDocs.Signature.Examples.CSharp
                     OutputFileName = "SignatureLineCells"
                 });
             //ExEnd:SignCellDocumentDigitallywithSignatureAppearance
-        }
+        }        
 
         /// <summary>
         /// Specify different Stretch mode to locate Signature Area along page width or height
@@ -552,6 +720,34 @@ namespace GroupDocs.Signature.Examples.CSharp
                 });
             //ExEnd:SignPDFDocumentwithStretchMode
         }
+
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of Digital signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetDigitalSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetDigitalSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+           // Stream certificateStream = new FileStream("ali.pfx", FileMode.Open);
+            // Specify Signature Options 
+            CellsSignDigitalOptions signOptions = new CellsSignDigitalOptions("ali.pfx", "signature.jpg");
+            //signOptions.Password = "1234567890";
+            signOptions.Width = 200;
+            signOptions.Height = 200;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetDigitalSignaturePositionOnCells
+        }
+
 
         #endregion
 
@@ -2493,6 +2689,32 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
             //ExEnd:SearchBarCodeSignaturesInWords
         }
+
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of Barcode signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetBarcodeSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetBarcodeSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Specify Signature Options 
+            CellsBarcodeSignOptions signOptions = new CellsBarcodeSignOptions("1234567");
+            signOptions.Width = 300;
+            signOptions.Height = 100;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetBarcodeSignaturePositionOnCells
+        }
         #endregion
 
         #region working with QR-code signatures
@@ -3387,6 +3609,121 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignedDocumentWithCustomEncryptedQRCodeData
         }
 
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of QRcode signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetQRCodeSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetQRCodeSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Specify Signature Options 
+            CellsQRCodeSignOptions signOptions = new CellsQRCodeSignOptions("012345678");
+            signOptions.Width = 100;
+            signOptions.Height = 100;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetQRCodeSignaturePositionOnCells
+        }
+
+        /// <summary>
+        /// Shows how to verify QRCode in PDF without setting EncodeType
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyQRCodeInPDFWithoutEncodeType(string fileName)
+        {
+            //ExStart:VerifyQRCodeInPDFWithoutEncodeType
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup verification options
+            PDFVerifyQRCodeOptions verifyOptions = new PDFVerifyQRCodeOptions("12345678");
+            // verify all pages of a document if true
+            verifyOptions.VerifyAllPages = true;
+            //verify document
+            VerificationResult result = handler.Verify(fileName, verifyOptions);
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyQRCodeInPDFWithoutEncodeType
+        }
+
+        /// <summary>
+        /// Shows how to verify QRCode in PDF without setting EncodeType
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void VerifyEncryptedQRCodeInPDF(string fileName)
+        {
+            //ExStart:VerifyEncryptedQRCodeInPDF
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup key and pasphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encrypter = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup verification options
+            PDFVerifyQRCodeOptions verifyOptions = new PDFVerifyQRCodeOptions(@"This is private text to be secured.");
+            // specify as true to verify all pages of a document
+            verifyOptions.VerifyAllPages = true;
+            // setup encrypter to retrieve original text
+            verifyOptions.DataEncryption = encrypter;
+            //verify document
+            VerificationResult result = handler.Verify(fileName, verifyOptions);
+            Console.WriteLine("Verification result is: " + result.IsValid);
+            //ExEnd:VerifyEncryptedQRCodeInPDF
+        }
+
+        /// <summary>
+        /// Shows how to handle exception while verifying QRCode in PDF
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void ExceptionHandlingWhileVerifyingQRCodeInPDF(string fileName)
+        {
+            //ExStart:ExceptionHandlingWhileVerifyingQRCodeInPDF
+            try
+            {
+                // setup Signature configuration
+                SignatureConfig signConfig = Utilities.GetConfigurations();
+                // instantiating the conversion handler
+                SignatureHandler handler = new SignatureHandler(signConfig);
+
+                // setup verification options
+                PDFVerifyQRCodeOptions verifyOptions = new PDFVerifyQRCodeOptions();
+                // verify all pages of a document if true
+                verifyOptions.VerifyAllPages = true;
+                //If verify option Text is set, it will be searched in Title, Subject and Contents
+                verifyOptions.Text = "12345678";
+                //verify document
+                VerificationResult result = handler.Verify(fileName, verifyOptions);
+                Console.WriteLine("Verification result is: " + result.IsValid);
+            }
+            catch (GroupDocs.Signature.Exception.GroupDocsSignatureException ex)
+            {
+                Console.WriteLine("GroupDocs Signature Exception: " + ex.Message);
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("System Exception: " + ex.Message);
+            }
+            //ExEnd:ExceptionHandlingWhileVerifyingQRCodeInPDF
+        }
 
         #endregion
 
@@ -3673,8 +4010,56 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignWordsDocumentWithStampSignature
         }
+
+        /// <summary>
+        /// Shows how to sign Cell document by setting position of Stamp signature in pixel 
+        /// Feature is supported in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SetStampSignaturePositionOnCells(string fileName)
+        {
+            //ExStart:SetStampSignaturePositionOnCells
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // Specify Signature Options 
+            CellsStampSignOptions signOptions = new CellsStampSignOptions();
+            signOptions.Height = 120;
+            signOptions.Width = 300;
+            signOptions.Top = 15;
+            signOptions.Left = 22;
+            //Inner square lines
+            StampLine line0 = new StampLine();
+            line0.Text = "John";
+            line0.TextBottomIntent = 0;
+            line0.TextColor = Color.MediumVioletRed;
+            line0.OuterBorder.Color = Color.DarkSlateBlue;
+            line0.InnerBorder.Color = Color.DarkSlateBlue;
+            line0.InnerBorder.Style = ExtendedDashStyle.Dash;
+            line0.Font.FontSize = 20;
+            line0.Font.Bold = true;
+            line0.Height = 40;
+            signOptions.InnerLines.Add(line0);
+            StampLine line1 = new StampLine();
+            line1.Text = "Smith";
+            line1.TextBottomIntent = 0;
+            line1.TextColor = Color.MediumVioletRed;
+            line1.InnerBorder.Color = Color.DarkSlateBlue;
+            line1.Font.FontSize = 20;
+            line1.Font.Bold = true;
+            line1.Height = 40;
+            signOptions.InnerLines.Add(line1);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SetStampSignaturePositionOnCells
+        }
         #endregion
 
+        #region WorkingWithImageDocument
 
         /// <summary>
         /// Shows how to sign Images document with Text Signature as image
@@ -4313,6 +4698,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:ExportCellsDocumentAsMultiPageTiff
         }
+        #endregion
+
         /// <summary>
         /// Sign PDF with Signature Process Event
         /// Feature is supported in versin 17.11 or greater
@@ -4761,6 +5148,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
 
         #endregion
+
     }
 
     internal class CustomXOREncryption : IDataEncryption

@@ -414,3 +414,4 @@ E:\Work Sami\Repos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signat
 E:\Work Sami\Repos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\bin\Debug\zh-Hant\System.Spatial.resources.dll
 E:\Work Sami\Repos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.exe
 E:\Work Sami\Repos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.pdb
+E:\Work Sami\Repos\GroupDocs.Signature-for-.NET\Examples\CSharp\GroupDocs.Signature.Examples.CSharp\obj\Debug\GroupDocs.Signature.Examples.CSharp.csprojResolveAssemblyReference.cache
