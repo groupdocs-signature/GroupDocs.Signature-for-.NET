@@ -60,6 +60,18 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
         //ExEnd:Applylicense
 
+        /// <summary>
+        /// Set Metered License
+        /// </summary>
+        public static void SetMeteredLicense()
+        {
+            string PublicKey = ""; // Your public license key
+            string PrivateKey = ""; // Your private license key
+            GroupDocs.Signature.Metered metered = new GroupDocs.Signature.Metered();
+            metered.SetMeteredKey(PublicKey, PrivateKey);
+        }
+        //ExEnd:SetMeteredLicense
+
         #region GetSourceDocsFromDifferentResources
         /// <summary>
         /// Get source document from absolute path
