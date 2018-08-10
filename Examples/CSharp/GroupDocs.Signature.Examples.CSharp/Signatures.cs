@@ -329,6 +329,73 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:AlignTextSignaturePositionOnWords
         }
 
+
+        /// <summary>
+        /// Shows how to set Text Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithTextMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithTextMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+
+            // size
+            signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+            // position
+
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_Text_Measure";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithTextMeasure
+        }
+
+        /// <summary>
+        /// Shows how to align Text Signature in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithTextSignatureAlignment(string fileName)
+        {
+            //ExStart:SignCellsWithTextSignatureAlignment
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+
+            // setup options with text of signature
+            CellsSignTextOptions signOptions = new CellsSignTextOptions("John Smith");
+            // text position
+
+            signOptions.RowNumber = 2;
+            signOptions.ColumnNumber = 2;
+
+            // text rectangle size
+            signOptions.Height = 100;
+            signOptions.Width = 100;
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Cells_Documents_Simple" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithTextSignatureAlignment
+        }
         #endregion
 
         #region WorkingWithImageSignature
@@ -482,6 +549,43 @@ namespace GroupDocs.Signature.Examples.CSharp
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SetImageSignaturePositionOnCells
+        }
+
+        /// <summary>
+        /// Shows how to set Image Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithImageMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithImageMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsSignImageOptions signOptions = new CellsSignImageOptions("sign.png");
+
+            // size
+            signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+
+            // position
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_Image_Measure";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithImageMeasure
         }
         #endregion
 
@@ -748,7 +852,108 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SetDigitalSignaturePositionOnCells
         }
 
+        /// <summary>
+        /// Shows how to set Digital Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithDigitalSignatureMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithDigitalSignatureMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();  
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsSignDigitalOptions signOptions = new CellsSignDigitalOptions("ali.pfx");
+            signOptions.ImageGuid = "sign.png";
+            //signOptions.Password = "1234567890";
 
+            // size
+            signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+
+            // position
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_Digital_Measure";
+
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithDigitalSignatureMeasure
+        }
+
+        /// <summary>
+        /// Shows how to search Digital Signature in Word with extended option
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchDigitalSignatureInWordsWithExtendedOption(string fileName)
+        {
+            //ExStart:SearchDigitalSignatureInWordsWithExtendedOption
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsSearchDigitalOptions searchOptions = new WordsSearchDigitalOptions();
+            // setup additional search criteria
+            searchOptions.Comments = "test comments";
+            searchOptions.SignDateTimeFrom = new DateTime(DateTime.Now.Year, 1, 1);
+            searchOptions.IssuerName = "John";
+            // Search Document for Signatures
+            SearchResult searchResult = handler.Search(fileName, searchOptions);
+            Console.WriteLine("Source file {0} contains {1} digital signature(s)", fileName, searchResult.Signatures.Count);
+            foreach (BaseSignature signature in searchResult.Signatures)
+            {
+                WordsDigitalSignature WordsSign = (signature as WordsDigitalSignature);
+                if (WordsSign != null)
+                {
+                    Console.WriteLine("\t >> Digital signature from {0}. Comments: {1}. Valid {2}", WordsSign.SignTime, WordsSign.Comments, WordsSign.IsValid);
+                }
+            }
+            //ExEnd:SearchDigitalSignatureInWordsWithExtendedOption
+        }
+
+        /// <summary>
+        /// Shows how to search Digital Signature in Cells with extended option
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchDigitalSignatureInCellsWithExtendedOption(string fileName)
+        {
+            //ExStart:SearchDigitalSignatureInCellsWithExtendedOption
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsSearchDigitalOptions searchOptions = new CellsSearchDigitalOptions();
+            // setup additional search criteria
+            searchOptions.Comments = "test comments";
+            searchOptions.SignDateTimeFrom = new DateTime(DateTime.Now.Year, 1, 1);
+            // Search Document for Signatures
+            SearchResult searchResult = handler.Search(fileName, searchOptions);
+            Console.WriteLine("Source file {0} contains {1} digital signature(s)", fileName, searchResult.Signatures.Count);
+            foreach (BaseSignature signature in searchResult.Signatures)
+            {
+                CellsDigitalSignature cellsSign = (signature as CellsDigitalSignature);
+                if (cellsSign != null)
+                {
+                    Console.WriteLine("\t >> Digital signature from {0}. Comments: {1}. Valid {2}", cellsSign.SignTime, cellsSign.Comments, cellsSign.IsValid);
+                }
+            }
+            //ExEnd:SearchDigitalSignatureInCellsWithExtendedOption
+        }
         #endregion
 
         #region Azure
@@ -2715,6 +2920,43 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SetBarcodeSignaturePositionOnCells
         }
+
+        /// <summary>
+        /// Shows how to set Barcode Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithBarCodeMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithBarCodeMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsBarcodeSignOptions signOptions = new CellsBarcodeSignOptions("1234567");
+
+            // size
+            signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+
+            // position
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_BarCode_Measure";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithBarCodeMeasure
+        }
         #endregion
 
         #region working with QR-code signatures
@@ -3725,6 +3967,42 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:ExceptionHandlingWhileVerifyingQRCodeInPDF
         }
 
+        /// <summary>
+        /// Shows how to set QRCode Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithQRCodeMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithQRCodeMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsQRCodeSignOptions signOptions = new CellsQRCodeSignOptions("12345678AbcdefghKLMNOPqrst");
+
+            // size
+            signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+
+            // position
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_QrCode_Measure";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithQRCodeMeasure
+        }
         #endregion
 
         #region working with Stamp signatures
@@ -4056,6 +4334,46 @@ namespace GroupDocs.Signature.Examples.CSharp
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "CellsTopLeftPixels" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SetStampSignaturePositionOnCells
+        }
+
+        /// <summary>
+        /// Shows how to set Stamp Signature position in Cells
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithStampMeasure(string fileName)
+        {
+            //ExStart:SignCellsWithStampMeasure
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            CellsStampSignOptions signOptions = new CellsStampSignOptions();
+            signOptions.BackgroundColor = Color.Blue;
+            signOptions.BackgroundColorCropType = StampBackgroundCropType.None;
+            signOptions.OuterLines.Add(new StampLine() { Text = "Stamp_Size_Pixels", BackgroundColor = Color.Blue, TextColor = Color.Chartreuse });
+
+            // size
+            //signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.Width = 10;
+            signOptions.Height = 10;
+
+            // position
+            // alignment
+            signOptions.HorizontalAlignment = HorizontalAlignment.Center;
+            signOptions.VerticalAlignment = VerticalAlignment.Top;
+
+            // margin
+            signOptions.MarginMeasureType = MeasureType.Percents;
+            signOptions.Margin.Top = 25;
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "Cells_Stamp_Measure";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithStampMeasure
         }
         #endregion
 
@@ -5023,6 +5341,52 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
            
             //ExEnd:EnumerateAllOptionsInsideCollection
+        }
+        
+        /// <summary>
+        /// Shows how to sign with updated process options
+        /// Feature is supported in version 18.7 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFWithUpdatedProcessEvents(string fileName)
+        {
+            //ExStart:SignPDFWithUpdatedProcessEvents
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup signature option
+            PdfSignTextOptions signOptions = new PdfSignTextOptions("John Smith", 10, 10, 100, 100);
+            signOptions.SignAllPages = true;
+            SaveOptions saveOptions = new SaveOptions { OutputType = OutputType.String, OutputFileName = "PDF_Process_Events" };
+            handler.SignatureStarted += delegate (object sender, ProcessStartEventArgs args)
+            {
+                Console.WriteLine("Processing of {0} signatures for {1} started at {2}", args.TotalSignatures, args.Guid, args.Started.ToString("f"));
+            };
+            handler.SignatureProgress += delegate (object sender, ProcessProgressEventArgs args)
+            {
+                Console.WriteLine("Singing of {0} progress: {1} %. Processed {2} signatures.", args.Guid, args.Progress, args.ProcessedSignatures);
+                if (args.Progress > 10)
+                {
+                    args.Cancel = true;
+                    Console.WriteLine("Cancellation of process");
+                }
+            };
+            handler.SignatureCompleted += delegate (object sender, ProcessCompleteEventArgs args)
+            {
+                if (args.Canceled)
+                {
+                    Console.WriteLine("Singing process was canceled");
+                }
+                else
+                {
+                    Console.WriteLine("Singing of {0} completed at {1}. Processing of {2}", args.Guid, args.Completed.ToString("f"), args.TotalSignatures);
+                }
+            };
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, saveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFWithUpdatedProcessEvents
         }
 
         #region working with Brushes
