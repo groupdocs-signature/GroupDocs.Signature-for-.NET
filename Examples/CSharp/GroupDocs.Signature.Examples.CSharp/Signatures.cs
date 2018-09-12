@@ -4354,7 +4354,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             signOptions.OuterLines.Add(new StampLine() { Text = "Stamp_Size_Pixels", BackgroundColor = Color.Blue, TextColor = Color.Chartreuse });
 
             // size
-            //signOptions.SizeMeasureType = MeasureType.Percents;
+            signOptions.SizeMeasureType = MeasureType.Percents;
             signOptions.Width = 10;
             signOptions.Height = 10;
 
