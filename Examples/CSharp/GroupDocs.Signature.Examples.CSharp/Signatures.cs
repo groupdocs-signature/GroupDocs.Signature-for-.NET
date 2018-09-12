@@ -5389,6 +5389,37 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignPDFWithUpdatedProcessEvents
         }
 
+        /// <summary>
+        /// Search Metadata Signature in PDF Documents
+        /// Feature is supported in versin 18.9 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInPDFDocuments(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInPDFDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchMetadataOptions searchOptions = new PdfSearchMetadataOptions();
+
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            foreach (BaseSignature signature in result.Signatures)
+            {
+                PdfMetadataSignature metadataSignature = signature as PdfMetadataSignature;
+                if (metadataSignature != null)
+                {
+                    Console.WriteLine("Pdf Metadata: {0}:{1}  = {2}", metadataSignature.TagPrefix, metadataSignature.Name, metadataSignature.ToString());
+                }
+            }            
+            //ExEnd:SearchMetadataSignatureInPDFDocuments
+        }
+
+
         #region working with Brushes
 
         /// <summary>
@@ -5513,9 +5544,83 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         #endregion
 
+        #region WorkingWithMetadataSignatures
+
+        /// <summary>
+        /// Shows how to sign PDF documents with standard Metadata Signatures
+        /// Feature is supported in versin 18.9 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFWithStandardMetadataSignatures(string fileName)
+        {
+            //ExStart:SignPDFWithStandardMetadataSignatures
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfMetadataSignOptions signOptions = new PdfMetadataSignOptions();
+            // Using standard Pdf Metadata Signatures with new values
+            MetadataSignature[] signatures = new MetadataSignature[]
+            {
+                PdfMetadataSignatures.Author.Clone("Mr.Scherlock Holmes"),
+                PdfMetadataSignatures.CreateDate.Clone(DateTime.Now.AddDays(-1)),
+                PdfMetadataSignatures.MetadataDate.Clone(DateTime.Now.AddDays(-2)),
+                PdfMetadataSignatures.CreatorTool.Clone("GD.Signature-Test"),
+                PdfMetadataSignatures.ModifyDate.Clone(DateTime.Now.AddDays(-13)),
+                PdfMetadataSignatures.Producer.Clone("GroupDocs-Producer"),
+                PdfMetadataSignatures.Entry.Clone("Signature"),
+                PdfMetadataSignatures.Keywords.Clone("GroupDocs, Signature, Metadata, Creation Tool"),
+                PdfMetadataSignatures.Title.Clone("Metadata Example"),
+                PdfMetadataSignatures.Subject.Clone("Metadata Test Example"),
+                PdfMetadataSignatures.Description.Clone("Metadata Test example description"),
+                PdfMetadataSignatures.Creator.Clone("GroupDocs.Signature"),
+            };
+            //signOptions.MetadataSignatures.AddRange(signatures);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_StdMetadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFWithStandardMetadataSignatures
+        }
+
+        /// <summary>
+        /// Shows how to sign PDF documents with Metadata Sign Options
+        /// Feature is supported in versin 18.9 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFWithMetadataSignOptions(string fileName)
+        {
+            //ExStart:SignPDFWithMetadataSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfMetadataSignOptions signOptions = new PdfMetadataSignOptions();
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            PdfMetadataSignature mdSign_Author = new PdfMetadataSignature("Author", "Mr.Scherlock Holmes");
+            signOptions.MetadataSignatures.Add(mdSign_Author);
+            // setup data of document id
+            PdfMetadataSignature mdSign_DocId = new PdfMetadataSignature("DocumentId", Guid.NewGuid().ToString());
+            signOptions.MetadataSignatures.Add(mdSign_DocId);
+            // setup data of sign date
+            PdfMetadataSignature mdSign_Date = new PdfMetadataSignature("SignDate", DateTime.Now);
+            signOptions.MetadataSignatures.Add(mdSign_Date);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Metadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFWithMetadataSignOptions
+        }
+
+        #endregion
     }
 
-    internal class CustomXOREncryption : IDataEncryption
+        internal class CustomXOREncryption : IDataEncryption
     {
         public string Decode(string source)
         {
