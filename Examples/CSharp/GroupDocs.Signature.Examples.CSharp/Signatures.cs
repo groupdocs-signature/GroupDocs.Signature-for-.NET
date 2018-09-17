@@ -5577,7 +5577,7 @@ namespace GroupDocs.Signature.Examples.CSharp
                 PdfMetadataSignatures.Description.Clone("Metadata Test example description"),
                 PdfMetadataSignatures.Creator.Clone("GroupDocs.Signature"),
             };
-            //signOptions.MetadataSignatures.AddRange(signatures);
+            signOptions.MetadataSignatures.AddRange(signatures);
             // sign document
             string signedPath = handler.Sign<string>(fileName, signOptions,
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_StdMetadata" });
@@ -5608,7 +5608,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             PdfMetadataSignature mdSign_DocId = new PdfMetadataSignature("DocumentId", Guid.NewGuid().ToString());
             signOptions.MetadataSignatures.Add(mdSign_DocId);
             // setup data of sign date
-            PdfMetadataSignature mdSign_Date = new PdfMetadataSignature("SignDate", DateTime.Now);
+            PdfMetadataSignature mdSign_Date = new PdfMetadataSignature("SignDate", DateTime.Now,"Pdf");
             signOptions.MetadataSignatures.Add(mdSign_Date);
             // sign document
             string signedPath = handler.Sign<string>(fileName, signOptions,
