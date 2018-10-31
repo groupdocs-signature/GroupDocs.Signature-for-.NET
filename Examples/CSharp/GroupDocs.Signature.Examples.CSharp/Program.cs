@@ -235,8 +235,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.EnumerateAllOptionsInsideCollection("text.pdf");
             //Signatures.SignPDFWithUpdatedProcessEvents("text.pdf");
 
-            //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
-
             #region working with Brushes
 
             //Signatures.SetupSolidBrushForSignatureBackground("text.pdf");
@@ -250,6 +248,14 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignPDFWithStandardMetadataSignatures("digital signatures.pdf");
             //Signatures.SignPDFWithMetadataSignOptions("digital signatures.pdf");
+            
+            //Signatures.SignCellsWithMetadataSignOptions("pie chart.xlsx");
+            //Signatures.SignWordsWithMetadataSignOptions("getting started.docx");
+
+            //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
+
+            //Signatures.SearchMetadataSignatureInCellsDocuments("pie chart.xlsx");
+            //Signatures.SearchMetadataSignatureInWordsDocuments("getting started.docx");
 
             #endregion
 
