@@ -5389,37 +5389,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignPDFWithUpdatedProcessEvents
         }
 
-        /// <summary>
-        /// Search Metadata Signature in PDF Documents
-        /// Feature is supported in versin 18.9 or greater
-        /// </summary>
-        /// <param name="fileName"></param>
-        public static void SearchMetadataSignatureInPDFDocuments(string fileName)
-        {
-            //ExStart:SearchMetadataSignatureInPDFDocuments
-
-            // setup Signature configuration
-            SignatureConfig signConfig = Utilities.GetConfigurations();
-            // instantiating the conversion handler
-            SignatureHandler handler = new SignatureHandler(signConfig);
-            // setup search options
-            PdfSearchMetadataOptions searchOptions = new PdfSearchMetadataOptions();
-
-            // search document
-            SearchResult result = handler.Search(fileName, searchOptions);
-            // output signatures
-            foreach (BaseSignature signature in result.Signatures)
-            {
-                PdfMetadataSignature metadataSignature = signature as PdfMetadataSignature;
-                if (metadataSignature != null)
-                {
-                    Console.WriteLine("Pdf Metadata: {0}:{1}  = {2}", metadataSignature.TagPrefix, metadataSignature.Name, metadataSignature.ToString());
-                }
-            }            
-            //ExEnd:SearchMetadataSignatureInPDFDocuments
-        }
-
-
         #region working with Brushes
 
         /// <summary>
@@ -5617,6 +5586,171 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignPDFWithMetadataSignOptions
         }
 
+        /// <summary>
+        /// Shows how to sign Cells documents with Metadata Sign Options
+        /// Feature is supported in versin 18.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithMetadataSignOptions(string fileName)
+        {
+            //ExStart:SignCellsWithMetadataSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsMetadataSignOptions signOptions = new CellsMetadataSignOptions();
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            CellsMetadataSignature mdSign_Author = new CellsMetadataSignature("Author", "Mr.Scherlock Holmes");
+            signOptions.MetadataSignatures.Add(mdSign_Author);
+            // setup data of document id
+            CellsMetadataSignature mdSign_DocId = new CellsMetadataSignature("DocumentId", Guid.NewGuid().ToString());
+            signOptions.MetadataSignatures.Add(mdSign_DocId);
+            // setup data of sign date
+            CellsMetadataSignature mdSign_Date = new CellsMetadataSignature("SignDate", DateTime.Now);
+            signOptions.MetadataSignatures.Add(mdSign_Date);
+            // setup some integer value
+            CellsMetadataSignature mdSign_Days = new CellsMetadataSignature("DocDays", 12345);
+            signOptions.MetadataSignatures.Add(mdSign_Days);
+            // setup data of sign date
+            CellsMetadataSignature mdSign_Koeff = new CellsMetadataSignature("SignKoeff", 2.345M);
+            signOptions.MetadataSignatures.Add(mdSign_Koeff);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Metadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithMetadataSignOptions
+        }
+
+        /// <summary>
+        /// Shows how to sign Words documents with Metadata Sign Options
+        /// Feature is supported in versin 18.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsWithMetadataSignOptions(string fileName)
+        {
+            //ExStart:SignWordsWithMetadataSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsMetadataSignOptions signOptions = new WordsMetadataSignOptions();
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            WordsMetadataSignature mdSign_Author = new WordsMetadataSignature("Author", "Mr.Scherlock Holmes");
+            signOptions.MetadataSignatures.Add(mdSign_Author);
+            // setup data of document id
+            WordsMetadataSignature mdSign_DocId = new WordsMetadataSignature("DocumentId", Guid.NewGuid().ToString());
+            signOptions.MetadataSignatures.Add(mdSign_DocId);
+            // setup data of sign date
+            WordsMetadataSignature mdSign_Date = new WordsMetadataSignature("SignDate", DateTime.Now);
+            signOptions.MetadataSignatures.Add(mdSign_Date);
+            // setup some integer value
+            WordsMetadataSignature mdSign_Days = new WordsMetadataSignature("DocDays", 12345);
+            signOptions.MetadataSignatures.Add(mdSign_Days);
+            // setup data of sign date
+            WordsMetadataSignature mdSign_Koeff = new WordsMetadataSignature("SignKoeff", 2.345M);
+            signOptions.MetadataSignatures.Add(mdSign_Koeff);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_Documents_Metadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsWithMetadataSignOptions
+        }
+
+
+        /// <summary>
+        /// Search Metadata Signature in PDF Documents
+        /// Feature is supported in versin 18.9 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInPDFDocuments(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInPDFDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchMetadataOptions searchOptions = new PdfSearchMetadataOptions();
+
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            foreach (BaseSignature signature in result.Signatures)
+            {
+                PdfMetadataSignature metadataSignature = signature as PdfMetadataSignature;
+                if (metadataSignature != null)
+                {
+                    Console.WriteLine("Pdf Metadata: {0}:{1}  = {2}", metadataSignature.TagPrefix, metadataSignature.Name, metadataSignature.ToString());
+                }
+            }
+            //ExEnd:SearchMetadataSignatureInPDFDocuments
+        }
+
+        /// <summary>
+        /// Search Metadata Signature in Cells Documents
+        /// Feature is supported in versin 18.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInCellsDocuments(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInCellsDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            CellsSearchMetadataOptions searchOptions = new CellsSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<CellsMetadataSignature> signatures = result.ToList<CellsMetadataSignature>();
+            foreach (CellsMetadataSignature signature in signatures)
+            {
+                if (signature != null)
+                {
+                    Console.WriteLine("Cells Metadata: {0} = {1}", signature.Name, signature.ToString());
+                }
+            }
+            //ExEnd:SearchMetadataSignatureInCellsDocuments
+        }
+
+        /// <summary>
+        /// Search Metadata Signature in Words Documents
+        /// Feature is supported in versin 18.10 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInWordsDocuments(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInWordsDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            WordsSearchMetadataOptions searchOptions = new WordsSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<WordsMetadataSignature> signatures = result.ToList<WordsMetadataSignature>();
+            foreach (WordsMetadataSignature signature in signatures)
+            {
+                WordsMetadataSignature metadataSignature = signature as WordsMetadataSignature;
+                if (metadataSignature != null)
+                {
+                    Console.WriteLine("Words Metadata: {0} = {1}", metadataSignature.Name, metadataSignature.ToString());
+                }
+            }
+            //ExEnd:SearchMetadataSignatureInWordsDocuments
+        }
         #endregion
     }
 
