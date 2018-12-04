@@ -13,6 +13,7 @@ using GroupDocs.Signature.Domain;
 using System.Drawing;
 using System.Drawing.Imaging;
 using GroupDocs.Signature.Domain.Extensions;
+using GroupDocs.Signature.Domain.FormField;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -2093,6 +2094,32 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file verification result: " + result.IsValid);
             //ExEnd:DigitalVerificationOfWordDocWithPfxCertificateContainer
         }
+
+        /// <summary>
+        /// Digitally verifies word document with .pfx certificate container
+        /// This feature is supported in GroupDocs.Signature for .NET 17.01.0 version or greater
+        /// </summary>
+        public static void DigitalVerificationOfWordsDocumentWithExtendedProperties(string fileName)
+        {
+            //ExStart:DigitalVerificationOfWordsDocumentWithExtendedProperties
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            VerifyOptionsCollection verifyOptionsCollection = new VerifyOptionsCollection();
+            // setup digital verification options
+            WordsVerifyDigitalOptions verifyOptions = new WordsVerifyDigitalOptions("SherlockHolmes.cer");
+            verifyOptions.Comments = "Test1";
+            verifyOptions.SubjectName = "Signature";
+            verifyOptions.IssuerName = "GroupDocs";
+            verifyOptions.SignDateTimeFrom = new DateTime(2017, 1, 26, 14, 55, 57);
+            verifyOptions.SignDateTimeTo = new DateTime(2017, 1, 26, 14, 55, 59);
+            //verify document
+            VerificationResult result = handler.Verify(fileName, verifyOptionsCollection);
+            Console.WriteLine("Signed file verification result: " + result.IsValid);
+            //ExEnd:DigitalVerificationOfWordsDocumentWithExtendedProperties
+        }
+
 
         /// <summary>
         /// Verifies PDF Document signed with Text Signature Sticker
@@ -5662,6 +5689,43 @@ namespace GroupDocs.Signature.Examples.CSharp
             //ExEnd:SignWordsWithMetadataSignOptions
         }
 
+        /// <summary>
+        /// Shows how to sign Slides documents with Metadata Sign Options
+        /// Feature is supported in versin 18.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesWithMetadataSignOptions(string fileName)
+        {
+            //ExStart:SignSlidesWithMetadataSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesMetadataSignOptions signOptions = new SlidesMetadataSignOptions();
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            SlidesMetadataSignature mdSign_Author = new SlidesMetadataSignature("Author", "Mr.Scherlock Holmes");
+            signOptions.MetadataSignatures.Add(mdSign_Author);
+            // setup data of document id
+            SlidesMetadataSignature mdSign_DocId = new SlidesMetadataSignature("DocumentId", Guid.NewGuid().ToString());
+            signOptions.MetadataSignatures.Add(mdSign_DocId);
+            // setup data of sign date
+            SlidesMetadataSignature mdSign_Date = new SlidesMetadataSignature("SignDate", DateTime.Now);
+            signOptions.MetadataSignatures.Add(mdSign_Date);
+            // setup some integer value
+            SlidesMetadataSignature mdSign_Days = new SlidesMetadataSignature("DocDays", 12345);
+            signOptions.MetadataSignatures.Add(mdSign_Days);
+            // setup data of sign date
+            SlidesMetadataSignature mdSign_Koeff = new SlidesMetadataSignature("SignKoeff", 2.345M);
+            signOptions.MetadataSignatures.Add(mdSign_Koeff);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Documents_Metadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesWithMetadataSignOptions
+        }
 
         /// <summary>
         /// Search Metadata Signature in PDF Documents
@@ -5751,10 +5815,144 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
             //ExEnd:SearchMetadataSignatureInWordsDocuments
         }
+
+        /// <summary>
+        /// Search Metadata Signature in Slides Documents
+        /// Feature is supported in versin 18.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInSlidesDocuments(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInSlidesDocuments
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            SlidesSearchMetadataOptions searchOptions = new SlidesSearchMetadataOptions();
+            // set if we need built-in signatures
+            searchOptions.IncludeBuiltinProperties = true;
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<SlidesMetadataSignature> signatures = result.ToList<SlidesMetadataSignature>();
+            foreach (SlidesMetadataSignature signature in signatures)
+            {
+                SlidesMetadataSignature metadataSignature = signature as SlidesMetadataSignature;
+                if (metadataSignature != null)
+                {
+                    Console.WriteLine("Slides Metadata: {0} = {1}", metadataSignature.Name, metadataSignature.ToString());
+                }
+            }
+            //ExEnd:SearchMetadataSignatureInSlidesDocuments
+        }
+        #endregion
+
+        #region WorkingWithFormFieldSignatures
+
+        /// <summary>
+        /// Shows how to sign PDF documents with Form Field Sign Options
+        /// Feature is supported in versin 18.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFWithFormFieldSignOptions(string fileName)
+        {
+            //ExStart:SignPDFWithFormFieldSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            //collection of signatures initialization
+            SignatureOptionsCollection collection = new SignatureOptionsCollection();
+            // 1. setup text form field signature options
+            // instantiate text form field signature
+            FormFieldSignature textSignature = new PdfTextFormFieldSignature("FieldText", "Value1");
+            // instantiate options based on text form field signature
+            PdfFormFieldSignOptions textOptions = new PdfFormFieldSignOptions(textSignature)
+            {
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Padding(10, 20, 0, 0),
+                Height = 10,
+                Width = 100
+            };
+            collection.Add(textOptions);
+            // 2. setup check-box form field signature options
+            // instantiate check-box form field signature
+            FormFieldSignature checkboxSignature = new PdfCheckboxFormFieldSignature("FieldCheckbox", true);
+            // instantiate options based on check-box form field signature
+            PdfFormFieldSignOptions checkboxOptions = new PdfFormFieldSignOptions(checkboxSignature)
+            {
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Padding(120, 20, 0, 0),
+                Height = 10,
+                Width = 10
+            };
+            collection.Add(checkboxOptions);
+            // 3. setup digital signature form field options
+            // instantiate digital signature form field
+            FormFieldSignature digitalSignature = new PdfDigitalFormFieldSignature("FieldDigital");
+            // instantiate options based on digital signature form field
+            PdfFormFieldSignOptions digitalOptions = new PdfFormFieldSignOptions(digitalSignature)
+            {
+                PagesSetup = new PagesSetup()
+                {
+                    LastPage = true
+                },
+                HorizontalAlignment = HorizontalAlignment.Right,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Margin = new Padding(0, 0, 10, 10),
+                Height = 20,
+                Width = 100
+            };
+            collection.Add(digitalOptions);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, collection,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Pdf_FormFields" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFWithFormFieldSignOptions
+        }
+
+        /// <summary>
+        /// Search PDF Signature in PDF Documents
+        /// Feature is supported in versin 18.11 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchFormFieldSignatureInPDF(string fileName)
+        {
+            //ExStart:SearchFormFieldSignatureInPDF
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchFormFieldOptions searchOptions = new PdfSearchFormFieldOptions();
+            searchOptions.SearchAllPages = true;
+            //searchOptions.NamePattern = @"Field";
+            searchOptions.Value = @"Value1";
+
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+
+            // output signatures
+            foreach (FormFieldSignature formFieldSignature in result.ToList<FormFieldSignature>())
+            {
+                if (formFieldSignature != null)
+                {
+                    Console.WriteLine("Pdf FormField: {0}:{1}  = {2}", formFieldSignature.Name, formFieldSignature.Value, formFieldSignature.ToString());
+                }
+            }
+            //ExEnd:SearchFormFieldSignatureInPDF
+        }
+
         #endregion
     }
 
-        internal class CustomXOREncryption : IDataEncryption
+    internal class CustomXOREncryption : IDataEncryption
     {
         public string Decode(string source)
         {
