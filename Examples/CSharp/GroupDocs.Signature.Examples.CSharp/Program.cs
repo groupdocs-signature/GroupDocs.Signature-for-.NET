@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp
     {
         static void Main(string[] args)
         {
-            
+
             //Uncomment the below line to apply license
             //Utilities.ApplyLicense();
 
@@ -114,6 +114,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.DigitalVerificationOfPdfWithPfxCertificateContainer("digital signatures.pdf");
             //Signatures.DigitalVerificationOfWordDocWithCerCertificateContainer("digital signatures.docx");
             //Signatures.DigitalVerificationOfWordDocWithPfxCertificateContainer("digital signatures.docx");
+
+            //Signatures.DigitalVerificationOfWordsDocumentWithExtendedProperties("digital signatures.docx");
+
             //Signatures.VerifyPdfDocumentSignedWithTextSignatureAnnotation("test_text_annotation.pdf");
             //Signatures.VerifyPdfDocumentSignedWithTextSignatureSticker("test_text_sticker.pdf");
             //Signatures.VerifyCellDocumentSignedWithTextSignature("digital signatures.xlsx");
@@ -249,14 +252,24 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Signatures.SignPDFWithStandardMetadataSignatures("digital signatures.pdf");
             //Signatures.SignPDFWithMetadataSignOptions("digital signatures.pdf");
-            
             //Signatures.SignCellsWithMetadataSignOptions("pie chart.xlsx");
             //Signatures.SignWordsWithMetadataSignOptions("getting started.docx");
 
-            //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
+            //Signatures.SignSlidesWithMetadataSignOptions("butterfly effect.pptx");
 
+            //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
             //Signatures.SearchMetadataSignatureInCellsDocuments("pie chart.xlsx");
             //Signatures.SearchMetadataSignatureInWordsDocuments("getting started.docx");
+
+            //Signatures.SearchMetadataSignatureInSlidesDocuments("butterfly effect.pptx");
+
+            #endregion
+
+            #region WorkingWithFormFieldSignatures
+
+            //Signatures.SignPDFWithFormFieldSignOptions("digital signatures.pdf");
+            //Signatures.SearchFormFieldSignatureInPDF("digital signatures.pdf");
+
 
             #endregion
 
