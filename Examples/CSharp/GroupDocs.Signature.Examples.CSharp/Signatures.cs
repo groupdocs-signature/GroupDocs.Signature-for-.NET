@@ -5847,6 +5847,32 @@ namespace GroupDocs.Signature.Examples.CSharp
             }
             //ExEnd:SearchMetadataSignatureInSlidesDocuments
         }
+
+        /// <summary>
+        /// Search Metadata Signature in Images
+        /// Feature is supported in versin 18.12 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchMetadataSignatureInImages(string fileName)
+        {
+            //ExStart:SearchMetadataSignatureInImages
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            ImagesSearchMetadataOptions searchOptions = new ImagesSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<ImageMetadataSignature> signatures = result.ToList<ImageMetadataSignature>();
+            foreach (ImageMetadataSignature signature in signatures)
+            {
+                Console.WriteLine("Image Metadata. #{0}. {1}. Value = {2}", signature.Name, signature.Description, signature.ToString());
+            }
+            //ExEnd:SearchMetadataSignatureInImages
+        }
         #endregion
 
         #region WorkingWithFormFieldSignatures
