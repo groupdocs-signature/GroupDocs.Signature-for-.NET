@@ -254,14 +254,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignPDFWithMetadataSignOptions("digital signatures.pdf");
             //Signatures.SignCellsWithMetadataSignOptions("pie chart.xlsx");
             //Signatures.SignWordsWithMetadataSignOptions("getting started.docx");
-
             //Signatures.SignSlidesWithMetadataSignOptions("butterfly effect.pptx");
-
             //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
             //Signatures.SearchMetadataSignatureInCellsDocuments("pie chart.xlsx");
             //Signatures.SearchMetadataSignatureInWordsDocuments("getting started.docx");
-
             //Signatures.SearchMetadataSignatureInSlidesDocuments("butterfly effect.pptx");
+
+            //Signatures.SearchMetadataSignatureInImages("ImageDocument.png");
 
             #endregion
 
