@@ -4402,6 +4402,47 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignCellsWithStampMeasure
         }
+
+        /// <summary>
+        /// Shows how to set Rounded Corners of Stamp Signature in Images
+        /// Feature is supported in version 19.1 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImagesWithRoundedCornersStampSignature(string fileName)
+        {
+            //ExStart:SignImagesWithRoundedCornersStampSignature
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options
+            ImagesStampSignOptions signOptions = new ImagesStampSignOptions();
+            signOptions.Height = 100;
+            signOptions.Width = 300;
+            signOptions.BackgroundColorCropType = StampBackgroundCropType.OuterArea;
+
+            //Inner square lines
+            StampLine line0 = new StampLine();
+            line0.Text = "PAID";
+            line0.TextColor = Color.White;
+            line0.Font.FontSize = 32;
+            line0.Font.Bold = true;
+            line0.Height = 100;
+            //Set radius of square corner
+            line0.OuterBorder = new SquareBorderLine(new Corners(25)); //This type is supported starting from version 19.01
+            line0.OuterBorder.Color = Color.Gray;
+            line0.OuterBorder.Weight = 2;
+            line0.BackgroundColor = Color.ForestGreen;
+            signOptions.InnerLines.Add(line0);
+
+            SaveOptions exSaveOptions = new SaveOptions();
+            exSaveOptions.OutputType = OutputType.String;
+            exSaveOptions.OutputFileName = "DocImages_Stamp_RoundedCorners";
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions, exSaveOptions);
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImagesWithRoundedCornersStampSignature
+        }
         #endregion
 
         #region WorkingWithImageDocument
@@ -5725,6 +5766,42 @@ namespace GroupDocs.Signature.Examples.CSharp
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "Slides_Documents_Metadata" });
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignSlidesWithMetadataSignOptions
+        }
+
+        /// <summary>
+        /// Shows how to sign Images with Metadata Sign Options
+        /// Feature is supported in versin 19.1 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImagesWithMetadataSignOptions(string fileName)
+        {
+            //ExStart:SignImagesWithMetadataSignOptions
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            ImagesMetadataSignOptions signOptions = new ImagesMetadataSignOptions();
+            // Specify different Metadata Signatures and add them to options sigature collection
+            ushort imgsMetadataId = 41996;
+            // setup int value
+            ImageMetadataSignature mdSign_DocId = new ImageMetadataSignature(imgsMetadataId++, 123456); // int
+            signOptions.MetadataSignatures.Add(mdSign_DocId);
+            // setup Author property
+            ImageMetadataSignature mdSign_Author = new ImageMetadataSignature(imgsMetadataId++, "Mr.Scherlock Holmes"); // string
+            signOptions.MetadataSignatures.Add(mdSign_Author);
+            // setup data of sign date
+            ImageMetadataSignature mdSign_Date = new ImageMetadataSignature(imgsMetadataId++, DateTime.Now); // DateTime
+            signOptions.MetadataSignatures.Add(mdSign_Date);
+            // setup double
+            ImageMetadataSignature mdSign_Amnt = new ImageMetadataSignature(imgsMetadataId++, 123.456M); //decimal value
+            signOptions.MetadataSignatures.Add(mdSign_Amnt);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "Image_Metadata" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImagesWithMetadataSignOptions
         }
 
         /// <summary>
