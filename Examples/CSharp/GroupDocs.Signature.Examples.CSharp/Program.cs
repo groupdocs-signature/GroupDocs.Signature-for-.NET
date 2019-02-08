@@ -204,7 +204,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignSlidesDocumentWithStampSignature("butterfly effect.pptx");
             //Signatures.SignWordsDocumentWithStampSignature("getting started.docx");
             //Signatures.SetStampSignaturePositionOnCells("pie chart.xlsx");
-            //Signatures.SignCellsWithStampMeasure("pie chart.xlsx");
+            //Signatures.SignImagesWithRoundedCornersStampSignature("ImageDocument.png");
             #endregion
 
             //Signatures.SetOutputFileName();
@@ -255,11 +255,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignCellsWithMetadataSignOptions("pie chart.xlsx");
             //Signatures.SignWordsWithMetadataSignOptions("getting started.docx");
             //Signatures.SignSlidesWithMetadataSignOptions("butterfly effect.pptx");
+            //Signatures.SignImagesWithMetadataSignOptions("ImageDocument.png");
             //Signatures.SearchMetadataSignatureInPDFDocuments("text.pdf");
             //Signatures.SearchMetadataSignatureInCellsDocuments("pie chart.xlsx");
             //Signatures.SearchMetadataSignatureInWordsDocuments("getting started.docx");
             //Signatures.SearchMetadataSignatureInSlidesDocuments("butterfly effect.pptx");
-
             //Signatures.SearchMetadataSignatureInImages("ImageDocument.png");
 
             #endregion
