@@ -5952,6 +5952,91 @@ namespace GroupDocs.Signature.Examples.CSharp
         }
         #endregion
 
+        #region WorkingWithEncryptedSignature
+
+        /// <summary>
+        /// Shows how to sign PDF documents with Custom Encrypted Metadata Signature
+        /// Feature is supported in versin 19.4 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignDocumentWithEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignDocumentWithEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            PdfMetadataSignOptions signOptions = new PdfMetadataSignOptions();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            PdfMetadataSignature mdDocument = new PdfMetadataSignature("DocumentSignature", signature);
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // add signatures to options
+            signOptions.MetadataSignatures.Add(mdDocument);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.pdf" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignDocumentWithEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to search Custom Encrypted Metadata Signature in PDF documents
+        /// Feature is supported in versin 19.4 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SearchCustomEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchMetadataOptions searchOptions = new PdfSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<PdfMetadataSignature> signatures = result.ToList<PdfMetadataSignature>();
+            foreach (PdfMetadataSignature signature in signatures)
+            {
+                if (signature != null && signature.Name.Equals("DocumentSignature"))
+                {
+                    DocumentSignature docSignature = signature.GetData<DocumentSignature>(encryption);
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                          docSignature.ID, docSignature.Author, docSignature.DataFactor, docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomEncryptedMetadataSignature
+        }
+
+        #endregion
+
         #region WorkingWithFormFieldSignatures
 
         /// <summary>
