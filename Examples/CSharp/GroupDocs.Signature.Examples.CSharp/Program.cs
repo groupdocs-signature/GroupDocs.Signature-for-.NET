@@ -264,6 +264,13 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #endregion
 
+            #region WorkingWithEncryptedSignature
+
+            //Signatures.SignDocumentWithEncryptedMetadataSignature("digital signatures.pdf");
+            //Signatures.SearchCustomEncryptedMetadataSignature("digital signatures.pdf");
+
+            #endregion
+
             #region WorkingWithFormFieldSignatures
 
             //Signatures.SignPDFWithFormFieldSignOptions("digital signatures.pdf");
@@ -271,6 +278,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
 
             #endregion
+
 
             Console.ReadKey();
         }
