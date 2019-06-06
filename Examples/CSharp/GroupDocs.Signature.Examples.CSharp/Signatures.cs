@@ -5959,9 +5959,9 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Feature is supported in versin 19.4 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void SignDocumentWithEncryptedMetadataSignature(string fileName)
+        public static void SignPDFWithCustomEncryptedMetadataSignature(string fileName)
         {
-            //ExStart:SignDocumentWithEncryptedMetadataSignature
+            //ExStart:SignPDFWithCustomEncryptedMetadataSignature
             // setup key and passphrase
             string key = "1234567890";
             string salt = "1234567890";
@@ -5993,7 +5993,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             string signedPath = handler.Sign<string>(fileName, signOptions,
                 new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.pdf" });
             Console.WriteLine("Signed file path is: " + signedPath);
-            //ExEnd:SignDocumentWithEncryptedMetadataSignature
+            //ExEnd:SignPDFWithCustomEncryptedMetadataSignature
         }
 
         /// <summary>
@@ -6001,9 +6001,9 @@ namespace GroupDocs.Signature.Examples.CSharp
         /// Feature is supported in versin 19.4 or greater
         /// </summary>
         /// <param name="fileName"></param>
-        public static void SearchCustomEncryptedMetadataSignature(string fileName)
+        public static void SearchCustomEncryptedMetadataSignatureInPDF(string fileName)
         {
-            //ExStart:SearchCustomEncryptedMetadataSignature
+            //ExStart:SearchCustomEncryptedMetadataSignatureInPDF
             // setup key and passphrase
             string key = "1234567890";
             string salt = "1234567890";
@@ -6032,7 +6032,421 @@ namespace GroupDocs.Signature.Examples.CSharp
                     }
                 }
             }
-            //ExEnd:SearchCustomEncryptedMetadataSignature
+            //ExEnd:SearchCustomEncryptedMetadataSignatureInPDF
+        }
+
+        /// <summary>
+        /// Shows how to sign PDF documents with Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignPDFWithEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignPDFWithEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            PdfMetadataSignOptions signOptions = new PdfMetadataSignOptions();
+
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property with encryption
+            var mdDocument = signOptions.AddSignature("Author", "Mr.Scherlock Holmes");
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // setup data of document id
+            signOptions.AddSignature("DocumentId", Guid.NewGuid().ToString());
+            // setup data of sign date
+            var msDate = signOptions.AddSignature("SignDate", DateTime.Now);
+            msDate.Value = DateTime.Now.Date;
+            // setup some integer value
+            signOptions.AddSignature("DocDays", 12345);
+            // setup data of sign date
+            signOptions.AddSignature("SignKoeff", 2.345M);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.pdf" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignPDFWithEncryptedMetadataSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to sign Words documents with Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsWithEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignWordsWithEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsMetadataSignOptions signOptions = new WordsMetadataSignOptions();
+
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property with encryption
+            var mdDocument = signOptions.AddSignature("Author", "Mr.Scherlock Holmes");
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // setup data of document id
+            signOptions.AddSignature("DocumentId", Guid.NewGuid().ToString());
+            // setup data of sign date
+            var msDate = signOptions.AddSignature("SignDate", DateTime.Now);
+            msDate.Value = DateTime.Now.Date;
+            // setup some integer value
+            signOptions.AddSignature("DocDays", 12345);
+            // setup data of sign date
+            signOptions.AddSignature("SignKoeff", 2.345M);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.docx" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsWithEncryptedMetadataSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to sign Slides documents with Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesWithEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignSlidesWithEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesMetadataSignOptions signOptions = new SlidesMetadataSignOptions();
+
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property with encryption
+            var mdDocument = signOptions.AddSignature("Author", "Mr.Scherlock Holmes");
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // setup data of document id
+            signOptions.AddSignature("DocumentId", Guid.NewGuid().ToString());
+            // setup data of sign date
+            var msDate = signOptions.AddSignature("SignDate", DateTime.Now);
+            msDate.Value = DateTime.Now.Date;
+            // setup some integer value
+            signOptions.AddSignature("DocDays", 12345);
+            // setup data of sign date
+            signOptions.AddSignature("SignKoeff", 2.345M);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.pptx" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesWithEncryptedMetadataSignature
+        }
+
+
+        /// <summary>
+        /// Shows how to sign Cells documents with Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignCellsWithEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsMetadataSignOptions signOptions = new CellsMetadataSignOptions();
+
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property with encryption
+            var mdDocument = signOptions.AddSignature("Author", "Mr.Scherlock Holmes");
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // setup data of document id
+            signOptions.AddSignature("DocumentId", Guid.NewGuid().ToString());
+            // setup data of sign date
+            var msDate = signOptions.AddSignature("SignDate", DateTime.Now);
+            msDate.Value = DateTime.Now.Date;
+            // setup some integer value
+            signOptions.AddSignature("DocDays", 12345);
+            // setup data of sign date
+            signOptions.AddSignature("SignKoeff", 2.345M);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.xlsx" });
+            Console.WriteLine("Signed file path is: " + signedPath);            
+            //ExEnd:SignCellsWithEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to sign Words documents with Custom Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignWordsWithCustomEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignWordsWithCustomEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            WordsMetadataSignOptions signOptions = new WordsMetadataSignOptions();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            WordsMetadataSignature mdDocument = new WordsMetadataSignature("DocumentSignature", signature);
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // add signatures to options
+            signOptions.MetadataSignatures.Add(mdDocument);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.docx" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignWordsWithCustomEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to search Custom Encrypted Metadata Signature in Words documents
+        /// Feature is supported in versin 19.4 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomEncryptedMetadataSignatureInWords(string fileName)
+        {
+            //ExStart:SearchCustomEncryptedMetadataSignatureInWords
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            WordsSearchMetadataOptions searchOptions = new WordsSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<WordsMetadataSignature> signatures = result.ToList<WordsMetadataSignature>();
+            foreach (WordsMetadataSignature signature in signatures)
+            {
+                if (signature != null && signature.Name.Equals("DocumentSignature"))
+                {
+                    DocumentSignature docSignature = signature.GetData<DocumentSignature>(encryption);
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                          docSignature.ID, docSignature.Author, docSignature.DataFactor, docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomEncryptedMetadataSignatureInWords
+        }
+
+        /// <summary>
+        /// Shows how to sign Slides documents with Custom Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignSlidesWithCustomEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignSlidesWithCustomEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            SlidesMetadataSignOptions signOptions = new SlidesMetadataSignOptions();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            SlidesMetadataSignature mdDocument = new SlidesMetadataSignature("DocumentSignature", signature);
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // add signatures to options
+            signOptions.MetadataSignatures.Add(mdDocument);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.pptx" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignSlidesWithCustomEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to search Custom Encrypted Metadata Signature in Slides documents
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomEncryptedMetadataSignatureInSlides(string fileName)
+        {
+            //ExStart:SearchCustomEncryptedMetadataSignatureInSlides
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            SlidesSearchMetadataOptions searchOptions = new SlidesSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<SlidesMetadataSignature> signatures = result.ToList<SlidesMetadataSignature>();
+            foreach (SlidesMetadataSignature signature in signatures)
+            {
+                if (signature != null && signature.Name.Equals("DocumentSignature"))
+                {
+                    DocumentSignature docSignature = signature.GetData<DocumentSignature>(encryption);
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                          docSignature.ID, docSignature.Author, docSignature.DataFactor, docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomEncryptedMetadataSignatureInSlides
+        }
+
+
+        /// <summary>
+        /// Shows how to sign Cells documents with Custom Encrypted Metadata Signature
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignCellsWithCustomEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignCellsWithCustomEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup options with text of signature
+            CellsMetadataSignOptions signOptions = new CellsMetadataSignOptions();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            CellsMetadataSignature mdDocument = new CellsMetadataSignature("DocumentSignature", signature);
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // add signatures to options
+            signOptions.MetadataSignatures.Add(mdDocument);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.xlsx" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignCellsWithCustomEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to search Custom Encrypted Metadata Signature in Cells documents
+        /// Feature is supported in versin 19.5 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomEncryptedMetadataSignatureInCells(string fileName)
+        {
+            //ExStart:SearchCustomEncryptedMetadataSignatureInCells
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            CellsSearchMetadataOptions searchOptions = new CellsSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<CellsMetadataSignature> signatures = result.ToList<CellsMetadataSignature>();
+            foreach (CellsMetadataSignature signature in signatures)
+            {
+                if (signature != null && signature.Name.Equals("DocumentSignature"))
+                {
+                    DocumentSignature docSignature = signature.GetData<DocumentSignature>(encryption);
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                          docSignature.ID, docSignature.Author, docSignature.DataFactor, docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomEncryptedMetadataSignatureInCells
         }
 
         #endregion
