@@ -265,9 +265,22 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region WorkingWithEncryptedSignature
+                                    
+            //Signatures.SignPDFWithEncryptedMetadataSignature("digital signatures.pdf");
+            //Signatures.SignWordsWithEncryptedMetadataSignature("getting started.docx");
+            //Signatures.SignSlidesWithEncryptedMetadataSignature("butterfly effect.pptx");
+            //Signatures.SignCellsWithEncryptedMetadataSignature("pie chart.xlsx");
 
-            //Signatures.SignDocumentWithEncryptedMetadataSignature("digital signatures.pdf");
-            //Signatures.SearchCustomEncryptedMetadataSignature("digital signatures.pdf");
+            //Signatures.SignPDFWithCustomEncryptedMetadataSignature("digital signatures.pdf");
+            //Signatures.SignWordsWithCustomEncryptedMetadataSignature("getting started.docx");
+            //Signatures.SignSlidesWithCustomEncryptedMetadataSignature("butterfly effect.pptx");
+            //Signatures.SignCellsWithCustomEncryptedMetadataSignature("pie chart.xlsx");
+            //Signatures.SearchCustomEncryptedMetadataSignatureInPDF("digital signatures.pdf");
+            //Signatures.SearchCustomEncryptedMetadataSignatureInWords("getting started.docx");
+            //Signatures.SearchCustomEncryptedMetadataSignatureInSlides("butterfly effect.pptx");
+            //Signatures.SearchCustomEncryptedMetadataSignatureInCells("pie chart.xlsx");
+
+
 
             #endregion
 
