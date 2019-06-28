@@ -4033,7 +4033,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         /// <summary>
         /// Shows how to search  QR Code signatures in PDF document and display signatures with page numbers:
-        /// This feature is availabale in version 18.6 or greater
+        /// This feature is availabale in version 19.6 or greater
         /// </summary>
         /// <param name="fileName"></param>
         public static void SearchQRCodeSignaturesAndDisplayPageNumber(string fileName)
