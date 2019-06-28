@@ -194,6 +194,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyEncryptedQRCodeInPDF("text.pdf");
             //Signatures.ExceptionHandlingWhileVerifyingQRCodeInPDF("text.pdf");
             //Signatures.SignCellsWithQRCodeMeasure("pie chart.xlsx");
+
             //Signatures.SearchQRCodeSignaturesAndDisplayPageNumber("text.pdf");
 
             #endregion
