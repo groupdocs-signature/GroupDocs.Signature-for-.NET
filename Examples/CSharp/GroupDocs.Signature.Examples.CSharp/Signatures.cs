@@ -4030,6 +4030,35 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Signed file path is: " + signedPath);
             //ExEnd:SignCellsWithQRCodeMeasure
         }
+
+        /// <summary>
+        /// Shows how to search  QR Code signatures in PDF document and display signatures with page numbers:
+        /// This feature is availabale in version 18.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchQRCodeSignaturesAndDisplayPageNumber(string fileName)
+        {
+            //ExStart:SearchQRCodeSignaturesAndDisplayPageNumber
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the conversion handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            PdfSearchQRCodeOptions searchOptions = new PdfSearchQRCodeOptions();
+            // specify as true to search all pages of a document
+            searchOptions.SearchAllPages = true;
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            // output signatures
+            List<QRCodeSignature> signatures = result.ToList<QRCodeSignature>();
+            foreach (QRCodeSignature signature in signatures)
+            {
+                Console.WriteLine("Found QRCode signature: {0} with text {1} on page {2}", signature.EncodeType.TypeName, signature.Text, signature.PageNumber);
+            }
+            //ExEnd:SearchQRCodeSignaturesAndDisplayPageNumber
+        }
+
         #endregion
 
         #region working with Stamp signatures
@@ -6447,6 +6476,89 @@ namespace GroupDocs.Signature.Examples.CSharp
                 }
             }
             //ExEnd:SearchCustomEncryptedMetadataSignatureInCells
+        }
+
+        /// <summary>
+        /// Shows how to sign Images with Custom Encrypted Metadata Signature
+        /// Feature is supported in versin 19.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SignImagesWithCustomEncryptedMetadataSignature(string fileName)
+        {
+            //ExStart:SignImagesWithCustomEncryptedMetadataSignature
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup signature options
+            ImagesMetadataSignOptions signOptions = new ImagesMetadataSignOptions();
+            // create custom object
+            DocumentSignature signature = new DocumentSignature()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Author = Environment.UserName,
+                Signed = DateTime.Now,
+                DataFactor = 11.22M
+            };
+            ushort imgsMetadataId = 41996;
+            // Specify different Metadata Signatures and add them to options sigature collection
+            // setup Author property
+            ImageMetadataSignature mdDocument = signOptions.AddSignature(imgsMetadataId, signature);
+            // set encryption
+            mdDocument.DataEncryption = encryption;
+            // add signatures to options
+            signOptions.MetadataSignatures.Add(mdDocument);
+            // sign document
+            string signedPath = handler.Sign<string>(fileName, signOptions,
+                new SaveOptions { OutputType = OutputType.String, OutputFileName = "SignedMedataDataEncrypted.png" });
+            Console.WriteLine("Signed file path is: " + signedPath);
+            //ExEnd:SignImagesWithCustomEncryptedMetadataSignature
+        }
+
+        /// <summary>
+        /// Shows how to search Custom Encrypted Metadata Signature in Images
+        /// Feature is supported in versin 19.6 or greater
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void SearchCustomEncryptedMetadataSignatureInImages(string fileName)
+        {
+            //ExStart:SearchCustomEncryptedMetadataSignatureInImages
+            // setup key and passphrase
+            string key = "1234567890";
+            string salt = "1234567890";
+            // create data encryption
+            IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+
+            // setup Signature configuration
+            SignatureConfig signConfig = Utilities.GetConfigurations();
+            // instantiating the signature handler
+            SignatureHandler handler = new SignatureHandler(signConfig);
+            // setup search options
+            ImagesSearchMetadataOptions searchOptions = new ImagesSearchMetadataOptions();
+            // search document
+            SearchResult result = handler.Search(fileName, searchOptions);
+            // output signatures
+            List<ImageMetadataSignature> signatures = result.ToList<ImageMetadataSignature>();
+            ushort imgsMetadataId = 41996;
+            foreach (ImageMetadataSignature signature in signatures)
+            {
+                if (signature != null && signature.Id.Equals(imgsMetadataId))
+                {
+                    DocumentSignature docSignature = signature.GetData<DocumentSignature>(encryption);
+                    if (docSignature != null)
+                    {
+                        Console.WriteLine("Found DocumentSignature signature: #{0}. Author {1} from {2}. Factor: {3}",
+                                docSignature.ID, docSignature.Author, docSignature.Signed.ToShortDateString(), docSignature.DataFactor);
+                    }
+                }
+            }
+            //ExEnd:SearchCustomEncryptedMetadataSignatureInImages
         }
 
         #endregion

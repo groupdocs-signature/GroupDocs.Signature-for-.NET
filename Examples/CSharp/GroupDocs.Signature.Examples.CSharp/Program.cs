@@ -194,6 +194,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.VerifyEncryptedQRCodeInPDF("text.pdf");
             //Signatures.ExceptionHandlingWhileVerifyingQRCodeInPDF("text.pdf");
             //Signatures.SignCellsWithQRCodeMeasure("pie chart.xlsx");
+            //Signatures.SearchQRCodeSignaturesAndDisplayPageNumber("text.pdf");
 
             #endregion
 
@@ -265,7 +266,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region WorkingWithEncryptedSignature
-                                    
+
             //Signatures.SignPDFWithEncryptedMetadataSignature("digital signatures.pdf");
             //Signatures.SignWordsWithEncryptedMetadataSignature("getting started.docx");
             //Signatures.SignSlidesWithEncryptedMetadataSignature("butterfly effect.pptx");
@@ -275,10 +276,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Signatures.SignWordsWithCustomEncryptedMetadataSignature("getting started.docx");
             //Signatures.SignSlidesWithCustomEncryptedMetadataSignature("butterfly effect.pptx");
             //Signatures.SignCellsWithCustomEncryptedMetadataSignature("pie chart.xlsx");
+            //Signatures.SignImagesWithCustomEncryptedMetadataSignature("ImageDocument.png");
+
             //Signatures.SearchCustomEncryptedMetadataSignatureInPDF("digital signatures.pdf");
             //Signatures.SearchCustomEncryptedMetadataSignatureInWords("getting started.docx");
             //Signatures.SearchCustomEncryptedMetadataSignatureInSlides("butterfly effect.pptx");
             //Signatures.SearchCustomEncryptedMetadataSignatureInCells("pie chart.xlsx");
+            //Signatures.SearchCustomEncryptedMetadataSignatureInImages("ImageDocument.png");
 
 
 
