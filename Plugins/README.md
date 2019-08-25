@@ -1,1 +1,0 @@
-[Explore GroupDocs.Signature API for .NET Examples using Visual Studio Plugin](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Plugins/GroupDocsSignatureVSPlugin)

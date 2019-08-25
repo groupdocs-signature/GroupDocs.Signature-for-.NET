@@ -1,8 +1,0 @@
-C:\Users\atir\Desktop\today\GroupDocs_Signature_VSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.msi
-C:\Users\atir\Desktop\today\GroupDocs_Signature_VSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.wixpdb
-obj\Debug\Product.wixobj
-obj\Debug\Installer.wixproj.BindContentsFileListnull.txt
-obj\Debug\Installer.wixproj.BindOutputsFileListnull.txt
-obj\Debug\Installer.wixproj.BindBuiltOutputsFileListnull.txt
-D:\GroupDocsSignatureVSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.msi
-D:\GroupDocsSignatureVSPlugin\out\Installer GroupDocs.Signature for .NET API Examples.wixpdb
