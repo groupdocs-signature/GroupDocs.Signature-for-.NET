@@ -2,7 +2,9 @@
 
 This package contains [Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Examples) and [Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases) for [GroupDocs.Signature for .NET](https://products.groupdocs.com/signature/net) that will help you in understanding the API's working and writing your own applications.
 
-GroupDocs.Signature for .NET allows developers to write applications with ability to significantly sign electronic docs. Signatures can be of different types. API supports multitude of file formats. The quite captivating fact about the API is, its UI less and independent calls can be made. It also provides useful features to manipulate documents and signatures.
+GroupDocs.Signature for .NET is a feature rich library which provides an ability to add stamps, barcodes and QR-codes, text, image, metadata, form field and digital signatures to documents of various formats. Sign, search and verify document signatures for all popular document formats and set different signing options to suit your needs with GroupDocs.Signature for .NET API.
+
+Supported document formats: PDF, Microsoft Word documents, Microsoft Excel spreadsheets, Microsoft PowerPoint presentations, Open Document formats, Images - TIFF, JPEG, PNG, GIF, BMP, and many more.
 
 <p align="center">
 
