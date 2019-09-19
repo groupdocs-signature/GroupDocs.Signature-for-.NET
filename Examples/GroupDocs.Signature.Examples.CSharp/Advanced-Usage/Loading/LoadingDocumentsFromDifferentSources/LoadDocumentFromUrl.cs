@@ -13,7 +13,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         public static void Run()
         {
-            string url = "https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/api-v2/Examples/Resources/SampleFiles/sample.pdf?raw=true";
+            string url = "https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/Resources/SampleFiles/sample.pdf?raw=true";
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignedWithTextFromUrl", "sample.pdf");
 
