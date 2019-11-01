@@ -7,7 +7,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
     
-
     public class SearchForBarcode
     {
         /// <summary>

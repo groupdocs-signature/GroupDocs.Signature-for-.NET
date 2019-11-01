@@ -25,6 +25,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion // Quick Start
 
             return;
+
             #region Basic Usage
 
             #region Common
@@ -82,6 +83,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion // Sign document with different signature types
 
             #region Search signed documents for different signature types
+
+            //Search document for Text signature
+            SearchForText.Run();
+
+            //Search document for Image signature
+            SearchForImage.Run();
 
             //Search document for Bar-Code signature
             SearchForBarcode.Run();
@@ -213,6 +220,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Search signed documents for different signature types with additional options
+
+            //Search document for Text signature with applying specific options
+            SearchForTextAdvanced.Run();
+
+            //Search document for Image signature with applying specific options
+            SearchForImageAdvanced.Run();
 
             //Search document for Bar-Code signature with applying specific options
             SearchForBarcodeAdvanced.Run();

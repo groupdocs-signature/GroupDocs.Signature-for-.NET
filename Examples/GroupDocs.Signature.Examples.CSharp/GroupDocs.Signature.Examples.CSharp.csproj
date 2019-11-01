@@ -54,8 +54,8 @@
     <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>packages\AWSSDK.S3.3.3.104.10\lib\net45\AWSSDK.S3.dll</HintPath>
     </Reference>
-    <Reference Include="GroupDocs.Signature, Version=19.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>packages\GroupDocs.Signature.19.8.0\lib\GroupDocs.Signature.dll</HintPath>
+    <Reference Include="GroupDocs.Signature, Version=19.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>packages\GroupDocs.Signature.19.10.0\lib\net20\GroupDocs.Signature.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
@@ -141,6 +141,7 @@
     <Compile Include="Advanced-Usage\Saving\SaveSignedImageWithVariousOutputTypes.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForDigitalAdvanced.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForBarcodeAdvanced.cs" />
+    <Compile Include="Advanced-Usage\Search\SearchForImageAdvanced.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomEncryptionObject.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomSerializationObject.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataEncryptedObject.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Advanced-Usage\Search\SearchForFormFieldAdvanced.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomEncryptionObject.cs" />
     <Compile Include="Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedText.cs" />
+    <Compile Include="Advanced-Usage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="Advanced-Usage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="Advanced-Usage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
     <Compile Include="Advanced-Usage\Sign\SignatureAppearances\SignWithImageAppearance.cs" />
@@ -193,11 +195,13 @@
     <Compile Include="Basic-Usage\DocumentPreview\GeneratePreview.cs" />
     <Compile Include="Basic-Usage\DocumentPreview\GetDocumentInfo.cs" />
     <Compile Include="Basic-Usage\Search\SearchForBarcode.cs" />
+    <Compile Include="Basic-Usage\Search\SearchForImage.cs" />
     <Compile Include="Basic-Usage\Search\SearchForMultiple.cs" />
     <Compile Include="Basic-Usage\Search\SearchForQRCode.cs" />
     <Compile Include="Basic-Usage\Search\SearchForDigital.cs" />
     <Compile Include="Basic-Usage\Search\SearchForMetadata.cs" />
     <Compile Include="Basic-Usage\Search\SearchForFormField.cs" />
+    <Compile Include="Basic-Usage\Search\SearchForText.cs" />
     <Compile Include="Basic-Usage\Sign\SignWithBarcode.cs" />
     <Compile Include="Basic-Usage\Sign\SignWithDigital.cs" />
     <Compile Include="Basic-Usage\Sign\Metadata\SignImageWithMetadata.cs" />

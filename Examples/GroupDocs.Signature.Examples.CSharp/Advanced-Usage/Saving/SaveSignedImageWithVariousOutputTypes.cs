@@ -18,8 +18,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_JPG;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedImageOutputType", "sampleJPG");
-
             using (Signature signature = new Signature(filePath))
             {   
                 QrCodeSignOptions signOptions = new QrCodeSignOptions("JohnSmith")
@@ -73,19 +71,20 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     {
                         ExpectedTiffFormat = TiffFormat.TiffNoCompressionBw
                     }
-                };
+                };                
                 foreach (SaveOptions saveOptions in listSaveOptions)
                 {
                     // set flag to overwrite existing files
                     saveOptions.OverwriteExistingFiles = true;
                     // set flag to add missing extension automatically
                     saveOptions.AddMissingExtenstion = true;
-                    outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedImageOutputType", "sampleJPG2" + saveOptions.GetType().ToString());
+                    var outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedImageOutputType", "sampleJPG-To-" + saveOptions.GetType().Name.ToString());
                     // sign document to file
                     signature.Sign(outputFilePath, signOptions, saveOptions);
+                    Console.WriteLine("\nSource document {0} signed successfully.\nFile saved at {1}", fileName,outputFilePath);
                 }
             }
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
+            
         }
     }
 }
