@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchForTextAdvanced
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for Text signature
         /// </summary>
         public static void Run()
         {

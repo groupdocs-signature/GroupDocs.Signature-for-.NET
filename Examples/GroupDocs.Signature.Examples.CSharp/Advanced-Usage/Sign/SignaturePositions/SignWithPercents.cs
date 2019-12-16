@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithPercents
     {
         /// <summary>
-        /// Sign document with Bar-Code signature applying specific options
+        /// Sign document with Barcode signature applying specific options
         /// </summary>
         public static void Run()
         {

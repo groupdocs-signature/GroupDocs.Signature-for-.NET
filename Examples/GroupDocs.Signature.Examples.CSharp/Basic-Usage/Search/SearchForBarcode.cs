@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SearchForBarcode
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for Barcode signature
         /// </summary>
         public static void Run()
         {

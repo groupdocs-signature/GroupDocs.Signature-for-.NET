@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>7a57d308-9f4e-4b17-b975-b53577b5a72a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GroupDocs.Signature.Examples.CSharp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\CancellationSearchProcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\CancellationSignProcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\CancellationVerifyProcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\SubscribeSearchEvents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\SubscribeSignEvents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Common\SubscribeVerifyEvents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\CustomEncryption\CustomXOREncryption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\CustomSerialization\CustomSerializationAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAmazonS3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAzureBlobStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromFtp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromLocalDisk.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromUrl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Loading\LoadPasswordProtectedDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedImageWithDifferentOutputFileType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedPdfWithDifferentOutputFileType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedPresentationWithDifferentOutputFileType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedSpreadsheetWithDifferentOutputFileType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedWordProcessingWithDifferentOutputFileType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveDocumentWithPassword.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveSignedDocumentsAsImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Saving\SaveSignedImageWithVariousOutputTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForBarcodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForDigitalAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForFormFieldAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForImageAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForMetadataAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomEncryptionObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomSerializationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataEncryptedObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForMetadataSecureCustom\SearchForMetadataEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForQRCodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomEncryptionObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomSerializationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchForTextAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Search\SearchWithExceptionHandling.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignatureAppearances\SignWithImageAppearance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignatureAppearances\SignWithPdfTextAnnotation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignatureAppearances\SignWithPdfTextSticker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignaturePositions\SignWithAlignments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignaturePositions\SignWithMillimeters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignaturePositions\SignWithPercents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignaturePositions\SignWithStretchMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignPdfWithFormFieldAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignPdfWithStandardMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithBarcodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithDigitalAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithExceptionHandling.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithImageAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithMetadataAdvanced\SignImageWithCustomMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithMetadataAdvanced\SignPdfWithCustomMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataCustomEncryptionObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataCustomSerializationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithQRCodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomEncryptionObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithStampAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SignWithTextAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SinginWithBrushes\SignWithLinearGradientBrush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SinginWithBrushes\SignWithRadialGradientBrush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SinginWithBrushes\SignWithSolidBrush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Sign\SinginWithBrushes\SignWithTextureBrush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Verify\VerifyBarcodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Verify\VerifyDigitalAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Verify\VerifyQRCodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Verify\VerifyTextAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advanced-Usage\Verify\VerifyWithExceptionHandling.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Common\GetSupportedFileFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\DocumentPreview\GeneratePreview.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\DocumentPreview\GetDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForBarcode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForDigital.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForFormField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForMultiple.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForQRCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Search\SearchForText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\Metadata\SignImageWithMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\Metadata\SignPdfWithMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\Metadata\SignPresentationWithMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\Metadata\SignSpreadsheetWithMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\Metadata\SignWordProcessingWithMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignPdfWithFormField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithBarcode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithDigital.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithMultipleOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithQRCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithStamp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Sign\SignWithText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Verify\VerifyBarcode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Verify\VerifyDigital.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Verify\VerifyQrCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Verify\VerifyText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Basic-Usage\Verify\VerifyWithMultipleOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Quick-Start\HelloWorld.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Quick-Start\SetLicenseFromFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Quick-Start\SetLicenseFromStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Quick-Start\SetMeteredLicense.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\butterfly effect.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\acer.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\ali.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\MrSmithSignature.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\signtest.cer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\signtest.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\encrypted_metadata_sample.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\getting started.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataCustomEncryptionObject.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataCustomSerializationObject.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataEncryptedObject.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataEncryptedText.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\pie chart.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomEncryptionObject.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomSerializationObject.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedObject.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedText.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.ppsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_pwd.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\signed_formfield.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\signed_sample.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\test_text_annotation.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\test_text_sticker.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\text.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\Screenshots\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\DocImages_BarCode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\DocImages_QRCode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\ImageDocument.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\signature-handwrite.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\stamp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

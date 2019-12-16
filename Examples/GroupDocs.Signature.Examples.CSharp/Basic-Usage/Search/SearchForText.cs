@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -11,7 +12,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SearchForText
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for Text signature
         /// </summary>
         public static void Run()
         {

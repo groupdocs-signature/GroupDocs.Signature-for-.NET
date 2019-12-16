@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETCOREAPP
+using System;
 using System.IO;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
@@ -66,3 +67,4 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         }
     }
 }
+#endif

@@ -9,7 +9,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class GetDocumentInfo
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Get document basic info
         /// </summary>
         public static void Run()
         {

@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         static void Main(string[] args)
         {
             // TODO: Reference library from Nuget instead of local path.
-            
+
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
 
@@ -23,17 +23,15 @@ namespace GroupDocs.Signature.Examples.CSharp
             //QuickStart.SetMeteredLicense.Run();
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
-
-            return;
-
+            
             #region Basic Usage
 
             #region Common
 
             GetSupportedFileFormats.Run();
-            
+
             #endregion
-            
+
             #region Document Preview
 
             GetDocumentInfo.Run();
@@ -90,7 +88,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for Image signature
             SearchForImage.Run();
 
-            //Search document for Bar-Code signature
+            //Search document for Barcode signature
             SearchForBarcode.Run();
 
             //Search document for QR-Code signature
@@ -115,7 +113,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Verify document with Text signature
             VerifyText.Run();
 
-            //Verify document with Bar-Code signature
+            //Verify document with Barcode signature
             VerifyBarcode.Run();
 
             //Verify document with QR-Code signature
@@ -138,7 +136,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //LoadDocumentFromAzureBlobStorage.Run();
             //LoadDocumentFromFtp.Run();            
             LoadPasswordProtectedDocument.Run();
-            
+
             #endregion
 
             #region Saving
@@ -151,7 +149,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SaveSignedImageWithVariousOutputTypes.Run();
 
             SaveDocumentWithPassword.Run();
-            SaveSignedDocumentsAsImages.Run();            
+            SaveSignedDocumentsAsImages.Run();
             #endregion
 
             #region Sign document with different signature types with additional options
@@ -162,7 +160,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
 
-            //Sign document with Bar-Code signature applying specific options
+            //Sign document with Barcode signature applying specific options
             SignWithBarcodeAdvanced.Run();
 
             //Sign document with QR-Code signature applying specific options
@@ -172,7 +170,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignPdfWithFormFieldAdvanced.Run();
 
             SignWithStampAdvanced.Run();
-            
+
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization
@@ -227,7 +225,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for Image signature with applying specific options
             SearchForImageAdvanced.Run();
 
-            //Search document for Bar-Code signature with applying specific options
+            //Search document for Barcode signature with applying specific options
             SearchForBarcodeAdvanced.Run();
 
             //Search document for encrypted QR-Code signature with applying specific options
@@ -255,7 +253,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Verify document with Text signature with applying specific options
             VerifyTextAdvanced.Run();
 
-            //Verify document with Bar-Code signature with applying specific options
+            //Verify document with Barcode signature with applying specific options
             VerifyBarcodeAdvanced.Run();
 
             //Verify document with QR-Code signature with applying specific options

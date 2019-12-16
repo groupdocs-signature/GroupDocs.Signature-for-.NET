@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SearchForMultiple
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for multiple signature types
         /// </summary>
         public static void Run()
         {

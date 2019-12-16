@@ -12,7 +12,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchForImageAdvanced
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for Image signature
         /// </summary>
         public static void Run()
         {

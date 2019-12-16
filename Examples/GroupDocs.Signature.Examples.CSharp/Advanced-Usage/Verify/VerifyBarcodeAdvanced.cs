@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class VerifyBarcodeAdvanced
     {
         /// <summary>
-        /// Verify document with Bar-Code signature with applying specific options
+        /// Verify document with Barcode signature with applying specific options
         /// </summary>
         public static void Run()
         {

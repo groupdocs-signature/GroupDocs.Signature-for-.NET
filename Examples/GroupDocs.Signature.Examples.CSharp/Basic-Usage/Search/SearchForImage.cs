@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SearchForImage
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Search document for Image signature
         /// </summary>
         public static void Run()
         {

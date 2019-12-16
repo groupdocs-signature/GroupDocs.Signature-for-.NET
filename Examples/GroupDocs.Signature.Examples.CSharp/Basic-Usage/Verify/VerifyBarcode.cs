@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class VerifyBarcode
     {
         /// <summary>
-        /// Verify document with Bar-Code signature
+        /// Verify document with Barcode signature
         /// </summary>
         public static void Run()
         {

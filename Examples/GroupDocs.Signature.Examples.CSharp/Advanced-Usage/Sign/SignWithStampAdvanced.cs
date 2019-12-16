@@ -12,7 +12,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithStampAdvanced
     {
         /// <summary>
-        /// Sign document with Bar-Code signature applying specific options
+        /// Sign document with Stamp signature applying specific options
         /// </summary>
         public static void Run()
         {

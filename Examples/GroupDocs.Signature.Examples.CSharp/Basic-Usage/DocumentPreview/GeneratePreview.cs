@@ -10,7 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class GeneratePreview
     {
         /// <summary>
-        /// Search document for Bar-Code signature
+        /// Generate document pages preview
         /// </summary>
         public static void Run()
         {

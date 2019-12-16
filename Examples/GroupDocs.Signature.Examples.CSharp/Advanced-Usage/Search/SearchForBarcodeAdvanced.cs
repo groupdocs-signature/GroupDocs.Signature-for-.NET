@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchForBarcodeAdvanced
     {
         /// <summary>
-        /// Search document for Bar-Code signature with applying specific options
+        /// Search document for Barcode signature with applying specific options
         /// </summary>
         public static void Run()
         {
