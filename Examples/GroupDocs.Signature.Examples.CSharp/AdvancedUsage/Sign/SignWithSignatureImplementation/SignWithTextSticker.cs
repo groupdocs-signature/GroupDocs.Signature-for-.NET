@@ -1,0 +1,55 @@
+﻿using System;
+using System.IO;
+
+namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
+{
+    using GroupDocs.Signature;
+    using GroupDocs.Signature.Domain;
+    using GroupDocs.Signature.Options;
+    using GroupDocs.Signature.Options.Appearances;
+
+
+    public class SignWithTextSticker
+    {
+        /// <summary>
+        /// Sign document with text signature applying Sticker implementation type
+        /// </summary>
+        public static void Run()
+        {
+            // The path to the documents directory.
+            string filePath = Constants.SAMPLE_PDF;
+            string fileName = Path.GetFileName(filePath);
+
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithTextSticker", fileName);
+
+            using (Signature signature = new Signature(filePath))
+            {
+                TextSignOptions options = new TextSignOptions("John Smith")
+                {
+                    // set alternative signature implementation on document page
+                    SignatureImplementation = TextSignatureImplementation.Sticker,
+                    // for Pdf document type ther's ability to setup exteneded appearences for Stickers
+                    Appearance = new PdfTextStickerAppearance()
+                    {
+                        // select sticker icon
+                        Icon = PdfTextStickerIcon.Key,
+                        // setup if popup annotation will be opened by default
+                        Opened = false,
+                        // text content of an annotation
+                        Contents = "Sample",
+                        Subject = "Sample subject",
+                        Title = "Sample Title"
+                    },
+                    // set alignment
+                    VerticalAlignment = VerticalAlignment.Top,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    // set margin with 20 pixels for all sides
+                    Margin = new Padding(20)
+                };
+                // sign document to file
+                signature.Sign(outputFilePath, options);
+            }
+            Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+        }
+    }
+}

@@ -9,8 +9,6 @@ namespace GroupDocs.Signature.Examples.CSharp
     {
         static void Main(string[] args)
         {
-            // TODO: Reference library from Nuget instead of local path.
-
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
 
@@ -53,7 +51,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithQRCode.Run();
 
             //Sign document with digital signature
-            //SignWithDigital.Run();
+            SignWithDigital.Run();
 
             //Sign document with Stamp signature
             SignWithStamp.Run();
@@ -61,21 +59,22 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign image document with metadata signature
             SignImageWithMetadata.Run();
 
-            //Sign pdf document with text signature
+            //Sign pdf document with metadata signature
             SignPdfWithMetadata.Run();
 
-            //Sign presentation document with text signature
+            //Sign presentation document with metadata signature
             SignPresentationWithMetadata.Run();
 
-            //Sign spreadsheets document with text signature
+            //Sign spreadsheets document with metadata signature
             SignSpreadsheetWithMetadata.Run();
 
-            //Sign word-processing document with text signature
+            //Sign word-processing document with metadata signature
             SignWordProcessingWithMetadata.Run();
 
-            //Sign pdf document with form - field signature
+            //Sign pdf document with form-field signature
             SignPdfWithFormField.Run();
 
+            // Sign document with multiple signature types
             SignWithMultipleOptions.Run();
 
             #endregion // Sign document with different signature types
@@ -103,7 +102,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for form-field signature
             SearchForFormField.Run();
 
-            //Search for signature with multiple options
+            //Search document for multiple signature types
             SearchForMultiple.Run();
 
             #endregion // Search signed documents for different signature types
@@ -123,6 +122,21 @@ namespace GroupDocs.Signature.Examples.CSharp
             VerifyDigital.Run();
 
             #endregion // Verify documents signed with different signature types
+
+            #region Update signatures in the document
+            UpdateText.Run();
+            UpdateImage.Run();
+            UpdateBarcode.Run();
+            UpdateQRCode.Run();
+            #endregion
+
+            #region Delete signatures from document
+            DeleteText.Run();
+            DeleteImage.Run();
+            DeleteBarcode.Run();
+            DeleteQRCode.Run();
+            DeleteMultiple.Run();
+            #endregion
 
             #endregion // Basic Usage
 
@@ -152,6 +166,15 @@ namespace GroupDocs.Signature.Examples.CSharp
             SaveSignedDocumentsAsImages.Run();
             #endregion
 
+            #region Document Preivew with hiding signatures
+            GeneratePreviewAdvanced.Run();
+            #endregion
+
+            #region Handling different special exceptions
+            HandlingIncorrectPasswordException.Run();
+            HandlingPasswordRequiredException.Run();
+            #endregion
+
             #region Sign document with different signature types with additional options
 
             //Sign document with text signature applying specific options
@@ -171,6 +194,19 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             SignWithStampAdvanced.Run();
 
+            #endregion
+
+            #region Sign with further result analyzis
+            SignWithResultAnalysis.Run();
+            #endregion
+
+            #region Sign with different signature implementation type
+            SignWithTextStamp.Run();
+            SignWithTextAnnotation.Run();
+            SignWithTextImage.Run();
+            SignWithTextSticker.Run();
+            SignWithTextFormField.Run();
+            SignWithTextWatermark.Run();
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization
@@ -248,6 +284,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             SearchWithExceptionHandling.Run();
             #endregion // Search signed documents for different signature types with additional options
 
+            SearchAndSkipExternalSignatures.Run();
+
             #region Verify signed documents with additional options
 
             //Verify document with Text signature with applying specific options
@@ -277,6 +315,38 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             VerifyWithExceptionHandling.Run();
+
+            #region Updating document signatures
+            UpdateTextAfterSearch.Run();
+            UpdateTextById.Run();
+            UpdateImageAfterSearch.Run();
+            UpdateImageById.Run();
+            UpdateBarcodeAfterSearch.Run();
+            UpdateBarcodeById.Run();
+            UpdateQRCodeAfterSearch.Run();
+            UpdateQRCodeById.Run();
+            UpdateMultipleAdvanced.Run();
+            #endregion
+
+            #region Delete signatures from the document
+            DeleteTextAfterSearch.Run();
+            DeleteTextById.Run();
+            DeleteImageAfterSearch.Run();
+            DeleteImageById.Run();
+            DeleteBarcodeAfterSearch.Run();
+            DeleteBarcodeById.Run();
+            DeleteQRCodeAfterSearch.Run();
+            DeleteQRCodeById.Run();
+            DeleteMultipleAdvanced.Run();
+            #endregion
+
+            #region Processing signatures over all CRUD operation to show full signature process life-cycle
+            ProcessingTextSignatureOverCRUD.Run();
+            ProcessingImageSignatureOverCRUD.Run();
+            ProcessingBarcodeSignatureOverCRUD.Run();
+            ProcessingQrCodeSignatureOverCRUD.Run();
+            #endregion
+
             #endregion // Advanced Usage
 
             Console.WriteLine();
