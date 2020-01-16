@@ -9,13 +9,16 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Options;
     using GroupDocs.Signature.Domain.Extensions;
 
+    /// <summary>
+    /// Search document for metadata signature with applying specific options
+    /// </summary>
     public class SearchForMetadataEncryptedText
     {
-        /// <summary>
-        /// Search document for metadata signature with applying specific options
-        /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForMetadataEncryptedText : Search document for metadata signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX_METADATA_ENCRYPTED_TEXT;
 

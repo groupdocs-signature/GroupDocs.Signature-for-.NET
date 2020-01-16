@@ -43,8 +43,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SubscribeVerifyEvents : Verify document with text signature applying specific options and subscribe for events\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -52,20 +55,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 signature.VerifyProgress += OnVerifyProgress;
                 signature.VerifyCompleted += OnVerifyCompleted;
 
-                TextVerifyOptions options = new TextVerifyOptions("John Smith")
+                TextVerifyOptions options = new TextVerifyOptions("JS_Stamp")
                 {
-                   AllPages = true
+                    AllPages = false,
+                    PageNumber = 1
                 };
 
                 // verify document
                 VerificationResult result = signature.Verify(options);
                 if (result.IsValid)
                 {
-                    Console.WriteLine("\nDocument was verified successfully!");
+                    Console.WriteLine("\nDocument was verified successfully!\n");
                 }
                 else
                 {
-                    Console.WriteLine("\nDocument failed verification process.");
+                    Console.WriteLine("\nDocument failed verification process.\n");
                 }
             }
         }

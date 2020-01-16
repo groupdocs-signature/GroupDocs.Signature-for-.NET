@@ -7,7 +7,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
     public class SearchForMultiple
     {
         /// <summary>
@@ -15,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SearchForMultiple : Search document for multiple signature types \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORD_SIGNED;
 
@@ -29,7 +31,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 BarcodeSearchOptions barcodeOptions = new BarcodeSearchOptions()
                 {
                     AllPages = true,
-                    Text = "123456789012",
+                    Text = "12345678",
                     MatchType = TextMatchType.Exact
                 };
 

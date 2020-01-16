@@ -7,7 +7,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
     public class SearchForQRCode
     {
         /// <summary>
@@ -15,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SearchForQRCode : Search document for QR_Code signature \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
 
@@ -30,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var QrCodeSignature in signatures)
                 {
-                    Console.WriteLine($"QRCode signature found at page {QrCodeSignature.PageNumber} with type {QrCodeSignature.EncodeType} and text {QrCodeSignature.Text}");
+                    Console.WriteLine($"QRCode signature found at page {QrCodeSignature.PageNumber} with type {QrCodeSignature.EncodeType.TypeName} and text {QrCodeSignature.Text}");
                 }
             }
         }

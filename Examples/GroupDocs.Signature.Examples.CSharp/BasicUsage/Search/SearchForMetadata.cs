@@ -7,7 +7,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
     public class SearchForMetadata
     {
         /// <summary>
@@ -15,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SearchForMetadata : Search document for metadata signature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
 

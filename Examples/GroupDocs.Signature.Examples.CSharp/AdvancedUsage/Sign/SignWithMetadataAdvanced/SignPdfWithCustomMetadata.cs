@@ -8,7 +8,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Options;
     using GroupDocs.Signature.Domain.Extensions;
 
-
     public class SignPdfWithCustomMetadata
     {
         // Define customer data class
@@ -27,12 +26,14 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             public decimal DataFactor { get; set; }
         }
 
-
         /// <summary>
         /// Sign pdf document with metadata signature with customer object and encryption
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignPdfWithCustomMetadata : Sign pdf document with metadata signature with customer object and encryption\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -83,8 +84,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 options.Signatures.Add(mdDocId);
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
-                Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
         }
     }

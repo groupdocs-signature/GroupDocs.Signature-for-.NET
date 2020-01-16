@@ -13,26 +13,40 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromUrl : Load document from Url\n");
+
+
             string url = "https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/Resources/SampleFiles/sample.pdf?raw=true";
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignedWithTextFromUrl", "sample.pdf");
 
-            using (Stream stream = GetRemoteFile(url))
+            try
             {
-                using (Signature signature = new Signature(stream))
+                using (Stream stream = GetRemoteFile(url))
                 {
-                    TextSignOptions options = new TextSignOptions("John Smith")
+                    using (Signature signature = new Signature(stream))
                     {
-                        // set signature position
-                        Left = 100,
-                        Top = 100
-                    };
+                        TextSignOptions options = new TextSignOptions("John Smith")
+                        {
+                            // set signature position
+                            Left = 100,
+                            Top = 100
+                        };
 
-                    // sign document to file
-                    signature.Sign(outputFilePath, options);
+                        // sign document to file
+                        signature.Sign(outputFilePath, options);
+                    }
                 }
+                Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
             }
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
+            catch(Exception ex)
+            {
+                Console.WriteLine("\nThis example requires valid network resource Url to download the document. " +
+                                  "\nProbably following resource are not available. " +
+                                  $"\n{url}");
+            }
+            
         }
                 
         private static Stream GetRemoteFile(string url)

@@ -7,17 +7,19 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
-    
 
     public class SearchForImageAdvanced
     {
         /// <summary>
-        /// Search document for Image signature
+        /// Search document for Barcode signature with applying specific options
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForImageAdvanced : Search document for Barcode signature with applying specific options\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
             string fileName = Path.GetFileName(filePath);
             using (Signature signature = new Signature(filePath))
             {

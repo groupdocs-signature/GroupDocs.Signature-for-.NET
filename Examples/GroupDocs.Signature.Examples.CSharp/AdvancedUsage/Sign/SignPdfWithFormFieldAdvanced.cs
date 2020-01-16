@@ -11,10 +11,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SignPdfWithFormFieldAdvanced
     {
         /// <summary>
-        /// Sign pdf document with form-field signature
+        /// Sign pdf document with form-field signature applying specific options
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignPdfWithFormFieldAdvanced : Sign pdf document with form-field signature applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -68,8 +71,15 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 listOptions.Add(optionsTextDIG);
 
                 // sign document to file
-                signature.Sign(outputFilePath, listOptions);
-                Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+                SignResult signResult = signature.Sign(outputFilePath, listOptions);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
+
+                Console.WriteLine("\nList of newly created signatures:");
+                int number = 1;
+                foreach (BaseSignature temp in signResult.Succeeded)
+                {
+                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                }
             }
         }
     }

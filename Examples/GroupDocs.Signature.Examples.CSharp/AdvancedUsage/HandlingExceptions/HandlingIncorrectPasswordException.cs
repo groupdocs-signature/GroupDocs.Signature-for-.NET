@@ -10,10 +10,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class HandlingIncorrectPasswordException
     {
         /// <summary>
-        /// Sign document with qr-code signature
+        /// Sign document and handle incorrect password exception
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # HandlingIncorrectPasswordException : Sign document and handle incorrect password exception\n");
+
             // The path to the documents directory
             // This file is secured with password
             string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;

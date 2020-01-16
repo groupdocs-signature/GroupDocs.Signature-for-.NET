@@ -10,6 +10,9 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
     {
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Quick Start] # SetLicenseFromStream : Set license from stream\n");
+
             if (File.Exists(Constants.LicensePath))
             {
                 using (FileStream stream = File.OpenRead(Constants.LicensePath))

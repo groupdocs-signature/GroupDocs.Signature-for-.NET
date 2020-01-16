@@ -39,6 +39,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForQRCodeCustomSerializationObject : Search document for QR-Code signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_QRCODE_CUSTOM_SERIALIZATION_OBJECT;
 

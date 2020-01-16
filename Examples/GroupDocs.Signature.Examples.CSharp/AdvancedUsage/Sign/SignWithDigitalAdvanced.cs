@@ -10,23 +10,26 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithDigitalAdvanced
     {
         /// <summary>
-        /// Sign document with digital signature
+        /// Sign document with digital signature applying specific options
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithDigitalAdvanced : Sign document with digital signature applying specific options\n");
+
             // The path to the documents directory.            
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
             string certificatePath = Constants.CertificatePfx;
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithDigital", fileName);
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithDigitalAdvanced", fileName);
 
             using (Signature signature = new Signature(filePath))
             {
                 DigitalSignOptions options = new DigitalSignOptions(certificatePath)
                 {
-                    // certifiate password
+                    // certificate password
                     Password = "1234567890",
                     // digital certificate details
                     Reason = "Sign",
@@ -44,10 +47,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Margin = new Padding() {  Bottom = 10, Right = 10},
 
                 };
-                signature.Sign(outputFilePath, options);
-            }
 
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
+
+                Console.WriteLine("\nList of newly created signatures:");
+                int number = 1;
+                foreach (BaseSignature temp in signResult.Succeeded)
+                {
+                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                }
+            }
         }
     }
 }

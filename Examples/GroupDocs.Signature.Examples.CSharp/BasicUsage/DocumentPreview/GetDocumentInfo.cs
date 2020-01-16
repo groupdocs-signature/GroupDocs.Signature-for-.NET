@@ -13,6 +13,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # GetDocumentInfo : Get document basic info\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             

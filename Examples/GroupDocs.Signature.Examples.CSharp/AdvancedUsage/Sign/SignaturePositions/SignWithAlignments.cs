@@ -12,10 +12,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithAlignments
     {
         /// <summary>
-        /// Sign document with text signature applying specific options
+        /// Sign document with setting position of signature
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithAlignments : Sign document with setting position of signature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -53,9 +56,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     }
                 }
                 // sign document to file
-                signature.Sign(outputFilePath, listOptions);
+                SignResult signResult = signature.Sign(outputFilePath, listOptions);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
         }
     }
 }

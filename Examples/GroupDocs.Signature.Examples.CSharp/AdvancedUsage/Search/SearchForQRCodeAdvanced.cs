@@ -7,7 +7,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
+    /// <summary>
+    /// Following example shows searching document for QR-Code signature with applying specific options.
+    /// Please be aware that this example works only on licensed product due to limitation with QR-code processing
+    /// </summary>
     public class SearchForQRCodeAdvanced
     {
         /// <summary>
@@ -15,6 +18,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForQRCodeAdvanced : Search document for QR-Code signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORD_SIGNED;
 
@@ -32,7 +38,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify text match type
                     MatchType = TextMatchType.Contains,
                     // specify text pattern to search
-                    Text = "Smith"
+                    Text = "John"
                 };
 
                 // search for signatures in document

@@ -10,10 +10,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class LoadPasswordProtectedDocument
     {
         /// <summary>
-        /// Sign document with qr-code signature
+        /// Sign password-protected document
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # LoadPasswordProtectedDocument : Sign password-protected document\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;
             string fileName = Path.GetFileName(filePath);

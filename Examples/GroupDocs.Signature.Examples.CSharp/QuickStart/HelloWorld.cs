@@ -10,7 +10,9 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
         /// Basic example of GroupDocs.Signature usage
         /// </summary>
         public static void Run()
-        {            
+        {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Quick Start] # HelloWorld : Basic example of GroupDocs.Signature usage\n");
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
@@ -20,7 +22,7 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
             // Sign document with text signature.
             using (Signature signature = new Signature(filePath))
             {
-                TextSignOptions textSignOptions = new TextSignOptions("John Smith");
+                TextSignOptions textSignOptions = new TextSignOptions("Hello world!");
                 signature.Sign(outputFilePath, textSignOptions);
             }
 

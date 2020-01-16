@@ -15,8 +15,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # DeleteTextAfterSearch : Delete Text signature from the document\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORDS_SIGNED_NO_METAINFO;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
             // copy source file since Delete method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteTextAfterSearch", fileName);
@@ -32,7 +35,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // collect signatures to delete
                 foreach (TextSignature temp in signatures)
                 {
-                    if (temp.Text.Contains("John"))
+                    if (temp.Text.Contains("JS"))
                     {
                         signaturesToDelete.Add(temp);
                     }

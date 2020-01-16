@@ -10,10 +10,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithResultAnalysis
     {
         /// <summary>
-        /// Sign document with qr-code signature
+        /// Sign document and result analysis
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithResultAnalysis : Sign document and result analysis\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);

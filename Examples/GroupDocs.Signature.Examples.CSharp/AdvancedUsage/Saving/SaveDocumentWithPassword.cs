@@ -10,10 +10,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SaveDocumentWithPassword
     {
         /// <summary>
-        /// Sign document with qr-code signature
+        /// Sign document and make it password-protected
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SaveDocumentWithPassword : Sign document and make it password-protected\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -39,9 +42,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     UseOriginalPassword = false
                 };
                 // sign document to file
-                signature.Sign(outputFilePath, signOptions, saveOptions);
+                SignResult result = signature.Sign(outputFilePath, signOptions, saveOptions);
+                Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
         }
     }
 }

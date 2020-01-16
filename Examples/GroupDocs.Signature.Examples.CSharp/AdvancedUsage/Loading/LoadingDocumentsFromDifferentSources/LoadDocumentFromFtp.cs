@@ -15,6 +15,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromFtp : Load document from ftp\n");
+
             string filePath = "ftp://localhost/sample.doc";
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignFromStream", "signedSample.doc");
             using (Stream stream = GetFileFromFtp(filePath))

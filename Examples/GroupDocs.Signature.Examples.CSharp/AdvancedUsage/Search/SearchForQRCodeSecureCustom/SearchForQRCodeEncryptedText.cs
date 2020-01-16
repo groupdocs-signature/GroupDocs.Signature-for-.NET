@@ -15,17 +15,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchForQRCodeEncryptedText
     {
         /// <summary>
+        /// Search document for encrypted QR-Code signature with applying specific options
         /// Following example show searching document for QR-Code signature with applying specific options.
         /// Please be aware that this example works only on licensed product due to limitation with QR-code processing
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForQRCodeEncryptedText : Search document for encrypted QR-Code signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_QRCODE_ENCRYPTED_TEXT;
 
             using (Signature signature = new Signature(filePath))
             {
-                // setup key and pasphrase
+                // setup key and passphrase
                 string key = "1234567890";
                 string salt = "1234567890";
                 // create data encryption

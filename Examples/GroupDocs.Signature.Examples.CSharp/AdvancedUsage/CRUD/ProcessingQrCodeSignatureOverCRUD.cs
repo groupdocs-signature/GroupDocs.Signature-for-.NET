@@ -14,9 +14,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// <summary>
         /// Following example shows how to process QR-Code Signature over all signature life-cycle.
         /// First document is being signed with QR-Code Signature, then verified for it, searched for same, updating and finally deleting this signature.
+        /// Please be aware that this example works only on licensed product due to limitation with QR-code processing
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # ProcessingQrCodeSignatureOverCRUD : Process QR-Code Signature over all signature life-cycle\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
@@ -57,8 +61,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 QrCodeVerifyOptions verifyOptions = new QrCodeVerifyOptions()
                 {
-                    // specify if all pages shoudl be verified
-                    AllPages = true,
+                    // specify if all pages should be verified
+                    AllPages = false,
+                    PageNumber = 1,
                     // QrCode type
                     EncodeType = QrCodeTypes.QR,
                     // 

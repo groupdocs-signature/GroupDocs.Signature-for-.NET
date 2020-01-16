@@ -11,10 +11,14 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class UpdateQRCode
     {
         /// <summary>
-        /// Delete QR-Code signature from the document
+        /// Update QR-Code signature from the document
+        /// Update method supports changing QR-Code location and size.
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # UpdateQRCode : Update QR-Code signature from the document \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
             // copy source file since Update method works with same Document

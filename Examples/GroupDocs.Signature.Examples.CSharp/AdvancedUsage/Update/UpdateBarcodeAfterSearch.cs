@@ -12,10 +12,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         /// <summary>
         /// Update Barcode signature from the document.
-        /// Update method supports changin Barcode location and size.
+        /// Update method supports changing Barcode location and size.
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # UpdateBarcodeAfterSearch : Update Barcode signature from the document\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORD_SIGNED;
             // copy source file since Update method works with same Document

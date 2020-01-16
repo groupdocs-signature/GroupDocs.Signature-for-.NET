@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
@@ -10,12 +9,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class VerifyWithExceptionHandling
     {
         /// <summary>
-        /// Sign document with text signature applying specific options
+        /// Verify document with exception handling
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # VerifyWithExceptionHandling : Verify document with exception handling\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;            
+            string filePath = Constants.SAMPLE_PDF_SIGNED_DIGITAL;            
             try
             {
                 using (Signature signature = new Signature(filePath))

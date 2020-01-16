@@ -166,7 +166,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SaveSignedDocumentsAsImages.Run();
             #endregion
 
-            #region Document Preivew with hiding signatures
+            #region Document Preview with hiding signatures
             GeneratePreviewAdvanced.Run();
             #endregion
 
@@ -192,11 +192,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             // Sign Pdf document with Form-fields
             SignPdfWithFormFieldAdvanced.Run();
 
+            // Sign Pdf document with Stamp signature
             SignWithStampAdvanced.Run();
 
             #endregion
 
-            #region Sign with further result analyzis
+            #region Sign with further result analysis
             SignWithResultAnalysis.Run();
             #endregion
 

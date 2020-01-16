@@ -6,7 +6,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
     public class VerifyBarcode
     {
         /// <summary>
@@ -14,6 +13,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # VerifyBarcode : Verify document with Barcode signature \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
 

@@ -6,7 +6,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-
     public class VerifyBarcodeAdvanced
     {
         /// <summary>
@@ -14,6 +13,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # VerifyBarcodeAdvanced : Verify document with Barcode signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
 

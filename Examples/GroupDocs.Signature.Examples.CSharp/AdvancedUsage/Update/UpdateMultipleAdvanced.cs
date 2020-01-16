@@ -11,12 +11,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class UpdateMultipleAdvanced
     {
         /// <summary>
-        /// Update multiple signatures in the document over known Signature Id property
+        /// Update multiple signatures in the document
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # UpdateMultipleAdvanced : Update multiple signatures in the document\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORDS_SIGNED_NO_METAINFO;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
             // copy source file since Update method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "UpdateMultipleAdvanced", fileName);

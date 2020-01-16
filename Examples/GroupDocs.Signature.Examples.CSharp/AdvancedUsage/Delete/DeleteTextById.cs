@@ -16,6 +16,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # DeleteTextById : Delete Text signature in the document by known SignatureId\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORD_SIGNED;
             // copy source file since Delete method works with same Document

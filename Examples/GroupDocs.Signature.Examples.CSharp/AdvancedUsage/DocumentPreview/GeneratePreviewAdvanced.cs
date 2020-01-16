@@ -13,6 +13,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # GeneratePreviewAdvanced : Generate document pages preview with using HideSignature feature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORD_SIGNED;
 

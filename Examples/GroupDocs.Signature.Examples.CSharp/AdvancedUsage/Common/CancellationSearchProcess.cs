@@ -17,35 +17,41 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// <param name="args"></param>
         private static void OnSearchProgress(Signature sender, ProcessProgressEventArgs args)
         {
-            // check if process takes more than 1 second (1000 milliseconds) processing cancellation
-            if (args.Ticks > 1000)
+            // check if process takes more than 0.1 second (100 milliseconds) processing cancellation
+            if (args.Ticks > 100)
             {
                 args.Cancel = true;
                 Console.WriteLine("Sign progress was cancelled. Time spent {0} mlsec", args.Ticks);
             }
         }
 
+        /// <summary>
+        /// Search document and cancel process
+        /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # CancellationSearchProcess : Search document and cancel process\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
             string fileName = Path.GetFileName(filePath);
 
             using (Signature signature = new Signature(filePath))
             {
                 signature.SearchProgress += OnSearchProgress;
 
-                QrCodeSearchOptions options = new QrCodeSearchOptions(QrCodeTypes.QR)
+                TextSearchOptions options = new TextSearchOptions("JS_Stamp")
                 {
                     // ...
                 };
 
                 // search for signatures in document
-                List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(options);
+                List<TextSignature> signatures = signature.Search<TextSignature>(options);
                 Console.WriteLine("\nSource document contains following signatures.");
-                foreach (var QrCodeSignature in signatures)
+                foreach (var textSignature in signatures)
                 {
-                    Console.WriteLine("QRCode signature found at page {0} with type {1} and text {2}", QrCodeSignature.PageNumber, QrCodeSignature.EncodeType, QrCodeSignature.Text);
+                    Console.WriteLine("Text signature found at page {0} with text {1}", textSignature.PageNumber, textSignature.Text);
                 }
             }
         }

@@ -34,6 +34,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithMetadataEncryptedObject : Sign pdf document with metadata signature with customer object and encryption\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
 
@@ -79,8 +82,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 options.Signatures.Add(mdDocId);
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
-                Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
         }
     }

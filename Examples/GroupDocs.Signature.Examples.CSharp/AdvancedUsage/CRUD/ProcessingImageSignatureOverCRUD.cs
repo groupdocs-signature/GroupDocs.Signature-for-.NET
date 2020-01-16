@@ -17,6 +17,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # ProcessingImageSignatureOverCRUD : Process Image Signature over all signature life-cycle\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);

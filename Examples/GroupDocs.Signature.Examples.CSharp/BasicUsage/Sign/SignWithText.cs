@@ -15,6 +15,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SignWithText : Sign document with text signature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
@@ -37,9 +40,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 };
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
+                SignResult result = signature.Sign(outputFilePath, options);
+
+                Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine($"\nSource document signed successfully.\nFile saved at " + outputFilePath);
         }
     }
 }

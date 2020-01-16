@@ -8,7 +8,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
     using GroupDocs.Signature.Options.Appearances;
-    using GroupDocs.Signature.Domain.Extensions;
 
     public class SignWithPdfTextAnnotation
     {
@@ -17,6 +16,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithPdfTextAnnotation : Sign document with text signature applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
 
@@ -62,9 +64,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 };
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
         }
     }
 }

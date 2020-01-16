@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.IO;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
@@ -15,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignPdfWithStandardMetadata : Sign pdf document with metadata signature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -45,8 +47,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 options.Signatures.AddRange(signatures);
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
-                Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
         }
     }

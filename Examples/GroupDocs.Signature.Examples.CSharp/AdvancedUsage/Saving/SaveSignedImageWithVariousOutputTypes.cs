@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SaveSignedImageWithVariousOutputTypes : Sign image document with qr-code signature and save it to various image output types\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_JPG;
             string fileName = Path.GetFileName(filePath);
@@ -80,11 +83,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     saveOptions.AddMissingExtenstion = true;
                     var outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedImageOutputType", "sampleJPG-To-" + saveOptions.GetType().Name.ToString());
                     // sign document to file
-                    signature.Sign(outputFilePath, signOptions, saveOptions);
-                    Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
+                    SignResult result = signature.Sign(outputFilePath, signOptions, saveOptions);
+                    Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
                 }
             }
-            
         }
     }
 }

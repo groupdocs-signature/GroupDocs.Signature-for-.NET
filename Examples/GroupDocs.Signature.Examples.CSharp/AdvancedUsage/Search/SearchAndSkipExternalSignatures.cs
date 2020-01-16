@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchAndSkipExternalSignatures : Search document for Text signature skipping external signatures\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
 

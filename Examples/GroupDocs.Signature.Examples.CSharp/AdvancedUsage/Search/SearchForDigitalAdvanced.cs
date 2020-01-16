@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForDigitalAdvanced : Search document for digital signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
 
@@ -23,16 +26,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     // specify special search criteria
                     Comments = "Test comment",
-                    // certificate issues criteria
-                    IssuerName = "John",
-                    // digital certificate subject
-                    SubjectName = "Test",
                     // specify date range period of signature
-                    SignDateTimeFrom = DateTime.Now.AddMonths(-1),
-                    SignDateTimeTo = DateTime.Now,
-                    //
-                };
+                    SignDateTimeFrom = new DateTime(2017, 1, 1),
+                    SignDateTimeTo = new DateTime(2017, 2, 2)
 
+                };
                 // search for signatures in document
                 List<DigitalSignature> signatures = signature.Search<DigitalSignature>(options);
                 Console.WriteLine("\nSource document contains following signatures.");

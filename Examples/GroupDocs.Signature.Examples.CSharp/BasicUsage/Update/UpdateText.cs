@@ -15,6 +15,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # UpdateText : Update Text signature in the document \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
             // copy source file since Update method works with same Document

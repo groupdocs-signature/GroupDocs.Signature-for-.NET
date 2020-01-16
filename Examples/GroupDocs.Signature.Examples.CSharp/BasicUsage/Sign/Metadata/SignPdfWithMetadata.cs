@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SignPdfWithMetadata : Sign pdf document with metadata signature\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -36,8 +39,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 options.Signatures.AddRange(signatures);
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
-                Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
+                SignResult result = signature.Sign(outputFilePath, options);
+
+                Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
         }
     }

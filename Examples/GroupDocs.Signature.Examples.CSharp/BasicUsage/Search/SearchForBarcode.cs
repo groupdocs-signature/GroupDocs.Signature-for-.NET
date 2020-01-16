@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SearchForBarcode : Search document for Barcode signature \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
 
@@ -29,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var barcodeSignature in signatures)
                 {
-                    Console.WriteLine($"Barcode signature found at page {barcodeSignature.PageNumber} with type {barcodeSignature.EncodeType} and text {barcodeSignature.Text}");
+                    Console.WriteLine($"Barcode signature found at page {barcodeSignature.PageNumber} with type {barcodeSignature.EncodeType.TypeName} and text {barcodeSignature.Text}");
                 }
             }
         }

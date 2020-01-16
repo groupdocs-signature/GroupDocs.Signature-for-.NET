@@ -9,10 +9,12 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithExceptionHandling
     {
         /// <summary>
-        /// Sign document with text signature applying specific options
+        /// Sign document with exception handling
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithExceptionHandling : Sign document with exception handling\n");
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;

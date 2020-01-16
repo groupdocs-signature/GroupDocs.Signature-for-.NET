@@ -10,10 +10,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SaveSignedSpreadsheetWithDifferentOutputFileType
     {
         /// <summary>
-        /// Sign document with qr-code signature
+        /// Sign spreadsheet and save it to different output type
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SaveSignedSpreadsheetWithDifferentOutputFileType : Sign spreadsheet and save it to different output type\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET;
             string fileName = Path.GetFileName(filePath);
@@ -38,9 +41,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     OverwriteExistingFiles = true
                 };
                 // sign document to file
-                signature.Sign(outputFilePath, signOptions, saveOptions);
+                SignResult result = signature.Sign(outputFilePath, signOptions, saveOptions);
+                Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
         }
     }
 }

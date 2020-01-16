@@ -44,8 +44,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SubscribeSearchEvents : Search document for barcode signatures and subscribe for events\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -60,8 +63,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     PageNumber = 1,
                     PagesSetup = new PagesSetup() { FirstPage = true, LastPage = true, OddPages = false, EvenPages = false },
 
-                    // specify special barcode type to search
-                    EncodeType = BarcodeTypes.Code39Standard,
                     // specify text match type
                     MatchType = TextMatchType.Contains,
                     // specify text pattern to search

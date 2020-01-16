@@ -36,6 +36,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchForMetadataCustomSerializationObject : Search document for metadata signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX_METADATA_CUSTOM_SERIALIZATION_OBJECT;
 

@@ -17,6 +17,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithTextAnnotation : Sign document with text signature applying Annotation implementation type\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -53,9 +56,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Margin = new Padding(20)
                 };
                 // sign document to file
-                signature.Sign(outputFilePath, options);
+                SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine($"\nSource document signed successfully.\nFile saved at {outputFilePath}");
         }
     }
 }

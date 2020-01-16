@@ -11,12 +11,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class DeleteMultipleAdvanced
     {
         /// <summary>
-        /// Delete multiple signatures in the document over known Signature Id property
+        /// Delete multiple signatures in the document
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # DeleteMultipleAdvanced : Delete multiple signatures in the document\n");
+
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
             // copy source file since Delete method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteMultipleAdvanced", fileName);
@@ -42,10 +45,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // collect image signatures to delete
                     foreach (BaseSignature temp in result.Signatures)
                     {
-                        if (temp.SignatureType == SignatureType.Image)
-                        {
-                            signaturesToDelete.Add(temp);
-                        }
+                        signaturesToDelete.Add(temp);
                     }
                     // delete signatures
                     DeleteResult deleteResult = signature.Delete(signaturesToDelete);

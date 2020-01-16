@@ -10,15 +10,18 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchWithExceptionHandling
     {
         /// <summary>
-        /// Sign document with text signature applying specific options
+        /// Search document with exception handling
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SearchWithExceptionHandling : Search document with exception handling\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;
             try
             {
-                // dont specify Password on protected document
+                // don't specify Password on protected document
                 LoadOptions loadOptions = new LoadOptions();
                 using (Signature signature = new Signature(filePath))
                 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Drawing;
 
 namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 {
@@ -12,10 +11,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     public class SignWithStretchMode
     {
         /// <summary>
-        /// Sign document with barcode signature
+        /// Sign document with text signature applying specific options
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithStretchMode : Sign document with text signature applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
@@ -56,9 +58,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 listOptions.Add(imageOptions);
 
                 // sign document to file
-                signature.Sign(outputFilePath, listOptions);
+                SignResult signResult = signature.Sign(outputFilePath, listOptions);
+                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
         }
     }
 }

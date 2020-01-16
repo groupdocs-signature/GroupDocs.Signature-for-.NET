@@ -15,6 +15,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Basic Usage] # SignWithMultipleOptions : Sign document with multiple signature types \n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
@@ -56,11 +59,12 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 listOptions.Add(barcodeOptions);
                 listOptions.Add(qrcodeOptions);
                 listOptions.Add(digitalOptions);
-                
+
                 // sign document to file
-                signature.Sign(outputFilePath, listOptions);
+                SignResult result = signature.Sign(outputFilePath, listOptions);
+
+                Console.WriteLine($"\nSource document signed successfully with {result.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
             }
-            Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
         }
     }
 }

@@ -10,6 +10,9 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
     {
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Quick Start] # SetMeteredLicense : Set metered license\n");
+
             string publicKey = "*****";
             string privateKey = "*****";
 

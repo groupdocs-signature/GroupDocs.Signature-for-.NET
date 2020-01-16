@@ -19,6 +19,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # VerifyQRCodeAdvanced : Verify document with QR-Code signature with applying specific options\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
 
@@ -34,7 +37,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify verification text pattern
                     MatchType = TextMatchType.Contains,
                     // specify types of QR code to verify
-                    EncodeType = QrCodeTypes.QR
+                    EncodeType = QrCodeTypes.Aztec
                 };
                 // Verify document signatures
                 // For evaluation version this verification will fail

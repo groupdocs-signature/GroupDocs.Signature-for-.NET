@@ -15,6 +15,8 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
         /// </remarks>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Quick Start] # SetLicenseFromFile : Set license from file\n");
             if (File.Exists(Constants.LicensePath))
             {
                 License license = new License();

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.IO;
-using System.Net;
-
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
     /// <summary>
-    /// This example demonstrates how to render document from stream.
+    /// Sign document from stream
     /// </summary>
     class LoadDocumentFromStream
     {
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromStream : Sign document from stream\n");
+
             string outputFilePath = Path.Combine(Constants.OutputPath, "LoadDocumentFromStream", "signedSample.pdf");
             using (Stream stream = File.OpenRead(Constants.SAMPLE_PDF))
             {

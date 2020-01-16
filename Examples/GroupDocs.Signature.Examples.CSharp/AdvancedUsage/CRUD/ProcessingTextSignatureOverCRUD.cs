@@ -17,6 +17,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # ProcessingTextSignatureOverCRUD : Process Text Signature over all signature life-cycle\n");
+
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
@@ -57,8 +60,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 TextVerifyOptions verifyOptions = new TextVerifyOptions()
                 {
-                    // specify if all pages shoudl be verified
-                    AllPages = true,
+                    // specify if all pages should be verified
+                    AllPages = false,
+                    PageNumber = 1,
                     // specify text pattern
                     Text = textLabel,
                     // specify verification text pattern
