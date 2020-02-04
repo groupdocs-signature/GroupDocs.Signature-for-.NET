@@ -22,7 +22,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignSaveToImage", "SignedAndSavedAsImage");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignSaveToImage", "SignedAndSavedAsImage.png");
 
             using (Signature signature = new Signature(filePath))
             {

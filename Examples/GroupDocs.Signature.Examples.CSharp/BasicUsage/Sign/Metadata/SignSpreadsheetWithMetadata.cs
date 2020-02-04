@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignSpreadsheetWithMetadata : Sign spreadsheets document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET;
+            string filePath = Constants.SAMPLE_DOCX;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignSpreadsheetWithMetadata", fileName);
@@ -34,7 +34,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     new SpreadsheetMetadataSignature("Author", "Mr.Scherlock Holmes"),
                     new SpreadsheetMetadataSignature("DateCreated", DateTime.Now),
                     new SpreadsheetMetadataSignature("DocumentId", 123456),
-                    new SpreadsheetMetadataSignature("SignatureId", 123.456M)
+                    new SpreadsheetMetadataSignature("SignatureId", 123.456D)
                 };
                 options.Signatures.AddRange(signatures);
 

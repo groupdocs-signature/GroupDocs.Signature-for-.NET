@@ -195,6 +195,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             // Sign Pdf document with Stamp signature
             SignWithStampAdvanced.Run();
 
+            // Sign Spreadsheet document with XAdes signature
+            SignWithXAdESTypes.Run();
+
             #endregion
 
             #region Sign with further result analysis

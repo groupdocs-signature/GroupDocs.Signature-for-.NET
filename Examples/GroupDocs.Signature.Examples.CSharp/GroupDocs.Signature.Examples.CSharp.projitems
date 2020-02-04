@@ -99,6 +99,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithStampAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithTextAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithXAdESTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SinginWithBrushes\SignWithLinearGradientBrush.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SinginWithBrushes\SignWithRadialGradientBrush.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SinginWithBrushes\SignWithSolidBrush.cs" />

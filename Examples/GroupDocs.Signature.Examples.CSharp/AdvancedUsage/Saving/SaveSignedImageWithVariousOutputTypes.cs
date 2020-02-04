@@ -57,7 +57,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         BitsPerChannel = 8,
                         ColorType = JpegCompressionColorMode.Rgb,
                         Comment = "signed jpeg file",
-                        CompressionType = JpegCompressionMode.Lossless,
+                        //CompressionType = JpegCompressionMode.Lossless,
                         Quality = 100,
                         SampleRoundingMode = JpegRoundingMode.Extrapolate
                     },
