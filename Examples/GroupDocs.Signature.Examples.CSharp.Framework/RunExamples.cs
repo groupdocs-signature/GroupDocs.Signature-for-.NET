@@ -13,7 +13,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("=====================================================");
 
             // Please uncomment the example you want to try out
-
             #region Quick Start
 
             QuickStart.SetLicenseFromFile.Run();
@@ -31,7 +30,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Document Preview
-
+            
             GetDocumentInfo.Run();
             GeneratePreview.Run();
             #endregion
@@ -83,7 +82,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Search document for Text signature
             SearchForText.Run();
-
+            
             //Search document for Image signature
             SearchForImage.Run();
 
@@ -168,6 +167,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Document Preview with hiding signatures
             GeneratePreviewAdvanced.Run();
+            GetDocumentInfoAdvanced.Run();
             #endregion
 
             #region Handling different special exceptions
@@ -179,6 +179,9 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Sign document with text signature applying specific options
             SignWithTextAdvanced.Run();
+
+            //Sign document with digital signature applying specific options
+            SignWithDigitalAdvanced.Run();
 
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
@@ -214,10 +217,16 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization
-            SearchForQRCodeEncryptedText.Run();
-            SearchForQRCodeEncryptedObject.Run();
-            SearchForQRCodeCustomEncryptionObject.Run();
-            SearchForQRCodeCustomSerializationObject.Run();
+            SignWithQRCodeEncryptedText.Run();
+            SignWithQRCodeEncryptedObject.Run();
+            SignWithQRCodeCustomEncryptionObject.Run();
+            SignWithQRCodeCustomSerializationObject.Run();
+            #endregion
+
+            #region Sign QR-Code standard objects
+            SignWithQRCodeAddressObject.Run();
+            SignWithQRCodeEmailObject.Run();
+            SignWithQRCodeVCardObject.Run();
             #endregion
 
             #region Sign Metadata advanced
@@ -280,13 +289,28 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for metadata signature with applying specific options
             SearchForMetadataAdvanced.Run();
 
+            #region Search for QR-Code Encryption, Custom encryption, custom serialization
             SearchForMetadataEncryptedText.Run();
             SearchForMetadataEncryptedObject.Run();
             SearchForMetadataCustomEncryptionObject.Run();
             SearchForMetadataCustomSerializationObject.Run();
+            #endregion
+
+            #region Search for QR-Code standard objects
+            SearchForQRCodeAddressObject.Run();
+            SearchForQRCodeEmailObject.Run();
+            SearchForQRCodeVCardObject.Run();
+            #endregion
 
             SearchWithExceptionHandling.Run();
             #endregion // Search signed documents for different signature types with additional options
+
+            #region Search for QR-Code Encryption, custom encryption, custom serialization            
+            SearchForQRCodeEncryptedText.Run();
+            SearchForQRCodeEncryptedObject.Run();
+            SearchForQRCodeCustomEncryptionObject.Run();
+            SearchForQRCodeCustomSerializationObject.Run();
+            #endregion
 
             SearchAndSkipExternalSignatures.Run();
 

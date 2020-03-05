@@ -22,14 +22,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             string filePath = Constants.SAMPLE_PDF_SIGNED_FORMFIELD;
 
             using (Signature signature = new Signature(filePath))
-            {
-                FormFieldSearchOptions options = new FormFieldSearchOptions()
-                {
-
-                };
-
+            {             
                 // search for signatures in document
-                List<FormFieldSignature> signatures = signature.Search<FormFieldSignature>(options);
+                List<FormFieldSignature> signatures = signature.Search<FormFieldSignature>(SignatureType.FormField);
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var FormFieldSignature in signatures)
                 {

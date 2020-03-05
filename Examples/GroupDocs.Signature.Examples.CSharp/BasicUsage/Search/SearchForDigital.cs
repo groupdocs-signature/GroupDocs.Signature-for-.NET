@@ -22,13 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                DigitalSearchOptions options = new DigitalSearchOptions()
-                {
-                    
-                };
-
                 // search for signatures in document
-                List<DigitalSignature> signatures = signature.Search<DigitalSignature>(options);
+                List<DigitalSignature> signatures = signature.Search<DigitalSignature>(SignatureType.Digital);
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var digitalSignature in signatures)
                 {

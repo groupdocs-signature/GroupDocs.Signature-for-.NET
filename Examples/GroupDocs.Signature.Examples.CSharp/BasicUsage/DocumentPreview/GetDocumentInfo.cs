@@ -17,8 +17,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # GetDocumentInfo : Get document basic info\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
-            
+            string filePath = Constants.SAMPLE_WORD_SIGNED;
+
             using (Signature signature = new Signature(filePath))
             {
                 IDocumentInfo documentInfo = signature.GetDocumentInfo();
@@ -27,6 +27,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 Console.WriteLine($" - extension : {documentInfo.FileType.Extension}");
                 Console.WriteLine($" - size : {documentInfo.Size}");
                 Console.WriteLine($" - page count : {documentInfo.PageCount}");
+                Console.WriteLine($" - Form Fields count : {documentInfo.FormFields.Count}");
+                Console.WriteLine($" - Text signatures count : {documentInfo.TextSignatures.Count}");
+                Console.WriteLine($" - Image signatures count : {documentInfo.ImageSignatures.Count}");
+                Console.WriteLine($" - Digital signatures count : {documentInfo.DigitalSignatures.Count}");
+                Console.WriteLine($" - Barcode signatures count : {documentInfo.BarcodeSignatures.Count}");
+                Console.WriteLine($" - QrCode signatures count : {documentInfo.QrCodeSignatures.Count}");
+                Console.WriteLine($" - FormField signatures count : {documentInfo.FormFieldSignatures.Count}");
                 foreach (PageInfo pageInfo in documentInfo.Pages)
                 {
                     Console.WriteLine($" - page-{pageInfo.PageNumber} Width {pageInfo.Width}, Height {pageInfo.Height}");

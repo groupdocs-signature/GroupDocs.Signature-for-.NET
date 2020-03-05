@@ -38,9 +38,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("QRCodeCustomEncryptionObject.pdf");
         public static string SAMPLE_PDF_QRCODE_CUSTOM_SERIALIZATION_OBJECT
             => GetSampleFilePath("QRCodeCustomSerializationObject.pdf");
-        public static string SAMPLE_PDF_SIGNED_DIGITAL
-            => GetSampleFilePath("digital signatures.pdf");
-
+        public static string SAMPLE_PDF_QRCODE_VCARD_OBJECT
+            => GetSampleFilePath("QRCodeVCardObject.pdf");
+        public static string SAMPLE_PDF_QRCODE_ADDRESS_OBJECT
+            => GetSampleFilePath("QRCodeAddressObject.pdf");
+        public static string SAMPLE_PDF_QRCODE_EMAIL_OBJECT
+            => GetSampleFilePath("QRCodeEmailObject.pdf");        
         public static string SAMPLE_WORD_SIGNED
             => GetSampleFilePath("AllSignatures.docx");
         public static string SAMPLE_DOCX_METADATA_ENCRYPTED_TEXT

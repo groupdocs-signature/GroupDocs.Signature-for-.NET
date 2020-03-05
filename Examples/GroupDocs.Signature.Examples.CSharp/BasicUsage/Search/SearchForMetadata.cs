@@ -22,13 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                MetadataSearchOptions options = new MetadataSearchOptions()
-                {
-                    
-                };
-
                 // search for signatures in document
-                List<MetadataSignature> signatures = signature.Search<MetadataSignature>(options);
+                List<MetadataSignature> signatures = signature.Search<MetadataSignature>(SignatureType.Metadata);
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var metadataSignature in signatures)
                 {

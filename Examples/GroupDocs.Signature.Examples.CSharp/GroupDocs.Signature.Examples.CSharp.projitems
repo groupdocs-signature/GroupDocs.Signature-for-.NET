@@ -31,6 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteTextAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteTextById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GeneratePreviewAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingIncorrectPasswordException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingPasswordRequiredException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAmazonS3.cs" />
@@ -63,6 +64,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeAddressObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEmailObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
@@ -90,6 +94,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeAddressObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEmailObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithResultAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextAnnotation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextFormField.cs" />
@@ -187,19 +194,10 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\encrypted_metadata_sample.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Forms.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Forms.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\getting started.docx">
@@ -220,17 +218,26 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\pie chart.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeAddressObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomEncryptionObject.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomSerializationObject.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEmailObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedObject.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedText.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeVCardObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -18,9 +18,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithDigitalAdvanced : Sign document with digital signature applying specific options\n");
 
             // The path to the documents directory.            
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
-            string imagePath = Constants.ImageHandwrite;
+            string imagePath = Constants.ImageStamp;
             string certificatePath = Constants.CertificatePfx;
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithDigitalAdvanced", fileName);
@@ -32,16 +32,16 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // certificate password
                     Password = "1234567890",
                     // digital certificate details
-                    Reason = "Sign",
-                    Contact = "JohnSmith",
-                    Location = "Office1",
+                    Reason = "Approved",
+                    Contact = "John Smith",
+                    Location = "New York",
 
                     // image as digital certificate appearance on document pages
-                    ImageFilePath = imagePath,
+                    //ImageFilePath = imagePath,
                     //                    
                     AllPages = true,
-                    Width = 80,
-                    Height = 60,
+                    Width = 160,
+                    Height = 80,
                     VerticalAlignment = VerticalAlignment.Bottom,
                     HorizontalAlignment = HorizontalAlignment.Right,
                     Margin = new Padding() {  Bottom = 10, Right = 10},

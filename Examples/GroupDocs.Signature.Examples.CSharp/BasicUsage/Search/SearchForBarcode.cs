@@ -22,13 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                BarcodeSearchOptions options = new BarcodeSearchOptions()
-                {
-                    AllPages = true, // this value is set by default
-                };
-
                 // search for signatures in document
-                List<BarcodeSignature> signatures = signature.Search<BarcodeSignature>(options);
+                List<BarcodeSignature> signatures = signature.Search<BarcodeSignature>(SignatureType.Barcode);
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (var barcodeSignature in signatures)
                 {

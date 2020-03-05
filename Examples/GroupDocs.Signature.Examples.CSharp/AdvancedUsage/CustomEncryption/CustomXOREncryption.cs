@@ -17,6 +17,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public int Key { get; set; }
 
+        public CustomXOREncryption()
+        {
+            this.Key = 0;
+        }
         /// <summary>
         /// Encode method to encrypt string.
         /// </summary>

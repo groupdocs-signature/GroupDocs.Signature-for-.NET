@@ -23,15 +23,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             string fileName = Path.GetFileName(filePath);
             using (Signature signature = new Signature(filePath))
             {
-                // setup search options
-                ImageSearchOptions searchOptions = new ImageSearchOptions()
-                {
-                    // specify as true to search all pages of a document
-                    AllPages = true
-                };
-
                 // search document
-                List<ImageSignature> signatures = signature.Search<ImageSignature>(searchOptions);
+                List<ImageSignature> signatures = signature.Search<ImageSignature>(SignatureType.Image);
                 Console.WriteLine($"\nSource document ['{fileName}'] contains following image signature(s).");
                 // output signatures
                 foreach (ImageSignature imageSignature in signatures)

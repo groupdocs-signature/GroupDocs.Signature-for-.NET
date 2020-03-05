@@ -22,7 +22,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
 
-
             #region Basic Usage
 
             #region Common
@@ -169,6 +168,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Document Preview with hiding signatures
             GeneratePreviewAdvanced.Run();
+            GetDocumentInfoAdvanced.Run();
             #endregion
 
             #region Handling different special exceptions
@@ -217,10 +217,16 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization
-            SearchForQRCodeEncryptedText.Run();
-            SearchForQRCodeEncryptedObject.Run();
-            SearchForQRCodeCustomEncryptionObject.Run();
-            SearchForQRCodeCustomSerializationObject.Run();
+            SignWithQRCodeEncryptedText.Run();
+            SignWithQRCodeEncryptedObject.Run();
+            SignWithQRCodeCustomEncryptionObject.Run();
+            SignWithQRCodeCustomSerializationObject.Run();
+            #endregion
+
+            #region Sign QR-Code standard objects
+            SignWithQRCodeAddressObject.Run();
+            SignWithQRCodeEmailObject.Run();
+            SignWithQRCodeVCardObject.Run();
             #endregion
 
             #region Sign Metadata advanced
@@ -283,13 +289,28 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for metadata signature with applying specific options
             SearchForMetadataAdvanced.Run();
 
+            #region Search for QR-Code Encryption, Custom encryption, custom serialization
             SearchForMetadataEncryptedText.Run();
             SearchForMetadataEncryptedObject.Run();
             SearchForMetadataCustomEncryptionObject.Run();
             SearchForMetadataCustomSerializationObject.Run();
+            #endregion
+
+            #region Search for QR-Code standard objects
+            SearchForQRCodeAddressObject.Run();
+            SearchForQRCodeEmailObject.Run();
+            SearchForQRCodeVCardObject.Run();
+            #endregion
 
             SearchWithExceptionHandling.Run();
             #endregion // Search signed documents for different signature types with additional options
+
+            #region Search for QR-Code Encryption, custom encryption, custom serialization            
+            SearchForQRCodeEncryptedText.Run();
+            SearchForQRCodeEncryptedObject.Run();
+            SearchForQRCodeCustomEncryptionObject.Run();
+            SearchForQRCodeCustomSerializationObject.Run();
+            #endregion
 
             SearchAndSkipExternalSignatures.Run();
 
