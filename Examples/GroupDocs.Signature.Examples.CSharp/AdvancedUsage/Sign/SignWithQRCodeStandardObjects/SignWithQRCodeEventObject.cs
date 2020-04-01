@@ -39,7 +39,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 QrCodeSignOptions options = new QrCodeSignOptions
                 {
                     EncodeType = QrCodeTypes.QR,
-                    // setup Data property to Address instance
+                    // setup Data property to Event instance
                     Data = evnt,
                     // set right bottom corner
                     HorizontalAlignment = HorizontalAlignment.Right,
