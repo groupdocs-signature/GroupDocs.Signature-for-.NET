@@ -41,7 +41,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     }
                     else
                     {
-                        Console.WriteLine($"Signature was not deleted from the document! Signature at location {imageSignature.Left}x{imageSignature.Top} and Size {imageSignature.Size} was not found!");
+                        Helper.WriteError($"Signature was not deleted from the document! Signature at location {imageSignature.Left}x{imageSignature.Top} and Size {imageSignature.Size} was not found!");
                     }
                 }
             }

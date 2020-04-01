@@ -41,7 +41,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     }
                     else
                     {
-                        Console.WriteLine($"Signature was not deleted from the document! Signature with Barcode '{barcodeSignature.Text}' and encode type '{barcodeSignature.EncodeType.TypeName}' was not found!");
+                        Helper.WriteError($"Signature was not deleted from the document! Signature with Barcode '{barcodeSignature.Text}' and encode type '{barcodeSignature.EncodeType.TypeName}' was not found!");
                     }
                 }
             }

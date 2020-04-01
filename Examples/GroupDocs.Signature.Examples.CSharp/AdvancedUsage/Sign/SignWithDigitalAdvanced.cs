@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Drawing;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
@@ -37,7 +38,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Location = "New York",
 
                     // image as digital certificate appearance on document pages
-                    //ImageFilePath = imagePath,
+                    ImageFilePath = imagePath,
                     //                    
                     AllPages = true,
                     Width = 160,
@@ -45,6 +46,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     VerticalAlignment = VerticalAlignment.Bottom,
                     HorizontalAlignment = HorizontalAlignment.Right,
                     Margin = new Padding() {  Bottom = 10, Right = 10},
+
+                    // setup signature border
+                    Border = new Border()
+                    {
+                        Visible = true,
+                        Color = Color.Red,
+                        DashStyle = DashStyle.DashDot,
+                        Weight = 2
+                    },
 
                 };
 

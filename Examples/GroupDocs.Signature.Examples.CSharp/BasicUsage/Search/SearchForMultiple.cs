@@ -67,7 +67,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 }
                 else
                 {
-                    Console.WriteLine("No one signature was found.");
+                    Helper.WriteError("No one signature was found.");
                 }                
             }
         }

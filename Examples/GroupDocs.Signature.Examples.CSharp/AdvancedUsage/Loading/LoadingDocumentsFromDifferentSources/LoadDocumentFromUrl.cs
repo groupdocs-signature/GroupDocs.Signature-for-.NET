@@ -40,9 +40,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
                 Console.WriteLine("\nSource document signed successfully.\nFile saved at " + outputFilePath);
             }
-            catch(Exception ex)
+            catch
             {
-                Console.WriteLine("\nThis example requires valid network resource Url to download the document. " +
+                Helper.WriteError("\nThis example requires valid network resource Url to download the document. " +
                                   "\nProbably following resource are not available. " +
                                   $"\n{url}");
             }

@@ -29,36 +29,27 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             // instantiating the signature object
             using (Signature signature = new Signature(filePath))
             {
-                // setup search options
-                QrCodeSearchOptions searchOptions = new QrCodeSearchOptions()
-                {
-                    // specify special pages to search on 
-                    AllPages = true,
-                };
-
                 // search document
-                List<BaseSignature> result = signature.Search<BaseSignature>(searchOptions);
-
+                List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(SignatureType.QrCode);
                 try
                 {
-                    foreach (BaseSignature item in result)
+                    foreach (QrCodeSignature qrSignature in signatures)
                     {
-                        QrCodeSignature qrCodeSignature = item as QrCodeSignature;
-                        if (qrCodeSignature != null)
+                        Console.WriteLine("Found QRCode signature: {0} with text {1}", qrSignature.EncodeType.TypeName, qrSignature.Text);
+                        Email email = qrSignature.GetData<Email>();
+                        if (email != null)
                         {
-                            Console.WriteLine("Found QRCode signature: {0} with text {1}", qrCodeSignature.EncodeType.TypeName, qrCodeSignature.Text);
-
-                            Email Email = qrCodeSignature.GetData<Email>();
-                            if (Email != null)
-                            {
-                                Console.WriteLine($"Found Email signature: {Email.Address} {Email.Subject} {Email.Body}");
-                            }
+                            Console.WriteLine($"Found Email signature: {email.Address}: [{email.Subject}] : {email.Body}");
+                        }
+                        else
+                        {
+                            Helper.WriteError($"Email object was not found. QRCode {qrSignature.EncodeType.TypeName} with text {qrSignature.Text}");
                         }
                     }
                 }
                 catch
                 {
-                    Console.WriteLine("\nThis example requires license to properly run. " +
+                    Helper.WriteError("\nThis example requires license to properly run. " +
                                   "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                                   "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +
                                   "\nLear how to request temporary license at https://purchase.groupdocs.com/temporary-license.");

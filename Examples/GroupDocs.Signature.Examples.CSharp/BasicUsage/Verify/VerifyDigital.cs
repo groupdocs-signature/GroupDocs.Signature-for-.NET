@@ -34,7 +34,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 }
                 else
                 {
-                    Console.WriteLine($"\nDocument {filePath} failed verification process.");
+                    Helper.WriteError($"\nDocument {filePath} failed verification process.");
                 }
             }
         }

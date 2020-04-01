@@ -23,7 +23,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 TextVerifyOptions textVerifyOptions = new TextVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    SignatureImplementation = TextSignatureImplementation.Stamp,
+                    SignatureImplementation = TextSignatureImplementation.Native,
                     Text = "John",
                     MatchType = TextMatchType.Contains
                 };

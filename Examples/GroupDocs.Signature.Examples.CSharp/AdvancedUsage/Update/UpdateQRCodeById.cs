@@ -53,7 +53,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 else
                 {
                     Console.WriteLine($"Successfully updated signatures : {updateResult.Succeeded.Count}");
-                    Console.WriteLine($"Not updated signatures : {updateResult.Failed.Count}");
+                    Helper.WriteError($"Not updated signatures : {updateResult.Failed.Count}");
                 }
                 Console.WriteLine("List of updated signatures:");
                 foreach (BaseSignature temp in updateResult.Succeeded)

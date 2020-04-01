@@ -35,8 +35,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     VerticalAlignment = VerticalAlignment.Bottom,
                     HorizontalAlignment = HorizontalAlignment.Right,
                     Margin = new Padding() { Right = 10, Bottom = 10 },
-
-                    Background = new Background() { Color = Color.DarkOrange },
+                    Transparency = 0.2,
+                    Background = new Background() { Color = Color.DarkOrange, Transparency = 0.5 },
+                    Border = new Border(){ Visible = true, Color = Color.OrangeRed,
+                        DashStyle = DashStyle.DashLongDashDot, Weight = 2 },
                     BackgroundColorCropType = StampBackgroundCropType.OuterArea,
                     ImageFilePath = Constants.ImageHandwrite,
                     BackgroundImageCropType = StampBackgroundCropType.InnerArea,

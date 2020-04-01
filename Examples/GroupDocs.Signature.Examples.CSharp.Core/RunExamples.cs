@@ -13,7 +13,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("=====================================================");
 
             // Please uncomment the example you want to try out
-
             #region Quick Start
 
             QuickStart.SetLicenseFromFile.Run();
@@ -195,12 +194,14 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // Sign Pdf document with Form-fields
             SignPdfWithFormFieldAdvanced.Run();
+            SignPdfWithFormFieldAdvancedRadio.Run();
 
             // Sign Pdf document with Stamp signature
             SignWithStampAdvanced.Run();
 
             // Sign Spreadsheet document with XAdes signature
             SignWithXAdESTypes.Run();
+
             #endregion
 
             #region Sign with further result analysis
@@ -227,6 +228,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithQRCodeAddressObject.Run();
             SignWithQRCodeEmailObject.Run();
             SignWithQRCodeVCardObject.Run();
+            SignWithQRCodeEPCObject.Run();
+            SignWithQRCodeEventObject.Run();
+            SignWithQRCodeMeCardObject.Run();
             #endregion
 
             #region Sign Metadata advanced
@@ -300,6 +304,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             SearchForQRCodeAddressObject.Run();
             SearchForQRCodeEmailObject.Run();
             SearchForQRCodeVCardObject.Run();
+            SearchForQRCodeEPCObject.Run();
+            SearchForQRCodeEventObject.Run();
+            SearchForQRCodeMeCardObject.Run();
             #endregion
 
             SearchWithExceptionHandling.Run();

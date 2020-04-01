@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     // set alternative signature implementation on document page
                     SignatureImplementation = TextSignatureImplementation.Annotation,
-                    // for Pdf document type ther's ability to setup exteneded appearences
+                    // for Pdf document type there is ability to setup extended appearances
                     Appearance = new PdfTextAnnotationAppearance()
                     {
                         Border = new Border()

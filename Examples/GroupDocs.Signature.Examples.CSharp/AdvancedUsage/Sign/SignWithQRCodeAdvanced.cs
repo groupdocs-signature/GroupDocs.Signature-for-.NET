@@ -54,10 +54,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // setup signature border
                     Border = new Border()
                     {
-                        Color = Color.DarkGreen,
-                        DashStyle = DashStyle.DashLongDashDot,
-                        Transparency = 0.5,
                         Visible = true,
+                        Color = Color.OrangeRed,
+                        DashStyle = DashStyle.DashLongDashDot,
                         Weight = 2
                     },
 

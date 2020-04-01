@@ -30,7 +30,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 DigitalSignOptions options = new DigitalSignOptions(certificatePath)
                 {
-                    // certifiate password
+                    // certificate password
                     Password = "1234567890",
                     // digital certificate details
                     Reason = "Sign",

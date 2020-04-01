@@ -50,7 +50,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     }
                     else
                     {
-                        Console.WriteLine($"Signature was not updated in  the document! Signature with Text '{textSignature.Text}' was not found!");
+                        Helper.WriteError($"Signature was not updated in  the document! Signature with Text '{textSignature.Text}' was not found!");
                     }
                 }
             }

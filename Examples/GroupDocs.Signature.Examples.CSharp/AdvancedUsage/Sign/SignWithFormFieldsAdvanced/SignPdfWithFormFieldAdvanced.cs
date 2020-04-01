@@ -53,7 +53,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     Width = 100,
                 };
 
-
                 // instantiate text form field signature
                 DigitalFormFieldSignature digSignature = new DigitalFormFieldSignature("dgData1");
                 // instantiate options based on text form field signature

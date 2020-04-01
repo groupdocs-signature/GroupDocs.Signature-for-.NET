@@ -50,7 +50,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     else
                     {
                         Console.WriteLine($"Successfully deleted signatures : {deleteResult.Succeeded.Count}");
-                        Console.WriteLine($"Not deleted signatures : {deleteResult.Failed.Count}");
+                        Helper.WriteError($"Not deleted signatures : {deleteResult.Failed.Count}");
                     }
                     Console.WriteLine("\nList of deleted signatures:");
                     int number = 1;
@@ -61,7 +61,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 }
                 else
                 {
-                    Console.WriteLine("No one signature was found.");
+                    Helper.WriteError("No one signature was found.");
                 }
             }
         }

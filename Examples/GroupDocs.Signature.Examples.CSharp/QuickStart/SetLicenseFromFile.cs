@@ -26,10 +26,10 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
             }
             else
             {
-                Console.WriteLine("\nWe do not ship any license with this example. " +
+                Helper.WriteError("\nWe do not ship any license with this example. " +
                                   "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                                   "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +
-                                  "\nLear how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
+                                  "\nLearn how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
             }
         }
     }

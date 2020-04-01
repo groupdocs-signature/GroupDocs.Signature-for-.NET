@@ -56,7 +56,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     else
                     {
                         Console.WriteLine($"Successfully deleted signatures : {deleteResult.Succeeded.Count}");
-                        Console.WriteLine($"Not deleted signatures : {deleteResult.Failed.Count}");
+                        Helper.WriteError($"Not deleted signatures : {deleteResult.Failed.Count}");
                     }
                     Console.WriteLine("List of deleted signatures:");
                     foreach (BaseSignature temp in deleteResult.Succeeded)

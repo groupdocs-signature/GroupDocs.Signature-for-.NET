@@ -66,7 +66,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     EncodeType = QrCodeTypes.QR,
                     // specify serialization encryption
                     DataEncryption = encryption,
-                    // locate and aligh signature
+                    // locate and align signature
                     Height = 100,
                     Width = 100,
                     VerticalAlignment = VerticalAlignment.Bottom,

@@ -49,7 +49,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     }
                     else
                     {
-                        Console.WriteLine($"Signature was not updated in the document! Signature at location {imageSignature.Left}x{imageSignature.Top} and Size {imageSignature.Size} was not found!");
+                        Helper.WriteError($"Signature was not updated in the document! Signature at location {imageSignature.Left}x{imageSignature.Top} and Size {imageSignature.Size} was not found!");
                     }
                 }
             }

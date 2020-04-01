@@ -23,7 +23,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 TextVerifyOptions options = new TextVerifyOptions()
                 {
-                    // specify if all pages shoudl be verified
+                    // specify if all pages should be verified
                     AllPages = false,
                     PagesSetup = new PagesSetup() { FirstPage = false, LastPage = true, OddPages = false, EvenPages = true },
                     // specify text pattern
@@ -31,8 +31,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify verification text pattern
                     MatchType = TextMatchType.Contains,
                     // specify types of QR code to verify
-                    SignatureImplementation = TextSignatureImplementation.Stamp,
-                    // specify if form fielsd should be verified
+                    SignatureImplementation = TextSignatureImplementation.Native,
+                    // specify if form fields should be verified
                     FormTextFieldTitle = "Sample",
                     FormTextFieldType = FormTextFieldType.RichText
                 };
@@ -45,7 +45,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
                 else
                 {
-                    Console.WriteLine("\nDocument failed verification process.");
+                    Helper.WriteError("\nDocument failed verification process.");
                 }
             }
         }

@@ -69,7 +69,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
                 else
                 {
-                    Console.WriteLine("\nDocument failed verification process.\n");
+                    Helper.WriteError("\nDocument failed verification process.\n");
                 }
             }
         }

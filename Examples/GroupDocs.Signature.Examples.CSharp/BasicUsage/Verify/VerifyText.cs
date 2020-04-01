@@ -24,7 +24,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 TextVerifyOptions options = new TextVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    SignatureImplementation = TextSignatureImplementation.Stamp,
+                    SignatureImplementation = TextSignatureImplementation.Native,
                     Text = "John",
                     MatchType = TextMatchType.Contains
                 };
@@ -37,7 +37,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 }
                 else
                 {
-                    Console.WriteLine($"\nDocument {filePath} failed verification process.");
+                    Helper.WriteError($"\nDocument {filePath} failed verification process.");
                 }
             }
         }

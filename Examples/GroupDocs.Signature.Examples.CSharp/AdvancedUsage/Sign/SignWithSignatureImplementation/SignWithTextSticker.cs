@@ -30,7 +30,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     // set alternative signature implementation on document page
                     SignatureImplementation = TextSignatureImplementation.Sticker,
-                    // for Pdf document type ther's ability to setup exteneded appearences for Stickers
+                    // for Pdf document type there is ability to setup extended appearances for Stickers
                     Appearance = new PdfTextStickerAppearance()
                     {
                         // select sticker icon

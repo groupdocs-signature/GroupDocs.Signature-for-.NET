@@ -5,7 +5,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
-    using GroupDocs.Signature.Options;
     using GroupDocs.Signature.Domain.Extensions;
 
     /// <summary>
@@ -29,36 +28,28 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             // instantiating the signature object
             using (Signature signature = new Signature(filePath))
             {
-                // setup search options
-                QrCodeSearchOptions searchOptions = new QrCodeSearchOptions()
-                {
-                    // specify special pages to search on 
-                    AllPages = true,
-                };
-
                 // search document
-                List<BaseSignature> result = signature.Search<BaseSignature>(searchOptions);
-
+                List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(SignatureType.QrCode);
                 try
                 {
-                    foreach (BaseSignature item in result)
+                    foreach (QrCodeSignature qrSignature in signatures)
                     {
-                        QrCodeSignature qrCodeSignature = item as QrCodeSignature;
-                        if (qrCodeSignature != null)
-                        {
-                            Console.WriteLine("Found QRCode signature: {0} with text {1}", qrCodeSignature.EncodeType.TypeName, qrCodeSignature.Text);
+                        Console.WriteLine("Found QRCode signature: {0} with text {1}", qrSignature.EncodeType.TypeName, qrSignature.Text);
 
-                            Address Address = qrCodeSignature.GetData<Address>();
-                            if (Address != null)
-                            {
-                                Console.WriteLine($"Found Address signature: {Address.Country} {Address.State} {Address.City} {Address.ZIP}");
-                            }
+                        Address Address = qrSignature.GetData<Address>();
+                        if (Address != null)
+                        {
+                            Console.WriteLine($"Found Address signature: {Address.Country} {Address.State} {Address.City} {Address.ZIP}");
+                        }
+                        else
+                        {
+                            Helper.WriteError($"Address object was not found. QRCode {qrSignature.EncodeType.TypeName} with text {qrSignature.Text}");
                         }
                     }
                 }
                 catch
                 {
-                    Console.WriteLine("\nThis example requires license to properly run. " +
+                    Helper.WriteError("\nThis example requires license to properly run. " +
                                   "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                                   "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +
                                   "\nLear how to request temporary license at https://purchase.groupdocs.com/temporary-license.");

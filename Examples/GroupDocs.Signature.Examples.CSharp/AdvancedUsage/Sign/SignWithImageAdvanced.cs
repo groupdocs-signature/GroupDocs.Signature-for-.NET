@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithImageAdvanced : Sign document with image signature applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
 
@@ -35,36 +35,32 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Top = 100,
 
                     // set signature rectangle
-                    Width = 100,
-                    Height = 30,
+                    Width = 200,
+                    Height = 100,
 
                     // set signature alignment
                     // when VerticalAlignment is set the Top coordinate will be ignored. 
                     // Use Margin properties Top, Bottom to provide vertical offset
-                    VerticalAlignment = Domain.VerticalAlignment.Top,
+                    VerticalAlignment = VerticalAlignment.Top,
 
                     // when HorizontalAlignment is set the Left coordinate will be ignored. 
                     // Use Margin properties Left, Right to provide horizontal offset
-                    HorizontalAlignment = Domain.HorizontalAlignment.Right,
+                    HorizontalAlignment = HorizontalAlignment.Center,
 
-                    Margin = new Padding() { Top = 20, Right = 20 },
+                    Margin = new Padding() { Top = 120, Right = 120 },
 
                     // set rotation
                     RotationAngle = 45,
 
-                    // setup image additional appearance as Brightness and Border
-                    Appearance = new ImageAppearance()
+                    // setup signature border
+                    Border = new Border()
                     {
-                        Brightness = 0.9f,
-                        Border = new Border()
-                        {
-                            Color = Color.DarkGreen,
-                            DashStyle = DashStyle.DashLongDashDot,
-                            Transparency = 0.5,
-                            Visible = true,
-                            Weight = 2
-                        },
+                        Visible = true,
+                        Color = Color.OrangeRed,
+                        DashStyle = DashStyle.DashDotDot,
+                        Weight = 5
                     }
+
                 };
 
                 // sign document to file

@@ -66,6 +66,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeEncryptedText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeAddressObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEmailObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEPCObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEventObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeMeCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
@@ -77,7 +80,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithMillimeters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithPercents.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithStretchMode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignPdfWithFormFieldAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedCombobox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedRadio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignPdfWithStandardMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced.cs" />
@@ -96,6 +101,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeAddressObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEmailObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEPCObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEventObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeMeCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithResultAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextAnnotation.cs" />
@@ -164,6 +172,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Verify\VerifyText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Verify\VerifyWithMultipleOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorld.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromStream.cs" />
@@ -235,6 +244,15 @@
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedText.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEPCObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEventObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeMeCardObject.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeVCardObject.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

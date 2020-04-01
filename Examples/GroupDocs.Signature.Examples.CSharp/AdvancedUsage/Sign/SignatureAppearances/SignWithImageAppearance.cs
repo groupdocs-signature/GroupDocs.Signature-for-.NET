@@ -42,7 +42,14 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     VerticalAlignment = Domain.VerticalAlignment.Bottom,
                     HorizontalAlignment = Domain.HorizontalAlignment.Right,
                     Margin = new Padding() { Bottom = 20, Right = 20 },
-
+                    Border = new Border()
+                    {
+                        Color = Color.DarkGreen,
+                        DashStyle = DashStyle.DashLongDashDot,
+                        Transparency = 0.5,
+                        Visible = true,
+                        Weight = 2
+                    },
                     // setup image additional appearance as Brightness and Border
                     Appearance = new ImageAppearance()
                     {
@@ -50,14 +57,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Contrast = 0.2f,
                         GammaCorrection = 0.3f,
                         Brightness = 0.9f,
-                        Border = new Border()
-                        {
-                            Color = Color.DarkGreen,
-                            DashStyle = DashStyle.DashLongDashDot,
-                            Transparency = 0.5,
-                            Visible = true,
-                            Weight = 2
-                        }                        
+                                                
                     }
                 };
 

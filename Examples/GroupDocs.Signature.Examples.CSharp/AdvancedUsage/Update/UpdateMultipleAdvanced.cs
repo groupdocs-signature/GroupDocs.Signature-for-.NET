@@ -59,7 +59,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     else
                     {
                         Console.WriteLine($"Successfully updated signatures : {updateResult.Succeeded.Count}");
-                        Console.WriteLine($"Not updated signatures : {updateResult.Failed.Count}");
+                        Helper.WriteError($"Not updated signatures : {updateResult.Failed.Count}");
                     }
                     Console.WriteLine("\nList of updated signatures:");
                     int number = 1;
@@ -70,7 +70,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
                 else
                 {
-                    Console.WriteLine("No one signature was found.");
+                    Helper.WriteError("No one signature was found.");
                 }
             }
         }

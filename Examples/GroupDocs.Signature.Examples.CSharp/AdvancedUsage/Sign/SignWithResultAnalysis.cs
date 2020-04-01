@@ -44,7 +44,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 else
                 {
                     Console.WriteLine($"Successfully created signatures : {signResult.Succeeded.Count}");
-                    Console.WriteLine($"Failed signatures : {signResult.Failed.Count}");
+                    Helper.WriteError($"Failed signatures : {signResult.Failed.Count}");
                 }
                 Console.WriteLine("\nList of newly created signatures:");
                 int number = 1;

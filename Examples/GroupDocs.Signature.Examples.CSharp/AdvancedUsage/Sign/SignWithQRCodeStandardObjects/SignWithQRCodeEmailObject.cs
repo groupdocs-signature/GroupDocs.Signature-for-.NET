@@ -33,7 +33,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     Address = "sherlock@holmes.com",
                     Subject = "Very important e-mail",
-                    Body = "Very important body"
+                    Body = "Hello, Watson. Reach me ASAP!"
                 };
 
                 // create options

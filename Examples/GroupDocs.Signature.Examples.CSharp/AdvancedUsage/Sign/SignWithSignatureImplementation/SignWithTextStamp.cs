@@ -28,7 +28,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 TextSignOptions options = new TextSignOptions("John Smith")
                 {
                     // set alternative signature implementation on document page
-                    SignatureImplementation = TextSignatureImplementation.Stamp,
+                    SignatureImplementation = TextSignatureImplementation.Native,
                     // set alignment
                     VerticalAlignment = VerticalAlignment.Top,
                     HorizontalAlignment = HorizontalAlignment.Right,

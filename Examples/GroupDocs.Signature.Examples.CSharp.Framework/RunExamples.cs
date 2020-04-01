@@ -144,7 +144,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Loading
             LoadDocumentFromLocalDisk.Run();
             LoadDocumentFromStream.Run();
-            LoadDocumentFromUrl.Run();
+            //LoadDocumentFromUrl.Run();
             //LoadDocumentFromAmazonS3.Run();
             //LoadDocumentFromAzureBlobStorage.Run();
             //LoadDocumentFromFtp.Run();            
@@ -194,6 +194,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // Sign Pdf document with Form-fields
             SignPdfWithFormFieldAdvanced.Run();
+            SignPdfWithFormFieldAdvancedRadio.Run();
 
             // Sign Pdf document with Stamp signature
             SignWithStampAdvanced.Run();
@@ -227,6 +228,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithQRCodeAddressObject.Run();
             SignWithQRCodeEmailObject.Run();
             SignWithQRCodeVCardObject.Run();
+            SignWithQRCodeEPCObject.Run();
+            SignWithQRCodeEventObject.Run();
+            SignWithQRCodeMeCardObject.Run();
             #endregion
 
             #region Sign Metadata advanced
@@ -300,6 +304,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             SearchForQRCodeAddressObject.Run();
             SearchForQRCodeEmailObject.Run();
             SearchForQRCodeVCardObject.Run();
+            SearchForQRCodeEPCObject.Run();
+            SearchForQRCodeEventObject.Run();
+            SearchForQRCodeMeCardObject.Run();
             #endregion
 
             SearchWithExceptionHandling.Run();
