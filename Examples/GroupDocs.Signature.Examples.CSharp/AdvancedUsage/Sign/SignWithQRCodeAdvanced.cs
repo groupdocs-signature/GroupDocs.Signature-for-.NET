@@ -23,7 +23,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCodeAdvanced", fileName);
+            string outputPath = Path.Combine(Constants.OutputPath, "SignWithQRCodeAdvanced");
+            string outputFilePath = System.IO.Path.Combine(outputPath, fileName);
 
             using (Signature signature = new Signature(filePath))
             {
@@ -70,7 +71,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Color = Color.LimeGreen,
                         Transparency = 0.5,
                         Brush = new LinearGradientBrush(Color.LimeGreen, Color.DarkGreen)
-                    }
+                    },
+                    // set field for QRCode images returning
+                    ReturnContent = true,
+                    // specify type of returned QRCode images
+                    ReturnContentType = FileType.PNG
                 };
 
                 // sign document to file
@@ -79,9 +84,18 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 Console.WriteLine("\nList of newly created signatures:");
                 int number = 1;
-                foreach (BaseSignature temp in signResult.Succeeded)
+                foreach (QrCodeSignature qrCodeSignature in signResult.Succeeded)
                 {
-                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    Console.WriteLine($"Signature #{number++}: Type: {qrCodeSignature.SignatureType} Id:{qrCodeSignature.SignatureId}, Location: {qrCodeSignature.Left}x{qrCodeSignature.Top}. Size: {qrCodeSignature.Width}x{qrCodeSignature.Height}");
+                    Console.WriteLine($"Location at {qrCodeSignature.Left}-{qrCodeSignature.Top}. Size is {qrCodeSignature.Width}x{qrCodeSignature.Height}.");
+
+                    string outputImagePath = System.IO.Path.Combine(outputPath, $"image{number}{qrCodeSignature.Format.Extension}");
+
+                    using (FileStream fs = new FileStream(outputImagePath, FileMode.Create))
+                    {
+                        fs.Write(qrCodeSignature.Content, 0, qrCodeSignature.Content.Length);
+                    }
+                    number++;
                 }
             }
             

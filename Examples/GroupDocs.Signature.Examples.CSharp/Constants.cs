@@ -30,6 +30,14 @@ namespace GroupDocs.Signature.Examples.CSharp
 
         public static string SAMPLE_PDF_SIGNED
             => GetSampleFilePath("sample_signed.pdf");
+
+        public static string SAMPLE_PDF_SIGNED_METADATA => GetSampleFilePath("SignedWithMetadata.pdf");
+        public static string SAMPLE_PRESENTATION_SIGNED_METADATA => GetSampleFilePath("SignedWithMetadata.ppsx");
+        public static string SAMPLE_SPREADSHEET_SIGNED_METADATA => GetSampleFilePath("SignedWithMetadata.xlsx");
+        public static string SAMPLE_WORDSPROCESSING_SIGNED_METADATA => GetSampleFilePath("SignedWithMetadata.docx");
+        public static string SAMPLE_IMAGE_SIGNED_METADATA => GetSampleFilePath("SignedWithMetadata.jpg");
+
+
         public static string SAMPLE_PDF_QRCODE_ENCRYPTED_TEXT
             => GetSampleFilePath("QRCodeEncryptedText.pdf");
         public static string SAMPLE_PDF_QRCODE_ENCRYPTED_OBJECT
@@ -50,6 +58,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("QRCodeEPCObject.pdf");
         public static string SAMPLE_PDF_QRCODE_EVENT_OBJECT
             => GetSampleFilePath("QRCodeEventObject.pdf");
+        public static string SAMPLE_PDF_SIGNED_DIGITAL
+            => GetSampleFilePath("digital signatures.pdf");
         public static string SAMPLE_WORD_SIGNED
             => GetSampleFilePath("AllSignatures.docx");
         public static string SAMPLE_DOCX_METADATA_ENCRYPTED_TEXT

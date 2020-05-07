@@ -59,10 +59,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 FormFieldSignOptions optionsTextDIG = new FormFieldSignOptions(digSignature)
                 {
                     HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Top,
+                    VerticalAlignment = VerticalAlignment.Center,
                     Margin = new Padding(0, 50, 0, 0),
-                    Height = 10,
-                    Width = 100,
+                    Height = 50,
+                    Width = 50,
                 };
 
                 listOptions.Add(optionsTextFF);

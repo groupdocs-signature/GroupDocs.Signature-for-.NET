@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithDigital : Sign document with digital certificate\n");
 
             // The path to the documents directory.            
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
             string certificatePath = Constants.CertificatePfx;

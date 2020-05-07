@@ -41,37 +41,37 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 Console.WriteLine($"Document Text signatures : {documentInfo.TextSignatures.Count}");
                 foreach (TextSignature textSignature in documentInfo.TextSignatures)
                 {
-                    Console.WriteLine($" - #{textSignature.SignatureId}: Text: {textSignature.Text} Location: {textSignature.Left}x{textSignature.Top}. Size: {textSignature.Width}x{textSignature.Height}");
+                    Console.WriteLine($" - #{textSignature.SignatureId}: Text: {textSignature.Text} Location: {textSignature.Left}x{textSignature.Top}. Size: {textSignature.Width}x{textSignature.Height}. CreatedOn/ModifiedOn: {textSignature.CreatedOn.ToShortDateString()} / {textSignature.ModifiedOn.ToShortDateString()}");
                 }
                 // display document Image signatures information
                 Console.WriteLine($"Document Image signatures : {documentInfo.ImageSignatures.Count}");
                 foreach (ImageSignature imageSignature in documentInfo.ImageSignatures)
                 {
-                    Console.WriteLine($" - #{imageSignature.SignatureId}: Size: {imageSignature.Size} bytes, Format: {imageSignature.Format}.");
+                    Console.WriteLine($" - #{imageSignature.SignatureId}: Size: {imageSignature.Size} bytes, Format: {imageSignature.Format}. CreatedOn/ModifiedOn: {imageSignature.CreatedOn.ToShortDateString()} / {imageSignature.ModifiedOn.ToShortDateString()}");
                 }
                 // display document Digital signatures information
                 Console.WriteLine($"Document Digital signatures : {documentInfo.DigitalSignatures.Count}");
                 foreach (DigitalSignature digitalSignature in documentInfo.DigitalSignatures)
                 {
-                    Console.WriteLine($" - #{digitalSignature.SignatureId}.");
+                    Console.WriteLine($" - #{digitalSignature.SignatureId}. CreatedOn/ModifiedOn: {digitalSignature.CreatedOn.ToShortDateString()} / {digitalSignature.ModifiedOn.ToShortDateString()}");
                 }
                 // display document Barcode signatures information
                 Console.WriteLine($"Document Barcode signatures : {documentInfo.BarcodeSignatures.Count}");
                 foreach (BarcodeSignature barcodeSignature in documentInfo.BarcodeSignatures)
                 {
-                    Console.WriteLine($" - #{barcodeSignature.SignatureId}: Type: {barcodeSignature.EncodeType?.TypeName}. Text: {barcodeSignature.Text}");
+                    Console.WriteLine($" - #{barcodeSignature.SignatureId}: Type: {barcodeSignature.EncodeType?.TypeName}. Text: {barcodeSignature.Text}. CreatedOn/ModifiedOn: {barcodeSignature.CreatedOn.ToShortDateString()} / {barcodeSignature.ModifiedOn.ToShortDateString()}");
                 }
                 // display document QrCode signatures information
                 Console.WriteLine($"Document QR-Code signatures : {documentInfo.QrCodeSignatures.Count}");
                 foreach (QrCodeSignature qrCodeSignature in documentInfo.QrCodeSignatures)
                 {
-                    Console.WriteLine($" - #{qrCodeSignature.SignatureId}: Type: {qrCodeSignature.EncodeType?.TypeName}. Text: {qrCodeSignature.Text}");
+                    Console.WriteLine($" - #{qrCodeSignature.SignatureId}: Type: {qrCodeSignature.EncodeType?.TypeName}. Text: {qrCodeSignature.Text}. CreatedOn/ModifiedOn: {qrCodeSignature.CreatedOn.ToShortDateString()} / {qrCodeSignature.ModifiedOn.ToShortDateString()}");
                 }
                 // display document Form Fields signatures information
                 Console.WriteLine($"Document Form Fields signatures : {documentInfo.FormFieldSignatures.Count}");
                 foreach (FormFieldSignature formFieldSignature in documentInfo.FormFields)
                 {
-                    Console.WriteLine($" - #{formFieldSignature.SignatureId} Type {formFieldSignature.Type}: Name: {formFieldSignature.Name} Value: {formFieldSignature.Value}");
+                    Console.WriteLine($" - #{formFieldSignature.SignatureId} Type {formFieldSignature.Type}: Name: {formFieldSignature.Name} Value: {formFieldSignature.Value}. CreatedOn/ModifiedOn: {formFieldSignature.CreatedOn.ToShortDateString()} / {formFieldSignature.ModifiedOn.ToShortDateString()}");
                 }
             }
         }

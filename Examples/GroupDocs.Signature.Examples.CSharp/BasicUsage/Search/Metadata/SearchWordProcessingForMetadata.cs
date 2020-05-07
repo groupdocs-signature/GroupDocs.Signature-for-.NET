@@ -1,33 +1,31 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 {
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
-    using GroupDocs.Signature.Options;
 
-    public class SearchForQRCode
+    public class SearchWordProcessingForMetadata
     {
         /// <summary>
-        /// Search document for QR_Code signature
+        /// Search document for metadata signature
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Basic Usage] # SearchForQRCode : Search document for QR_Code signature \n");
+            Console.WriteLine("[Example Basic Usage] # SearchWordProcessingForMetadata : Search Word Processing document for metadata signature(s)\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
-
+            string filePath = Constants.SAMPLE_WORDSPROCESSING_SIGNED_METADATA;
             using (Signature signature = new Signature(filePath))
             {
                 // search for signatures in document
-                List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(SignatureType.QrCode);
+                List<WordProcessingMetadataSignature> signatures = signature.Search<WordProcessingMetadataSignature>(SignatureType.Metadata);
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
-                foreach (var QrCodeSignature in signatures)
+                foreach (WordProcessingMetadataSignature mdSignature in signatures)
                 {
-                    Console.WriteLine($"QRCode signature found at page {QrCodeSignature.PageNumber} with type {QrCodeSignature.EncodeType.TypeName} and text {QrCodeSignature.Text}");
+                    Console.WriteLine($"\t[{mdSignature.Name}] = {mdSignature.Value}");
                 }
             }
         }

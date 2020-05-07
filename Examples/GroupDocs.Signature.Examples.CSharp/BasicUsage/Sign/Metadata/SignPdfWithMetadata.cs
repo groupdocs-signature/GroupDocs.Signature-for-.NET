@@ -19,10 +19,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPdfWithMetadata", fileName);
-
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPdfWithMetadata", "SignedWithMetadata.pdf");
+            // create Signature instance 
             using (Signature signature = new Signature(filePath))
             {
                 // create Metadata option with predefined Metadata text
@@ -31,10 +29,12 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // Create few Pdf Metadata signatures
                 PdfMetadataSignature[] signatures = new PdfMetadataSignature[]
                 {
-                    new PdfMetadataSignature("Author", "Mr.Scherlock Holmes"),
-                    new PdfMetadataSignature("DateCreated", DateTime.Now),
-                    new PdfMetadataSignature("DocumentId", 123456),
-                    new PdfMetadataSignature("SignatureId", 123.456M)
+                    new PdfMetadataSignature("Author", "Mr.Scherlock Holmes"), // String value
+                    new PdfMetadataSignature("CreatedOn", DateTime.Now), // DateTime values
+                    new PdfMetadataSignature("DocumentId", 123456), // Integer value
+                    new PdfMetadataSignature("SignatureId", 123.456D), // Double value
+                    new PdfMetadataSignature("Amount", 123.456M), // Decimal value
+                    new PdfMetadataSignature("Total", 123.456F) // Float value
                 };
                 options.Signatures.AddRange(signatures);
 

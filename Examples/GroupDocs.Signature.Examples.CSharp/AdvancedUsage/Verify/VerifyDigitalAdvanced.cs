@@ -24,7 +24,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 DigitalVerifyOptions options = new DigitalVerifyOptions()
                 {
                     Comments = "Test1",
-                    SignDateTimeFrom = new DateTime(year: 2019, month: 05, day: 01)
+                    SignDateTimeFrom = new DateTime(year: 2019, month: 05, day: 01),
+                    SignDateTimeTo = new DateTime(year: 2020, month: 04, day: 20),
+                    
                 };
 
                 // verify document signatures

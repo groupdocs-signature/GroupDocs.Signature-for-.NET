@@ -54,11 +54,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForDigitalAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForFormFieldAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForImageAdvanced.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadataAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadataSecureCustom\SearchForMetadataCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadataSecureCustom\SearchForMetadataEncryptedObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadataSecureCustom\SearchForMetadataEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadata\SearchImageForMetadataAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadata\SearchPdfForMetadataAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadata\SearchPresentationForMetadataAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadata\SearchSpreadsheetForMetadataAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForMetadata\SearchWordProcessingForMetadataAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeSecureCustom\SearchForQRCodeCustomSerializationObject.cs" />
@@ -141,11 +145,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\DocumentPreview\GeneratePreview.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\DocumentPreview\GetDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchImageForMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchPdfForMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchPresentationForMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchSpreadsheetForMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchWordProcessingForMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForBarcode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForDigital.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForFormField.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForImage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForMultiple.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForQRCode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForText.cs" />
@@ -272,6 +280,18 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_pwd.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.ppsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\signed_formfield.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -307,6 +327,9 @@
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 </Project>

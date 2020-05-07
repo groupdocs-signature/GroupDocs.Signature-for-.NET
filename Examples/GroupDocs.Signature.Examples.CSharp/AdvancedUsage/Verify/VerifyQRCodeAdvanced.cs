@@ -24,20 +24,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
-
             using (Signature signature = new Signature(filePath))
             {
                 QrCodeVerifyOptions options = new QrCodeVerifyOptions()
                 {
                     // specify if all pages should be verified
                     AllPages = false,
-                    PagesSetup = new PagesSetup() {  FirstPage = false, LastPage = true, OddPages = false, EvenPages = true },
+                    PagesSetup = new PagesSetup() { FirstPage = true },
                     // specify text pattern
-                    Text = "John",
+                    Text = "1234",
                     // specify verification text pattern
-                    MatchType = TextMatchType.Contains,
-                    // specify types of QR code to verify
-                    EncodeType = QrCodeTypes.Aztec
+                    MatchType = TextMatchType.Contains
                 };
                 // Verify document signatures
                 // For evaluation version this verification will fail

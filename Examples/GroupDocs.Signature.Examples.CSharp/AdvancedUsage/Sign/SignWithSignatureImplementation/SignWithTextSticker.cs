@@ -44,7 +44,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     },
                     // set alignment
                     VerticalAlignment = VerticalAlignment.Top,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     // set margin with 20 pixels for all sides
                     Margin = new Padding(20)
                 };

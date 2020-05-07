@@ -18,10 +18,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignImageWithMetadata : Sign image document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_JPG;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignImageWithMetadata", fileName);
+            string filePath = Constants.SAMPLE_JPG;            
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignImageWithMetadata", "SignedWithMetadata.jpg");
 
             using (Signature signature = new Signature(filePath))
             {
@@ -33,11 +31,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
                 // Create several Image Metadata signatures with different types
                 ImageMetadataSignature[] signatures = new ImageMetadataSignature[]
-                {
-                    new ImageMetadataSignature(imgsMetadataId++, 123456), // int
-                    new ImageMetadataSignature(imgsMetadataId++, "Mr.Scherlock Holmes"), // string
-                    new ImageMetadataSignature(imgsMetadataId++, DateTime.Now), // date time
-                    new ImageMetadataSignature(imgsMetadataId++, 123.456M), //decimal value
+                {   
+                    new ImageMetadataSignature(imgsMetadataId++, "Mr.Scherlock Holmes"), // String value
+                    new ImageMetadataSignature(imgsMetadataId++, DateTime.Now), // Date Time value
+                    new ImageMetadataSignature(imgsMetadataId++, 123456), // Integer value
+                    new ImageMetadataSignature(imgsMetadataId++, 123.456D), // Double value
+                    new ImageMetadataSignature(imgsMetadataId++, 123.456M), // Decimal value
+                    new ImageMetadataSignature(imgsMetadataId++, 123.456F), // Float value
                 };
                 options.Signatures.AddRange(signatures);
 

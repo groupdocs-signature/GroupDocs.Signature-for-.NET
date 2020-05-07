@@ -19,13 +19,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED_FORMFIELD;
-
             using (Signature signature = new Signature(filePath))
             {
-                FormFieldSearchOptions options = new FormFieldSearchOptions()
-                {
-                    Value = "Value1"
-                };
+                FormFieldSearchOptions options = new FormFieldSearchOptions();
 
                 // search for signatures in document
                 List<FormFieldSignature> signatures = signature.Search<FormFieldSignature>(options);

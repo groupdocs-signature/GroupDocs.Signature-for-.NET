@@ -22,8 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithBarcodeAdvanced", fileName);
+            string outputPath = System.IO.Path.Combine(Constants.OutputPath, "SignWithBarcodeAdvanced");
+            string outputFilePath = System.IO.Path.Combine(outputPath, fileName);
 
             using (Signature signature = new Signature(filePath))
             {
@@ -71,7 +71,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Color = Color.LimeGreen,
                         Transparency = 0.5,
                         Brush = new LinearGradientBrush(Color.LimeGreen, Color.DarkGreen)
-                    }
+                    },
+                    // set field for barcode images returning
+                    ReturnContent = true,
+                    // specify type of returned barcode images
+                    ReturnContentType = FileType.PNG
 
                 };
                 // sign document to file
@@ -80,9 +84,18 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 Console.WriteLine("\nList of newly created signatures:");
                 int number = 1;
-                foreach (BaseSignature temp in signResult.Succeeded)
+                foreach (BarcodeSignature barcodeSignature in signResult.Succeeded)
                 {
-                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    Console.WriteLine($"Signature #{number++}: Type: {barcodeSignature.SignatureType} Id:{barcodeSignature.SignatureId}, Location: {barcodeSignature.Left}x{barcodeSignature.Top}. Size: {barcodeSignature.Width}x{barcodeSignature.Height}");
+                    Console.WriteLine($"Location at {barcodeSignature.Left}-{barcodeSignature.Top}. Size is {barcodeSignature.Width}x{barcodeSignature.Height}.");
+
+                    string outputImagePath = System.IO.Path.Combine(outputPath, $"image{number}{barcodeSignature.Format.Extension}");
+
+                    using (FileStream fs = new FileStream(outputImagePath, FileMode.Create))
+                    {
+                        fs.Write(barcodeSignature.Content, 0, barcodeSignature.Content.Length);
+                    }
+                    number++;
                 }
             }
         }

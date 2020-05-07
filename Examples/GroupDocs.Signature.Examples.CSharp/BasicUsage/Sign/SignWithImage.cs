@@ -31,8 +31,6 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     // set signature position
                     Left = 100,
                     Top = 100,
-                    //
-                    PageNumber = 1,
                     AllPages = true
                 };
 

@@ -95,8 +95,20 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for digital signature
             SearchForDigital.Run();
 
-            //Search document for metadata signature
-            SearchForMetadata.Run();
+            //Search image document for metadata signatures
+            SearchImageForMetadata.Run();
+
+            //Search PDF document for metadata signatures
+            SearchPdfForMetadata.Run();
+
+            //Search Presentation document for metadata signatures
+            SearchPresentationForMetadata.Run();
+
+            //Search Spreadsheet document for metadata signatures
+            SearchSpreadsheetForMetadata.Run();
+
+            //Search WordProcessing document for metadata signatures
+            SearchWordProcessingForMetadata.Run();
 
             //Search document for form-field signature
             SearchForFormField.Run();
@@ -290,8 +302,20 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Search document for form-field signature with applying specific options
             SearchForFormFieldAdvanced.Run();
 
-            //Search document for metadata signature with applying specific options
-            SearchForMetadataAdvanced.Run();
+            //Advanced search image document for metadata signatures
+            SearchImageForMetadataAdvanced.Run();
+
+            //Advanced search PDF document for metadata signatures
+            SearchPdfForMetadataAdvanced.Run();
+
+            //Advanced search Presentation document for metadata signatures
+            SearchPresentationForMetadataAdvanced.Run();
+
+            //Advanced search Spreadsheet document for metadata signatures
+            SearchSpreadsheetForMetadataAdvanced.Run();
+
+            //Advanced search WordProcessing document for metadata signatures
+            SearchWordProcessingForMetadataAdvanced.Run();
 
             #region Search for QR-Code Encryption, Custom encryption, custom serialization
             SearchForMetadataEncryptedText.Run();

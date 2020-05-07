@@ -18,23 +18,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
-
             using (Signature signature = new Signature(filePath))
             {
                 TextVerifyOptions options = new TextVerifyOptions()
                 {
                     // specify if all pages should be verified
                     AllPages = false,
-                    PagesSetup = new PagesSetup() { FirstPage = false, LastPage = true, OddPages = false, EvenPages = true },
+                    PagesSetup = new PagesSetup() { FirstPage = true },
                     // specify text pattern
                     Text = "John",
-                    // specify verification text pattern
+                    //// specify verification text pattern
                     MatchType = TextMatchType.Contains,
-                    // specify types of QR code to verify
-                    SignatureImplementation = TextSignatureImplementation.Native,
-                    // specify if form fields should be verified
-                    FormTextFieldTitle = "Sample",
-                    FormTextFieldType = FormTextFieldType.RichText
                 };
                 // verify document signatures
 

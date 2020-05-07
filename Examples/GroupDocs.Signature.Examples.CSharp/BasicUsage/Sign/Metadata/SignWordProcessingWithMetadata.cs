@@ -18,10 +18,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWordProcessingWithMetadata : Sign word-processing document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWordProcessingWithMetadata", fileName);
+            string filePath = Constants.SAMPLE_DOCX;            
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWordProcessingWithMetadata", "SignedWithMetadata.docx");
 
             using (Signature signature = new Signature(filePath))
             {
@@ -31,10 +29,12 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // Create few WordProcessing Metadata signatures
                 WordProcessingMetadataSignature[] signatures = new WordProcessingMetadataSignature[]
                 {
-                    new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes"),
-                    new WordProcessingMetadataSignature("DateCreated", DateTime.Now),
-                    new WordProcessingMetadataSignature("DocumentId", 123456),
-                    new WordProcessingMetadataSignature("SignatureId", 123.456M)
+                    new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes"), // String value
+                    new WordProcessingMetadataSignature("CreatedOn", DateTime.Now), // DateTime values
+                    new WordProcessingMetadataSignature("DocumentId", 123456), // Integer value
+                    new WordProcessingMetadataSignature("SignatureId", 123.456D), // Double value
+                    new WordProcessingMetadataSignature("Amount", 123.456M), // Decimal value
+                    new WordProcessingMetadataSignature("Total", 123.456F) // Float value
                 };
                 options.Signatures.AddRange(signatures);
 

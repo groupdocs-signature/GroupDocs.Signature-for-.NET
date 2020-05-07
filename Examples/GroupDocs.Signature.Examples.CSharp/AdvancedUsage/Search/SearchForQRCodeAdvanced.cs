@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
@@ -22,8 +23,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchForQRCodeAdvanced : Search document for QR-Code signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
-
+            string filePath = Constants.SAMPLE_PDF_SIGNED;
             using (Signature signature = new Signature(filePath))
             {
                 QrCodeSearchOptions options = new QrCodeSearchOptions()
@@ -32,22 +32,41 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     AllPages = false,
                     PageNumber = 1,
                     PagesSetup = new PagesSetup() { FirstPage = true, LastPage = true, OddPages = false, EvenPages = false },
-
                     // specify special QRCode type to search
-                    EncodeType = QrCodeTypes.Aztec,
+                    EncodeType = QrCodeTypes.QR,
                     // specify text match type
                     MatchType = TextMatchType.Contains,
                     // specify text pattern to search
-                    Text = "John"
+                    Text = "GroupDocs.Signature",
+                    // set field for QRCode images returning
+                    ReturnContent = true,
+                    // specify type of returned QRCode images
+                    ReturnContentType = FileType.PNG
                 };
 
                 // search for signatures in document
                 List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(options); //For evaluation version is 0
                 Console.WriteLine("\nSource document contains following signatures.");
-                foreach (var QrCodeSignature in signatures)
+                foreach (QrCodeSignature qrSignature in signatures)
                 {
-                    Console.WriteLine("QRCode signature found at page {0} with type {1} and text {2}", 
-                        QrCodeSignature.PageNumber, QrCodeSignature.EncodeType, QrCodeSignature.Text);
+                    Console.WriteLine($"\t #{qrSignature.SignatureId} at {qrSignature.PageNumber}-page, {qrSignature.EncodeType.TypeName} type, Text = '{qrSignature.Text}', created {qrSignature.CreatedOn.ToShortDateString()}, modified {qrSignature.ModifiedOn.ToShortDateString()}");
+                }
+                //Save QRCode images
+                string outputPath = System.IO.Path.Combine(Constants.OutputPath, "SearchForQRCodeAdvanced");
+                if (!Directory.Exists(outputPath))
+                {
+                    Directory.CreateDirectory(outputPath);
+                }
+                int i = 0;
+                foreach (QrCodeSignature qrCodeSignature in signatures)
+                {
+                    string outputFilePath = System.IO.Path.Combine(outputPath, $"image{i}{qrCodeSignature.Format.Extension}");
+
+                    using (FileStream fs = new FileStream(outputFilePath, FileMode.Create))
+                    {
+                        fs.Write(qrCodeSignature.Content, 0, qrCodeSignature.Content.Length);
+                    }
+                    i++;
                 }
             }
         }

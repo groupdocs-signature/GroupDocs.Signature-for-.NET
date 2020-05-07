@@ -29,12 +29,12 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             using (Signature signature = new Signature(outputFilePath))
             {
                 // define few search options
-                BarcodeSearchOptions barcodeOptions = new BarcodeSearchOptions();
-                QrCodeSearchOptions qrCodeOptions = new QrCodeSearchOptions();
+                TextSearchOptions textOptions = new TextSearchOptions();
+                ImageSearchOptions imageCodeOptions = new ImageSearchOptions();
                 // add options to list
                 List<SearchOptions> listOptions = new List<SearchOptions>();
-                listOptions.Add(barcodeOptions);
-                listOptions.Add(qrCodeOptions);
+                listOptions.Add(textOptions);
+                listOptions.Add(imageCodeOptions);
 
                 // search for signatures in document
                 SearchResult result = signature.Search(listOptions);

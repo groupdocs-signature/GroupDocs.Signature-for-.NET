@@ -18,10 +18,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignPresentationWithMetadata : Sign presentation document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PRESENTATION;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPresentationWithMetadata", fileName);
+            string filePath = Constants.SAMPLE_PRESENTATION;            
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPresentationWithMetadata", "SignedWithMetadata.ppsx");
 
             using (Signature signature = new Signature(filePath))
             {
@@ -31,10 +29,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // Create few Presentation Metadata signatures
                 PresentationMetadataSignature[] signatures = new PresentationMetadataSignature[]
                 {
-                    new PresentationMetadataSignature("Author", "Mr.Scherlock Holmes"),
-                    new PresentationMetadataSignature("DateCreated", DateTime.Now),
-                    new PresentationMetadataSignature("DocumentId", 123456),
-                    new PresentationMetadataSignature("SignatureId", 123.456M)
+                    new PresentationMetadataSignature("Author", "Mr.Scherlock Holmes"), // String value
+                    new PresentationMetadataSignature("CreatedOn", DateTime.Now), // DateTime values
+                    new PresentationMetadataSignature("DocumentId", 123456), // Integer value
+                    new PresentationMetadataSignature("SignatureId", 123.456D), // Double value
+                    new PresentationMetadataSignature("Amount", 123.456M), // Decimal value
+                    new PresentationMetadataSignature("Total", 123.456F) // Float value
+                        
                 };
                 options.Signatures.AddRange(signatures);
 

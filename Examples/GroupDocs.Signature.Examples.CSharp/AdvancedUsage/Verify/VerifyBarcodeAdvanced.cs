@@ -10,6 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         /// <summary>
         /// Verify document with Barcode signature with applying specific options
+        /// Please be aware that this example works only on licensed product due to limitation with Barcode processing
         /// </summary>
         public static void Run()
         {
@@ -18,7 +19,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED;
-
             using (Signature signature = new Signature(filePath))
             {
                 BarcodeVerifyOptions options = new BarcodeVerifyOptions()
@@ -27,8 +27,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Text = "John",
                     MatchType = TextMatchType.Contains
                 };
-                // verify document signatures
 
+                // verify document signatures
                 VerificationResult result = signature.Verify(options);
                 if (result.IsValid)
                 {
