@@ -37,9 +37,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     mdSignature = signatures.FirstOrDefault(p => p.Name == "SignatureId");
                     Console.WriteLine($"\t[{mdSignature.Name}] as Double = {mdSignature.ToDouble()}");
                     mdSignature = signatures.FirstOrDefault(p => p.Name == "Amount");
-                    Console.WriteLine($"\t[{mdSignature.Name}] as Decimal = {mdSignature.ToDouble()}");
+                    Console.WriteLine($"\t[{mdSignature.Name}] as Decimal = {mdSignature.ToDecimal()}");
                     mdSignature = signatures.FirstOrDefault(p => p.Name == "Total");
-                    Console.WriteLine($"\t[{mdSignature.Name}] as Float = {mdSignature.ToDouble()}");
+                    Console.WriteLine($"\t[{mdSignature.Name}] as Float = {mdSignature.ToSingle()}");
                 }
                 catch (Exception ex)
                 {
