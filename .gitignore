@@ -195,3 +195,4 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 Examples/GroupDocs.Signature.Examples.CSharp/Output/
+deploy_key
