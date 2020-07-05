@@ -101,7 +101,7 @@
                                                 <asp:Literal ID="litDownloadNow" runat="server"></asp:Literal>
                                             </span>
                                             <div class="clearfix">&nbsp;</div>
-                                            <a href="/signature/total" class="btn btn-link refresh-c"><%=Resources["SignAnotherFile"]%> <i class="fa-refresh fa "></i></a>
+                                            <a href="/" class="btn btn-link refresh-c"><%=Resources["SignAnotherFile"]%> <i class="fa-refresh fa "></i></a>
                                             <a class="btn btn-link" target="_blank" href="https://products.groupdocs.cloud/signature/family">Cloud API &nbsp;<i class="fa-cloud fa"></i></a>
                                         </div>
 
