@@ -24,7 +24,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 QrCodeVerifyOptions options = new QrCodeVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    Text = "John",
+                    Text = "Signed",
                     MatchType = TextMatchType.Contains
                 };
                 // verify document signatures

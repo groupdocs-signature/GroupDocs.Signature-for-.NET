@@ -42,6 +42,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
             catch
             {
+                // skipe any exception and show the error
                 Helper.WriteError("\nThis example requires valid network resource Url to download the document. " +
                                   "\nProbably following resource are not available. " +
                                   $"\n{url}");

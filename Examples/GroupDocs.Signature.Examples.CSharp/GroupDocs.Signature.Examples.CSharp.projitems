@@ -116,6 +116,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextStamp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextSticker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextWatermark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextWatermarkNative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithStampAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithXAdESTypes.cs" />

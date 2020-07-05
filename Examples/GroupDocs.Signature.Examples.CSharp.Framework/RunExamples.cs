@@ -227,6 +227,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithTextSticker.Run();
             SignWithTextFormField.Run();
             SignWithTextWatermark.Run();
+            SignWithTextWatermarkNative.Run();
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization

@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     AllPages = false,
                     PagesSetup = new PagesSetup() { FirstPage = true },
                     // specify text pattern
-                    Text = "1234",
+                    Text = "Signed",
                     // specify verification text pattern
                     MatchType = TextMatchType.Contains
                 };

@@ -29,7 +29,11 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             // initialize Signature instance
             using (Signature signature = new Signature(outputFilePath))
             {
-                BarcodeSearchOptions options = new BarcodeSearchOptions();
+                BarcodeSearchOptions options = new BarcodeSearchOptions()
+                {
+                    Text = "Signed",
+                    MatchType = TextMatchType.Contains
+                };
 
                 List<BarcodeSignature> signatures = signature.Search<BarcodeSignature>(options);
                 if (signatures.Count > 0)
