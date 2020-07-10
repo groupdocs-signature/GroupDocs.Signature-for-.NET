@@ -17,12 +17,12 @@ Directory | Description
 [Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases)  | Open source web based projects that demonstrate the salient features of GroupDocs.Signature. 
 [Plugins](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Plugins)  | Visual Studio plugins related to GroupDocs.Signature.
 
-## Docuement e-Signing Features
+## Document e-Signing Features
 
 - Create and add signatures to [documents of various formats](https://docs.groupdocs.com/signature/net/supported-document-formats/).
 - Specify visual attributes of signatures, such as, color, font, margins and more.
 - Search and fetch list of signatures & certificates.
-- Determine if the document contains signatures meeting a specified criteria.
+- Determine if the document contains signatures meeting a specified criterion.
 - Distinguish created signatures from the actual document.
 - Put encrypted text into QR-code signature or embed custom data objects.
 - Extract basic information about the document.
