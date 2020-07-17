@@ -252,8 +252,9 @@ using (Signature signature = new Signature("sample.pdf"))
     signature.Sign("sample_signed.pdf", options);
 }
 ```
-
-{{< alert style="info" >}}Examples above also work for different document types. For Presentations documents only objects of PresentationMetadataSignature should be used with same properties and behavior, for Spreadsheet documents only objects of SpreadsheetMetadataSignature should be used with same properties and behavior, with WordProcessing documents the class WordProcessingMetadataSignature should be used{{< /alert >}}
+{{< alert style="info" >}}
+Examples above also work for different document types. For Presentations documents only objects of [PresentationMetadataSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/presentationmetadatasignature) should be used with same properties and behavior, for Spreadsheet documents only objects of [SpreadsheetMetadataSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/spreadsheetmetadatasignature) should be used with same properties and behavior, with WordProcessing documents the class [WordProcessingMetadataSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/wordprocessingmetadatasignature) should be used
+{{< /alert >}}
 
 ## More resources
 ### GitHub Examples
