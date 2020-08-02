@@ -2,7 +2,7 @@
 id: subscribing-for-search-process-events
 url: signature/net/subscribing-for-search-process-events
 title: Subscribing for search process events
-weight: 3
+weight: 4
 description: "This article explains how to subscribe for search electronic signatures events like start, progress and completion with GroupDocs.Signature API."
 keywords: 
 productName: GroupDocs.Signature for .NET

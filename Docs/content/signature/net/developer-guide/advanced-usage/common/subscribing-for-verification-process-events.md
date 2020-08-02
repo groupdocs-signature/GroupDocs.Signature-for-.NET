@@ -2,7 +2,7 @@
 id: subscribing-for-verification-process-events
 url: signature/net/subscribing-for-verification-process-events
 title: Subscribing for verification process events
-weight: 5
+weight: 6
 description: "This article explains how to subscribe for verification of electronic signatures events like start, progress and completion with GroupDocs.Signature API."
 keywords: 
 productName: GroupDocs.Signature for .NET
