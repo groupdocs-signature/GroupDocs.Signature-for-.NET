@@ -1,10 +1,10 @@
-﻿
-using GroupDocs.Signature.Examples.CSharp.AdvancedUsage;
-using GroupDocs.Signature.Examples.CSharp.BasicUsage;
-using System;
+﻿using System;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
+    using GroupDocs.Signature.Examples.CSharp.BasicUsage;
+    using GroupDocs.Signature.Examples.CSharp.AdvancedUsage;
+
     class RunExamples
     {
         static void Main(string[] args)
@@ -180,6 +180,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Document Preview with hiding signatures
             GeneratePreviewAdvanced.Run();
             GetDocumentInfoAdvanced.Run();
+            GetDocumentProcessHistory.Run();
             #endregion
 
             #region Handling different special exceptions
@@ -194,6 +195,12 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Sign document with digital signature applying specific options
             SignWithDigitalAdvanced.Run();
+
+            //Sign Pdf document with digital time stamp
+            SignWithDigitalAdvancedPdfTimestamp.Run();
+
+            //Sign Pdf document with digital certificate
+            SignWithDigitalAdvancedPdfCertificate.Run();
 
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
