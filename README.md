@@ -1,4 +1,4 @@
-# Digital Signature API
+# Digital Signature API for .NET
 
 [GroupDocs.Signature for .NET](https://products.groupdocs.com/signature/net) provides the ability to add stamps, barcodes and QR-codes, text, image, metadata, form field and digital signatures to documents of various formats. Sign, search and verify document signatures for all popular document formats and set different signing options to suit your needs.
 
@@ -124,4 +124,4 @@ using (Signature signature = new Signature("signed.docx"))
 }
 ```
 
-[Product Page](https://products.groupdocs.com/signature/net) | [Documentation](https://docs.groupdocs.com/signature/net/) | [Demo](https://products.groupdocs.app/signature/family) | [API Reference](https://apireference.groupdocs.com/net/signature) | [Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET) | [Blog](https://blog.groupdocs.com/category/signature/) | [Free Support](https://forum.groupdocs.com/c/signature) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
+[Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/signature/net) | [Documentation](https://docs.groupdocs.com/signature/net/) | [Demo](https://products.groupdocs.app/signature/family) | [API Reference](https://apireference.groupdocs.com/signature/net) | [Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET) | [Blog](https://blog.groupdocs.com/category/signature/) | [Free Support](https://forum.groupdocs.com/c/signature) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
