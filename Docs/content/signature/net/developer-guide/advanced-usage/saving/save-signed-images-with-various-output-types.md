@@ -12,32 +12,27 @@ hideChildren: False
 
 Following classes are inherited from base class [SaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/saveoptions) and allows to specify additional output image format settings.
 
-*   [BmpSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/bmpsaveoptions) class allows to save signed image document to **BMP** image format and setup additional options ( like compression, resolutions, bits per pixel etc);
-*   [GifSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/gifsaveoptions) class allows to save signed image document to **GIF **image format and setup additional options ( like compression, resolutions etc);
-*   [JpegSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/jpegsaveoptions) class allows to save signed image document to **JPEG** image format and setup additional options ( like compression, resolutions, quality etc);
-*   [PngSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/pngsaveoptions) class allows to save signed image document to **PNG** image format and setup additional options ( like bit depth, color type, compression, filters etc);
-*   [TiffSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions) class allows to save signed image document to **TIFF** image format and setup additional options
+* [BmpSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/bmpsaveoptions) class allows to save signed image document to **BMP** image format and setup additional options ( like compression, resolutions, bits per pixel etc);
+* [GifSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/gifsaveoptions) class allows to save signed image document to **GIF**image format and setup additional options ( like compression, resolutions etc);
+* [JpegSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/jpegsaveoptions) class allows to save signed image document to **JPEG** image format and setup additional options ( like compression, resolutions, quality etc);
+* [PngSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/pngsaveoptions) class allows to save signed image document to **PNG** image format and setup additional options ( like bit depth, color type, compression, filters etc);
+* [TiffSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions) class allows to save signed image document to **TIFF** image format and setup additional options
 
 Here are the steps to save signed Image document to special image output type with additional settings with GroupDocs.Signature:
 
-*   Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path or stream as a constructor parameter.
-    
-*   Instantiate required signature options.
-    
-*   Instantiate the one of required class of image format save options ([BmpSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/bmpsaveoptions)[, ](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions)[GifSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/gifsaveoptions)[, ](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions)[JpegSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/jpegsaveoptions)[, ](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions)[PngSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/pngsaveoptions)[, TiffSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions)) object according to your requirements and specify its properties.  
-    
-*   Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass signatureoptions and [SaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/saveoptions) object to it.
-    
+* Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path or stream as a constructor parameter.
+* Instantiate required signature options.
+* Instantiate the one of required class of image format save options [BmpSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/bmpsaveoptions), [GifSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/gifsaveoptions), [JpegSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/jpegsaveoptions), [PngSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/pngsaveoptions), [TiffSaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/tiffsaveoptions) object according to your requirements and specify its properties.  
 
-  
+* Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass signatureoptions and [SaveOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/saveoptions) object to it.
 
 ## Save signed image as BMP
 
 ```csharp
 using (Signature signature = new Signature("sample.jpg"))
-{   
+{
     QRCodeSignOptions signOptions = new QRCodeSignOptions("JohnSmith")
-    {                    
+    {
         EncodeType = QRCodeTypes.QR, Left = 100, Top = 100
     };
     SaveOptions saveOptions;
@@ -52,7 +47,7 @@ using (Signature signature = new Signature("sample.jpg"))
         OverwriteExistingFiles = true
     };
     // sign document to file
-    signature.Sign("signedSample", signOptions, saveOptions);    
+    signature.Sign("signedSample", signOptions, saveOptions);
 }
 ```
 
@@ -60,12 +55,12 @@ using (Signature signature = new Signature("sample.jpg"))
 
 ```csharp
 using (Signature signature = new Signature("sample.jpg"))
-{   
+{
     QRCodeSignOptions signOptions = new QRCodeSignOptions("JohnSmith")
-    {                    
+    {
         EncodeType = QRCodeTypes.QR, Left = 100, Top = 100
     };
-    SaveOptions saveOptions;    
+    SaveOptions saveOptions;
     // create Gif save options with advanced settings
     saveOptions = new GifSaveOptions()
     {
@@ -79,7 +74,7 @@ using (Signature signature = new Signature("sample.jpg"))
         PixelAspectRatio = 24
     };
     // sign document to file
-    signature.Sign("SignedSample", signOptions, saveOptions);    
+    signature.Sign("SignedSample", signOptions, saveOptions);
 }
 ```
 
@@ -87,12 +82,12 @@ using (Signature signature = new Signature("sample.jpg"))
 
 ```csharp
 using (Signature signature = new Signature("sample.jpg"))
-{   
+{
     QRCodeSignOptions signOptions = new QRCodeSignOptions("JohnSmith")
-    {                    
+    {
         EncodeType = QRCodeTypes.QR, Left = 100, Top = 100
     };
-    SaveOptions saveOptions;   
+    SaveOptions saveOptions;
     // create Jpeg save options with advanced settings
     saveOptions = new JpegSaveOptions()
     {
@@ -105,7 +100,7 @@ using (Signature signature = new Signature("sample.jpg"))
         SampleRoundingMode = JpegRoundingMode.Extrapolate
     };
     // sign document to file
-    signature.Sign("SignedSample", signOptions, saveOptions);    
+    signature.Sign("SignedSample", signOptions, saveOptions);
 }
 ```
 
@@ -113,12 +108,12 @@ using (Signature signature = new Signature("sample.jpg"))
 
 ```csharp
 using (Signature signature = new Signature("sample.jpg"))
-{   
+{
     QRCodeSignOptions signOptions = new QRCodeSignOptions("JohnSmith")
-    {                    
+    {
         EncodeType = QRCodeTypes.QR, Left = 100, Top = 100
     };
-    SaveOptions saveOptions;    
+    SaveOptions saveOptions;
     // create png save options with advanced settings
     saveOptions = new PngSaveOptions()
     {
@@ -138,17 +133,17 @@ using (Signature signature = new Signature("sample.jpg"))
 
 ```csharp
 using (Signature signature = new Signature("sample.jpg"))
-{   
+{
     QRCodeSignOptions signOptions = new QRCodeSignOptions("JohnSmith")
-    {                    
+    {
         EncodeType = QRCodeTypes.QR, Left = 100, Top = 100
     };
-    SaveOptions saveOptions;    
+    SaveOptions saveOptions;
     // create tiff save options with advanced settings
     saveOptions = new TiffSaveOptions()
     {
         AddMissingExtenstion = true,
-        ExpectedTiffFormat = TiffFormat.TiffNoCompressionBw                    
+        ExpectedTiffFormat = TiffFormat.TiffNoCompressionBw
     };
     // sign document to file
     signature.Sign("SignedSample", signOptions, saveOptions);
@@ -156,15 +151,20 @@ using (Signature signature = new Signature("sample.jpg"))
 ```
 
 ## More resources
-### GitHub Examples
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)    
-*   [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)    
-*   [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)     
-*   [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)    
-*   [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)    
-*   [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)    
 
-### Free Online App 
-Along with full-featured .NET library we provide simple, but powerful free Apps.  
+### GitHub Examples
+
+You may easily run the code above and see the feature in action in our GitHub examples:
+
+* [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)
+* [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
+* [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)
+* [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)
+* [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)
+* [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)
+
+### Free Online App
+
+Along with full-featured .NET library we provide simple, but powerful free Apps.
+
 You are welcome to eSign PDF, Word, Excel, PowerPoint documents with free to use online **[GroupDocs Signature App](https://products.groupdocs.app/signature)**.

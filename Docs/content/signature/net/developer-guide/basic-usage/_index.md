@@ -11,13 +11,15 @@ hideChildren: False
 [**GroupDocs Signature**](https://products.groupdocs.com/signature/net) library provides ability to manipulate with different electronic signature types such as Text, Image, Digital, Barcode, QR-code, Stamp, Form Field, Metadata. These e-signatures could be added to document, updated, deleted, verified or searched inside already signed documents. Our product also provides information about document type and structure - file type, size, pages count, etc. and generates document pages preview based on provided options.  
 
 Here are main GroupDocs Signature API concepts:
-*   [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) is the main class that contains all required methods for manipulating with document e-signatures.    
-*   Most part of methods expects different options to eSign document, verify and search electronic signatures inside document.    
-*   [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) interface to correctly release used resources - like safely closing document streams when all operations completed. 
-    
+
+* [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) is the main class that contains all required methods for manipulating with document e-signatures.
+* Most part of methods expects different options to eSign document, verify and search electronic signatures inside document.
+* [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) interface to correctly release used resources - like safely closing document streams when all operations completed.
+
 ## Referencing required namespaces
 
 The following code shows how to include required namespace for all code examples.
+
 ```csharp
 using GroupDocs.Signature;
 using GroupDocs.Signature.Domain;

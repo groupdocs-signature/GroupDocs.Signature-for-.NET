@@ -11,18 +11,18 @@ hideChildren: False
 ### Why To Migrate?
   
 Here are the key reasons to use the new updated API provided by GroupDocs.Signature for .NET since version 19.8:
-*   [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class introduced as a **single entry point** to sing the document with various signature types with further verification and search with any supported file format.       
-*   Document **signature options** ([SignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/signoptions)), **verify options** ([VerifyOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/verifyoptions)) and **search options** ([SearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/searchoptions)) were unified for all document types. Instead of using document related options now options are related to signature type only.
-*   The overall document related classes were unified to common.      
-*   Product architecture was redesigned from scratch in order to simplify passing options and classes to manipulate signature.    
-*   Document information and preview generation procedures were simplified.
-    
+
+* [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class introduced as a **single entry point** to sing the document with various signature types with further verification and search with any supported file format.
+* Document **signature options** ([SignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/signoptions)), **verify options** ([VerifyOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/verifyoptions)) and **search options** ([SearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/searchoptions)) were unified for all document types. Instead of using document related options now options are related to signature type only.
+* The overall document related classes were unified to common.
+* Product architecture was redesigned from scratch in order to simplify passing options and classes to manipulate signature.
+* Document information and preview generation procedures were simplified.
 
 ### How To Migrate?
 
 Here is a brief comparison of how to sign document with text signature using old and new API.  
 
-**Old coding style**
+#### Old coding style
 
 ```csharp
 // setup Signature configuration
@@ -48,7 +48,7 @@ string signedPath = handler.Sign<string>("test.pdf", signOptions,saveOptions);
 Console.WriteLine("Signed file path is: " + signedPath);
 ```
 
-**New coding style**
+#### New coding style
 
 ```csharp
 using (Signature signature = new Signature("sample.pdf"))

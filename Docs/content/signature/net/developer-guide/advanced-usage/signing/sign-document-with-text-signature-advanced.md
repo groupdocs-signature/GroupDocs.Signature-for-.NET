@@ -10,23 +10,18 @@ hideChildren: False
 ---
 [**GroupDocs.Signature**](https://products.groupdocs.com/signature/net) provides [TextSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions) class to specify additional options for text signature to specify following signature appearance
 
-*   signature alignment ([HorizontalAlignment](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/horizontalalignment), [VerticalAlignment](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/verticalalignment))
-*   margins ([Margin](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/margin))
-*   border and background settings ([Border,](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/border) [Background](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/background))
-*   font and colors ([Font](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/font), [Forecolor](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/qrcodesignoptions/properties/forecolor))
-*   text signature implementation ([stamp, text as image, watermark, annotation, shaped](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/signatureimplementation) etc)
+* signature alignment ([HorizontalAlignment](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/horizontalalignment), [VerticalAlignment](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/verticalalignment))
+* margins ([Margin](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/margin))
+* border and background settings ([Border,](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/border) [Background](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/background))
+* font and colors ([Font](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/font), [Forecolor](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/qrcodesignoptions/properties/forecolor))
+* text signature implementation ([stamp, text as image, watermark, annotation, shaped](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions/properties/signatureimplementation) etc)
 
 Here are the steps to add Text signature into document with GroupDocs.Signature:
 
-*   Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path as a constructor parameter.
-    
-*   Instantiate the [TextSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions) object with all required additional options .
-    
-*   Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass [TextSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions) to it.  
-    
-*   Analyze [SignResult](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/signresult) result to check newly created signatures if needed.  
-      
-    
+* Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path as a constructor parameter.
+* Instantiate the [TextSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions) object with all required additional options .
+* Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass [TextSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/textsignoptions) to it.
+* Analyze [SignResult](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/signresult) result to check newly created signatures if needed.  
 
 This example shows how to add Text signature to document with advanced setup and analyzing result of method. See [SignResult](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/signresult)
 
@@ -35,17 +30,17 @@ using (Signature signature = new Signature("sample.pdf"))
 {
     TextSignOptions options = new TextSignOptions("John Smith")
     {
-        // set signature position 
+        // set signature position
         Left = 100,
         Top = 100,
         // set signature rectangle
         Width = 100,
         Height = 30,
         // set signature alignment
-        // when VerticalAlignment is set the Top coordinate will be ignored. 
+        // when VerticalAlignment is set the Top coordinate will be ignored.
         // Use Margin properties Top, Bottom to provide vertical offset
         VerticalAlignment = Domain.VerticalAlignment.Top,
-        // when HorizontalAlignment is set the Left coordinate will be ignored. 
+        // when HorizontalAlignment is set the Left coordinate will be ignored.
         // Use Margin properties Left, Right to provide horizontal offset
         HorizontalAlignment = Domain.HorizontalAlignment.Right,
         Margin = new Padding() { Top = 20, Right = 20 },
@@ -73,7 +68,7 @@ using (Signature signature = new Signature("sample.pdf"))
         RotationAngle = 45,
         // set alternative signature implementation on document page
         SignatureImplementation = TextSignatureImplementation.Image
-        
+
     };
     // set up shadow options for text
     TextShadow shadow = new TextShadow()
@@ -98,15 +93,20 @@ using (Signature signature = new Signature("sample.pdf"))
 ```
 
 ## More resources
-### GitHub Examples
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)    
-*   [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)    
-*   [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)     
-*   [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)    
-*   [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)    
-*   [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)    
 
-### Free Online App 
-Along with full-featured .NET library we provide simple, but powerful free Apps.  
+### GitHub Examples
+
+You may easily run the code above and see the feature in action in our GitHub examples:
+
+* [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)
+* [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
+* [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)
+* [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)
+* [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)
+* [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)
+
+### Free Online App
+
+Along with full-featured .NET library we provide simple, but powerful free Apps.
+
 You are welcome to eSign PDF, Word, Excel, PowerPoint documents with free to use online **[GroupDocs Signature App](https://products.groupdocs.app/signature)**.

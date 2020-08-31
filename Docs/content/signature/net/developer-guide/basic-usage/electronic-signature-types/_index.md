@@ -10,15 +10,13 @@ hideChildren: False
 ---
 [**GroupDocs.Signature**](https://products.groupdocs.com/signature/net) for .NET supportswide range of electronic signature types that are listed below:
 
-*   Barcode signatures;
-*   Digital signatures based on certificate files;
-*   Form-field signatures;
-*   Image signatures;
-*   Metadata signatures;
-*   QR-code signatures
-*   Stamp signatures;
-*   Text signatures.  
-      
-    
+* Barcode signatures;
+* Digital signatures based on certificate files;
+* Form-field signatures;
+* Image signatures;
+* Metadata signatures;
+* QR-code signatures
+* Stamp signatures;
+* Text signatures.  
 
 The following articles containing examples how to eSign documents with each supported signature type.

@@ -16,33 +16,22 @@ The [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/gro
 
 Here are the list of different Form Field signature classes that could be set to [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions)
 
-*   [TextFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) - represents text input form field on document page.  
-    
-*   [CheckboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) - represents check box field on the document page.
-*   [ComboboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/comboboxformfieldsignature) - represents combo box field signature input with list of possible options on document page.
-*   [RadioButtonFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/radiobuttonformfieldsignature) - represents radio button signature on document page.  
-    
-*   [DigitalFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/digitalformfieldsignature) - represents digital signature input form on document page.  
-    
+* [TextFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) - represents text input form field on document page.
+* [CheckboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) - represents check box field on the document page.
+* [ComboboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/comboboxformfieldsignature) - represents combo box field signature input with list of possible options on document page.
+* [RadioButtonFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/radiobuttonformfieldsignature) - represents radio button signature on document page.
+* [DigitalFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/digitalformfieldsignature) - represents digital signature input form on document page.  
 
 Here are the steps to add Form Field signatures into document with GroupDocs.Signature:
 
-*   Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path as a constructor parameter.
-    
-*   Instantiate the [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions) object according to your requirements.
-    
-*   Instantiate one of the derived classes from [FormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/formfieldsignature) object. It could be [TextFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature), [CheckboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) or [DigitalFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/digitalformfieldsignature).
-    
-*   Set FormFieldSignOptions.[Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions/properties/signature) property with created object.  
-    
-*   Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of  [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions) to it.  
-    
-*   Analyze [SignResult](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/signresult) result to check newly created signatures if needed.
-
-  
+* Create new instance of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class and pass source document path as a constructor parameter.
+* Instantiate the [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions) object according to your requirements.
+* Instantiate one of the derived classes from [FormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/formfieldsignature) object. It could be [TextFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature), [CheckboxFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/checkboxformfieldsignature) or [DigitalFormFieldSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/digitalformfieldsignature).
+* Set FormFieldSignOptions.[Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions/properties/signature) property with created object.
+* Call [Sign](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/sign) method of  [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass [FormFieldSignOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/formfieldsignoptions) to it.
+* Analyze [SignResult](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/signresult) result to check newly created signatures if needed.
 
 Following examples show different scenarios of using form fields on document page. These samples are supported for Pdf documents.
-
 
 ## Sign Pdf document with various Form Field signatures  
 
@@ -52,7 +41,7 @@ This example shows how to add various Form Field signature to document. See [Si
 using (Signature signature = new Signature("sample.pdf"))
 {
     List<SignOptions> listOptions = new List<SignOptions>();
-    
+
     // instantiate text form field signature
     FormFieldSignature textSignature = new TextFormFieldSignature("tbData1", "Value-1");
     // instantiate options based on text form field signature
@@ -146,15 +135,20 @@ using (Signature signature = new Signature(filePath))
 ```
 
 ## More resources
-### GitHub Examples
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)    
-*   [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)    
-*   [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)     
-*   [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)    
-*   [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)    
-*   [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)    
 
-### Free Online App 
-Along with full-featured .NET library we provide simple, but powerful free Apps.  
+### GitHub Examples
+
+You may easily run the code above and see the feature in action in our GitHub examples:
+
+* [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)
+* [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
+* [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)
+* [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)
+* [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)
+* [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)
+
+### Free Online App
+
+Along with full-featured .NET library we provide simple, but powerful free Apps.
+
 You are welcome to eSign PDF, Word, Excel, PowerPoint documents with free to use online **[GroupDocs Signature App](https://products.groupdocs.app/signature)**.

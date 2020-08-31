@@ -10,10 +10,10 @@ hideChildren: False
 ---
 [**GroupDocs.Signature**](https://products.groupdocs.com/signature/net) allows to get document information which includes:
 
-*   [FileType](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/filetype)
-*   [Size](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/size)
-*   [PageCount](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/pagecount)
-*   Pages dimensions - [Height](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/pageinfo/properties/height) and [Width](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/pageinfo/properties/width) for each page in a document [Pages](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/idocumentinfo/properties/pages) collection.
+* [FileType](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/filetype)
+* [Size](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/size)
+* [PageCount](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/documentinfo/properties/pagecount)
+* Pages dimensions - [Height](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/pageinfo/properties/height) and [Width](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/pageinfo/properties/width) for each page in a document [Pages](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/idocumentinfo/properties/pages) collection.
 
 ## Get document information from file on local disk
 
@@ -37,7 +37,7 @@ using (Signature signature = new Signature("sample.pdf"))
 
 ## Get document information from a stream
 
-The following code snippet demonstrates how to obtain information about document provided as a stream. 
+The following code snippet demonstrates how to obtain information about document provided as a stream.
 
 ```csharp
 using (var stream = File.OpenRead("sample.pdf"))
@@ -64,19 +64,25 @@ To learn more about please refer to the following guides:
 [Obtain document form fields and signatures information]({{< ref "signature/net/developer-guide/advanced-usage/common/obtain-document-form-fields-and-signatures-information.md" >}})
 {{< /alert >}}
 
-## More resources
 ### Advanced Usage Topics
+
 To learn more about document eSign features, please refer to the [advanced usage section]({{< ref "signature/net/developer-guide/advanced-usage/_index.md" >}}).
 
-### GitHub Examples 
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)    
-*   [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)    
-*   [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)     
-*   [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)    
-*   [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)    
-*   [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)    
+## More resources
 
-### Free Online App 
-Along with full-featured .NET library we provide simple, but powerful free Apps.  
+### GitHub Examples
+
+You may easily run the code above and see the feature in action in our GitHub examples:
+
+* [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)
+* [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
+* [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)
+* [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)
+* [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)
+* [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)
+
+### Free Online App
+
+Along with full-featured .NET library we provide simple, but powerful free Apps.
+
 You are welcome to eSign PDF, Word, Excel, PowerPoint documents with free to use online **[GroupDocs Signature App](https://products.groupdocs.app/signature)**.

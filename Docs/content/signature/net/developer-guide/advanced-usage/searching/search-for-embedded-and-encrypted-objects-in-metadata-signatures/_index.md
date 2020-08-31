@@ -8,23 +8,18 @@ keywords:
 productName: GroupDocs.Signature for .NET
 hideChildren: False
 ---
-[**GroupDocs.Signature**](https://products.groupdocs.com/signature/net) provides additional features when searching for Metadata Signatures ([MetadataSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/metadatasignature)) that were previously encrypted or contains custom data objects. 
+[**GroupDocs.Signature**](https://products.groupdocs.com/signature/net) provides additional features when searching for Metadata Signatures ([MetadataSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/metadatasignature)) that were previously encrypted or contains custom data objects.
 
-*   Ability to search for embedded custom objects into metadata and decrypt them to original source values.
-*   Ability to search for encrypted text of metadata signature and decrypt it.  
+* Ability to search for embedded custom objects into metadata and decrypt them to original source values.
+* Ability to search for encrypted text of metadata signature and decrypt it.  
 
 Here are the steps to search and decrypt previously encrypted text of metadata and decrypt custom object from metadata signature with GroupDocs.Signature API:
 
-*   Implement if needed custom data serialization class that implement [IDataSerializer](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain.extensions/idataserializer) interface. By default Signature uses embedded json format serialization but allows user to customize it. if object of class was serialized by custom serialization when searching for it, this class should also has same serialization attribute.  
-    
-*   Implement if needed custom data encryption class that implements[IDataEncryption](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain.extensions/idataencryption) interface. By default Signature has several encryption implementation you can use but allows user to customize it. There's ability to specify inline encryption to use.  
-    
-*   Instantiate the[MetadataSearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions) object value.
-    
-*   Call [Search](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/search/_1) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass[MetadataSearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions) to it.
-    
-*   Process each Metadata signature and set property [DataEncryption](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions/properties/dataencryption) to specify data encryption and call [GetData](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/metadatasignature/methods/getdata/_1) method to retrieve object. 
-    
+* Implement if needed custom data serialization class that implement [IDataSerializer](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain.extensions/idataserializer) interface. By default Signature uses embedded json format serialization but allows user to customize it. if object of class was serialized by custom serialization when searching for it, this class should also has same serialization attribute.  
+* Implement if needed custom data encryption class that implements[IDataEncryption](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain.extensions/idataencryption) interface. By default Signature has several encryption implementation you can use but allows user to customize it. There's ability to specify inline encryption to use.  
+* Instantiate the[MetadataSearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions) object value.
+* Call [Search](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/search/_1) method of [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) class instance and pass[MetadataSearchOptions](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions) to it.
+* Process each Metadata signature and set property [DataEncryption](https://apireference.groupdocs.com/net/signature/groupdocs.signature.options/metadatasearchoptions/properties/dataencryption) to specify data encryption and call [GetData](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/metadatasignature/methods/getdata/_1) method to retrieve object.
 
 ## Implementation of custom data serialization
 
@@ -69,7 +64,7 @@ class CustomSerializationAttribute : Attribute, IDataSerializer
                     writer.Write(signatureData.Author);
                     writer.Write(signatureData.Signed.Ticks);
                     writer.Write(signatureData.DataFactor);
-                }                        
+                }
                 result = Encoding.UTF8.GetString(stream.ToArray());
             }
         }
@@ -153,8 +148,6 @@ private class DocumentSignatureData
 }
 ```
 
-  
-
 ## Search for embedded custom objects in metadata signatures
 
  This example shows how to decrypt previously embedded encrypted custom objects into metadata signature. MetadataSignature contains method [GetData](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/metadatasignature/methods/getdata/_1) to retrieve object
@@ -165,7 +158,7 @@ using (Signature signature = new Signature("signed.pdf"))
 {
     // setup search options
     MetadataSearchOptions searchOptions = new MetadataSearchOptions();
-    
+
     // search document
     List<MetadataSignature> signatures = signature.Search<MetadataSignature>(searchOptions);
     // output signatures
@@ -176,7 +169,7 @@ using (Signature signature = new Signature("signed.pdf"))
             DocumentSignatureData docSignature = metadataSignature.GetData<DocumentSignatureData>();
             if (docSignature != null)
             {
-                Console.WriteLine("Found DocumentSignature: #{0} by {1} from {2} DataFactor = {3}", docSignature.ID, 
+                Console.WriteLine("Found DocumentSignature: #{0} by {1} from {2} DataFactor = {3}", docSignature.ID,
                     docSignature.Author, docSignature.Signed, docSignature.DataFactor.ToString("N2"));
             }
         }
@@ -185,15 +178,20 @@ using (Signature signature = new Signature("signed.pdf"))
 ```
 
 ## More resources
-### GitHub Examples
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)    
-*   [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)    
-*   [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)     
-*   [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)    
-*   [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)    
-*   [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)    
 
-### Free Online App 
-Along with full-featured .NET library we provide simple, but powerful free Apps.  
+### GitHub Examples
+
+You may easily run the code above and see the feature in action in our GitHub examples:
+
+* [GroupDocs.Signature for .NET examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET)
+* [GroupDocs.Signature for Java examples, plugins, and showcase](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
+* [Document Signature for .NET MVC UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-MVC)
+* [Document Signature for .NET App WebForms UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms)
+* [Document Signature for Java App Dropwizard UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Dropwizard)
+* [Document Signature for Java Spring UI Example](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java-Spring)
+
+### Free Online App
+
+Along with full-featured .NET library we provide simple, but powerful free Apps.
+
 You are welcome to eSign PDF, Word, Excel, PowerPoint documents with free to use online **[GroupDocs Signature App](https://products.groupdocs.app/signature)**.

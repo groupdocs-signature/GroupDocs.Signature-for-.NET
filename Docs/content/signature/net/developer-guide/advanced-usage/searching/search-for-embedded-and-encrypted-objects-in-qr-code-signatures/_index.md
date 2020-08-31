@@ -10,14 +10,11 @@ hideChildren: False
 ---
 GroupDocs.Signature provides additional features when searching forQR-code signatures ([QrCodeSignature](https://apireference.groupdocs.com/net/signature/groupdocs.signature.domain/qrcodesignature)) that were previously encrypted or contains embedded data objects. Summary the abilities are as follow
 
-*   ability to search for embedded custom objects into metadata and decrypt them to original source values
-*   ability to search for encrypted text of QR-code signature and decrypt it
-*   ability to search for embedded object into QR-code signatures with custom encryption and custom serialization  
-      
+* ability to search for embedded custom objects into metadata and decrypt them to original source values
+* ability to search for encrypted text of QR-code signature and decrypt it
+* ability to search for embedded object into QR-code signatures with custom encryption and custom serialization  
 
 Following topics show different aspects
-
-  
 
 ## Alternative implementation of custom data serialization
 
@@ -62,7 +59,7 @@ class CustomSerializationAttribute : Attribute, IDataSerializer
                     writer.Write(signatureData.Author);
                     writer.Write(signatureData.Signed.Ticks);
                     writer.Write(signatureData.DataFactor);
-                }                        
+                }
                 result = Encoding.UTF8.GetString(stream.ToArray());
             }
         }

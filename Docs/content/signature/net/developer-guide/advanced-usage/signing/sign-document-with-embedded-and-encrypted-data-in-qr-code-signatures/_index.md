@@ -10,13 +10,10 @@ hideChildren: False
 ---
 GroupDocs.Signature provides ability to put into QR-code signature encrypted text or embed custom data objects. This feature is implemented over data serialization and encryption. Also there is ability to provide custom data serialization and encryption to secure your signature data the most. Here are feature summary
 
-*   ability to encrypt QR-code signature text
-*   ability to embed standard QR-code entries (like email, V-Card, web, Address)
-*   ability to embedded custom objects into QR-Code signatures with data encryption
-*   ability to specify custom objects encryption
-*   ability to implement custom data serialization  
-        
-      
-    
+* ability to encrypt QR-code signature text
+* ability to embed standard QR-code entries (like email, V-Card, web, Address)
+* ability to embedded custom objects into QR-Code signatures with data encryption
+* ability to specify custom objects encryption
+* ability to implement custom data serialization  
 
 Please find in topics below examples and details for each of these features

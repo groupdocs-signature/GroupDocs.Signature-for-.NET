@@ -10,17 +10,17 @@ hideChildren: False
 ---
 ## Electronic signature
 
-**Electronic Signature** is an abstract concept that means data in electronic form associated with a certain document and expressing the consent of the signatory with the information contained in the document.   
+**Electronic Signature** is an abstract concept that means data in electronic form associated with a certain document and expressing the consent of the signatory with the information contained in the document.
 GroupDocs.Signature provides various electronic signature implementations as follows:
 
-*   Native text signatures as text stamps, text labels, annotation, stickers, watermarks with big amount of settings for visualization effects, opacity, colors, fonts, etc.;
-*   Text as image signatures with big scope of additional options to specify how text will look, colors, and extra image effects;
-*   Image signatures with options to specify extra image effects, rotation etc.;
-*   Digital signatures based on digital certificate files and ability to support digital signature by document type (PDF, Microsoft Word documents and Microsoft Excel spreadsheets);
-*   Barcode/QR-code signatures with variety of options;
-*   Generated stamp looking image signatures based on predefined lines with custom text, colors, width, etc;
-*   Metadata signatures to keep hidden signatures inside the document;
-*   Form-field signatures.
+* Native text signatures as text stamps, text labels, annotation, stickers, watermarks with big amount of settings for visualization effects, opacity, colors, fonts, etc.;
+* Text as image signatures with big scope of additional options to specify how text will look, colors, and extra image effects;
+* Image signatures with options to specify extra image effects, rotation etc.;
+* Digital signatures based on digital certificate files and ability to support digital signature by document type (PDF, Microsoft Word documents and Microsoft Excel spreadsheets);
+* Barcode/QR-code signatures with variety of options;
+* Generated stamp looking image signatures based on predefined lines with custom text, colors, width, etc;
+* Metadata signatures to keep hidden signatures inside the document;
+* Form-field signatures.
 
 Signing documents in .NET with our electronic signature (eSign) API is easy, reliable and secure. Document signatures could be created and added to the document via collection of different options that specify all possible visualization features – color settings, alignment, font, margins, padding and different styling. Depending on the application requirements, you can sign documents with one or several signature types at the same time.
 
@@ -28,23 +28,23 @@ Signing documents in .NET with our electronic signature (eSign) API is easy, re
 
 Obtain signatures list applied to document:
 
-*   Text signatures information from all supported formats;
-*   Image signatures information;
-*   Digital signatures information from PDF, Microsoft Word documents and Microsoft Excel spreadsheets;
-*   Barcode/QR-code signatures information from all supported formats;
-*   Metadata signatures information from all supported formats;
-*   Form-field signatures information from all supported formats.
+* Text signatures information from all supported formats;
+* Image signatures information;
+* Digital signatures information from PDF, Microsoft Word documents and Microsoft Excel spreadsheets;
+* Barcode/QR-code signatures information from all supported formats;
+* Metadata signatures information from all supported formats;
+* Form-field signatures information from all supported formats.
 
 ## Verify signatures
 
-Determine whether document contains signatures that meet the specified criteria.   
+Determine whether document contains signatures that meet the specified criteria.
 Supported signature types are:
 
-*   Text signatures;
-*   Digital signatures;
-*   Barcode/QR-code signatures;
-*   Metadata signatures;
-*   Form-field signatures.
+* Text signatures;
+* Digital signatures;
+* Barcode/QR-code signatures;
+* Metadata signatures;
+* Form-field signatures.
 
 ## Document information extraction
 
@@ -58,6 +58,6 @@ set proper signature position inside document, apply appropriate signature styl
 
 Supported image formats for document preview are:
 
-*   PNG;
-*   JPG;
-*   BMP.
+* PNG;
+* JPG;
+* BMP.
