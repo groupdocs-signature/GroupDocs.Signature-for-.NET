@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # DeleteBarcodeAfterSearch : Delete Barcode signature from the document\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Delete method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteBarcodeAfterSearch", fileName);
@@ -35,7 +35,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // collect signatures to delete
                 foreach (BarcodeSignature temp in signatures)
                 {
-                    if (temp.Text.Contains("John"))
+                    if (temp.Text.Contains("12345"))
                     {
                         signaturesToDelete.Add(temp);
                     }

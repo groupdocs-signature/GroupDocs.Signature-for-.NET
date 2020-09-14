@@ -18,10 +18,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SaveSignedWordProcessingWithDifferentOutputFileType : Sign word-processing document and save it to different output type\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "SampleDocX.odt");
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "Sample_DocxToOdt.odt");
 
             using (Signature signature = new Signature(filePath))
             {

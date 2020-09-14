@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # DeleteText : Delete Text signature from the document \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             string fileName = Path.GetFileName(filePath);
             // copy source file since Delete method works with same Document
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteText", fileName);

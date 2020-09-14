@@ -32,8 +32,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     EncodeType = BarcodeTypes.Code128,
 
                     // set signature position
-                    Left = 100,
-                    Top = 100                    
+                    Left = 50,
+                    Top = 150,
+                    Width = 200,
+                    Height = 50
                 };
 
                 // sign document to file

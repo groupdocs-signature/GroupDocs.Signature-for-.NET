@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # UpdateTextAfterSearch : Update Text signature in the document\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Update method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "UpdateTextAfterSearch", fileName);
@@ -35,7 +35,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 foreach(TextSignature temp in signatures)
                 {
                     // apply some condition to adjust signature properties
-                    if(temp.Text == "John Smith")
+                    if(temp.Text == "Text signature")
                     {
                         temp.Left = temp.Left + 100;
                         temp.Top = temp.Top + 100;

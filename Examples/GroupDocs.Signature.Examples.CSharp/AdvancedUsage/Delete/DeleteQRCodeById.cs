@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # DeleteQRCodeById : Delete QR-code signature in the document by known SignatureId\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Delete method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteQRCodeById", fileName);
@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // read from some data source signature Id value
                 string[] signatureIdList = new string[]
                 {
-                    "b0123987-b0d4-4004-86ec-30ab5c41ac7e"
+                    "eff64a14-dad9-47b0-88e5-2ee4e3604e71"
                 };
                 // create list of QR-code Signature by known SignatureId
                 List<BaseSignature> signatures = new List<BaseSignature>();

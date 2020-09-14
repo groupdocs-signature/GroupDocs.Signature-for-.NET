@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # GetDocumentInfo : Get document basic info\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {

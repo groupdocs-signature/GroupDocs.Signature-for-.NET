@@ -15,8 +15,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromStream : Sign document from stream\n");
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "LoadDocumentFromStream", "signedSample.pdf");
-            using (Stream stream = File.OpenRead(Constants.SAMPLE_PDF))
+            string outputFilePath = Path.Combine(Constants.OutputPath, "LoadDocumentFromStream", "signedSample.xlsx");
+            using (Stream stream = File.OpenRead(Constants.SAMPLE_SPREADSHEET))
             {
                 using (Signature signature = new Signature(stream))
                 {

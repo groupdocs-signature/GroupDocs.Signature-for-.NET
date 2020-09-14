@@ -12,6 +12,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     {
         /// <summary>
         /// Sign pdf document with combo box signatures applying specific options
+        /// Please be aware that this example works only on licensed product due to limitation with Pdf processing
         /// </summary>
         public static void Run()
         {
@@ -36,11 +37,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     // instantiate options based on text form field signature
                     FormFieldSignOptions options = new FormFieldSignOptions(combobox)
                     {
-                        HorizontalAlignment = HorizontalAlignment.Right,
-                        VerticalAlignment = VerticalAlignment.Top,
-                        Margin = new Padding(0, 0, 0, 0),
-                        Height = 100,
-                        Width = 300,
+                        Top = 200,
+                        Left = 50,
+                        Height = 20,
+                        Width = 200
                     };
 
                     // sign document to file

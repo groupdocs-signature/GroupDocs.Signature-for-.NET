@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SearchForQRCode : Search document for QR_Code signature \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {

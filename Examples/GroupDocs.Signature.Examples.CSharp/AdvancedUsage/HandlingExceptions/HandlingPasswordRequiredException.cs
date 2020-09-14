@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory
             // This file is secured with password
-            string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;
+            string filePath = Constants.SAMPLE_PDF_SIGNED_PWD;
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "HandlingExceptions", fileName);
             // skip initialization of LoadOptions with Password 

@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithText : Sign document with text signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithText", fileName);
@@ -29,14 +29,14 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 TextSignOptions options = new TextSignOptions("John Smith")
                 {
                     // set signature position
-                    Left = 100,
-                    Top = 100,
+                    Left = 50,
+                    Top = 200,
                     // set signature rectangle
                     Width = 100,
                     Height = 30,
                     // set Text color and Font
                     ForeColor = Color.Red,
-                    Font = new SignatureFont { Size = 12, FamilyName = "Comic Sans MS" }
+                    Font = new SignatureFont { Size = 14, FamilyName = "Comic Sans MS" }
                 };
 
                 // sign document to file

@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # UpdateImage : Update Image signature from the document \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Update method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "UpdateImage", fileName);
@@ -36,8 +36,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 {
                     ImageSignature imageSignature = signatures[0];
                     // change position
-                    imageSignature.Left = 10;
-                    imageSignature.Top = 10;
+                    imageSignature.Left = 200;
+                    imageSignature.Top = 250;
                     // change size. Please note not all documents support changing signature size
                     imageSignature.Width = 200;
                     imageSignature.Height = 200;

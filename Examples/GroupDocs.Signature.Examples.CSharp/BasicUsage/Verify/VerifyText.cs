@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # VerifyText : Verify document with Text signature \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -25,7 +25,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 {
                     AllPages = true, // this value is set by default
                     SignatureImplementation = TextSignatureImplementation.Native,
-                    Text = "John",
+                    Text = "signature",
                     MatchType = TextMatchType.Contains
                 };
                 // verify document signatures

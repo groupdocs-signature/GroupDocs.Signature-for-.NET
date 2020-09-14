@@ -50,8 +50,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Title = "Sample Title",
                     },
                     // set alignment
-                    VerticalAlignment = VerticalAlignment.Top,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     // set margin with 20 pixels for all sides
                     Margin = new Padding(20)
                 };

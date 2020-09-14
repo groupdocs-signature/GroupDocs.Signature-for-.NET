@@ -45,8 +45,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // setup Data property to Address instance
                     Data = address,
                     // set right bottom corner
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Bottom,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Center,
                     Margin = new Padding(10),
                     Width = 100,
                     Height = 100,

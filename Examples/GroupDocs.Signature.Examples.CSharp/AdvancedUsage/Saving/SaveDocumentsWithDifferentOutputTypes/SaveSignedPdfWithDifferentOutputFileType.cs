@@ -21,7 +21,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "SamplePdf.docx");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "Sample_PdfToDocx.docx");
 
             using (Signature signature = new Signature(filePath))
             {

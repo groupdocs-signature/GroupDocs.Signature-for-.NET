@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # DeleteMultiple : Delete multiple signatures from the document \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             string fileName = Path.GetFileName(filePath);
             // copy source file since Delete method works with same Document
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteMultiple", fileName);
@@ -29,11 +29,15 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             using (Signature signature = new Signature(outputFilePath))
             {
                 // define few search options
+                TextSearchOptions textSearchOptions = new TextSearchOptions();
+                ImageSearchOptions imageSearchOptions = new ImageSearchOptions();
                 BarcodeSearchOptions barcodeOptions = new BarcodeSearchOptions();
                 QrCodeSearchOptions qrCodeOptions = new QrCodeSearchOptions();
                 
                 // add options to list
                 List<SearchOptions> listOptions = new List<SearchOptions>();
+                listOptions.Add(textSearchOptions);
+                listOptions.Add(imageSearchOptions);
                 listOptions.Add(barcodeOptions);
                 listOptions.Add(qrCodeOptions);
 

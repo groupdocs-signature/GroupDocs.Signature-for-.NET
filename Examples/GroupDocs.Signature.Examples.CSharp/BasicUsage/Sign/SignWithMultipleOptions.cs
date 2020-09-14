@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 {
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
-    using System.Collections.Generic;
 
     public class SignWithMultipleOptions
     {
@@ -19,15 +19,13 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithMultipleOptions : Sign document with multiple signature types \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithMultiple", fileName);
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithMultiple", "SignWithMultiple.docx");
 
             using (Signature signature = new Signature(filePath))
             {
                 // define several signature options of different types and settings
-                TextSignOptions textOptions = new TextSignOptions("This is test message")
+                TextSignOptions textOptions = new TextSignOptions("Text signature")
                 {
                     VerticalAlignment = VerticalAlignment.Top,
                     HorizontalAlignment = HorizontalAlignment.Left
@@ -35,22 +33,40 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 BarcodeSignOptions barcodeOptions = new BarcodeSignOptions("123456")
                 {                    
                     EncodeType = BarcodeTypes.Code128,
-                    Left = 100,
-                    Top = 100
+                    Left = 0,
+                    Top = 150,
+                    Height = 50,
+                    Width = 200
                 };
                 QrCodeSignOptions qrcodeOptions = new QrCodeSignOptions("JohnSmith")
                 {                    
                     EncodeType = QrCodeTypes.QR,
-                    Left = 100,
-                    Top = 200
+                    Left = 0,
+                    Top = 220
                 };
                 DigitalSignOptions digitalOptions = new DigitalSignOptions(Constants.CertificatePfx)
                 {
                     ImageFilePath = Constants.ImageHandwrite,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Left = 20,
+                    Top = 400,
+                    Height = 100,
+                    Width = 100,
                     Password = "1234567890"
                 };
+                ImageSignOptions imageOptions = new ImageSignOptions(Constants.ImageStamp)
+                {
+                    Left = 20,
+                    Top = 550,
+                    Height = 100,
+                    Width = 100
+                };
+                MetadataSignOptions metaOptions = new MetadataSignOptions();
+                WordProcessingMetadataSignature[] metaSignatures = new WordProcessingMetadataSignature[]
+                {
+                    new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes"),
+                    new WordProcessingMetadataSignature("CreatedOn", DateTime.Now)
+                };
+                metaOptions.Signatures.AddRange(metaSignatures);
 
                 // define list of signature options
                 List<SignOptions> listOptions = new List<SignOptions>();
@@ -59,6 +75,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 listOptions.Add(barcodeOptions);
                 listOptions.Add(qrcodeOptions);
                 listOptions.Add(digitalOptions);
+                listOptions.Add(imageOptions);
+                listOptions.Add(metaOptions);
 
                 // sign document to file
                 SignResult result = signature.Sign(outputFilePath, listOptions);

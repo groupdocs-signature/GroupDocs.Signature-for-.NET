@@ -21,7 +21,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithTextImage : Sign document with text signature applying Image implementation type\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithTextImage", fileName);
@@ -33,8 +33,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // set alternative signature implementation on document page
                     SignatureImplementation = TextSignatureImplementation.Image,                    
                     // set alignment
-                    VerticalAlignment = VerticalAlignment.Top,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     // set margin with 20 pixels for all sides
                     Margin = new Padding(20),
                     // add special background as an image text implementation advantage

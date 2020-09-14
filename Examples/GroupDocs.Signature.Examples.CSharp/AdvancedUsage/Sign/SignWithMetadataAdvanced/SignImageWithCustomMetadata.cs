@@ -36,7 +36,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignImageWithCustomMetadata : Sign Image document with metadata signature with customer object and encryption\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_JPG;
+            string filePath = Constants.SAMPLE_IMAGE;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignImageWithCustomMetadata", fileName);

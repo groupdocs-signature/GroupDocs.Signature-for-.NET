@@ -16,7 +16,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         public static void Run()
         {
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -24,14 +24,14 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 {
                     AllPages = true, // this value is set by default
                     SignatureImplementation = TextSignatureImplementation.Native,
-                    Text = "John",
+                    Text = "Text signature",
                     MatchType = TextMatchType.Contains
                 };
 
                 BarcodeVerifyOptions barcVerifyOptions = new BarcodeVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    Text = "John",
+                    Text = "12345",
                     MatchType = TextMatchType.Contains
                 };
 
@@ -44,7 +44,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
                 DigitalVerifyOptions digtVerifyOptions = new DigitalVerifyOptions(Constants.CertificatePfx)
                 {
-                    Comments = "Test comment"
+                    SignDateTimeFrom = new DateTime(year: 2020, month: 01, day: 01),
+                    SignDateTimeTo = new DateTime(year: 2020, month: 12, day: 31),
+                    Password = "1234567890"
                 };
 
                 // verify document signatures

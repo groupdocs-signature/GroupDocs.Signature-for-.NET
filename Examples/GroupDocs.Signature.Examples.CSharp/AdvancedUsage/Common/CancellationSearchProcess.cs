@@ -34,14 +34,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # CancellationSearchProcess : Search document and cancel process\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
-            string fileName = Path.GetFileName(filePath);
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
                 signature.SearchProgress += OnSearchProgress;
 
-                TextSearchOptions options = new TextSearchOptions("JS_Stamp")
+                TextSearchOptions options = new TextSearchOptions("Text signature")
                 {
                     // ...
                 };

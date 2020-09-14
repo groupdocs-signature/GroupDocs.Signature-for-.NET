@@ -32,7 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteTextById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GeneratePreviewAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentInfoAdvanced.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentProcessHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentProcessHistoryAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingIncorrectPasswordException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingPasswordRequiredException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAmazonS3.cs" />
@@ -149,6 +149,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\DocumentPreview\GeneratePreview.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\DocumentPreview\GetDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\DocumentPreview\GetDocumentProcessHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchImageForMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchPdfForMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\Metadata\SearchPresentationForMetadata.cs" />
@@ -191,12 +192,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetMeteredLicense.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\AllSignatures.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\butterfly effect.pptx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\acer.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -212,128 +207,111 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\signtest.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.docx">
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\digital signatures.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Forms.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\getting started.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataCustomEncryptionObject.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataCustomSerializationObject.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataEncryptedObject.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\MetadataEncryptedText.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\pie chart.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeAddressObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomEncryptionObject.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeCustomSerializationObject.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEmailObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedObject.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEncryptedText.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEPCObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeEventObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeMeCardObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\QRCodeVCardObject.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.ppsx">
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_formfields.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_formfields.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_history.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_metadata_custom_encryption_object.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_metadata_custom_serialization_object.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_metadata_encrypted_object.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_metadata_encrypted_text.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_multiple_signatures.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_address_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_custom_encryption_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_custom_serialization_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_email_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_encrypted_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_encrypted_text.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_epc_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_event_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mecard_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_vcard_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_digital.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_metadata.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_metadata.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_metadata.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_metadata.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_pwd.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.ppsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\signed_formfield.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\signed_sample.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\test_text_annotation.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\test_text_sticker.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\text.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\Screenshots\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\DocImages_BarCode.png">
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\signature_handwrite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\DocImages_QRCode.png">
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\stamp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\ImageDocument.png">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed_metadata.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\signature-handwrite.jpg">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Images\stamp.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\SignedWithMetadata.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
 </Project>

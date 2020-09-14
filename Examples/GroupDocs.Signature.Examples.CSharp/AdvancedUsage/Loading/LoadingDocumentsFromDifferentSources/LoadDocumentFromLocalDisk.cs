@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromLocalDisk : Sign document from local disk\n");
 
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "LoadDocumentFromLocalDisk", fileName);

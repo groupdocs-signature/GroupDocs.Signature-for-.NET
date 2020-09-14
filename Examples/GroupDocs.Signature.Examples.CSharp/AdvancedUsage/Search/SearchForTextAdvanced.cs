@@ -18,8 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchForTextAdvanced : Search document for Text signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
-
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 TextSearchOptions options = new TextSearchOptions()
@@ -33,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify text match type
                     MatchType = TextMatchType.Exact,
                     // specify text pattern to search
-                    Text = "John Smith"
+                    Text = "Text signature"
                 };
 
                 // search for text signatures in document

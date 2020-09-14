@@ -33,6 +33,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             
             GetDocumentInfo.Run();
             GeneratePreview.Run();
+            GetDocumentProcessHistory.Run();
             #endregion
 
             #region Sign document with different signature types
@@ -132,20 +133,41 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Verify document with digital signature
             VerifyDigital.Run();
 
+            //Verify document with multiple signatures
+            VerifyWithMultipleOptions.Run();
+
             #endregion // Verify documents signed with different signature types
 
             #region Update signatures in the document
+
+            //Update Text signature in the document after Search method
             UpdateText.Run();
+
+            //Update Image signature in the document after Search method
             UpdateImage.Run();
+
+            //Update Barcode signature in the document after Search method
             UpdateBarcode.Run();
+
+            //Update QR-code signature in the document after Search method
             UpdateQRCode.Run();
             #endregion
 
             #region Delete signatures from document
+
+            //Delete found Text signature in the document after Search method
             DeleteText.Run();
+
+            //Delete found Image signature in the document after Search method
             DeleteImage.Run();
+
+            //Delete found Barcode signature in the document after Search method
             DeleteBarcode.Run();
+
+            //Delete found QR-code signature in the document after Search method
             DeleteQRCode.Run();
+
+            //Delete few found multiple signatures in the document after Search method
             DeleteMultiple.Run();
             #endregion
 
@@ -156,7 +178,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Loading
             LoadDocumentFromLocalDisk.Run();
             LoadDocumentFromStream.Run();
-            //LoadDocumentFromUrl.Run();
+            LoadDocumentFromUrl.Run();
             //LoadDocumentFromAmazonS3.Run();
             //LoadDocumentFromAzureBlobStorage.Run();
             //LoadDocumentFromFtp.Run();            
@@ -180,7 +202,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Document Preview with hiding signatures
             GeneratePreviewAdvanced.Run();
             GetDocumentInfoAdvanced.Run();
-            GetDocumentProcessHistory.Run();
+            GetDocumentProcessHistoryAdvanced.Run();
             #endregion
 
             #region Handling different special exceptions
@@ -214,6 +236,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             // Sign Pdf document with Form-fields
             SignPdfWithFormFieldAdvanced.Run();
             SignPdfWithFormFieldAdvancedRadio.Run();
+            SignPdfWithFormFieldAdvancedCombobox.Run();
 
             // Sign Pdf document with Stamp signature
             SignWithStampAdvanced.Run();
@@ -283,7 +306,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             SignWithExceptionHandling.Run();
 
-            #region Sining with different brush styles
+            #region Signing with different brush styles
             SignWithSolidBrush.Run();
             SignWithTextureBrush.Run();
             SignWithLinearGradientBrush.Run();

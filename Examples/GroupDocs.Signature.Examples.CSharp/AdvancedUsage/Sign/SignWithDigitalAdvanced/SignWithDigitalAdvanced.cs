@@ -43,8 +43,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     AllPages = true,
                     Width = 160,
                     Height = 80,
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     Margin = new Padding() {  Bottom = 10, Right = 10},
 
                     // setup signature border

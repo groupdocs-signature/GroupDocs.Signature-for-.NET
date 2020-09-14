@@ -10,6 +10,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
     {
         /// <summary>
         /// Verify document with QR-Code signature
+        /// Please be aware that this example works only on licensed product due to limitation with QR-Code processing
         /// </summary>
         public static void Run()
         {
@@ -17,14 +18,14 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # VerifyQRCode : Verify document with QR-Code signature \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
                 QrCodeVerifyOptions options = new QrCodeVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    Text = "Signed",
+                    Text = "John",
                     MatchType = TextMatchType.Contains
                 };
                 // verify document signatures

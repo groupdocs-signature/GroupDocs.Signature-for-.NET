@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchWithExceptionHandling : Search document with exception handling\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;
+            string filePath = Constants.SAMPLE_PDF_SIGNED_PWD;
             try
             {
                 // don't specify Password on protected document

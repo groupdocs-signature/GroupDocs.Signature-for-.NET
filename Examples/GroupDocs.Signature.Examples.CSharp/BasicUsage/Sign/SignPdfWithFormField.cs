@@ -21,7 +21,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPdfWithFormField", fileName);
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPdfWithFormField", "SignedWithFormField.pdf");
 
             using (Signature signature = new Signature(filePath))
             {
@@ -30,11 +30,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // instantiate options based on text form field signature
                 FormFieldSignOptions options = new FormFieldSignOptions(textSignature)
                 {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Padding(10, 20, 0, 0),
-                    Height = 10,
-                    Width = 100
+                    Top = 150,
+                    Left = 50,
+                    Height = 50,
+                    Width = 200
                 };
 
                 // sign document to file

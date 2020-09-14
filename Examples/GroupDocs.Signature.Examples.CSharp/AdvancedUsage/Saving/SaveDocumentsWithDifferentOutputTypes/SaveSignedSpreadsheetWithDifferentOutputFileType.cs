@@ -19,9 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SPREADSHEET;
-            string fileName = Path.GetFileName(filePath);
-
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "SampleXlsx.pdf");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "Sample_XlsxToPdf.pdf");
 
             using (Signature signature = new Signature(filePath))
             {

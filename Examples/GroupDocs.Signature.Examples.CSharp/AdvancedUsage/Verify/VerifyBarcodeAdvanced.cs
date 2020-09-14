@@ -18,13 +18,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # VerifyBarcodeAdvanced : Verify document with Barcode signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 BarcodeVerifyOptions options = new BarcodeVerifyOptions()
                 {
                     AllPages = true, // this value is set by default
-                    Text = "Signed",
+                    Text = "12345",
                     MatchType = TextMatchType.Contains
                 };
 

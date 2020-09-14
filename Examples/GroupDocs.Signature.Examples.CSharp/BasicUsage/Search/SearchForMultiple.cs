@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SearchForMultiple : Search document for multiple signature types \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -28,24 +28,27 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     AllPages = true
                 };
 
+                DigitalSearchOptions digitalOptions = new DigitalSearchOptions()
+                {
+                    AllPages = true
+                };
+
                 BarcodeSearchOptions barcodeOptions = new BarcodeSearchOptions()
                 {
                     AllPages = true,
-                    Text = "12345678",
+                    Text = "123456",
                     MatchType = TextMatchType.Exact
                 };
 
                 QrCodeSearchOptions qrCodeOptions = new QrCodeSearchOptions()
                 {
                     AllPages = true,
-                    Text = "John Sm",
+                    Text = "John",
                     MatchType = TextMatchType.Contains
                 };
 
                 MetadataSearchOptions metadataOptions = new MetadataSearchOptions()
                 {
-                    AllPages = true,
-                    IncludeBuiltinProperties = true
                 };
 
                 // add options to list
@@ -54,6 +57,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 listOptions.Add(barcodeOptions);
                 listOptions.Add(qrCodeOptions);
                 listOptions.Add(metadataOptions);
+                listOptions.Add(digitalOptions);
 
                 // search for signatures in document
                 SearchResult result = signature.Search(listOptions);

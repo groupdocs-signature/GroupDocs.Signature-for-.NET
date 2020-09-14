@@ -21,7 +21,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PRESENTATION;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "SamplePPSX.tiff");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "Sample_PptxToTiff.tiff");
 
             using (Signature signature = new Signature(filePath))
             {

@@ -34,11 +34,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // instantiate options based on text form field signature
                 FormFieldSignOptions optionsTextFF = new FormFieldSignOptions(textSignature)
                 {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Padding(10, 20, 0, 0),
-                    Height = 10,
-                    Width = 100
+                    Top = 200,
+                    Left = 50,
+                    Height = 20,
+                    Width = 200
                 };
 
                 // instantiate text form field signature
@@ -46,11 +45,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // instantiate options based on text form field signature
                 FormFieldSignOptions optionsTextCHB = new FormFieldSignOptions(chbSignature)
                 {
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Padding(0, 0, 0, 0),
-                    Height = 10,
-                    Width = 100,
+                    Top = 300,
+                    Left = 50,
+                    Height = 20,
+                    Width = 200
                 };
 
                 // instantiate text form field signature
@@ -58,11 +56,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 // instantiate options based on text form field signature
                 FormFieldSignOptions optionsTextDIG = new FormFieldSignOptions(digSignature)
                 {
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Margin = new Padding(0, 50, 0, 0),
-                    Height = 50,
-                    Width = 50,
+                    Top = 400,
+                    Left = 50,
+                    Height = 20,
+                    Width = 200
                 };
 
                 listOptions.Add(optionsTextFF);

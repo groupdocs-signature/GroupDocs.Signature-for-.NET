@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithImage : Sign document with image\n");
 
             // The path to the documents directory.            
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
 
@@ -29,8 +29,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 ImageSignOptions options = new ImageSignOptions(imagePath)
                 {
                     // set signature position
-                    Left = 100,
-                    Top = 100,
+                    Left = 50,
+                    Top = 50,
                     AllPages = true
                 };
 

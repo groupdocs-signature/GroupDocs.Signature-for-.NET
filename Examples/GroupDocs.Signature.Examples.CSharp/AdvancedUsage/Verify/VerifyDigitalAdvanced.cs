@@ -17,16 +17,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # VerifyDigitalAdvanced : Verify document with digital signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
-            string certificate = Constants.CertificateCer;
+            string filePath = Constants.SAMPLE_PDF_SIGNED_DIGITAL;
             using (Signature signature = new Signature(filePath))
             {
                 DigitalVerifyOptions options = new DigitalVerifyOptions()
                 {
-                    Comments = "Test1",
-                    SignDateTimeFrom = new DateTime(year: 2019, month: 05, day: 01),
-                    SignDateTimeTo = new DateTime(year: 2020, month: 04, day: 20),
-                    
+                    // specify special search criteria
+                    Comments = "Approved",
+                    // specify date range period of signature
+                    SignDateTimeFrom = new DateTime(year: 2020, month: 01, day: 01),
+                    SignDateTimeTo = new DateTime(year: 2020, month: 12, day: 31)
+
                 };
 
                 // verify document signatures

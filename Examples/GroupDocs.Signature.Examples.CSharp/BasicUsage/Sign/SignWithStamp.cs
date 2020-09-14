@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithStamp : Sign document with stamp\n");
 
             // The path to the documents directory.            
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithStamp", fileName);
@@ -29,13 +29,16 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 StampSignOptions options = new StampSignOptions()
                 {
                     // set stamp signature position
-                    Left = 100,
-                    Top = 100,
+                    Left = 50,
+                    Top = 150,                    
+                    Width = 200,
+                    Height = 200
                 };
 
                 // setup first external line of Stamp
                 StampLine outerLine = new StampLine();
-                outerLine.Text = " * European Union * European Union  * European Union  * European Union  * European Union  * ";
+                outerLine.Text = " * European Union ";
+                outerLine.TextRepeatType = StampTextRepeatType.FullTextRepeat;
                 outerLine.Font.Size = 12;
                 outerLine.Height = 22;
                 outerLine.TextBottomIntent = 6;
@@ -45,7 +48,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
                 //Inner square lines - horizontal lines inside the rings
                 StampLine innerLine = new StampLine();
-                innerLine.Text = "John";
+                innerLine.Text = "John Smith";
                 innerLine.TextColor = Color.MediumVioletRed;
                 innerLine.Font.Size = 20;
                 innerLine.Font.Bold = true;

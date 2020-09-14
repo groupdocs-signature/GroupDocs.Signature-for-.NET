@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithTextStamp : Sign document with text signature applying Stamp implementation type (this is default value)\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithTextStamp", fileName);
@@ -30,8 +30,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // set alternative signature implementation on document page
                     SignatureImplementation = TextSignatureImplementation.Native,
                     // set alignment
-                    VerticalAlignment = VerticalAlignment.Top,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     // set margin with 20 pixels for all sides
                     Margin = new Padding(20)
                 };

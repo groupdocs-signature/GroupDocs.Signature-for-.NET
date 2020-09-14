@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
-using System.ComponentModel;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
@@ -16,8 +14,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// Creates class that implements IDataSerializer interface
         /// It cam support common serialization like JSon or custom data format
         /// </summary>
-        
-
         [CustomSerialization]
         private class DocumentSignatureData
         {
@@ -40,8 +36,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         {
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
-            string fileName = Path.GetFileName(filePath);
-
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCodeSecureCustom", "QRCodeCustomSerializationObject.pdf");
 
             using (Signature signature = new Signature(filePath))
@@ -70,8 +64,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // locate and align signature
                     Height = 100,
                     Width = 100,
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     Margin = new Padding() { Right = 10, Bottom = 10 }
                 };
 

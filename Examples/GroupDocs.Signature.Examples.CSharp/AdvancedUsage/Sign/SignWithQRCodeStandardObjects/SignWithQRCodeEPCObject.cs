@@ -44,8 +44,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // setup Data property to EPC instance
                     Data = epc,
                     // set right bottom corner
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Bottom,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Center,
                     Width = 100,
                     Height = 100,
                     Margin = new Padding(10)

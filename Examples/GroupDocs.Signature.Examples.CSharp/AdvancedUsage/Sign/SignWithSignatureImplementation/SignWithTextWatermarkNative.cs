@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithTextWatermarkNative : Sign WordProcessing document with text watermark signature using document specific implementation\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithTextWatermarkNative", fileName);
@@ -45,7 +45,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // If transparency is not 0 it will be converted to 50%.
                     Transparency = 0.9
                 };
-
+                
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");

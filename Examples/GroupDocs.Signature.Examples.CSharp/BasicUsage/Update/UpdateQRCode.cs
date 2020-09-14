@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # UpdateQRCode : Update QR-Code signature from the document \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Update method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "UpdateQRCode", fileName);
@@ -36,8 +36,11 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 {
                     QrCodeSignature qrCodeSignature = signatures[0];
                     // change position
-                    qrCodeSignature.Left = 100;
-                    qrCodeSignature.Top = 100;
+                    qrCodeSignature.Left = 200;
+                    qrCodeSignature.Top = 250;
+                    // change size. Please note not all documents support changing signature size
+                    qrCodeSignature.Width = 200;
+                    qrCodeSignature.Height = 200;
 
                     bool result = signature.Update(qrCodeSignature);
                     if (result)

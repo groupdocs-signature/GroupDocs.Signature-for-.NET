@@ -32,8 +32,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     EncodeType = QrCodeTypes.QR,
 
                     // set signature position
-                    Left = 100,
-                    Top = 100
+                    Left = 50,
+                    Top = 150,
+                    Width = 200,
+                    Height = 200
                 };
 
                 // sign document to file

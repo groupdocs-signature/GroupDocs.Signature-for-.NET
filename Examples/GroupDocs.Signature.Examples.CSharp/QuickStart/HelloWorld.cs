@@ -14,7 +14,7 @@ namespace GroupDocs.Signature.Examples.CSharp.QuickStart
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Quick Start] # HelloWorld : Basic example of GroupDocs.Signature usage\n");
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "HelloWorld", fileName);

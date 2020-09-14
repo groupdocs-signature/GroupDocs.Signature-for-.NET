@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWordProcessingWithMetadata : Sign word-processing document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;            
+            string filePath = Constants.SAMPLE_WORDPROCESSING;            
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWordProcessingWithMetadata", "SignedWithMetadata.docx");
 
             using (Signature signature = new Signature(filePath))

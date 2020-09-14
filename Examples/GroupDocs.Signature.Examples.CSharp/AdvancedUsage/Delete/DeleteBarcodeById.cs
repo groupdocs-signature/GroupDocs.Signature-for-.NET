@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # DeleteBarcodeById : Delete Barcode signature in the document by known SignatureId\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Delete method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteBarcodeById", fileName);
@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // read from some data source signature Id value
                 string[] signatureIdList = new string[]
                 {
-                    "1a5fbc08-4b96-43d9-b650-578b16fbb877"
+                    "07f83369-318b-41ad-a843-732417b912c2"
                 };
                 // create list of Barcode Signature by known SignatureId
                 List<BaseSignature> signatures = new List<BaseSignature>();

@@ -32,8 +32,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     // optional: setup image file path
                     ImageFilePath = imagePath,
                     //
-                    Left = 100,
-                    Top = 100,
+                    Left = 50,
+                    Top = 50,
                     PageNumber = 1,
                     Password = "1234567890"
                 };

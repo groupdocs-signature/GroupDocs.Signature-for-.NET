@@ -29,9 +29,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 TextSignOptions options = new TextSignOptions("John Smith")
                 {
                     // set signature position 
-                    Left = 100,
-                    Top = 100,
-
+                    Left = 50,
+                    Top = 200,
                     // set signature rectangle
                     Width = 100,
                     Height = 30,
@@ -54,9 +53,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Subject = "Sample subject",
                         Title = "Sample Title",
                     },
-                    // set signature alignment
-                    VerticalAlignment = Domain.VerticalAlignment.Bottom,
-                    HorizontalAlignment = Domain.HorizontalAlignment.Right,
                     Margin = new Padding() { Bottom = 20, Right = 20 },
                     // set text color and Font
                     ForeColor = Color.Red,

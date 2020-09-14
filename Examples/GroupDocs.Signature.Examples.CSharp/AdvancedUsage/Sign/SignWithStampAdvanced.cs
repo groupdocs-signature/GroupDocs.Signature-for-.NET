@@ -32,8 +32,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Height = 300,
                     Width = 300,
 
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     Margin = new Padding() { Right = 10, Bottom = 10 },
                     Transparency = 0.2,
                     Background = new Background() { Color = Color.DarkOrange, Transparency = 0.5 },

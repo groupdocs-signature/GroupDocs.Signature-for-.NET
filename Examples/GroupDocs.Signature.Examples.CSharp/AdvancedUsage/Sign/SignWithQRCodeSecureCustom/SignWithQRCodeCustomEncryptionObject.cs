@@ -38,8 +38,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         {
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
-            string fileName = Path.GetFileName(filePath);
-
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCodeSecureCustom", "QRCodeCustomEncryptionObject.pdf");
 
             using (Signature signature = new Signature(filePath))
@@ -68,8 +66,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // locate and align signature
                     Height = 100,
                     Width = 100,
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
                     Margin = new Padding() { Right = 10, Bottom = 10 }
                 };
 

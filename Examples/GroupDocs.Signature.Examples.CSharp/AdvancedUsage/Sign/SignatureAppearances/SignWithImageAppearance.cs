@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithImageAppearance : Sign document with image signature applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
 
@@ -31,16 +31,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 ImageSignOptions options = new ImageSignOptions(imagePath)
                 {
                     // set signature position 
-                    Left = 100,
-                    Top = 100,
-
+                    Left = 50,
+                    Top = 200,
                     // set signature rectangle
                     Width = 100,
                     Height = 30,
-
-                    // set signature alignment
-                    VerticalAlignment = Domain.VerticalAlignment.Bottom,
-                    HorizontalAlignment = Domain.HorizontalAlignment.Right,
                     Margin = new Padding() { Bottom = 20, Right = 20 },
                     Border = new Border()
                     {
@@ -57,7 +52,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         Contrast = 0.2f,
                         GammaCorrection = 0.3f,
                         Brightness = 0.9f,
-                                                
                     }
                 };
 

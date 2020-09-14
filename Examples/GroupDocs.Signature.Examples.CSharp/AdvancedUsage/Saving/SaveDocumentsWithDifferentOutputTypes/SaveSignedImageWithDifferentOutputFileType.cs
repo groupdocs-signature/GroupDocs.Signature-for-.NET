@@ -18,10 +18,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SaveSignedImageWithDifferentOutputFileType : Sign image and save it to different output type\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_JPG;
+            string filePath = Constants.SAMPLE_IMAGE;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "SampleJPG.svg");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SaveSignedOutputType", "Sample_PngToJpg.jpg");
 
             using (Signature signature = new Signature(filePath))
             {
@@ -37,7 +37,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 ImageSaveOptions saveOptions = new ImageSaveOptions()
                 {
-                    FileFormat = ImageSaveFileFormat.Svg,
+                    FileFormat = ImageSaveFileFormat.Jpg,
                     OverwriteExistingFiles = true
                 };
                 // sign document to file

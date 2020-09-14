@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithDigitalAppearance : Sign document with digital signature applying specific options\n");
 
             // The path to the documents directory.            
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
             string fileName = Path.GetFileName(filePath);
             string imagePath = Constants.ImageHandwrite;
             string certificatePath = Constants.CertificatePfx;

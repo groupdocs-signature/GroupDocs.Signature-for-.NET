@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # VerifyTextAdvanced : Verify document with Text signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 TextVerifyOptions options = new TextVerifyOptions()
@@ -26,9 +26,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     AllPages = false,
                     PagesSetup = new PagesSetup() { FirstPage = true },
                     // specify text pattern
-                    Text = "John",
+                    Text = "Text signature",
                     //// specify verification text pattern
-                    MatchType = TextMatchType.Contains,
+                    MatchType = TextMatchType.Exact,
                 };
                 // verify document signatures
 

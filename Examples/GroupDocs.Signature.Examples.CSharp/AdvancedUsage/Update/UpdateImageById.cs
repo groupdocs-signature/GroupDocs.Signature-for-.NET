@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # UpdateImageById : Update Image signature in the document by known SignatureId\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             // copy source file since Update method works with same Document
             string fileName = Path.GetFileName(filePath);
             string outputFilePath = Path.Combine(Constants.OutputPath, "UpdateImageById", fileName);
@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // read from some data source signature Id value
                 string[] signatureIdList = new string[]
                 {
-                    "1d4cf995-3150-47a0-b17a-44c17ecf7279"
+                    "e3ad0ec7-9abf-426d-b9aa-b3328f3f1470"
                 };
                 // create list of Image Signature by known SignatureId
                 List<BaseSignature> signatures = new List<BaseSignature>();

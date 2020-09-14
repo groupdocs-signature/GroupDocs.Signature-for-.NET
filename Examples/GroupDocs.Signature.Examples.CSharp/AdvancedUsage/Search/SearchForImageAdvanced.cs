@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchForImageAdvanced : Search document for Barcode signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             string fileName = Path.GetFileName(filePath);
             
             using (Signature signature = new Signature(filePath))

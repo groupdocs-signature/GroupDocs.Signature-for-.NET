@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # VerifyDigital : Verify document with digital signature \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 DigitalVerifyOptions options = new DigitalVerifyOptions(Constants.CertificatePfx)

@@ -18,18 +18,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchForDigitalAdvanced : Search document for digital signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_PDF_SIGNED_DIGITAL;
 
             using (Signature signature = new Signature(filePath))
             {
                 DigitalSearchOptions options = new DigitalSearchOptions()
                 {
                     // specify special search criteria
-                    Comments = "Test comment",
+                    Comments = "Approved",
                     // specify date range period of signature
-                    SignDateTimeFrom = new DateTime(2017, 1, 1),
-                    SignDateTimeTo = new DateTime(2017, 2, 2)
-
+                    SignDateTimeFrom = new DateTime(year: 2020, month: 01, day: 01),
+                    SignDateTimeTo = new DateTime(year: 2020, month: 12, day: 31)
                 };
                 // search for signatures in document
                 List<DigitalSignature> signatures = signature.Search<DigitalSignature>(options);

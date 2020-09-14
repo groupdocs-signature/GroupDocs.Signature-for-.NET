@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # VerifyWithExceptionHandling : Verify document with exception handling\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;            
+            string filePath = Constants.SAMPLE_PDF;            
             try
             {
                 using (Signature signature = new Signature(filePath))

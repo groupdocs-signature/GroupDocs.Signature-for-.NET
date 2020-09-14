@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # LoadPasswordProtectedDocument : Sign password-protected document\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SIGNED_PWD_PDF;
+            string filePath = Constants.SAMPLE_PDF_SIGNED_PWD;
             string fileName = Path.GetFileName(filePath);
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "LoadPasswordProtected", fileName);

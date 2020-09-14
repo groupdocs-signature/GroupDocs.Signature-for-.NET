@@ -23,7 +23,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # VerifyQRCodeAdvanced : Verify document with QR-Code signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 QrCodeVerifyOptions options = new QrCodeVerifyOptions()
@@ -32,7 +32,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     AllPages = false,
                     PagesSetup = new PagesSetup() { FirstPage = true },
                     // specify text pattern
-                    Text = "Signed",
+                    Text = "John",
                     // specify verification text pattern
                     MatchType = TextMatchType.Contains
                 };

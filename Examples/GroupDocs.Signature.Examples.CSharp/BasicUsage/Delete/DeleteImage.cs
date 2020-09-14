@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # DeleteImage : Delete Image signature from the document \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SPREADSHEET_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             string fileName = Path.GetFileName(filePath);
             // copy source file since Delete method works with same Document
             string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteImage", fileName);
@@ -33,7 +33,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 List<ImageSignature> signatures = signature.Search<ImageSignature>(options);
                 if (signatures.Count > 0)
                 {
-                    ImageSignature imageSignature = signatures[3];
+                    ImageSignature imageSignature = signatures[0];
                     bool result = signature.Delete(imageSignature);
                     if (result)
                     {

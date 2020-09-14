@@ -39,7 +39,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SignWithMetadataCustomSerializationObject : Sign pdf document with metadata signature with customer object and encryption\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_DOCX;
+            string filePath = Constants.SAMPLE_WORDPROCESSING;
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithMetadataSecureCustom", "MetadataCustomSerializationObject.docx");
 

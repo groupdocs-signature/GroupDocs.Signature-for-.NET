@@ -1,13 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Drawing;
+﻿using System.Text;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
-{
-    using GroupDocs.Signature;
-    using GroupDocs.Signature.Domain;
-    using GroupDocs.Signature.Options;
+{    
     using GroupDocs.Signature.Domain.Extensions;
 
     public class CustomXOREncryption : IDataEncryption
@@ -17,9 +11,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public int Key { get; set; }
 
-        public CustomXOREncryption()
+        public CustomXOREncryption(int key = 0)
         {
-            this.Key = 0;
+            this.Key = key;
         }
         /// <summary>
         /// Encode method to encrypt string.

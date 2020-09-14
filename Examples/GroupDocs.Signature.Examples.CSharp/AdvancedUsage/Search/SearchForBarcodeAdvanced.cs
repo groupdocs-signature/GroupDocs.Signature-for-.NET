@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SearchForBarcodeAdvanced : Search document for Barcode signature with applying specific options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
             using (Signature signature = new Signature(filePath))
             {
                 BarcodeSearchOptions options = new BarcodeSearchOptions()
@@ -36,7 +36,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify text match type
                     MatchType = TextMatchType.Contains,
                     // specify text pattern to search
-                    Text = "GroupDocs.Signature",
+                    Text = "12345",
                     // set field for barcode images returning
                     ReturnContent = true,
                     // specify type of returned barcode images

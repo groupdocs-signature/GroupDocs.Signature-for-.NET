@@ -33,14 +33,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # CancellationVerifyProcess : Verify document and cancel process\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
-            string fileName = Path.GetFileName(filePath);
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
                 signature.VerifyProgress += OnVerifyProgress;
 
-                TextVerifyOptions options = new TextVerifyOptions("JS_Stamp")
+                TextVerifyOptions options = new TextVerifyOptions("Text signature")
                 {
                     // ...
                 };

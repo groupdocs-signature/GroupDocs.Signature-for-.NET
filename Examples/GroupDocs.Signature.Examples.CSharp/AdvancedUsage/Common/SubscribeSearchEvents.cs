@@ -48,7 +48,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # SubscribeSearchEvents : Search document for barcode signatures and subscribe for events\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_WORD_SIGNED;
+            string filePath = Constants.SAMPLE_SIGNED_MULTI;
 
             using (Signature signature = new Signature(filePath))
             {
@@ -66,7 +66,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // specify text match type
                     MatchType = TextMatchType.Contains,
                     // specify text pattern to search
-                    Text = "12345678"
+                    Text = "12345"
                 };
 
                 // search for signatures in document

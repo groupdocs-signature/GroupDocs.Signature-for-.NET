@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # LoadDocumentFromUrl : Load document from Url\n");
 
 
-            string url = "https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/Resources/SampleFiles/sample.pdf?raw=true";
+            string url = "https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/Resources/SampleFiles/sample.pdf?raw=true";
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignedWithTextFromUrl", "sample.pdf");
 
@@ -42,7 +42,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
             catch
             {
-                // skipe any exception and show the error
+                // skip any exception and show the error
                 Helper.WriteError("\nThis example requires valid network resource Url to download the document. " +
                                   "\nProbably following resource are not available. " +
                                   $"\n{url}");

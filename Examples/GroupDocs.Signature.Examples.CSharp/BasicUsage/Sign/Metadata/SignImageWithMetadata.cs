@@ -18,8 +18,8 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignImageWithMetadata : Sign image document with metadata signature\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_JPG;            
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignImageWithMetadata", "SignedWithMetadata.jpg");
+            string filePath = Constants.SAMPLE_IMAGE;            
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignImageWithMetadata", "SignedWithMetadata.png");
 
             using (Signature signature = new Signature(filePath))
             {

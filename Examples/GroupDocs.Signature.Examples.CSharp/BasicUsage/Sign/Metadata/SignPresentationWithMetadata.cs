@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PRESENTATION;            
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPresentationWithMetadata", "SignedWithMetadata.ppsx");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignPresentationWithMetadata", "SignedWithMetadata.pptx");
 
             using (Signature signature = new Signature(filePath))
             {

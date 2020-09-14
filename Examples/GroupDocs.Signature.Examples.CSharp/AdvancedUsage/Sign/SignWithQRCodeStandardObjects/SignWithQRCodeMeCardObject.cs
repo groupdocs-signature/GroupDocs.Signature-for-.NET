@@ -54,8 +54,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // setup Data property to MeCard instance
                     Data = vCard,
                     // set right bottom corner
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Bottom,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Center,
                     Width = 100,
                     Height = 100,
                     Margin = new Padding(10)
