@@ -38,11 +38,7 @@ New constructor class DigitalSignature allows to create instance with predefined
 /// <summary>
 /// Initialize Digital signature with known SignatureId.
 /// </summary>
-public DigitalSignature(string signatureId) : base(SignatureType.Digital)
-{
-  Init(null);
-  this.SignatureId = signatureId;
-}
+public DigitalSignature(string signatureId)
 ```
 
 Following example shows how to delete Digital signature by known signature identifier.
