@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace GroupDocs.Signature.Tests.Wiki.AdvancedUsage.CustomSerialization
+namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+
     using GroupDocs.Signature.Domain;
-    using GroupDocs.Signature.Examples.CSharp;
-    using GroupDocs.Signature.Examples.CSharp.AdvancedUsage;
     using GroupDocs.Signature.Options;
-    
-    class OptionsSerialization
+    using GroupDocs.Signature.Examples.CSharp;
+
+    public class OptionsSerialization
     {
 
         public static void Run()

@@ -430,6 +430,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             DeleteBarcodeById.Run();
             DeleteQRCodeAfterSearch.Run();
             DeleteQRCodeById.Run();
+            DeleteDigitalAfterSearch.Run();
+            DeleteDigitalById.Run();
 
             DeleteMultipleAdvanced.Run();
             #endregion
@@ -440,6 +442,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             ProcessingBarcodeSignatureOverCRUD.Run();
             ProcessingQrCodeSignatureOverCRUD.Run();
             #endregion
+
+            OptionsSerialization.Run();
 
             #endregion // Advanced Usage
 

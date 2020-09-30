@@ -21,8 +21,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CRUD\ProcessingTextSignatureOverCRUD.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CustomEncryption\CustomXOREncryption.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CustomSerialization\CustomSerializationAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CustomSerialization\OptionsSerialization.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeById.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalAfterSearch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteImageAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteImageById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteMultipleAdvanced.cs" />
