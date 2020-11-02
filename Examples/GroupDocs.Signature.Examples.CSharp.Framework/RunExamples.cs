@@ -224,6 +224,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign Pdf document with digital certificate
             SignWithDigitalAdvancedPdfCertificate.Run();
 
+            //Sign Pdf document with digital certificate and custom appearance settings
+            SignWithDigitalAdvancedPdfAppearance.Run();
+
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
 

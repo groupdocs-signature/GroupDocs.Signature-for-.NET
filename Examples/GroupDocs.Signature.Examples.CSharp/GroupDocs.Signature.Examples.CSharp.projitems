@@ -90,6 +90,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithStretchMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfCertificate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfTimestamp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfAppearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedCombobox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedRadio.cs" />
