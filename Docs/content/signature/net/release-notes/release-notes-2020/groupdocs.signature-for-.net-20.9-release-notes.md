@@ -12,7 +12,7 @@ hideChildren: False
 
 ## Major Features
 
-There are few important new features and improvements in this release. Mostl features are related to ability to hide and remove digital electronic signatures on Pdf Document pages same as adjust appearance of its representation on document page. Below the list of most notable changes in release of GroupDocs.Signature for .NET 20.9:
+There are few important new features and improvements in this release. Most features are related to ability to hide and remove digital electronic signatures on Pdf Document pages same as adjust appearance of its representation on document page. Below the list of most notable changes in release of GroupDocs.Signature for .NET 20.9:
 
 * Implement ability to hide digital signatures on document preview for PDF documents.
 * Involved option to adjust digital signature appearance on page.
