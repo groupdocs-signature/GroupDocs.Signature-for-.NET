@@ -2,7 +2,7 @@
 id: sign-pdf-documents-with-digital-signature-appearance
 url: signature/net/sign-pdf-documents-with-digital-signature-appearance
 title: Sign Pdf documents with custom digital signature appearance
-weight: 2
+weight: 4
 description: " This article explains how to customize PDF digital electronic signature on document page."
 keywords: 
 productName: GroupDocs.Signature for .NET

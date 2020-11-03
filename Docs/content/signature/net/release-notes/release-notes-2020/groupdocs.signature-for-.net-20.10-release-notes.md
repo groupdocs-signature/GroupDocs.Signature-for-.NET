@@ -14,9 +14,10 @@ hideChildren: False
 
 There are eight important new features, improvements and important bug fixes in this release. New features are related to customization of PDF digital signatures on document pages and allow to adjust signature appearance. Below the list of most notable changes in release of GroupDocs.Signature for .NET 20.10:
 
-* Implement ability to hide digital signatures on document preview for PDF documents.
-* Involved option to adjust digital signature appearance on page.
-* Introduced ability to remove digital signatures from PDF documents.
+* Introduced extended customization of PDF Digital signatures appearance.
+* Implemented ability to apply signature extensions to Digital Signatures.
+* Fixed bug with restoring signatures metadata from signed image documents.
+* Bug fixes.
 
 Full List of Issues Covering all Changes in this Release
 
