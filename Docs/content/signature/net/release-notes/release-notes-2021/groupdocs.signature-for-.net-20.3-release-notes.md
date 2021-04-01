@@ -168,7 +168,7 @@ This class contains following properties
 }
 ```
 
-#### Public class [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) was updated with static methods to generate Signature preview with specified SignOptions
+#### Public class [Signature](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature) was updated with static method to generate Signature preview with specified SignOptions
 
 Static method [GenerateSignaturePreview](https://apireference.groupdocs.com/net/signature/groupdocs.signature/signature/methods/generatesignaturepreview) expects [PreviewSignatureOptions](https://apireference.groupdocs.com/signature/net/groupdocs.signature.options/previewsignatureoptions) to generate signature preview and control creation and deletion signature image stream.
 
@@ -227,13 +227,13 @@ public static void Run()
 private static Stream CreateSignatureStream(PreviewSignatureOptions previewOptions)
 {
     SignOptions signOptions = previewOptions.SignOptions;
-    string imageFilePath = $"signature-{previewOptions.SignatureId}-{signOptions.SignatureType}.jpg";
+    string imageFilePath = $"signature-{previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name}.jpg";
     return new FileStream(imageFilePath, FileMode.Create);
 }
 
 private static void ReleaseSignatureStream(PreviewSignatureOptions previewOptions, Stream signatureStream)
 {
     signatureStream.Dispose();
-    Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.SignatureType} is ready for preview");
+    Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name} is ready for preview");
 }
 ```

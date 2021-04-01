@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CustomSerialization\OptionsSerialization.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeById.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBySignatureTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteImageAfterSearch.cs" />
@@ -147,6 +148,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Common\GetSupportedFileFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteBarcode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteByType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteDigital.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteMultiple.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteQRCode.cs" />
@@ -166,6 +169,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForMultiple.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForQRCode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Search\SearchForText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\SignaturePreview\GenerateSignaturePreview.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Sign\Metadata\SignImageWithMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Sign\Metadata\SignPdfWithMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Sign\Metadata\SignPresentationWithMetadata.cs" />

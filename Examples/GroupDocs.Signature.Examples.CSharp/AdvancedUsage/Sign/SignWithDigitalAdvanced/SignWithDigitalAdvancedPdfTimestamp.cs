@@ -33,7 +33,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Location = "Location",
                     Reason = "Reason",
                     // Setting data for getting time stamp from third-party site for pdf digital signature
-                    TimeStamp = new TimeStamp("https://freetsa.org/tsr", "", "")
+                    TimeStamp = new TimeStamp("https://www.safestamper.com/tsa", "", "")
                 };
 
                 //Create digital signing options
@@ -47,15 +47,25 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     VerticalAlignment = VerticalAlignment.Bottom,
                     HorizontalAlignment = HorizontalAlignment.Right
                 };
-
-                SignResult signResult = signature.Sign(outputFilePath, options);
-                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
-
-                Console.WriteLine("\nList of newly created signatures:");
-                int number = 1;
-                foreach (BaseSignature temp in signResult.Succeeded)
+                SignResult signResult = null;
+                try
                 {
-                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    signResult = signature.Sign(outputFilePath, options);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Unexpected error signing with TimeStamp {pdfDigitalSignature.TimeStamp.Url} : {ex.Message}");
+                }
+                if (signResult != null)
+                {
+                    Console.WriteLine($"Source document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
+
+                    Console.WriteLine("List of newly created signatures:");
+                    int number = 1;
+                    foreach (BaseSignature temp in signResult.Succeeded)
+                    {
+                        Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    }
                 }
             }
         }

@@ -36,6 +36,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             GetDocumentProcessHistory.Run();
             #endregion
 
+            #region Signature Preview
+            GenerateSignaturePreview.Run();
+            #endregion
+
             #region Sign document with different signature types
 
             //Sign document with text signature
@@ -167,8 +171,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Delete found QR-code signature in the document after Search method
             DeleteQRCode.Run();
 
+            //Delete Digital signature from the document after Search method
+            DeleteDigital.Run();
+                        
             //Delete few found multiple signatures in the document after Search method
             DeleteMultiple.Run();
+
+            //Delete signature from the document by certain type
+            DeleteBySignatureType.Run();
             #endregion
 
             #endregion // Basic Usage
@@ -433,6 +443,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             DeleteDigitalAfterSearch.Run();
             DeleteDigitalById.Run();
             DeleteMultipleAdvanced.Run();
+            DeleteBySignatureTypes.Run();
             #endregion
 
             #region Processing signatures over all CRUD operation to show full signature process life-cycle

@@ -31,7 +31,7 @@ GroupDocs.Signature expects [CreateSignatureStream](https://apireference.groupd
 private static CreateSignatureStream(PreviewSignatureOptions previewOptions)
 {
     SignOptions signOptions = previewOptions.SignOptions;
-    string imageFilePath = Path.Combine(Constants.OutputPath, "GenerateSignaturePreview", $"signature-{previewOptions.SignatureId}-{signOptions.SignatureType}.jpg");
+    string imageFilePath = Path.Combine(Constants.OutputPath, "GenerateSignaturePreview", $"signature-{previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name}.jpg");
     var folder = Path.GetDirectoryName(imageFilePath);
     if (!Directory.Exists(folder))
     {
@@ -47,7 +47,7 @@ private static CreateSignatureStream(PreviewSignatureOptions previewOptions)
 private static void ReleaseSignatureStream(PreviewSignatureOptions previewOptions, Stream signatureStream)
 {
      signatureStream.Dispose();
-     Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.SignatureType} is ready for preview");
+     Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name} is ready for preview");
 }
 ```
 
@@ -90,14 +90,14 @@ public static void GetPreview()
 private static Stream CreateSignatureStream(PreviewSignatureOptions previewOptions)
 {
     SignOptions signOptions = previewOptions.SignOptions;
-    string imageFilePath = $"signature-{previewOptions.SignatureId}-{signOptions.SignatureType}.jpg";
+    string imageFilePath = $"signature-{previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name}.jpg";
     return new FileStream(imageFilePath, FileMode.Create);
 }
 
 private static void ReleaseSignatureStream(PreviewSignatureOptions previewOptions, Stream signatureStream)
 {
     signatureStream.Dispose();
-    Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.SignatureType} is ready for preview");
+    Console.WriteLine($"Signature {previewOptions.SignatureId}-{previewOptions.SignOptions.GetType().Name} is ready for preview");
 }
 ```
 

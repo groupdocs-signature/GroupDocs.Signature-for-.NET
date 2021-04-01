@@ -42,15 +42,18 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         // do now show contact details
                         ContactInfoLabel = string.Empty,
                         // simplify reason label
-                        ReasonLabel = "?",
+                        ReasonLabel = "R:",
                         // change location label
-                        LocationLabel = "From",
-                        DigitalSignedLabel = "By",
+                        LocationLabel = "@=>",
+                        DigitalSignedLabel = "By:",
                         DateSignedAtLabel = "On",
                         // apply custom appearance color
-                        Background = Color.Red
+                        Background = Color.Red,
+                        // apply custom font settings
+                        FontFamilyName = "Courier",
+                        FontSize = 8
                     },
-                    //                    
+                    //
                     AllPages = true,
                     Width = 160,
                     Height = 80,
