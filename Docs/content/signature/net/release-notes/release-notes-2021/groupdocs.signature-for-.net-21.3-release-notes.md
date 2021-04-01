@@ -46,7 +46,7 @@ Following topics from Developer Guide were added
 
 [Generate Signatures preview]({{< ref "signature/net/developer-guide/basic-usage/generate-signatures-preview.md" >}})
 
-[Advanced Signatures removal of the certain types]({{< ref "signature/net/developer-guide/advanced-usage\deleting\delete-signatures-of-the-certain-types.md" >}})
+[Advanced Signatures removal of the certain types]({{< ref "signature/net/developer-guide/advanced-usage/deleting/delete-signatures-of-the-certain-types.md" >}})
 
 ## Public API and Backward Incompatible Changes
 
