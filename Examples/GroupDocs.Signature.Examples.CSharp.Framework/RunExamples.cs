@@ -215,6 +215,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             GetDocumentProcessHistoryAdvanced.Run();
             #endregion
 
+            #region Advanced Signature Preview
+            GenerateSignaturePreviewAdvanced.Run();
+            #endregion
+
             #region Handling different special exceptions
             HandlingIncorrectPasswordException.Run();
             HandlingPasswordRequiredException.Run();
