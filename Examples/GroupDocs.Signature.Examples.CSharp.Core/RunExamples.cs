@@ -22,6 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
 
+            SignWithBase64ImageAdvanced.Run();
+
             #region Basic Usage
 
             #region Common

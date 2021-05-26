@@ -100,7 +100,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithExceptionHandling.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithImageAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithImagesAdvanced\SignWithBase64ImageAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithImagesAdvanced\SignWithImageAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithMetadataAdvanced\SignImageWithCustomMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithMetadataAdvanced\SignPdfWithCustomMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataCustomEncryptionObject.cs" />

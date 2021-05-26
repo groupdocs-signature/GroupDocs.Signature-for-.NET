@@ -7,7 +7,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
-    using GroupDocs.Signature.Options.Appearances;
 
     public class SignWithImageAdvanced
     {
