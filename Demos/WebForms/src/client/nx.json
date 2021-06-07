@@ -1,0 +1,18 @@
+{
+  "npmScope": "client",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "signature-e2e": {
+      "tags": []
+    },
+    "signature": {
+      "tags": []
+    }
+  }
+}

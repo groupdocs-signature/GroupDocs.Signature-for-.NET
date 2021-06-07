@@ -11,10 +11,9 @@
 
 Directory | Description
 --------- | -----------
-[Docs](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
-[Demos](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Demos)  | Source code for the live demos hosted at https://products.groupdocs.app/signature/family.
+[Docs](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
+[Demos](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Demos)  |  Open source web based projects that demonstrate the salient features of GroupDocs.Signature. Source code for the live demos hosted at https://products.groupdocs.app/signature/family.
 [Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Examples)  | C# based examples and sample files that will help you quickly started. 
-[Showcases](https://github.com/groupdocs-signature/GroupDocs.Signature-for.NET/tree/master/Showcases)  | Open source web based projects that demonstrate the salient features of GroupDocs.Signature. 
 [Plugins](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Plugins)  | Visual Studio plugins related to GroupDocs.Signature.
 
 ## Document e-Signing Features

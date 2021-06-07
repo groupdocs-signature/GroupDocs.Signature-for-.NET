@@ -1,0 +1,138 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "signature": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "less"
+        }
+      },
+      "root": "apps/signature",
+      "sourceRoot": "apps/signature/src",
+      "prefix": "client",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "../resources/signature",
+            "index": "apps/signature/src/index.html",
+            "main": "apps/signature/src/main.ts",
+            "polyfills": "apps/signature/src/polyfills.ts",
+            "tsConfig": "apps/signature/tsconfig.app.json",
+            "assets": ["apps/signature/src/favicon.ico", "apps/signature/src/assets"],
+            "styles": ["apps/signature/src/styles.less"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/signature/src/environments/environment.ts",
+                  "with": "apps/signature/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "signature:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "signature:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "signature:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/signature/tsconfig.app.json",
+              "apps/signature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/signature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/signature/jest.config.js",
+            "tsConfig": "apps/signature/tsconfig.spec.json",
+            "setupFile": "apps/signature/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "signature-e2e": {
+      "root": "apps/signature-e2e",
+      "sourceRoot": "apps/signature-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/signature-e2e/cypress.json",
+            "tsConfig": "apps/signature-e2e/tsconfig.e2e.json",
+            "devServerTarget": "signature:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "signature:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/signature-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/signature-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "signature"
+}
