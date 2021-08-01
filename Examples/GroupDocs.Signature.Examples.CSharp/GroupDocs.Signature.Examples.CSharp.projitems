@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\CustomSerialization\OptionsSerialization.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBarcodeById.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteByListIds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteBySignatureTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteDigitalById.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Common\GetSupportedFileFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteBarcode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteByType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteDigital.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Delete\DeleteImage.cs" />

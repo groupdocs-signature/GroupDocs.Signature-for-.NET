@@ -25,6 +25,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample_formfields.docx");
         public static string SAMPLE_SIGNED_MULTI
             => GetSampleFilePath("sample_multiple_signatures.docx");
+        public static string SAMPLE_SIGNED_MULTI_XLSX
+            => GetSampleFilePath("sample_multiple_signatures.xlsx");
         public static string SAMPLE_HISTORY
             => GetSampleFilePath("sample_history.docx");
 

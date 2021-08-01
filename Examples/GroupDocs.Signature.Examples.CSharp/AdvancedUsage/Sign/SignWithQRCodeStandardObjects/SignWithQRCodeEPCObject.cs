@@ -31,8 +31,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     Name = "Sherlock",
                     BIC = "MrSherlockH",
-                    IBAN = "BE72000000001616",
-                    Amount = 123456.78D,
+                    IBAN = "US533220010000026001300001480",
+                    Amount = 9.99D,
                     Code = "SHRL",
                     Reference = "Private service",
                     Information = "Thanks for help"

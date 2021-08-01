@@ -180,6 +180,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Delete signature from the document by certain type
             DeleteBySignatureType.Run();
 
+            //Delete signature from the document by known signature id
+            DeleteById.Run();
+
             #endregion
 
             #endregion // Basic Usage
@@ -454,6 +457,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             DeleteDigitalById.Run();
             DeleteMultipleAdvanced.Run();
             DeleteBySignatureTypes.Run();
+            DeleteByListIds.Run();
             #endregion
 
             #region Processing signatures over all CRUD operation to show full signature process life-cycle

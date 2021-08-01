@@ -66,6 +66,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);
+
+                // dispose Image
+                imageStream.Dispose();
+
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
 
                 Console.WriteLine("\nList of newly created signatures:");

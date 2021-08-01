@@ -34,21 +34,22 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Password = "1234567890",
                     // digital certificate details
                     Reason = "Approved",
+                    Contact = "John Smith",
                     Location = "New York",
 
                     // apply custom PDF signature appearance
                     Appearance = new PdfDigitalSignatureAppearance()
                     {
                         // do now show contact details
-                        ContactInfoLabel = string.Empty,
+                        ContactInfoLabel = "C",
                         // simplify reason label
-                        ReasonLabel = "R:",
+                        ReasonLabel = "R",
                         // change location label
                         LocationLabel = "@=>",
-                        DigitalSignedLabel = "By:",
+                        DigitalSignedLabel = "By",
                         DateSignedAtLabel = "On",
                         // apply custom appearance color
-                        Background = Color.Red,
+                        Background = Color.FromArgb(50, Color.LightGray),
                         // apply custom font settings
                         FontFamilyName = "Courier",
                         FontSize = 8
@@ -65,7 +66,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Border = new Border()
                     {
                         Visible = true,
-                        Color = Color.Red,
+                        Color = Color.FromArgb(80, Color.DarkGray),
                         DashStyle = DashStyle.DashDot,
                         Weight = 2
                     }

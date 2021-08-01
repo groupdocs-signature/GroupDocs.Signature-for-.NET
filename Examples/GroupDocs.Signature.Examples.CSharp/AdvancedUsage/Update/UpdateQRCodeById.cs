@@ -37,11 +37,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 List<BaseSignature> signatures = new List<BaseSignature>();
                 foreach (var item in signatureIdList)
                 {
-                    QrCodeSignature temp = new QrCodeSignature(item);
-                    temp.Width = 150;
-                    temp.Height = 150;
-                    temp.Left = 200;
-                    temp.Top = 200;
+                    QrCodeSignature temp = new QrCodeSignature(item)
+                    {
+                        Width = 150,
+                        Height = 150,
+                        Left = 200,
+                        Top = 200
+                    };
                     signatures.Add(temp);
                 }
                 // update all found signatures
