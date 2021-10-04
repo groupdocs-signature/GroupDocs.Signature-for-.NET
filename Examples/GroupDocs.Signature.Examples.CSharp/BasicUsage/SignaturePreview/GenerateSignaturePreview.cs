@@ -16,7 +16,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         {
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Basic Usage] # GenerateSignaturePreview : Generate signature preview");
-            // no need Siganture object since method is static
+            // no need Signature object since method is static
 
             // create options
             QrCodeSignOptions signOptions = new QrCodeSignOptions

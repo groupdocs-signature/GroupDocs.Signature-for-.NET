@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     {
         /// <summary>
         /// Delete signatures from the document by known list of the signature Identifiers
-        /// The list of sigantures Ids could be obtained by GetDocumentInfo or as result from the Sign method.
+        /// The list of signatures Ids could be obtained by GetDocumentInfo or as result from the Sign method.
         /// </summary>
         public static void Run()
         {

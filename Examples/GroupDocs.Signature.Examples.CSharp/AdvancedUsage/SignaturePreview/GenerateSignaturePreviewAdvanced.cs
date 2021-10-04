@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
         {
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Advanced Usage] # GenerateSignaturePreviewAdvanced : Generate Pdf Digital Signature preview");
-            // no need Siganture object since method is static
+            // no need Signature object since method is static
             // get certificate to check simulation preview with its data
             string certificatePath = Constants.CertificatePfx;
             // create options

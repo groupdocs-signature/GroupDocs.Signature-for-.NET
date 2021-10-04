@@ -20,9 +20,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_SIGNED_MULTI;
             SignatureSettings signatureSettings = new SignatureSettings()
             {
-                ShowDeletedSiganturesInfo = false
+                ShowDeletedSignaturesInfo = false
             };
-            using (Signature signature = new Signature(filePath))
+            using (Signature signature = new Signature(filePath, signatureSettings))
             {
                 IDocumentInfo documentInfo = signature.GetDocumentInfo();
 
