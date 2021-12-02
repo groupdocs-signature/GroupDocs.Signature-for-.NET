@@ -250,6 +250,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithImageAdvanced.Run();
 
             //Sign document with image from the base64 string
+            SignWithBase64ImageSample.Run();
+            
+            //Sign document with image from the base64 string created in SignImageOptions
             SignWithBase64ImageAdvanced.Run();
 
             //Sign document with Barcode signature applying specific options
