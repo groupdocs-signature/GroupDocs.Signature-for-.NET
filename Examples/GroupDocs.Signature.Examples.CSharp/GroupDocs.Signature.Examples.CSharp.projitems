@@ -110,6 +110,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithOrdering.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />

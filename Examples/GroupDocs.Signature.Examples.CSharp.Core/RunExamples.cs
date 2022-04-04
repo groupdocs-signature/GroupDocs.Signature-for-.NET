@@ -472,6 +472,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             OptionsSerialization.Run();
 
+            SignWithOrdering.Run();
             #endregion // Advanced Usage
 
             Console.WriteLine();
