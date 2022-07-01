@@ -427,6 +427,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Cancellation of signing, verification, searching process
             CancellationSignProcess.Run();
+
             CancellationVerifyProcess.Run();
             CancellationSearchProcess.Run();
             #endregion

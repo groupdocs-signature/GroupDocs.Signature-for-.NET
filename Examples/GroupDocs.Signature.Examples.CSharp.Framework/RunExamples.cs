@@ -18,19 +18,18 @@ namespace GroupDocs.Signature.Examples.CSharp
             QuickStart.SetLicenseFromFile.Run();
             //QuickStart.SetLicenseFromStream.Run();
             //QuickStart.SetMeteredLicense.Run();
+
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
 
             #region Basic Usage
 
             #region Common
-
             GetSupportedFileFormats.Run();
-
             #endregion
 
             #region Document Preview
-            
+
             GetDocumentInfo.Run();
             GeneratePreview.Run();
             GetDocumentProcessHistory.Run();
@@ -87,7 +86,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Search document for Text signature
             SearchForText.Run();
-            
+
             //Search document for Image signature
             SearchForImage.Run();
 
@@ -155,6 +154,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Update QR-code signature in the document after Search method
             UpdateQRCode.Run();
+
             #endregion
 
             #region Delete signatures from document
@@ -173,12 +173,16 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Delete Digital signature from the document after Search method
             DeleteDigital.Run();
-                        
+
             //Delete few found multiple signatures in the document after Search method
             DeleteMultiple.Run();
 
             //Delete signature from the document by certain type
             DeleteBySignatureType.Run();
+
+            //Delete signature from the document by known signature id
+            DeleteById.Run();
+
             #endregion
 
             #endregion // Basic Usage
@@ -186,6 +190,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Advanced Usage
 
             #region Loading
+
             LoadDocumentFromLocalDisk.Run();
             LoadDocumentFromStream.Run();
             LoadDocumentFromUrl.Run();
@@ -207,6 +212,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             SaveDocumentWithPassword.Run();
             SaveSignedDocumentsAsImages.Run();
+
             #endregion
 
             #region Document Preview with hiding signatures
@@ -225,7 +231,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign document with different signature types with additional options
-
             //Sign document with text signature applying specific options
             SignWithTextAdvanced.Run();
 
@@ -250,7 +255,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign document with image from the base64 string created in SignImageOptions
             SignWithBase64ImageAdvanced.Run();
 
-
             //Sign document with Barcode signature applying specific options
             SignWithBarcodeAdvanced.Run();
 
@@ -267,7 +271,6 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // Sign Spreadsheet document with XAdes signature
             SignWithXAdESTypes.Run();
-
             #endregion
 
             #region Sign with further result analysis
@@ -305,7 +308,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignPdfWithStandardMetadata.Run();
             SignPdfWithCustomMetadata.Run();
             SignImageWithCustomMetadata.Run();
-
             SignWithMetadataEncryptedText.Run();
             SignWithMetadataEncryptedObject.Run();
             SignWithMetadataCustomEncryptionObject.Run();
@@ -317,13 +319,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithPdfTextSticker.Run();
             SignWithImageAppearance.Run();
             SignWithDigitalAppearance.Run();
-
             #endregion
 
             #region Sign with different measure type
+
             SignWithMillimeters.Run();
             SignWithPercents.Run();
             SignWithAlignments.Run();
+
             #endregion
 
             SignWithStretchMode.Run();
@@ -424,11 +427,13 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Cancellation of signing, verification, searching process
             CancellationSignProcess.Run();
+
             CancellationVerifyProcess.Run();
             CancellationSearchProcess.Run();
             #endregion
 
             VerifyWithExceptionHandling.Run();
+
 
             #region Updating document signatures
             UpdateTextAfterSearch.Run();
@@ -439,6 +444,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             UpdateBarcodeById.Run();
             UpdateQRCodeAfterSearch.Run();
             UpdateQRCodeById.Run();
+
             UpdateMultipleAdvanced.Run();
             #endregion
 
@@ -455,6 +461,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             DeleteDigitalById.Run();
             DeleteMultipleAdvanced.Run();
             DeleteBySignatureTypes.Run();
+            DeleteByListIds.Run();
             #endregion
 
             #region Processing signatures over all CRUD operation to show full signature process life-cycle
@@ -465,6 +472,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             OptionsSerialization.Run();
+
             SignWithOrdering.Run();
             #endregion // Advanced Usage
 

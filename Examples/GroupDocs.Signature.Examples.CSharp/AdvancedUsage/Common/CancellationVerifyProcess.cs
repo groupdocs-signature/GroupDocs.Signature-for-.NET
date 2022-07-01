@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         private static void OnVerifyProgress(Signature sender, ProcessProgressEventArgs args)
         {
             // check if process takes more than 0.1 second (100 milliseconds) processing cancellation
-            if (args.Ticks > 100)
+            if (args.Ticks > 700)
             {
                 args.Cancel = true;
                 Console.WriteLine("Sign progress was cancelled. Time spent {0} mlsec", args.Ticks);

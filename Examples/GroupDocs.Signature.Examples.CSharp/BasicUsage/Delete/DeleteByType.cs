@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             string filePath = Constants.SAMPLE_SIGNED_MULTI;
             string fileName = Path.GetFileName(filePath);
             // copy source file since Delete method works with same Document
-            string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteByType", fileName);
+            string outputFilePath = Path.Combine(Constants.OutputPath, "DeleteBySignatureType", fileName);
             Constants.CheckDir(outputFilePath);
             File.Copy(filePath, outputFilePath, true);
             // processing QR-Code signatures
