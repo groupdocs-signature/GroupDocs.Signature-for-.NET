@@ -301,6 +301,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithQRCodeEPCObject.Run();
             SignWithQRCodeEventObject.Run();
             SignWithQRCodeMeCardObject.Run();
+            SignWithQRCodeWiFiObject.Run();
             #endregion
 
             #region Sign Metadata advanced

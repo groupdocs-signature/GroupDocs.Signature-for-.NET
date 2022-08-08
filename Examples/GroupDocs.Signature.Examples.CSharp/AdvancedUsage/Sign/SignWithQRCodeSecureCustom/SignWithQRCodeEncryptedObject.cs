@@ -46,7 +46,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 string key = "1234567890";
                 string salt = "1234567890";
                 // create data encryption
-                IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.Rijndael, key, salt);
+                IDataEncryption encryption = new SymmetricEncryption(SymmetricAlgorithmType.AES, key, salt);
 
                 // create custom object
                 DocumentSignatureData documentSignatureData = new DocumentSignatureData()
