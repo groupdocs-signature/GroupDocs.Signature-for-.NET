@@ -27,17 +27,14 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 MetadataSignOptions options = new MetadataSignOptions();
 
                 // Create few WordProcessing Metadata signatures
-                WordProcessingMetadataSignature[] signatures = new WordProcessingMetadataSignature[]
-                {
-                    new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes"), // String value
-                    new WordProcessingMetadataSignature("CreatedOn", DateTime.Now), // DateTime values
-                    new WordProcessingMetadataSignature("DocumentId", 123456), // Integer value
-                    new WordProcessingMetadataSignature("SignatureId", 123.456D), // Double value
-                    new WordProcessingMetadataSignature("Amount", 123.456M), // Decimal value
-                    new WordProcessingMetadataSignature("Total", 123.456F) // Float value
-                };
-                options.Signatures.AddRange(signatures);
-
+                options
+                    .Add(new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes")) // String value
+                    .Add(new WordProcessingMetadataSignature("CreatedOn", DateTime.Now))       // DateTime values
+                    .Add(new WordProcessingMetadataSignature("DocumentId", 123456))            // Integer value
+                    .Add(new WordProcessingMetadataSignature("SignatureId", 123.456D))         // Double value
+                    .Add(new WordProcessingMetadataSignature("Amount", 123.456M))              // Decimal value
+                    .Add(new WordProcessingMetadataSignature("Total", 123.456F));              // Float value
+                
                 // sign document to file
                 SignResult result = signature.Sign(outputFilePath, options);
 
