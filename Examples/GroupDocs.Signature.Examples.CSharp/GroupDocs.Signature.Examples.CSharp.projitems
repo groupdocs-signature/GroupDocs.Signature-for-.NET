@@ -79,6 +79,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEPCObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeEventObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeMeCardObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeSMSObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEPCObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeEventObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeMeCardObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeSMSObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeWiFiObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithResultAnalysis.cs" />
@@ -286,7 +288,13 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mecard_object.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_sms_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_vcard_object.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_wifi_object.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_signed.pdf">

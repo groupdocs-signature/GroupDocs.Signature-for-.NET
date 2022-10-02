@@ -8,38 +8,36 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Options;
     using GroupDocs.Signature.Domain.Extensions;
 
-    public class SignWithQRCodeWiFiObject
+    public class SignWithQRCodeSMSObject
     {
         /// <summary>
-        /// Sign document with QR-Code containing standard Event object.
+        /// Sign document with QR-Code containing standard SMS object.
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SignWithQRCodeWiFiObject : Sign document with QR-Code containing standard QR-Code WiFi object\n");
+            Console.WriteLine("[Example Advanced Usage] # SignWithQRCodeSMSObject : Sign document with QR-Code containing standard QR-Code SMS object\n");
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCodeWiFi", "QRCodeWiFiObject.pdf");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCodeSMS", "QRCodeSMSObject.pdf");
 
             using (Signature signature = new Signature(filePath))
             {
-                // create Event object
-                WiFi wiFi = new WiFi()
+                // create SMS object
+                SMS sms = new SMS()
                 {
-                    SSID = "GuestNetwork",
-                    Encryption = WiFiEncryptionType.WPAWPA2,
-                    Hidden = false,
-                    Password = "1234567890"
+                    Number = "0800 048 0408",
+                    Message = "Document approval automatic SMS message"
                 };
                 // create options
                 QrCodeSignOptions options = new QrCodeSignOptions
                 {
                     EncodeType = QrCodeTypes.QR,
-                    // setup Data property to WiFI instance
-                    Data = wiFi,
+                    // setup Data property to SMS instance
+                    Data = sms,
                     // set right bottom corner
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Center,

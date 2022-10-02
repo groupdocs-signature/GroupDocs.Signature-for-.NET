@@ -89,6 +89,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample_qrcode_epc_object.pdf");
         public static string SAMPLE_PDF_QRCODE_EVENT_OBJECT
             => GetSampleFilePath("sample_qrcode_event_object.pdf");
+        public static string SAMPLE_PDF_QRCODE_WIFI_OBJECT
+            => GetSampleFilePath("sample_qrcode_wifi_object.pdf");
+        public static string SAMPLE_PDF_QRCODE_SMS_OBJECT
+            => GetSampleFilePath("sample_qrcode_sms_object.pdf");
 
         private static string GetSampleFilePath(string filePath)
         {

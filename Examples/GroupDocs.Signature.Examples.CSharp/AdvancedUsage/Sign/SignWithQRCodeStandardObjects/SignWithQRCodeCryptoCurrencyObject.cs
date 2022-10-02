@@ -57,7 +57,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // create alternative QR-code options
                 QrCodeSignOptions options2 = new QrCodeSignOptions
                 {
-                    // setup Data property to Address instance
+                    // setup Data property to crypto currency instance
                     Data = customTransfer,
                     Left = 10,
                     Top = 200
