@@ -81,6 +81,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeMeCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeSMSObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeVCardObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForQRCodeStandardObjects\SearchForQRCodeWiFiObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SignaturePreview\GenerateSignaturePreviewAdvanced.cs" />

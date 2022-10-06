@@ -391,6 +391,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SearchForQRCodeEPCObject.Run();
             SearchForQRCodeEventObject.Run();
             SearchForQRCodeMeCardObject.Run();
+            SearchForQRCodeWiFiObject.Run();
             SearchForQRCodeSMSObject.Run();
             #endregion
 

@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithQRCodeWiFiObject
     {
         /// <summary>
-        /// Sign document with QR-Code containing standard Event object.
+        /// Sign document with QR-Code containing standard WiFI object.
         /// </summary>
         public static void Run()
         {
@@ -26,7 +26,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                // create Event object
+                // create WiFi object
                 WiFi wiFi = new WiFi()
                 {
                     SSID = "GuestNetwork",

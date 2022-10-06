@@ -68,7 +68,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                             fs.Write(barcodeSignature.Content, 0, barcodeSignature.Content.Length);
                         }
                     }
-                    i++;
+                    ++i;
                 }
             }
         }
