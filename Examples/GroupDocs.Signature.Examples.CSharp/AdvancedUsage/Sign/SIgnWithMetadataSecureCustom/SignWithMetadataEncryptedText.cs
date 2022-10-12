@@ -38,16 +38,16 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     // if you need separate encryption use own MetadataSignature.DataEncryption property
                     DataEncryption = encryption
                 };
-                
                 // setup signature metadata
                 WordProcessingMetadataSignature mdAuthor = new WordProcessingMetadataSignature("Author", "Mr.Scherlock Holmes");
 
                 // setup data of document id
                 WordProcessingMetadataSignature mdDocId = new WordProcessingMetadataSignature("DocumentId", Guid.NewGuid().ToString());
-                
+
                 // add signatures to options
-                options.Signatures.Add(mdAuthor);
-                options.Signatures.Add(mdDocId);
+                options
+                    .Add(mdAuthor)
+                    .Add(mdDocId);
 
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);

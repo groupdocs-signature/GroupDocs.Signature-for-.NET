@@ -74,9 +74,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 WordProcessingMetadataSignature mdDocId = new WordProcessingMetadataSignature("DocumentId", Guid.NewGuid().ToString());
 
                 // add signatures to options
-                options.Signatures.Add(mdSignature);
-                options.Signatures.Add(mdAuthor);
-                options.Signatures.Add(mdDocId);
+                options
+                    .Add(mdSignature)
+                    .Add(mdAuthor)
+                    .Add(mdDocId);
 
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);

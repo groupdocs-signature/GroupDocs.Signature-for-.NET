@@ -81,9 +81,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 mdDocId.DataEncryption = encryption;
 
                 // add signatures to options
-                options.Signatures.Add(mdDocument);
-                options.Signatures.Add(mdAuthor);
-                options.Signatures.Add(mdDocId);
+                options
+                    .Add(mdDocument)
+                    .Add(mdAuthor)
+                    .Add(mdDocId);
 
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);

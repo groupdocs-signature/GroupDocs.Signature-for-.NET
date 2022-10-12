@@ -38,7 +38,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         VCard vcard = qrSignature.GetData<VCard>();
                         if (vcard != null)
                         {
-                            Console.WriteLine("Found VCard signature: {0} {1} from {2}. Email: {3}", vcard.FirstName, vcard.LastName, vcard.Company, vcard.Email);
+                            Console.WriteLine($"Found VCard signature: {vcard.FirstName} {vcard.LastName} from {vcard.Company}. Tel: {vcard.CellPhone}");
                         }
                         else
                         {
