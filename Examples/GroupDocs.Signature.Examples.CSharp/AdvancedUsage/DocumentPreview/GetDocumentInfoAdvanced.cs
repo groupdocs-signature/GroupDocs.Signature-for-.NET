@@ -18,7 +18,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_SIGNED_MULTI;
-
+            SignatureSettings signatureSettings = new SignatureSettings()
+            {
+                IncludeStandardMetadataSignatures = true
+            };
             using (Signature signature = new Signature(filePath))
             {
                 IDocumentInfo documentInfo = signature.GetDocumentInfo();
@@ -72,6 +75,12 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 foreach (FormFieldSignature formFieldSignature in documentInfo.FormFields)
                 {
                     Console.WriteLine($" - #{formFieldSignature.SignatureId} Type {formFieldSignature.Type}: Name: {formFieldSignature.Name} Value: {formFieldSignature.Value}. CreatedOn/ModifiedOn: {formFieldSignature.CreatedOn.ToShortDateString()} / {formFieldSignature.ModifiedOn.ToShortDateString()}");
+                }
+                // display document Metadata signatures information
+                Console.WriteLine($"Document Metadata signatures : {documentInfo.MetadataSignatures.Count}");
+                foreach (MetadataSignature metadataSignature in documentInfo.MetadataSignatures)
+                {
+                    Console.WriteLine($" - #{metadataSignature.Name} = {metadataSignature.Value}");
                 }
             }
         }
