@@ -47,6 +47,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadPasswordProtectedDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\ConsoleLogging.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\FileLogging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedImageWithDifferentOutputFileType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedPdfWithDifferentOutputFileType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedPresentationWithDifferentOutputFileType.cs" />

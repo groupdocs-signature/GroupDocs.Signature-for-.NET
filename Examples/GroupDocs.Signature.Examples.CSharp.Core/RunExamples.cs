@@ -478,6 +478,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             OptionsSerialization.Run();
 
             SignWithOrdering.Run();
+
+            #region Logging
+            ConsoleLogging.Run();
+            FileLogging.Run();
+            #endregion
+            
             #endregion // Advanced Usage
 
             Console.WriteLine();
