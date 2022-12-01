@@ -16,7 +16,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # FileLogging : Using Console Loggin\n");
+            Console.WriteLine("[Example Advanced Usage] # FileLogging : Using file Logging\n");
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_PDF_SIGNED_PWD;

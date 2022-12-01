@@ -4,6 +4,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 {
     using GroupDocs.Signature.Examples.CSharp.BasicUsage;
     using GroupDocs.Signature.Examples.CSharp.AdvancedUsage;
+    using GroupDocs.Signature.Examples.CSharp.AdvancedUsage.DocumentPreview;
 
     class RunExamples
     {
@@ -11,6 +12,9 @@ namespace GroupDocs.Signature.Examples.CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
+
+            License license = new License();
+            license.SetLicense(@"C:\Licenses\GroupDocs\Total\Subscription\Valid\2022\Conholdate.Total.Product.Family.lic");
 
             // Please uncomment the example you want to try out
             #region Quick Start
@@ -219,6 +223,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             GeneratePreviewAdvanced.Run();
             GetDocumentInfoAdvanced.Run();
             GetDocumentProcessHistoryAdvanced.Run();
+            GetCertificateInfoAdvanced.Run();
             #endregion
 
             #region Advanced Signature Preview
@@ -437,7 +442,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             VerifyWithExceptionHandling.Run();
-
 
             #region Updating document signatures
             UpdateTextAfterSearch.Run();
