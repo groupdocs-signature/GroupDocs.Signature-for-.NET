@@ -39,6 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetCertificateInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentProcessHistoryAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentSignaturesInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingIncorrectPasswordException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingPasswordRequiredException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAmazonS3.cs" />
