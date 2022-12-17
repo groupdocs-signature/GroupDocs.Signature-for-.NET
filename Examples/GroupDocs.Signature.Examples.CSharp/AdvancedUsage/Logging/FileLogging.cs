@@ -22,7 +22,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PDF_SIGNED_PWD;
             string fileName = Path.GetFileName(filePath);
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "LoadPasswordProtected", fileName);
+            string outputFilePath = Path.Combine(Constants.OutputPath, "FileLogging", fileName);
             string outputLogFile = Path.Combine(Constants.OutputPath, "Logging", "signature-log.txt");
             LoadOptions loadOptions = new LoadOptions()
             {
