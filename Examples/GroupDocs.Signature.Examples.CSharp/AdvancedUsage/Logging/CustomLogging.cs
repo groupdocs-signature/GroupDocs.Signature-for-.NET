@@ -139,7 +139,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     response.EnsureSuccessStatusCode();
                     result = response.Content.ReadAsStringAsync().Result;
                 }
-                return result
+                return result;
             }
         }
     }
