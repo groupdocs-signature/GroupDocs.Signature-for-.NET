@@ -55,7 +55,7 @@
       <HintPath>..\packages\AWSSDK.S3.3.3.110.10\lib\net45\AWSSDK.S3.dll</HintPath>
     </Reference>
     <Reference Include="GroupDocs.Signature, Version=22.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Signature.22.12.0-alpha-20221230152403\lib\net40\GroupDocs.Signature.dll</HintPath>
+      <HintPath>..\packages\GroupDocs.Signature.22.12.0\lib\net40\GroupDocs.Signature.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=3.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.3.0.4\lib\net461\Microsoft.Azure.KeyVault.Core.dll</HintPath>
