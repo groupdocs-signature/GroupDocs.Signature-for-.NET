@@ -28,7 +28,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                     // display only added from example with 41996 + numbers
                     if (mdSignature.Id > 41995)
                     {
-                        Console.WriteLine($"\t[{mdSignature.Id}] = {mdSignature.Value}");
+                        Console.WriteLine($"\t[{mdSignature.Id}] = {mdSignature.Value} ({mdSignature.Type})");
                     }
                 }
             }

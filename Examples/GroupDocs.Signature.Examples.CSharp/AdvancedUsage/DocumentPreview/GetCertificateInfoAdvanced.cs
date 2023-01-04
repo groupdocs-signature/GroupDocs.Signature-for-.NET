@@ -41,7 +41,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage.DocumentPreview
                 Console.WriteLine($"Document MetaData information: count = {documentInfo.MetadataSignatures.Count}");
                 foreach (MetadataSignature metadataSignature in documentInfo.MetadataSignatures)
                 {
-                    Console.WriteLine($" - Name: {metadataSignature.Name} Value: {metadataSignature.Value}");
+                    Console.WriteLine($" - Name: {metadataSignature.Name} Value: {metadataSignature.Value} Type: {metadataSignature.Type}");
                 }
             }
         }

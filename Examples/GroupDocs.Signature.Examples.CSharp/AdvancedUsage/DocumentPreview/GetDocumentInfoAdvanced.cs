@@ -80,7 +80,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 Console.WriteLine($"Document Metadata signatures : {documentInfo.MetadataSignatures.Count}");
                 foreach (MetadataSignature metadataSignature in documentInfo.MetadataSignatures)
                 {
-                    Console.WriteLine($" - #{metadataSignature.Name} = {metadataSignature.Value}");
+                    Console.WriteLine($" - #{metadataSignature.Name} = {metadataSignature.Value} ({metadataSignature.Type})");
                 }
             }
         }

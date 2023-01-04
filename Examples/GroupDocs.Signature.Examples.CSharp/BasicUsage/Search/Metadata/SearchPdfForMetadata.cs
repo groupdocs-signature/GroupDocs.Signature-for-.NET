@@ -25,7 +25,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 Console.WriteLine($"\nSource document ['{filePath}'] contains following signatures.");
                 foreach (PdfMetadataSignature mdSignature in signatures)
                 {
-                    Console.WriteLine($"\t[{mdSignature.TagPrefix} : {mdSignature.Name}] = {mdSignature.Value}");
+                    Console.WriteLine($"\t[{mdSignature.TagPrefix} : {mdSignature.Name}] = {mdSignature.Value} ({mdSignature.Type})");
                 }
             }
         }
