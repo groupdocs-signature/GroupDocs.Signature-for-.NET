@@ -9,7 +9,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Logging;
     using GroupDocs.Signature.Options;
-    
 
     public class CustomLogging
     {
@@ -32,6 +31,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             };
             var logger = new ConsoleLogger();
             var settings = new SignatureSettings(logger);
+            // setup custom log level
+            settings.LogLevel = LogLevel.Warning | LogLevel.Error; 
             try
             {
                 using (Signature signature = new Signature(filePath, loadOptions, settings))
@@ -142,34 +143,5 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 return result;
             }
         }
-    }
-
-    [Flags]
-    public enum LogLevel
-    {
-        /// <summary>
-        /// No logging limitation all information will be logged from trace, warning to errors
-        /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// No logging limitation all information will be logged from trace, warning to errors
-        /// </summary>
-        Error = 1,
-
-        /// <summary>
-        /// Same as All level, all messages including the Trace level will be logged
-        /// </summary>
-        Warning = 2,
-
-        /// <summary>
-        /// The logging level to include messages from the Warning to Error level
-        /// </summary>
-        Trace = 4,
-
-        /// <summary>
-        /// All Log level events (Error, Warning, Trace) will be included into the logging
-        /// </summary>
-        All = Error | Warning | Trace
     }
 }

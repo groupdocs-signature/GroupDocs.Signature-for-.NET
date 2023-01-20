@@ -28,6 +28,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             };
             var logger = new ConsoleLogger();
             var settings = new SignatureSettings(logger);
+            // setup custom log level
+            settings.LogLevel = LogLevel.Trace | LogLevel.Warning | LogLevel.Error; // same as LogLevel.All
             try
             {
                 using (Signature signature = new Signature(filePath, loadOptions, settings))

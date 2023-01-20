@@ -220,6 +220,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             GeneratePreviewAdvanced.Run();
             GetDocumentInfoAdvanced.Run();
             GetDocumentProcessHistoryAdvanced.Run();
+            #endregion
+
+            #region Working with Certificate documents
             GetCertificateInfoAdvanced.Run();
             #endregion
 
