@@ -37,6 +37,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);
+                Console.WriteLine($"Sign-process was executed for {signResult.ProcessingTime} mls");
+                Console.WriteLine($"Input document size {signResult.SourceDocumentSize} bytes");
+                Console.WriteLine($"Output document size {signResult.DestinDocumentSize} bytes");
+                Console.WriteLine($"Total processed signatures {signResult.TotalSignatures}");
                 if (signResult.Failed.Count == 0)
                 {
                     Console.WriteLine("\nAll signatures were successfully created!");
