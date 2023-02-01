@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage.DocumentPreview
+namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;

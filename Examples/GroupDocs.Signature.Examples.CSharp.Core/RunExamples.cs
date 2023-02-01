@@ -4,7 +4,6 @@ namespace GroupDocs.Signature.Examples.CSharp
 {
     using GroupDocs.Signature.Examples.CSharp.BasicUsage;
     using GroupDocs.Signature.Examples.CSharp.AdvancedUsage;
-    using GroupDocs.Signature.Examples.CSharp.AdvancedUsage.DocumentPreview;
 
     class RunExamples
     {
@@ -438,6 +437,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             CancellationSignProcess.Run();
 
             CancellationVerifyProcess.Run();
+
             CancellationSearchProcess.Run();
             #endregion
 
