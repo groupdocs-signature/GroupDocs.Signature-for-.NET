@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
-    using System.Net;
 
     /// <summary>
     /// This example demonstrates how to render document downloaded from FTP.
@@ -46,13 +46,17 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             using (WebResponse response = request.GetResponse())
                 return GetFileStream(response);
         }
-
+        // FTP is no longer supported in .NET 6.0
+        // https://learn.microsoft.com/en-us/dotnet/core/compatibility/networking/6.0/webrequest-deprecated
+        // For FTP, since HttpClient doesn't support it, we recommend using a third-party library.
+#pragma warning disable SYSLIB0014
         private static FtpWebRequest CreateRequest(Uri uri)
         {
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
             request.Method = WebRequestMethods.Ftp.DownloadFile;
             return request;
         }
+#pragma warning restore SYSLIB0014
 
         private static Stream GetFileStream(WebResponse response)
         {

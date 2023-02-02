@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Net;
-
+using System.Net.Http;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 { 
     using GroupDocs.Signature.Options;
+    
+
     /// <summary>
     /// This example demonstrates how to download and render document.
     /// </summary>
@@ -52,21 +53,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 
         private static Stream GetRemoteFile(string url)
         {
-            WebRequest request = WebRequest.Create(url);
-
-            using (WebResponse response = request.GetResponse())
-                return GetFileStream(response);
-        }
-
-        private static Stream GetFileStream(WebResponse response)
-        {
-            MemoryStream fileStream = new MemoryStream();
-
-            using (Stream responseStream = response.GetResponseStream())
-                responseStream.CopyTo(fileStream);
-
-            fileStream.Position = 0;
-            return fileStream;
+            HttpClient client = new HttpClient();
+            MemoryStream result = new MemoryStream();
+            using (Stream stream = client.GetStreamAsync(url).Result)
+            {
+                stream.CopyTo(result);
+            }   
+            return result;
         }
     }
 }
