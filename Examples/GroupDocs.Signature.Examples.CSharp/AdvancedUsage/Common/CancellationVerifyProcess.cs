@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             if (args.Ticks > 350)
             {
                 args.Cancel = true;
-                Console.WriteLine("Sign progress was cancelled. Time spent {0} mlsec", args.Ticks);
+                Console.WriteLine("Sign progress was canceled. Time spent {0} mlsec", args.Ticks);
             }
         }
 
@@ -49,11 +49,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 if (result.IsValid)
                 {
-                    Console.WriteLine("\nDocument was verified successfully!\n");
+                    Helper.WriteError("\nDocument verification was not canceled!\n");
                 }
                 else
                 {
-                    Helper.WriteError("\nDocument failed verification process.\n");
+                    Console.WriteLine("\nDocument verification was canceled successfully!\n");
                 }
             }
         }

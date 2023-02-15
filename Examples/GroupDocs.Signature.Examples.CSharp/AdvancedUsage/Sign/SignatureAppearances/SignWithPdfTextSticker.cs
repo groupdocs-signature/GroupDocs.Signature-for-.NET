@@ -40,7 +40,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     {
                         // select sticker icon
                         Icon = PdfTextStickerIcon.Star,
-                        // setup if popup annotation will be opened by default
+                        // setup if pop-up annotation will be opened by default
                         Opened = false,
                         // text content of an annotation
                         Contents = "Sample",

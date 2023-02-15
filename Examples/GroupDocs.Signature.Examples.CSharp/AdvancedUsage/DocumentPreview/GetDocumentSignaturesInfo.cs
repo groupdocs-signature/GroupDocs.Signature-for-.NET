@@ -39,7 +39,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 Console.WriteLine($"Document Process logs information: count = {documentInfo.ProcessLogs.Count}");
                 foreach (ProcessLog processLog in documentInfo.ProcessLogs)
                 {
-                    Console.WriteLine($" - operation [{processLog.Type}] on {processLog.Date.ToShortDateString()}. Succedded/Failed {processLog.Succeeded}/{processLog.Failed}. Message: {processLog.Message} : ");
+                    Console.WriteLine($" - operation [{processLog.Type}] on {processLog.Date.ToShortDateString()}. Succeeded/Failed {processLog.Succeeded}/{processLog.Failed}. Message: {processLog.Message} : ");
                     if (processLog.Signatures != null)
                     {
                         foreach (BaseSignature logSignature in processLog.Signatures)

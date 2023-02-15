@@ -47,7 +47,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                // setup key and pasphrase
+                // setup key and passphrase
                 string key = "1234567890";
                 string salt = "1234567890";
                 // create data encryption

@@ -21,7 +21,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             if (args.Ticks > 100)
             {
                 args.Cancel = true;
-                Console.WriteLine("Sign progress was cancelled. Time spent {0} mlsec", args.Ticks);
+                Console.WriteLine("Sign progress was canceled. Time spent {0} mlsec", args.Ticks);
             }
         }
 
