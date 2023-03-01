@@ -53,7 +53,8 @@ namespace GroupDocs.Signature.Examples.CSharp
         // Images
         public static string SAMPLE_IMAGE
             => GetSampleFilePath("sample.png");
-
+        public static string SAMPLE_WEBP
+            => GetSampleFilePath("sample.webp");
         //Metadata
         public static string SAMPLE_PDF_SIGNED_METADATA => GetSampleFilePath("sample_signed_metadata.pdf");
         public static string SAMPLE_PRESENTATION_SIGNED_METADATA => GetSampleFilePath("sample_signed_metadata.pptx");
@@ -93,6 +94,21 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample_qrcode_wifi_object.pdf");
         public static string SAMPLE_PDF_QRCODE_SMS_OBJECT
             => GetSampleFilePath("sample_qrcode_sms_object.pdf");
+
+        #region Sample PDF with complex QR-Code data
+        public static string SAMPLE_PDF_QRCODE_HIBCLICPRIMARY_OBJECT
+            => GetSampleFilePath("sample_qrcode_hibclic_prmdata.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCLICPSECONDARY_OBJECT
+            => GetSampleFilePath("sample_qrcode_hibclic_secdata.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCLICCOMBINED_OBJECT
+            => GetSampleFilePath("sample_qrcode_hibclic_cmbdata.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCLICMAILMARK2DTYPE07_OBJECT
+            => GetSampleFilePath("sample_qrcode_mailmark2d_type07.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCLICMAILMARK2DTYPE09_OBJECT
+            => GetSampleFilePath("sample_qrcode_mailmark2d_type09.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCLICMAILMARK2DTYPE29_OBJECT
+            => GetSampleFilePath("sample_qrcode_mailmark2d_type29.pdf");
+        #endregion
 
         private static string GetSampleFilePath(string filePath)
         {

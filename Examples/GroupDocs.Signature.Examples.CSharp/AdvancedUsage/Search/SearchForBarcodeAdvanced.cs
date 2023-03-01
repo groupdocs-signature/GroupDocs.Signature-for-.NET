@@ -61,7 +61,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     if (barcodeSignature.Content != null)
                     {
-                        string outputFilePath = Path.Combine(outputPath, $"image{i}{barcodeSignature.Format?.Extension}");
+                        string outputFilePath = System.IO.Path.Combine(outputPath, $"image{i}{barcodeSignature.Format?.Extension}");
 
                         using (FileStream fs = new FileStream(outputFilePath, FileMode.Create))
                         {

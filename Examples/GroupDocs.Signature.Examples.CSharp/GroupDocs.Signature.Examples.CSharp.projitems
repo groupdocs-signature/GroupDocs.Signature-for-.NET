@@ -98,6 +98,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithMillimeters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithPercents.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithStretchMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithBarcodeComplexObjects\SignWithBarcodeTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvancedPdf.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfCertificate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfTimestamp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfAppearance.cs" />
@@ -119,6 +121,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithOrdering.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICCombinedDataObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICMailmark2DObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICPrimaryDataObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICSecondaryDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedObject.cs" />
@@ -132,6 +138,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeSMSObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeVCardObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeStandardObjects\SignWithQRCodeWiFiObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithResultAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextAnnotation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithSignatureImplementation\SignWithTextFormField.cs" />
@@ -240,6 +247,7 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.webp" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -291,6 +299,12 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_event_object.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_cmbdata.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_prmdata.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_secdata.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type07.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type09.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type29.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mecard_object.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -343,5 +357,8 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithBarcodeComplexObjects\" />
   </ItemGroup>
 </Project>

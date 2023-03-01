@@ -60,6 +60,7 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 if (result.IsValid)
                 {
                     Console.WriteLine("\nDocument was verified successfully!");
+                    Console.WriteLine($"\n{result.Succeeded.Count} signatures have passed through verification process.");
                 }
                 else
                 {

@@ -260,6 +260,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithBase64ImageAdvanced.Run();
 
             //Sign document with Barcode signature applying specific options
+            SignWithBarcodeTypes.Run();
             SignWithBarcodeAdvanced.Run();
 
             //Sign document with QR-Code signature applying specific options
@@ -289,6 +290,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithTextFormField.Run();
             SignWithTextWatermark.Run();
             SignWithTextWatermarkNative.Run();
+            #endregion
+
+            #region Sign with complex QR Code types
+            SignWithQRCodeTypes.Run();
             #endregion
 
             #region Sign QR-Code Encryption, Custom encryption, custom serialization
@@ -486,6 +491,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Logging
             ConsoleLogging.Run();
             FileLogging.Run();
+            //CustomLogging.Run();
             #endregion
 
             #endregion // Advanced Usage

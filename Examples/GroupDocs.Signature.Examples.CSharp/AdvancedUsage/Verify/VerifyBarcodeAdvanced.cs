@@ -33,6 +33,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 if (result.IsValid)
                 {
                     Console.WriteLine("\nDocument was verified successfully!");
+                    Console.WriteLine("\nList of Succeded sigantures:");
+                    foreach(BaseSignature temp in result.Succeeded)
+                    {
+                        Console.WriteLine($" -#{temp.SignatureId}-{temp.SignatureType} at: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    }
                 }
                 else
                 {

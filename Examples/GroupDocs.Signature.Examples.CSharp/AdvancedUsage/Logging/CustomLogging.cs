@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NET40
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -145,3 +146,4 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         }
     }
 }
+#endif

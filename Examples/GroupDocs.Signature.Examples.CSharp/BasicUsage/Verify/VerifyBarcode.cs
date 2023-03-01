@@ -34,6 +34,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 if (result.IsValid)
                 {
                     Console.WriteLine($"\nDocument {filePath} was verified successfully!");
+                    foreach (BarcodeSignature item in result.Succeeded)
+                    {
+                        Console.WriteLine($"\nValid signature is found with text: {item.Text} and type: {item.EncodeType.TypeName}.");
+                    }
                 }
                 else
                 {

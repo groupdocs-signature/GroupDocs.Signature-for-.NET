@@ -22,7 +22,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             string filePath = Constants.SAMPLE_PDF;
             string certificatePath = Constants.CertificatePfx;
 
-            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithDigitalAdvancedPdf", "digitallySignedTimeStamp.pdf");
+            string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithDigitalAdvancedPdfTimestamp", "digitallySignedTimeStamp.pdf");
 
             //Sign pdf document with digital signature and time stamp
             using (Signature signature = new Signature(filePath))

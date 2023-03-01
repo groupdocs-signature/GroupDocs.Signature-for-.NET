@@ -31,6 +31,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
                 if (result.IsValid)
                 {
                     Console.WriteLine($"\nDocument {filePath} was verified successfully!");
+                    foreach (DigitalSignature item in result.Succeeded)
+                    {
+                        Console.WriteLine($"\nValid signature is found.");
+                    }
                 }
                 else
                 {
