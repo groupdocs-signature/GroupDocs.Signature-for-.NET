@@ -18,7 +18,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             QuickStart.SetLicenseFromFile.Run();
             //QuickStart.SetLicenseFromStream.Run();
             //QuickStart.SetMeteredLicense.Run();
-
+            SignZIPArchiveDocuments.Run();
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
 

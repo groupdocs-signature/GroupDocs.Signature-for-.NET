@@ -39,7 +39,16 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 };
                 List<SignOptions> listOptions = new List<SignOptions>() { bcOptions1, qrOptions2 };
                 // sign document to file
-                SignResult signResult = signature.Sign(outputFilePath, listOptions);
+                // sign document to file
+                SignResult signResult = null;
+                try
+                {
+                    signResult = signature.Sign(outputFilePath, listOptions);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} documents(s).\nFile saved at {outputFilePath}.");
 
                 Console.WriteLine("\nList of successfully signed documents:");
