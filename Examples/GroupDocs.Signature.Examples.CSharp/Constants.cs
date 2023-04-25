@@ -1,11 +1,10 @@
 ﻿using System.IO;
-using System.Reflection;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
     internal static class Constants
     {
-        public const string LicensePath = @"c:\Worx\aspose\Docs\Conholdate.Total.Product.Family.lic"; //./Resources/GroupDocs.Signature.lic";
+        public const string LicensePath = @"./Resources/GroupDocs.Signature.lic";
         public const string SamplesPath = @"./Resources/SampleFiles";
         public const string ImagesPath = @"./Resources/SampleFiles/Images";
         public const string CertificatesPath = @"./Resources/SampleFiles/Certificates";

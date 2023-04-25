@@ -39,15 +39,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 };
                 List<SignOptions> listOptions = new List<SignOptions>() { bcOptions1, qrOptions2 };
                 // sign document to file
-                SignResult signResult = null;
-                try
-                {
-                    signResult = signature.Sign(outputFilePath, listOptions);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
+                SignResult signResult = signature.Sign(outputFilePath, listOptions);
+
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} documents(s).\nFile saved at {outputFilePath}.");
 
                 Console.WriteLine("\nList of successfully signed documents:");
@@ -55,6 +48,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 foreach (DocumentResultSignature document in signResult.Succeeded)
                 {
                     Console.WriteLine($"Document #{number++}: {document.FileName}. Processed: {document.ProcessingTime}, mls");
+                }
+                if (signResult.Failed.Count > 0)
+                {
+                    Console.WriteLine("\nList of failed documents:");
+                    number = 1;
+                    foreach (DocumentResultSignature document in signResult.Failed)
+                    {
+                        Console.WriteLine($"Document #{number++}: {document.FileName}. Processed: {document.ProcessingTime}, mls");
+                    }
                 }
             }
         }

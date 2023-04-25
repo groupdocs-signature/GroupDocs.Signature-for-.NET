@@ -51,6 +51,15 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 {
                     Console.WriteLine($"Document #{number++}: {document.FileName}. Processed: {document.ProcessingTime}, mls");
                 }
+                if (signResult.Failed.Count > 0)
+                {
+                    Console.WriteLine("\nList of failed documents:");
+                    number = 1;
+                    foreach (DocumentResultSignature document in signResult.Failed)
+                    {
+                        Console.WriteLine($"Document #{number++}: {document.FileName}. Processed: {document.ProcessingTime}, mls");
+                    }
+                }
             }
         }
     }
