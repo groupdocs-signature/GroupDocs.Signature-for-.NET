@@ -90,6 +90,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SignaturePreview\GenerateSignaturePreviewAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\Sign7ZIPArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignTARArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignZIPArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
@@ -241,6 +242,9 @@
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\signtest.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.7z">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

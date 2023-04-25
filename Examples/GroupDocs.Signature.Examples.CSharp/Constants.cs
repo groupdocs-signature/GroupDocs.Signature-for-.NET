@@ -115,6 +115,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample.zip");
         public static string SAMPLE_TAR
             => GetSampleFilePath("sample.tar");
+        public static string SAMPLE_7Z
+            => GetSampleFilePath("sample.7z");
         #endregion
 
         private static string GetSampleFilePath(string filePath)

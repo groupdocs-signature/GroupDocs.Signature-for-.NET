@@ -51,7 +51,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                         // apply custom appearance color
                         Background = Color.FromArgb(50, Color.LightGray),
                         // apply custom font settings
-                        FontFamilyName = "Courier",
+                        FontFamilyName = "Arial",
                         FontSize = 8
                     },
                     //

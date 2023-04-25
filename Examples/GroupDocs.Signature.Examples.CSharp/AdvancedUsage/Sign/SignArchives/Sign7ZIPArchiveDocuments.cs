@@ -8,36 +8,39 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-    public class SignTARArchiveDocuments
+    public class Sign7ZIPArchiveDocuments
     {
         /// <summary>
-        /// Sign TAR Documents with varios signature options
+        /// Sign ZIP Documents with varios signature options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SignTARArchiveDocuments : Sign TAR archive document with various signature options\n");
+            Console.WriteLine("[Example Advanced Usage] # Sign7ZIPArchiveDocuments : Sign 7z archive document with various signature options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_TAR;
+            string filePath = Constants.SAMPLE_ZIP;
             string fileName = Path.GetFileName(filePath);
-            string outputPath = System.IO.Path.Combine(Constants.OutputPath, "SignTARArchiveDocuments");
+            string outputPath = System.IO.Path.Combine(Constants.OutputPath, "Sign7ZIPArchiveDocuments");
             string outputFilePath = System.IO.Path.Combine(outputPath, fileName);
 
             using (Signature signature = new Signature(filePath))
             {
                 // create list of signature options
-                BarcodeSignOptions bcOptions1 = new BarcodeSignOptions("12345678", BarcodeTypes.Code128)
+                ImageSignOptions imOptions1 = new ImageSignOptions(Constants.ImageStamp)
                 {
-                    Left = 100,
-                    Top = 100
+                    VerticalAlignment = VerticalAlignment.Top,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Width = 100,
+                    Height = 40,
+                    Margin = new Padding(20)
                 };
                 QrCodeSignOptions qrOptions2 = new QrCodeSignOptions("12345678", QrCodeTypes.QR)
                 {
                     Left = 400,
                     Top = 400
                 };
-                List<SignOptions> listOptions = new List<SignOptions>() { bcOptions1, qrOptions2 };
+                List<SignOptions> listOptions = new List<SignOptions>() { imOptions1, qrOptions2 };
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, listOptions);
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} documents(s).\nFile saved at {outputFilePath}.");

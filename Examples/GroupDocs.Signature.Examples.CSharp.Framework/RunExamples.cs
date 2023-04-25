@@ -494,6 +494,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             //CustomLogging.Run();
             #endregion
 
+            #region Sign the different archive file types
+            SignZIPArchiveDocuments.Run();
+            SignTARArchiveDocuments.Run();
+            Sign7ZIPArchiveDocuments.Run();
+            #endregion
+
             #endregion // Advanced Usage
 
             Console.WriteLine();
