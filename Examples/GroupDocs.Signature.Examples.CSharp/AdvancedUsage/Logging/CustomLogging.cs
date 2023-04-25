@@ -1,4 +1,4 @@
-﻿#if !NET40
+﻿#if !NET462
 using System;
 using System.IO;
 using System.Net.Http;

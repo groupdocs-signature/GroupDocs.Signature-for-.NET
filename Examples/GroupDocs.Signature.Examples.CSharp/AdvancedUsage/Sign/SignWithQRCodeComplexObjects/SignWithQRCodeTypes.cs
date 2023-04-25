@@ -30,31 +30,56 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // create HIBC LIC QR-Code options
                 var hibcLic_QR = new QrCodeSignOptions("A123PROD30917/75#422011907#GP293", QrCodeTypes.HIBCLICQR)
                 {
-                    Left = 100,
-                    Top = 100,
+                    Left = 1,
+                    Top = 1,
                     ReturnContent = true,
                     ReturnContentType = FileType.PNG
                 };
                 // create HIBC LIC Aztec Code options
                 var hibcLic_AZ = new QrCodeSignOptions("A123PROD30917/75#422011907#GP293", QrCodeTypes.HIBCLICAztec)
                 {
-                    Left = 400,
-                    Top = 100,
+                    Left = 1,
+                    Top = 200,
                     ReturnContent = true,
                     ReturnContentType = FileType.PNG
                 };
                 // create HIBC LIC Aztec Code options
                 var hibcLic_DM = new QrCodeSignOptions("A123PROD30917/75#422011907#GP293", QrCodeTypes.HIBCLICDataMatrix)
                 {
-                    Left = 200,
-                    Top = 300,
+                    Left = 1,
+                    Top = 400,
                     ReturnContent = true,
                     ReturnContentType = FileType.PNG
                 };
-
+                // create HIBC PAS QR-Code options
+                var hibcPas_QR = new QrCodeSignOptions("+/EAH783/Z34H159", QrCodeTypes.HIBCPASQR)
+                {
+                    Left = 400,
+                    Top = 1,
+                    ReturnContent = true,
+                    ReturnContentType = FileType.PNG
+                };
+                // create HIBC PAS Aztec Code options
+                var hibcPas_AZ = new QrCodeSignOptions("+/EAH783/Z34H159", QrCodeTypes.HIBCPASAztec)
+                {
+                    Left = 400,
+                    Top = 200,
+                    ReturnContent = true,
+                    ReturnContentType = FileType.PNG
+                };
+                // create HIBC PAS Aztec Code options
+                var hibcPas_DM = new QrCodeSignOptions("+/EAH783/Z34H159", QrCodeTypes.HIBCPASDataMatrix)
+                {
+                    Left = 400,
+                    Top = 400,
+                    ReturnContent = true,
+                    ReturnContentType = FileType.PNG
+                };
+                // compose list of options
                 var listOptions = new List<SignOptions>()
                 {
-                    hibcLic_QR, hibcLic_AZ, hibcLic_DM
+                    hibcLic_QR, hibcLic_AZ, hibcLic_DM,
+                    hibcPas_QR, hibcPas_AZ, hibcPas_DM
                 };
                 // sign document to file with list of all specific QR-Codes
                 var signResult = signature.Sign(destinFilePath, listOptions);

@@ -108,6 +108,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample_qrcode_mailmark2d_type09.pdf");
         public static string SAMPLE_PDF_QRCODE_HIBCLICMAILMARK2DTYPE29_OBJECT
             => GetSampleFilePath("sample_qrcode_mailmark2d_type29.pdf");
+        public static string SAMPLE_PDF_QRCODE_HIBCPASDATA_OBJECT
+            => GetSampleFilePath("sample_qrcode_hibcpasdata.pdf");
+        // Archive Documents
+        public static string SAMPLE_ZIP
+            => GetSampleFilePath("sample.zip");
+        public static string SAMPLE_TAR
+            => GetSampleFilePath("sample.tar");
         #endregion
 
         private static string GetSampleFilePath(string filePath)

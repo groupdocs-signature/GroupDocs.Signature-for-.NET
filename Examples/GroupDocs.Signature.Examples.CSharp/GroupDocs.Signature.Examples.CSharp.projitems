@@ -90,6 +90,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SignaturePreview\GenerateSignaturePreviewAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignTARArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignZIPArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithImageAppearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithPdfTextAnnotation.cs" />
@@ -125,6 +127,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICMailmark2DObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICPrimaryDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICSecondaryDataObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCPASObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeMailmark2DObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeEncryptedObject.cs" />
@@ -247,9 +251,17 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.webp" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.tar">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_formfields.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -302,6 +314,9 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_cmbdata.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_prmdata.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibclic_secdata.pdf" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_hibcpasdata.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type07.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type09.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_qrcode_mailmark2d_type29.pdf" />

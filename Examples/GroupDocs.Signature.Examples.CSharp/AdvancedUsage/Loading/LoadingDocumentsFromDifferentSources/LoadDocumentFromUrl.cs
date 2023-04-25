@@ -1,6 +1,10 @@
 ﻿using System;
 using System.IO;
+#if NETCOREAPP || NET6_0_OR_GREATER
 using System.Net.Http;
+#else
+using System.Net;
+#endif
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 { 
@@ -50,7 +54,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
             
         }
-                
+
+#if NETCOREAPP || NET6_0_OR_GREATER
         private static Stream GetRemoteFile(string url)
         {
             HttpClient client = new HttpClient();
@@ -58,8 +63,28 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             using (Stream stream = client.GetStreamAsync(url).Result)
             {
                 stream.CopyTo(result);
-            }   
+            }
             return result;
         }
+#else
+        private static Stream GetRemoteFile(string url)
+        {
+            WebRequest request = WebRequest.Create(url);
+
+            using (WebResponse response = request.GetResponse())
+                return GetFileStream(response);
+        }
+
+        private static Stream GetFileStream(WebResponse response)
+        {
+            MemoryStream fileStream = new MemoryStream();
+
+            using (Stream responseStream = response.GetResponseStream())
+                responseStream.CopyTo(fileStream);
+
+            fileStream.Position = 0;
+            return fileStream;
+        }
+#endif
     }
 }
