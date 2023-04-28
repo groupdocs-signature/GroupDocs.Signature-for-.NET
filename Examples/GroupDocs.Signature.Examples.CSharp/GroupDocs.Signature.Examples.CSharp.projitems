@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteTextAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Delete\DeleteTextById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GeneratePreviewAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetArchiveInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetCertificateInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentProcessHistoryAdvanced.cs" />
