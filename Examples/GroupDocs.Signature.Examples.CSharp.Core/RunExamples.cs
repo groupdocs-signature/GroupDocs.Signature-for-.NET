@@ -502,6 +502,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             Sign7ZIPArchiveDocuments.Run();
             #endregion
 
+            #region Search for the different signatures within the archives
+            SearchWithinZIPArchiveDocuments.Run();
+            SearchWithinTARArchiveDocuments.Run();
+            SearchWithin7zArchiveDocuments.Run();
+            #endregion
+
             #endregion // Advanced Usage
 
             Console.WriteLine();

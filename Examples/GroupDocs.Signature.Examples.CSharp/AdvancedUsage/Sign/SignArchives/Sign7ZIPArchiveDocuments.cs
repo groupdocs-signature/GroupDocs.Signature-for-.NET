@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Console.WriteLine("[Example Advanced Usage] # Sign7ZIPArchiveDocuments : Sign 7z archive document with various signature options\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_ZIP;
+            string filePath = Constants.SAMPLE_7Z;
             string fileName = Path.GetFileName(filePath);
             string outputPath = System.IO.Path.Combine(Constants.OutputPath, "Sign7ZIPArchiveDocuments");
             string outputFilePath = System.IO.Path.Combine(outputPath, fileName);
