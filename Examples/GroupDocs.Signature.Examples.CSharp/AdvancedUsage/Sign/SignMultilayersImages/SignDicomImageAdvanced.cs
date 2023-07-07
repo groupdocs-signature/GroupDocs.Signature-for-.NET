@@ -21,7 +21,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DICOM;
             string fileName = Path.GetFileName(filePath);
-            string imagePath = Constants.ImageHandwrite;
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignDicomImageAdvanced", fileName);
 
