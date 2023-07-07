@@ -461,7 +461,6 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             VerifyWithExceptionHandling.Run();
 
-
             #region Updating document signatures
             UpdateTextAfterSearch.Run();
             UpdateTextById.Run();
