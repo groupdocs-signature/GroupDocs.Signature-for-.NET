@@ -11,8 +11,6 @@ namespace GroupDocs.Signature.Examples.CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
-            License license = new License();
-            license.SetLicense(@"C:\Licenses\GroupDocs\Total\Subscription\Valid\2023\Conholdate.Total.Product.Family.lic");
 
             // Please uncomment the example you want to try out
             #region Quick Start
