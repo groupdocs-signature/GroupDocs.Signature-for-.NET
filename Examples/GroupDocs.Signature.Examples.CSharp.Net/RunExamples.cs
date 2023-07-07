@@ -355,6 +355,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithRadialGradientBrush.Run();
             #endregion
 
+            #region Sign multi-layer image documents
+            SignDicomImageAdvanced.Run();
+            #endregion
+
             #region Search signed documents for different signature types with additional options
 
             //Search document for Text signature with applying specific options

@@ -21,7 +21,6 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_DICOM;
             string fileName = Path.GetFileName(filePath);
-            string imagePath = Constants.ImageHandwrite;
 
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignDicomImageAdvanced", fileName);
 
@@ -39,12 +38,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);
                 Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} signature(s).\nFile saved at {outputFilePath}.");
-
                 Console.WriteLine("\nList of newly created signatures:");
-                int number = 1;
                 foreach (BaseSignature temp in signResult.Succeeded)
                 {
-                    Console.WriteLine($"Signature #{number++}: Type: {temp.SignatureType} Id:{temp.SignatureId}, Location: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
+                    Console.WriteLine($"{temp.SignatureType} at page #{temp.PageNumber}: Id:{temp.SignatureId}.");
                 }
             }
         }
