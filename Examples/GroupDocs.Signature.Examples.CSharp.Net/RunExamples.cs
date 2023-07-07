@@ -409,6 +409,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             SearchWithExceptionHandling.Run();
+
+            // search certificate files for the particular string
+            SearchCertificateAdvanced.Run();
+
+            // search multi-layer images for the signatures
+            SearchForMultiLayerImagesAdvanced.Run();
             #endregion // Search signed documents for different signature types with additional options
 
             #region Search for QR-Code Encryption, custom encryption, custom serialization            

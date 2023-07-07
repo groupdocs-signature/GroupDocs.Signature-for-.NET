@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Reflection;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -54,6 +55,13 @@ namespace GroupDocs.Signature.Examples.CSharp
             => GetSampleFilePath("sample.png");
         public static string SAMPLE_WEBP
             => GetSampleFilePath("sample.webp");
+
+        // Multi-layer images
+        public static string SAMPLE_DICOM
+            => GetSampleFilePath("sample.dcm");
+        public static string SAMPLE_DICOM_SIGNED
+            => GetSampleFilePath("sample_signed.dcm");
+
         //Metadata
         public static string SAMPLE_PDF_SIGNED_METADATA => GetSampleFilePath("sample_signed_metadata.pdf");
         public static string SAMPLE_PRESENTATION_SIGNED_METADATA => GetSampleFilePath("sample_signed_metadata.pptx");
