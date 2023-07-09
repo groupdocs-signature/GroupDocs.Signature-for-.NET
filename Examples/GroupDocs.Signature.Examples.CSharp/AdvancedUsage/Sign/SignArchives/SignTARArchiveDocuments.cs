@@ -55,7 +55,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     number = 1;
                     foreach (DocumentResultSignature document in signResult.Failed)
                     {
-                        Console.WriteLine($"Document #{number++}: {document.FileName}. Processed: {document.ProcessingTime}, mls");
+                        Console.WriteLine($"ERROR in Document #{number++}-{document.FileName}: {document.ErrorMessage}, mls");
                     }
                 }
             }

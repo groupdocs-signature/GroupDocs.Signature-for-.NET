@@ -27,12 +27,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 QrCodeSignOptions options = new QrCodeSignOptions("Patient #36363393. R: No-Issues")
                 {
-                    // set signature position 
-                    Left = 10,
-                    Top = 10,
-                    // set signature rectangle
-                    Width = 200,
-                    Height = 200
+                    // set QR area
+                    Width = 100,
+                    Height = 100,
+                    // put right bottom corner
+                    VerticalAlignment = VerticalAlignment.Bottom,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    Margin = new Padding() { Right = 5, Left = 5 }
                 };
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, options);
