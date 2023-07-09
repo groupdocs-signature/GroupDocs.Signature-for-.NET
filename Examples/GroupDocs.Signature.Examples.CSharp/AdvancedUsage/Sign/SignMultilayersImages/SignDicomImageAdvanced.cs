@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Drawing;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
