@@ -40,7 +40,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 foreach (QrCodeSignature qrSignature in signatures)
                 {
                     // due to multi-layers each signature will contain the page number
-                    Console.Write($"Found Image signature at page {qrSignature.PageNumber} and id# {qrSignature.SignatureId}.");
+                    Console.Write($"Found Qr-Code {qrSignature.Text} signature at page {qrSignature.PageNumber} and id# {qrSignature.SignatureId}.");
                     Console.WriteLine($"Location at {qrSignature.Left}-{qrSignature.Top}. Size is {qrSignature.Width}x{qrSignature.Height}.");
                 }
             }
