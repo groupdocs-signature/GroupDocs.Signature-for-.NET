@@ -30,7 +30,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Document Preview
 
             GetDocumentInfo.Run();
+
             GeneratePreview.Run();
+
             GetDocumentProcessHistory.Run();
             #endregion
 
@@ -39,10 +41,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign document with different signature types
-
+            
             //Sign document with text signature
             SignWithText.Run();
-
+            
             //Sign document with image signature
             SignWithImage.Run();
 

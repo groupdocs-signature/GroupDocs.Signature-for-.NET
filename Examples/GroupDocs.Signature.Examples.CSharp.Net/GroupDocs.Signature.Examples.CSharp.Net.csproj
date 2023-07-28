@@ -8,7 +8,7 @@
   <Import Project="..\GroupDocs.Signature.Examples.CSharp\GroupDocs.Signature.Examples.CSharp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Signature" Version="23.6.0" />
+    <PackageReference Include="GroupDocs.Signature" Version="23.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

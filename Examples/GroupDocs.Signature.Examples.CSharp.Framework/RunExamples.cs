@@ -31,7 +31,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Document Preview
 
             GetDocumentInfo.Run();
+
             GeneratePreview.Run();
+
             GetDocumentProcessHistory.Run();
             #endregion
 
