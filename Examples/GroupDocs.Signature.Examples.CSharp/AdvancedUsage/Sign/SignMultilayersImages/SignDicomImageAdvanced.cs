@@ -54,16 +54,101 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
 
             //Get signed DICOM image info
-            using (Signature signature = new Signature(outputFilePath))
+            DocumentInfo(outputFilePath);
+
+            //Search for signatures at signed DICOM
+            Search(outputFilePath);
+
+            //Verify signed DICOM
+            Verify(outputFilePath);
+
+            //Preview signed DICOM
+            Preview(outputFilePath);
+        }
+
+        private static void DocumentInfo(string filePath) 
+        {
+            //Get signed DICOM image info
+            using (Signature signature = new Signature(filePath))
             {
-                Console.WriteLine($"\nList of DICOM xmp metadata:");
                 IDocumentInfo signedDocumentInfo = signature.GetDocumentInfo();
+
+                //Print XMP data
+                Console.WriteLine($"\nList of DICOM xmp metadata:");
                 foreach (var item in signedDocumentInfo.MetadataSignatures)
                 {
                     Console.WriteLine(item.ToString());
                 }
-                
             }
         }
+
+        private static void Verify(string filePath) 
+        {
+            // verify document signatures
+            using (Signature signature = new Signature(filePath))
+            {
+                QrCodeVerifyOptions options = new QrCodeVerifyOptions()
+                {
+                    AllPages = true, 
+                    Text = "Patient #36363393",
+                    MatchType = TextMatchType.Contains
+                };
+                
+                VerificationResult result = signature.Verify(options);
+                if (result.IsValid)
+                {
+                    Console.WriteLine($"\nDICOM {filePath} has {result.Succeeded.Count} successfully verified signatures!");
+                }
+                else
+                {
+                    Helper.WriteError($"\nDocument {filePath} failed verification process.");
+                }
+            }
+        }
+        
+        private static void Search(string filePath) 
+        {
+            // search for signatures in document
+            using (Signature signature = new Signature(filePath))
+            {
+                List<QrCodeSignature> signatures = signature.Search<QrCodeSignature>(SignatureType.QrCode);
+                Console.WriteLine($"\nDICOM ['{filePath}'] contains following signatures.");
+                foreach (var QrCodeSignature in signatures)
+                {
+                    Console.WriteLine($"QRCode signature found at page {QrCodeSignature.PageNumber} with type {QrCodeSignature.EncodeType.TypeName} and text {QrCodeSignature.Text}");
+                }
+            }
+        }
+    
+        private static void Preview(string filePath) 
+        {
+            // generate preview
+            using (Signature signature = new Signature(filePath))
+            {
+                PreviewOptions previewOption = new PreviewOptions(CreatePageStream, ReleasePageStream)
+                {
+                    PreviewFormat = PreviewOptions.PreviewFormats.PNG,
+                };
+                signature.GeneratePreview(previewOption);
+                Console.WriteLine($"\nDICOM ['{filePath}'] pages previews were successfully generated!");
+            }
+        }
+
+        private static Stream CreatePageStream(int pageNumber)
+        {
+            string imageFilePath = Path.Combine(Constants.OutputPath, "SignDicomImageAdvanced", "preview-" + pageNumber.ToString() + ".jpg");
+            var folder = Path.GetDirectoryName(imageFilePath);
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            return new FileStream(imageFilePath, FileMode.Create);
+        }
+
+        private static void ReleasePageStream(int pageNumber, Stream pageStream)
+        {
+            pageStream.Dispose();
+        }
+
     }
 }
