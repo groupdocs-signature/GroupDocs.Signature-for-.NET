@@ -108,11 +108,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithPercents.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignaturePositions\SignWithStretchMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignMultilayersImages\SignDicomImageAdvanced.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithAdvancedBarAndQRCodeTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithBarcodeComplexObjects\SignWithBarcodeTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvancedPdf.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfCertificate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfTimestamp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfAppearance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedSpreadSheets.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedCombobox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithFormFieldsAdvanced\SignPdfWithFormFieldAdvancedRadio.cs" />
@@ -131,11 +133,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SIgnWithMetadataSecureCustom\SignWithMetadataEncryptedText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithOrdering.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeAdvanced.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICCombinedDataObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICMailmark2DObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICPrimaryDataObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCLICSecondaryDataObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeHIBCPASObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeComplexObjects\SignWithQRCodeMailmark2DObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomEncryptionObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithQRCodeSecureCustom\SignWithQRCodeCustomSerializationObject.cs" />
@@ -175,6 +172,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateQRCodeById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateTextAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateTextById.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\Verify7zArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\VerifyTARArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\VerifyZIPArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyDigitalAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyQRCodeAdvanced.cs" />

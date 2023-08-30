@@ -87,7 +87,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     Helper.WriteError("\nThis example requires license to properly run. " +
                                   "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                                   "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +
-                                  "\nLear how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
+                                  "\nLearn how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
                 }
             }
         }

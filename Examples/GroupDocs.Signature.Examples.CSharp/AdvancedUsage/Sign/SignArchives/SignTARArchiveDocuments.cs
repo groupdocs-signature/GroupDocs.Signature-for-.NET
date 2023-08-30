@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignTARArchiveDocuments
     {
         /// <summary>
-        /// Sign TAR Documents with varios signature options
+        /// Sign TAR Documents with various signature options
         /// </summary>
         public static void Run()
         {

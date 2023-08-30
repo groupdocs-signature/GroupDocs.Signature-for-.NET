@@ -11,24 +11,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchWithin7zArchiveDocuments
     {
         /// <summary>
-        /// Search withint the 7z archive documents with varios search options
+        /// Search within the 7z archive documents with various search options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SearchWithin7zArchiveDocuments : Search 7z archive document for varios signatures\n");
+            Console.WriteLine("[Example Advanced Usage] # SearchWithin7zArchiveDocuments : Search 7z archive document for various signatures\n");
 
             // The path to the archive with signed documents
             string filePath = Constants.SAMPLE_SIGNED_7Z;
-            string fileName = Path.GetFileName(filePath);
 
             using (Signature signature = new Signature(filePath))
             {
-                // create list of signature options
+                // create list of search options
                 ImageSearchOptions imOptions = new ImageSearchOptions();
                 QrCodeSearchOptions qrOptions = new QrCodeSearchOptions(QrCodeTypes.QR);
-
-                // setup search options
                 List<SearchOptions> listOptions = new List<SearchOptions>() { imOptions, qrOptions };
 
                 // search archive for documents

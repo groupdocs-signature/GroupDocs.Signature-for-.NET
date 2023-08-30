@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
-
+ 
             // Please uncomment the example you want to try out
             #region Quick Start
 
@@ -30,9 +30,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Document Preview
 
             GetDocumentInfo.Run();
-
             GeneratePreview.Run();
-
             GetDocumentProcessHistory.Run();
             #endregion
 
@@ -41,10 +39,10 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign document with different signature types
-            
+
             //Sign document with text signature
             SignWithText.Run();
-            
+
             //Sign document with image signature
             SignWithImage.Run();
 
@@ -222,11 +220,11 @@ namespace GroupDocs.Signature.Examples.CSharp
             GetDocumentProcessHistoryAdvanced.Run();
             #endregion
 
-            #region Working with Certificate document Info
+            #region Working with Certificate documents
             GetCertificateInfoAdvanced.Run();
             #endregion
 
-            #region Working with Archive document Info
+            #region Working with Archive documents
             GetArchiveInfoAdvanced.Run();
             #endregion
 
@@ -255,12 +253,15 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign Pdf document with digital certificate and custom appearance settings
             SignWithDigitalAdvancedPdfAppearance.Run();
 
+            //Sign SpreadSheets document with digital signature
+            SignWithDigitalAdvancedSpreadSheets.Run();
+
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
 
             //Sign document with image from the base64 string
             SignWithBase64ImageSample.Run();
-            
+
             //Sign document with image from the base64 string created in SignImageOptions
             SignWithBase64ImageAdvanced.Run();
 
@@ -280,6 +281,10 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // Sign Spreadsheet document with XAdes signature
             SignWithXAdESTypes.Run();
+
+            // Sign Spreadsheet document with advanced Barcodes and QR-Codes
+            SignWithAdvancedBarAndQRCodeTypes.Run();
+
             #endregion
 
             #region Sign with further result analysis
@@ -297,6 +302,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #endregion
 
             #region Sign with complex QR Code types
+            SignWithQRCodeMailmark2DObject.Run();
             SignWithQRCodeTypes.Run();
             #endregion
 
@@ -419,6 +425,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // search multi-layer images for the signatures
             SearchForMultiLayerImagesAdvanced.Run();
+
             #endregion // Search signed documents for different signature types with additional options
 
             #region Search for QR-Code Encryption, custom encryption, custom serialization            
@@ -518,6 +525,12 @@ namespace GroupDocs.Signature.Examples.CSharp
             SearchWithinZIPArchiveDocuments.Run();
             SearchWithinTARArchiveDocuments.Run();
             SearchWithin7zArchiveDocuments.Run();
+            #endregion
+
+            #region Verify different documents packed to archives
+            VerifyZIPArchiveDocuments.Run();
+            VerifyTARArchiveDocuments.Run();
+            Verify7zArchiveDocuments.Run();
             #endregion
 
             #endregion // Advanced Usage

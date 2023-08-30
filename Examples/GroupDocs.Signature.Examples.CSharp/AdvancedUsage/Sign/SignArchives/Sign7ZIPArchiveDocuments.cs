@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class Sign7ZIPArchiveDocuments
     {
         /// <summary>
-        /// Sign ZIP Documents with varios signature options
+        /// Sign ZIP Documents with various signature options
         /// </summary>
         public static void Run()
         {

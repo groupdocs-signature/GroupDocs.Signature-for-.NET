@@ -27,7 +27,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             using (Signature signature = new Signature(filePath))
             {
                 // setup options with GS1CompositeBar 
-                var bc_GS1CompositeBar = new BarcodeSignOptions("(01)03212345678906/(21)A1B2C3D4E5F6G7H8", BarcodeTypes.GS1CompositeBar)
+                var bc_GS1CompositeBar = new BarcodeSignOptions("(01)03212345678906|(21)A1B2C3D4E5F6G7H8", BarcodeTypes.GS1CompositeBar)
                 {
                     Top = 100,
                     ReturnContent = true,

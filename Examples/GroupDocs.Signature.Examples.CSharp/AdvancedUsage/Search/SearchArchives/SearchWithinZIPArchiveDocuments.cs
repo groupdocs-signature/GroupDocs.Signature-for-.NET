@@ -11,24 +11,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SearchWithinZIPArchiveDocuments
     {
         /// <summary>
-        /// Search withint the ZIP archive documents with varios search options
+        /// Search within the ZIP archive documents with various search options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SearchWithinZIPArchiveDocuments : Search ZIP archive document for varios signatures\n");
+            Console.WriteLine("[Example Advanced Usage] # SearchWithinZIPArchiveDocuments : Search ZIP archive document for various signatures\n");
 
             // The path to the archive with signed documents
             string filePath = Constants.SAMPLE_SIGNED_ZIP;
-            string fileName = Path.GetFileName(filePath);
             
             using (Signature signature = new Signature(filePath))
             {
-                // create list of signature options
+                // create list of search options
                 BarcodeSearchOptions bcOptions = new BarcodeSearchOptions(BarcodeTypes.Code128);
                 QrCodeSearchOptions qrOptions = new QrCodeSearchOptions(QrCodeTypes.QR);
-
-                // setup search options
                 List<SearchOptions> listOptions = new List<SearchOptions>() { bcOptions, qrOptions };
 
                 // search archive for documents

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 {
@@ -6,35 +8,43 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-    public class VerifyBarcodeAdvanced
+    public class Verify7zArchiveDocuments
     {
         /// <summary>
-        /// Verify document with Barcode signature with applying specific options
-        /// Please be aware that this example works only on licensed product due to limitation with Barcode processing
+        /// Verify documents at the 7z archive documents with various options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # VerifyBarcodeAdvanced : Verify document with Barcode signature with applying specific options\n");
+            Console.WriteLine("[Example Advanced Usage] # Verify7zArchiveDocuments : Verify signatures at document packed to 7z archive\n");
 
-            // The path to the documents directory.
-            string filePath = Constants.SAMPLE_SIGNED_MULTI;
+            // The path to the archive with signed documents
+            string filePath = Constants.SAMPLE_SIGNED_7Z;
+
             using (Signature signature = new Signature(filePath))
             {
-                BarcodeVerifyOptions options = new BarcodeVerifyOptions()
+                // create list of verification options
+                BarcodeVerifyOptions barOptions = new BarcodeVerifyOptions()
                 {
-                    AllPages = true, // this value is set by default
                     Text = "12345",
                     MatchType = TextMatchType.Contains
                 };
+                QrCodeVerifyOptions qrOptions = new QrCodeVerifyOptions()
+                {
+                    Text = "12345",
+                    MatchType = TextMatchType.Contains
+                };
+                List<VerifyOptions> listOptions = new List<VerifyOptions>() { barOptions, qrOptions };
 
-                // verify document signatures
-                VerificationResult result = signature.Verify(options);
+                // Verify documents at the archive
+                VerificationResult result = signature.Verify(listOptions);
+
+                // check the result                
                 if (result.IsValid)
                 {
                     Console.WriteLine("\nDocument was verified successfully!");
                     Console.WriteLine("\nList of Succeeded signatures:");
-                    foreach(BaseSignature temp in result.Succeeded)
+                    foreach (BaseSignature temp in result.Succeeded)
                     {
                         Console.WriteLine($" -#{temp.SignatureId}-{temp.SignatureType} at: {temp.Left}x{temp.Top}. Size: {temp.Width}x{temp.Height}");
                     }
