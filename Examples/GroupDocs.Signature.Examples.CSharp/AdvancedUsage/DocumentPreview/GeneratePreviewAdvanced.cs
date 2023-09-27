@@ -33,9 +33,11 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
         }
 
-        private static Stream CreatePageStream(int pageNumber)
+        //Since 23.09 there is possibility to use extended preview page data
+        private static Stream CreatePageStream(PreviewPageData pageData)
         {
-            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewHideSignatures", "image-" + pageNumber.ToString() + ".jpg");
+            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewHideSignatures",
+                $"{pageData.FileName}-page-{pageData.PageNumber}.{pageData.PreviewFormat.ToString().ToLower()}");
             string folder = Path.GetDirectoryName(imageFilePath);
             if (!Directory.Exists(folder))
             {
@@ -44,10 +46,12 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             return new FileStream(imageFilePath, FileMode.Create);
         }
 
-        private static void ReleasePageStream(int pageNumber, Stream pageStream)
+        //Since 23.09 there is possibility to use extended preview page data
+        private static void ReleasePageStream(PreviewPageData pageData, Stream pageStream)
         {
             pageStream.Dispose();
-            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewHideSignatures", "image-" + pageNumber.ToString() + ".jpg");
+            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewHideSignatures", 
+                $"{pageData.FileName}-page-{pageData.PageNumber}.{pageData.PreviewFormat.ToString().ToLower()}");
             Console.WriteLine($"Image file {imageFilePath} is ready for preview");
         }
     }

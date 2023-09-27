@@ -7,7 +7,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature;
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
-    
+
     public class SignDicomImageAdvanced
     {
         /// <summary>
@@ -28,6 +28,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 QrCodeSignOptions options = new QrCodeSignOptions("Patient #36363393. R: No-Issues")
                 {
+                    AllPages = true,
                     // set QR area
                     Width = 100,
                     Height = 100,
@@ -66,7 +67,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             Preview(outputFilePath);
         }
 
-        private static void DocumentInfo(string filePath) 
+        private static void DocumentInfo(string filePath)
         {
             //Get signed DICOM image info
             using (Signature signature = new Signature(filePath))
@@ -82,18 +83,18 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
         }
 
-        private static void Verify(string filePath) 
+        private static void Verify(string filePath)
         {
             // verify document signatures
             using (Signature signature = new Signature(filePath))
             {
                 QrCodeVerifyOptions options = new QrCodeVerifyOptions()
                 {
-                    AllPages = true, 
+                    AllPages = true,
                     Text = "Patient #36363393",
                     MatchType = TextMatchType.Contains
                 };
-                
+
                 VerificationResult result = signature.Verify(options);
                 if (result.IsValid)
                 {
@@ -105,8 +106,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
             }
         }
-        
-        private static void Search(string filePath) 
+
+        private static void Search(string filePath)
         {
             // search for signatures in document
             using (Signature signature = new Signature(filePath))
@@ -119,8 +120,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 }
             }
         }
-    
-        private static void Preview(string filePath) 
+
+        private static void Preview(string filePath)
         {
             // generate preview
             using (Signature signature = new Signature(filePath))

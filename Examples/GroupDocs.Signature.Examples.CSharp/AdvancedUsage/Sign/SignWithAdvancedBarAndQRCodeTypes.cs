@@ -37,10 +37,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     ReturnContent = true,
                     ReturnContentType = FileType.PNG
                 };
+
+                // create GS1DotCode BarCode options
+                var HanXinCodeOptions = new QrCodeSignOptions("(01)04912345123459(15)970331(30)128(10)ABC123", QrCodeTypes.HanXin)
+                {
+                    Left = 201,
+                    Top = 1,
+                    Height = 200,
+                    Width = 200,
+                    ReturnContent = true,
+                    ReturnContentType = FileType.PNG
+                };
                 // compose list of options
                 var listOptions = new List<SignOptions>()
                 {
-                    GS1DotCodeOptions
+                    GS1DotCodeOptions, HanXinCodeOptions
                 };
                 // sign document to file with list of all specific QR-Codes
                 var signResult = signature.Sign(destinFilePath, listOptions);
@@ -49,15 +60,31 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
                 Console.WriteLine("\nList of newly created signatures:");
                 int number = 1;
-                foreach (BarcodeSignature item in signResult.Succeeded)
+                foreach (var item in signResult.Succeeded)
                 {
-                    string outputImagePath = System.IO.Path.Combine(outputPath, $"image{number}{item.Format.Extension}");
-
-                    using (FileStream fs = new FileStream(outputImagePath, FileMode.Create))
+                    switch (item)
                     {
-                        fs.Write(item.Content, 0, item.Content.Length);
+                        case BarcodeSignature barcodeSignature:
+                            string barOutputImagePath = System.IO.Path.Combine(outputPath, $"image{number}{barcodeSignature.Format.Extension}");
+                            using (FileStream fs = new FileStream(barOutputImagePath, FileMode.Create))
+                            {
+                                fs.Write(barcodeSignature.Content, 0, barcodeSignature.Content.Length);
+                            }
+                            number++;
+                            break;
+                        case QrCodeSignature qrCodeSignature:
+                            string qrOutputImagePath = System.IO.Path.Combine(outputPath, $"image{number}{qrCodeSignature.Format.Extension}");
+                            using (FileStream fs = new FileStream(qrOutputImagePath, FileMode.Create))
+                            {
+                                fs.Write(qrCodeSignature.Content, 0, qrCodeSignature.Content.Length);
+                            }
+                            number++;
+                            break;
+                        default:
+                            break;
                     }
-                    number++;
+
+
                 }
             }
         }

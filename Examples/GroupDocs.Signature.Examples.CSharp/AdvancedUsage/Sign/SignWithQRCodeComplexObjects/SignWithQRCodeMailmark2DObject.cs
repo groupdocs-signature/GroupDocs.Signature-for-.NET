@@ -24,7 +24,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
             using (Signature signature = new Signature(filePath))
             {
-                // create HIBC LIC Primary data object
+                // create Mailmark2D data object
                 Mailmark2D mailmark2D = new Mailmark2D()
                 {
                     UPUCountryID = "JGB ",
@@ -51,7 +51,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 };
 
                 // sign document to file
-                signature.Sign(outputFilePath, options);
+                var signResult = signature.Sign(outputFilePath, options);
             }
 
             Console.WriteLine("\nSource document signed successfully with Mailmark2D.\nFile saved at " + outputFilePath);

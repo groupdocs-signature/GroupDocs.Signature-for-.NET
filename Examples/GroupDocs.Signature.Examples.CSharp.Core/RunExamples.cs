@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.Examples.CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
- 
+
             // Please uncomment the example you want to try out
             #region Quick Start
 
@@ -303,6 +303,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Sign with complex QR Code types
             SignWithQRCodeMailmark2DObject.Run();
+            SignWithQRCodeHIBCLICCombinedDataObject.Run();
             SignWithQRCodeTypes.Run();
             #endregion
 

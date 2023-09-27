@@ -303,6 +303,7 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             #region Sign with complex QR Code types
             SignWithQRCodeMailmark2DObject.Run();
+            SignWithQRCodeHIBCLICCombinedDataObject.Run();
             SignWithQRCodeTypes.Run();
             #endregion
 
