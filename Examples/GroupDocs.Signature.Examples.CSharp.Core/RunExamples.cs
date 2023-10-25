@@ -21,8 +21,6 @@ namespace GroupDocs.Signature.Examples.CSharp
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
 
-            SearchCertificateAdvanced.Run();
-
             #region Basic Usage
 
             #region Common
