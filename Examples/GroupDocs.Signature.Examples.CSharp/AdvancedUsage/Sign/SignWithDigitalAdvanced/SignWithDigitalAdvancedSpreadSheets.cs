@@ -33,11 +33,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 };
 
                 //Create digital signing options
-                DigitalSignOptions options = new DigitalSignOptions(certificatePath)
+                DigitalSignOptions options = new DigitalSignOptions()
                 {
-                    // certificate password
-                    Password = password,
-                    // Setting document-specific options
                     Signature = digitalSignature,
                     // Page position
                     VerticalAlignment = VerticalAlignment.Bottom,
