@@ -256,6 +256,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign SpreadSheets document with digital signature
             SignWithDigitalAdvancedSpreadSheets.Run();
 
+            //Sign document with digital signatures got from one of certificate stores
+            SignWithDigitalUsingCertificateStore.Run();
+
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
 
@@ -284,7 +287,8 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             // Sign Spreadsheet document with advanced Barcodes and QR-Codes
             SignWithAdvancedBarAndQRCodeTypes.Run();
-
+            // Sign Spreadsheet document and VBA Project in it
+            SignSpreadsheetsVBAProject.Run();
             #endregion
 
             #region Sign with further result analysis

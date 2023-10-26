@@ -45,6 +45,8 @@ namespace GroupDocs.Signature.Examples.CSharp
         //Spreadsheets
         public static string SAMPLE_SPREADSHEET
             => GetSampleFilePath("sample.xlsx");
+        public static string SAMPLE_SPREADSHEET_MACRO_SUPPORT
+            => GetSampleFilePath("sample.xlsm");
 
         // Presentations
         public static string SAMPLE_PRESENTATION
