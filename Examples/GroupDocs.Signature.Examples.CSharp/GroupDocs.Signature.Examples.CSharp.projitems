@@ -41,6 +41,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentInfoAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentProcessHistoryAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\GetDocumentSignaturesInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\DocumentPreview\PreviewArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingIncorrectPasswordException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\HandlingExceptions\HandlingPasswordRequiredException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromAmazonS3.cs" />
@@ -62,9 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveSignedDocumentsAsImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveSignedImageWithVariousOutputTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchAndSkipExternalSignatures.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchArchives\SearchWithin7zArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchArchives\SearchWithinTARArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchArchives\SearchWithinZIPArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchCertificateAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForDigitalAdvanced.cs" />
@@ -96,9 +95,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SignaturePreview\GenerateSignaturePreviewAdvanced.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\Sign7ZIPArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignTARArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchives\SignZIPArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithImageAppearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithPdfTextAnnotation.cs" />
@@ -175,9 +172,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateQRCodeById.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateTextAfterSearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Update\UpdateTextById.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\Verify7zArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\VerifyTARArchiveDocuments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchives\VerifyZIPArchiveDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyDigitalAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyQRCodeAdvanced.cs" />

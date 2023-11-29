@@ -8,15 +8,16 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-    public class SearchWithinZIPArchiveDocuments
+    public class SearchArchiveDocuments
     {
         /// <summary>
-        /// Search within the ZIP archive documents with various search options
+        /// Search within the archive documents with various search options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SearchWithinZIPArchiveDocuments : Search ZIP archive document for various signatures\n");
+            Console.WriteLine("[Example Advanced Usage] # SearchArchiveDocuments : Search archive document for various signatures\n");
+            Console.WriteLine("ZIP, 7Z and TAR archive formats are supported \n");
 
             // The path to the archive with signed documents
             string filePath = Constants.SAMPLE_SIGNED_ZIP;

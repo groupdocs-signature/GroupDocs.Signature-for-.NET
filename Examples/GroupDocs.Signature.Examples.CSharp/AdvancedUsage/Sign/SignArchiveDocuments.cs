@@ -8,20 +8,21 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-    public class SignTARArchiveDocuments
+    public class SignArchiveDocuments
     {
         /// <summary>
-        /// Sign TAR Documents with various signature options
+        /// Sign Documents with various signature options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SignTARArchiveDocuments : Sign TAR archive document with various signature options\n");
+            Console.WriteLine("[Example Advanced Usage] # SignArchiveDocuments : Sign archive document with various signature options\n");
+            Console.WriteLine("ZIP, 7Z and TAR archive formats are supported \n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_TAR;
+            string filePath = Constants.SAMPLE_ZIP;
             string fileName = Path.GetFileName(filePath);
-            string outputPath = System.IO.Path.Combine(Constants.OutputPath, "SignTARArchiveDocuments");
+            string outputPath = System.IO.Path.Combine(Constants.OutputPath, "SignArchiveDocuments");
             string outputFilePath = System.IO.Path.Combine(outputPath, fileName);
 
             using (Signature signature = new Signature(filePath))
@@ -40,8 +41,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                 List<SignOptions> listOptions = new List<SignOptions>() { bcOptions1, qrOptions2 };
                 // sign document to file
                 SignResult signResult = signature.Sign(outputFilePath, listOptions);
-
-                Console.WriteLine($"\nSource document signed successfully with {signResult.Succeeded.Count} documents(s).\nFile saved at {outputFilePath}.");
+                // check the output
+                Console.WriteLine($"\nArchive signed successfully with {signResult.Succeeded.Count} documents(s).\nFile saved at {outputFilePath}.");
 
                 Console.WriteLine("\nList of successfully signed documents:");
                 int number = 1;

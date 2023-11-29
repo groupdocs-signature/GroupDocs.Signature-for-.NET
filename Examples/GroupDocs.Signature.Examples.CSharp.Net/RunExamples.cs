@@ -12,7 +12,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
 
-             // Please uncomment the example you want to try out
+            // Please uncomment the example you want to try out
             #region Quick Start
 
             QuickStart.SetLicenseFromFile.Run();
@@ -520,22 +520,18 @@ namespace GroupDocs.Signature.Examples.CSharp
             //CustomLogging.Run();
             #endregion
 
-            #region Sign the different archive file types
-            SignZIPArchiveDocuments.Run();
-            SignTARArchiveDocuments.Run();
-            Sign7ZIPArchiveDocuments.Run();
-            #endregion
+            #region Process various files stored to archives
+            //Sign different archive file types
+            SignArchiveDocuments.Run();
 
-            #region Search for the different signatures within the archives
-            SearchWithinZIPArchiveDocuments.Run();
-            SearchWithinTARArchiveDocuments.Run();
-            SearchWithin7zArchiveDocuments.Run();
-            #endregion
+            //Search for the different signatures within the archives
+            SearchArchiveDocuments.Run();
 
-            #region Verify different documents packed to archives
-            VerifyZIPArchiveDocuments.Run();
-            VerifyTARArchiveDocuments.Run();
-            Verify7zArchiveDocuments.Run();
+            //Verify different documents packed to archives
+            VerifyArchiveDocuments.Run();
+
+            //Preview different documents packed to archives
+            PreviewArchiveDocuments.Run();
             #endregion
 
             #endregion // Advanced Usage

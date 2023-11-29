@@ -8,18 +8,19 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     using GroupDocs.Signature.Domain;
     using GroupDocs.Signature.Options;
 
-    public class VerifyTARArchiveDocuments
+    public class VerifyArchiveDocuments
     {
         /// <summary>
-        /// Verify documents at the TAR archive documents with various options
+        /// Verify documents at the archive documents with various options
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # VerifyTARArchiveDocuments : Verify signatures at document packed to TAR archive\n");
+            Console.WriteLine("[Example Advanced Usage] # VerifyArchiveDocuments : Verify signatures at document packed to archive\n");
+            Console.WriteLine("ZIP, 7Z and TAR archive formats are supported \n");
 
             // The path to the archive with signed documents
-            string filePath = Constants.SAMPLE_SIGNED_TAR;
+            string filePath = Constants.SAMPLE_SIGNED_ZIP;
 
             using (Signature signature = new Signature(filePath))
             {
