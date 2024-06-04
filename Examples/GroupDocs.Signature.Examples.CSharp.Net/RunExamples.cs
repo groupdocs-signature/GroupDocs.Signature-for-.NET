@@ -258,6 +258,9 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Sign document with digital signatures got from one of certificate stores
             SignWithDigitalUsingCertificateStore.Run();
+            
+            //Sign document with digital signatures got from one of certificate stores
+            SignWithDigitalUsingCertificateStore.Run();
 
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();

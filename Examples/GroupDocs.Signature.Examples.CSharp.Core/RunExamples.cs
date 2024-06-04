@@ -258,6 +258,9 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Sign document with digital signatures got from one of certificate stores
             SignWithDigitalUsingCertificateStore.Run();
+            
+            //Sign document incrementally with digital certificates only
+            SignWithDigitalIncrementalSaving.Run();
 
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
@@ -354,7 +357,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SignWithAlignments.Run();
 
             #endregion
-
+           
             SignWithStretchMode.Run();
 
             SignWithExceptionHandling.Run();
