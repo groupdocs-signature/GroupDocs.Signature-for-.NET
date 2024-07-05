@@ -20,10 +20,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //QuickStart.SetMeteredLicense.Run();
             QuickStart.HelloWorld.Run();
             #endregion // Quick Start
-
-            //Sign document with qr-code signature
-            SignWithQRCode.Run();
-            return;
+                        
             #region Basic Usage
 
             #region Common
