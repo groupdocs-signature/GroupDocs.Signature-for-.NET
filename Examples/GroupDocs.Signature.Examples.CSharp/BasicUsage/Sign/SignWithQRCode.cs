@@ -18,12 +18,15 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             Console.WriteLine("[Example Basic Usage] # SignWithQRCode : Sign document with QR-Code\n");
 
             // The path to the documents directory.
-            string filePath = Constants.SAMPLE_PDF;
+            string filePath = Constants.SAMPLE_PRESENTATION;
             string fileName = Path.GetFileName(filePath);
-
+            var loadOptions = new LoadOptions()
+            {
+                Password = "1234567890"
+            };
             string outputFilePath = Path.Combine(Constants.OutputPath, "SignWithQRCode", fileName);
 
-            using (Signature signature = new Signature(filePath))
+            using (Signature signature = new Signature(filePath, loadOptions))
             {
                 // create QRCode option with predefined QRCode text
                 QrCodeSignOptions options = new QrCodeSignOptions("JohnSmith")
