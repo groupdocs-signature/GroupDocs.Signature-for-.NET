@@ -31,9 +31,9 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             }
         }
 
-        private static Stream CreatePageStream(int pageNumber)
+        private static Stream CreatePageStream(PreviewPageData pageData)
         {
-            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewFolder", "image-" + pageNumber.ToString() + ".jpg");
+            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewFolder", "image-" + pageData.PageNumber.ToString() + ".jpg");
             var folder = Path.GetDirectoryName(imageFilePath);
             if (!Directory.Exists(folder))
             {
@@ -42,10 +42,10 @@ namespace GroupDocs.Signature.Examples.CSharp.BasicUsage
             return new FileStream(imageFilePath, FileMode.Create);
         }
 
-        private static void ReleasePageStream(int pageNumber, Stream pageStream)
+        private static void ReleasePageStream(PreviewPageData pageData, Stream pageStream)
         {
             pageStream.Dispose();
-            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewFolder", "image-" + pageNumber.ToString() + ".jpg");
+            string imageFilePath = Path.Combine(Constants.OutputPath, "GeneratePreviewFolder", "image-" + pageData.PageNumber.ToString() + ".jpg");
             Console.WriteLine($"Image file {imageFilePath} is ready for preview");
         }
     }

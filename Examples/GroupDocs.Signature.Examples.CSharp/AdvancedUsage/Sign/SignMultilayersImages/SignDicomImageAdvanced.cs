@@ -135,9 +135,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             }
         }
 
-        private static Stream CreatePageStream(int pageNumber)
+        private static Stream CreatePageStream(PreviewPageData pageData)
         {
-            string imageFilePath = Path.Combine(Constants.OutputPath, "SignDicomImageAdvanced", "preview-" + pageNumber.ToString() + ".jpg");
+            string imageFilePath = Path.Combine(Constants.OutputPath, "SignDicomImageAdvanced", "preview-" + pageData.PageNumber.ToString() + ".jpg");
             var folder = Path.GetDirectoryName(imageFilePath);
             if (!Directory.Exists(folder))
             {
@@ -146,7 +146,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             return new FileStream(imageFilePath, FileMode.Create);
         }
 
-        private static void ReleasePageStream(int pageNumber, Stream pageStream)
+        private static void ReleasePageStream(PreviewPageData pageData, Stream pageStream)
         {
             pageStream.Dispose();
         }

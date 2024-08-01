@@ -66,7 +66,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
 
         static BarcodeSignOptions GetBarcodeSignOptions()
         {
-            BarcodeSignOptions result = new BarcodeSignOptions("123456789012", BarcodeTypes.Code39Standard);
+            BarcodeSignOptions result = new BarcodeSignOptions("123456789012", BarcodeTypes.Code39);
             // alignment settings
             result.Left = 100;
             result.Top = 50;
