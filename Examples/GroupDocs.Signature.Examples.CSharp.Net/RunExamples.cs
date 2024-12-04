@@ -243,6 +243,9 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Sign document with digital signature applying specific options
             SignWithDigitalAdvanced.Run();
+            
+            //Sign PDF document incrementally with digital signature applying special signature appearance settings, image and font settings
+            SignWithDigitalAdvancedPdfImageAndFontSettings.Run();
 
             //Sign Pdf document with digital time stamp
             SignWithDigitalAdvancedPdfTimestamp.Run();

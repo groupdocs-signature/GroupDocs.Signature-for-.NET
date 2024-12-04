@@ -261,6 +261,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             
             //Sign document incrementally with digital certificates only
             SignWithDigitalIncrementalSaving.Run();
+            
+            //Sign PDF document incrementally with digital signature applying special signature appearance settings, image and font settings
+            SignWithDigitalAdvancedPdfImageAndFontSettings.Run();
 
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
