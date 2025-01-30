@@ -51,6 +51,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadPasswordProtectedDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\SpecifyFileTypeWhenLoading.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\ConsoleLogging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\CustomLogging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\FileLogging.cs" />

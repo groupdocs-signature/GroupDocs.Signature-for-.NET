@@ -197,7 +197,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             //LoadDocumentFromAzureBlobStorage.Run();
             //LoadDocumentFromFtp.Run();            
             LoadPasswordProtectedDocument.Run();
-
+            SpecifyFileTypeWhenLoading.Run();
             #endregion
 
             #region Saving
