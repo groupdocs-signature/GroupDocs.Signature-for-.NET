@@ -1,0 +1,32 @@
+Title: GroupDocs.Signature for .NET – API to Sign, Verify, and Remove Document Signatures
+
+GroupDocs.Signature for .NET is a powerful library to create, apply, verify, and remove digital and electronic signatures from documents including PDFs, Word, Excel, Images, and more. Supports text, image, barcode, QR code, stamp, metadata, and certificate-based digital signatures.
+
+## About
+
+This repository contains examples and demos for GroupDocs.Signature for .NET, a comprehensive digital signature API that enables .NET developers to automate signing, verifying, and processing electronic and digital signatures in over 90 document types.
+
+**Key Features:**
+- Digital signatures with X.509 certificates
+- Image, text, barcode, QR code signatures  
+- Metadata and form field signatures
+- Signature verification and removal
+- Cross-platform support (.NET Framework, .NET Core, .NET 5–8)
+
+## Documentation
+
+- [README.md](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/README.md) – Overview and getting started guide
+- [Official Documentation](https://docs.groupdocs.com/signature/net/) – Comprehensive API documentation
+- [Code Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Examples) – Working samples and demos
+- [API Reference](https://apireference.groupdocs.com/signature/net) – Full API reference
+
+## Resources
+
+- [NuGet Package](https://www.nuget.org/packages/GroupDocs.Signature) – Install via NuGet
+- [Free Support Forum](https://forum.groupdocs.com/c/signature) – Community Q&A and support
+- [License Information](https://purchase.groupdocs.com/policies/license) – GroupDocs EULA
+- [Release Notes](https://docs.groupdocs.com/signature/net/release-notes/) – Version history and changes
+
+## Tags
+
+digital signature, e-sign, sign pdf, image signature, .NET signature library, verify signature, electronic signature, document signing, sign Word document in .NET, QR code signature, barcode signature, remove signature from PDF, certificate-based signature
