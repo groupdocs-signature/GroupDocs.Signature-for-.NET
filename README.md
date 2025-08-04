@@ -173,7 +173,6 @@ GroupDocs.Signature supports:
 This repository contains **examples and demos** for GroupDocs.Signature for .NET. We welcome contributions and feedback! 
 
 - [Report Issues](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/issues)
-- [Submit Feature Requests](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/discussions)
 - Fork the repo and submit pull requests with improvements
 - Help improve documentation and examples
 
