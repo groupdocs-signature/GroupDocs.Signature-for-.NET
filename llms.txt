@@ -1,4 +1,4 @@
-Title: GroupDocs.Signature for .NET – API to Sign, Verify, and Remove Document Signatures
+# Title: GroupDocs.Signature for .NET – API to Sign, Verify, and Remove Document Signatures
 
 GroupDocs.Signature for .NET is a powerful library to create, apply, verify, and remove digital and electronic signatures from documents including PDFs, Word, Excel, Images, and more. Supports text, image, barcode, QR code, stamp, metadata, and certificate-based digital signatures.
 

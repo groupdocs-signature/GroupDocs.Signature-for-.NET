@@ -7,26 +7,24 @@
 
 > ✅ Supports `create digital signature`, `esign pdf`, `sign pdf doc`, `verify signature`, and `remove signatures` features across multiple platforms.
 
----
 
 ## 🚀 Key Features
 
-- ✅ Add **electronic signatures** to **90+ document formats** including PDF, DOCX, XLSX, PPTX, PNG, TIFF, and more
-- ✅ Create signatures from **image, barcode, QR code, stamp, text, metadata, or form fields**
-- ✅ Support for **signature validation**, **verification**, and **removal**
-- ✅ **Search and remove** existing signatures from documents
-- ✅ Apply **multiple signatures** of different types to a single document
-- ✅ Built-in support for **digital certificates** (X.509, PKCS#7) for legally binding signatures
-- ✅ **Metadata signatures** for document tracking and authentication
-- ✅ **Form field signatures** for interactive document workflows
-- ✅ Integrate into your **signature app** or web-based **e-sign platform**
+- Add **electronic signatures** to **90+ document formats** including PDF, DOCX, XLSX, PPTX, PNG, TIFF, and more
+- Create signatures from **image, barcode, QR code, stamp, text, metadata, or form fields**
+- Support for **signature validation**, **verification**, and **removal**
+- **Search and remove** existing signatures from documents
+- Apply **multiple signatures** of different types to a single document
+- Built-in support for **digital certificates** (X.509, PKCS#7) for legally binding signatures
+- **Metadata signatures** for document tracking and authentication
+- **Form field signatures** for interactive document workflows
+- Integrate into your **signature app** or web-based **e-sign platform**
 
----
 
 ## 🔧 Supported Signature Types
 
 | Signature Type     | Description                                |
-|--------------------|--------------------------------------------|
+|--|--|
 | **Digital Signatures** | X.509 certificate-based signatures for legal compliance |
 | **Image Signatures**   | Draw or upload images (PNG, JPEG, SVG, BMP)    |
 | **Text Signatures**    | Add custom text annotations with fonts & styles |
@@ -36,7 +34,7 @@
 | **Metadata Signatures** | Hidden signatures for document tracking & authentication |
 | **Form Field Signatures** | Interactive signature fields for workflows |
 
----
+
 
 ## 📁 Supported Document Formats (90+)
 
@@ -56,22 +54,22 @@
 - Web formats (HTML, HTM)
 - And many more...
 
----
+
 
 ## 💡 Use Cases
 
-- ✅ **Sign PDF documents** with digital certificates (X.509, PKCS#7)
-- ✅ **E-sign Word documents** with image signatures or typed names
-- ✅ **Add signatures to Excel spreadsheets** and CSV files
-- ✅ **Verify and validate e-signatures** for authenticity
-- ✅ **Search and remove** existing signatures from documents
-- ✅ **Metadata signatures** for document versioning and tracking
-- ✅ **Form field signatures** for interactive document workflows
-- ✅ **Batch processing** multiple documents with signatures
+- [**Sign PDF documents**](https://docs.groupdocs.com/signature/net/sign-document-with-digital-signature/) with digital certificates (X.509, PKCS#7)
+- [**E-sign Word documents**](https://docs.groupdocs.com/signature/net/sign-document-with-different-text-signature-implementation/#sign-document-with-text-signature-and-form-field-implementation-type) with image signatures or typed names
+- [**Add signatures to Excel spreadsheets**](https://docs.groupdocs.com/signature/net/how-to-sign-excel-macros-using-csharp/) and CSV files
+- [**Verify and validate e-signatures**](https://docs.groupdocs.com/signature/net/verify-digital-signatures-in-the-document/) for authenticity
+- [**Search and remove**](https://docs.groupdocs.com/signature/net/delete-barcode-signatures-from-documents/) existing signatures from documents
+- [**Metadata signatures**](https://docs.groupdocs.com/signature/net/esign-document-with-metadata-signature/) for document versioning and tracking
+- [**Form field signatures**](https://docs.groupdocs.com/signature/net/esign-document-with-form-field-signature/) for interactive document workflows
+- [**Batch processing**](https://docs.groupdocs.com/signature/net/iterative-digital-signing-of-the-pdf-document/) multiple documents with signatures
 
----
 
-## 🧪 Example: Sign PDF Document with Image Signature
+
+## Example: Sign PDF Document with Image Signature
 
 ```csharp
 using GroupDocs.Signature;
@@ -97,7 +95,7 @@ using (Signature signature = new Signature("document.pdf"))
 
 ☝️ This example shows how to sign a PDF with an image signature using **GroupDocs.Signature for .NET**.
 
----
+
 
 ## 📦 Installation
 
@@ -115,7 +113,7 @@ Install-Package GroupDocs.Signature -Version 25.6.0
 
 Or download directly from the [Releases](https://releases.groupdocs.com/signature/net/).
 
----
+
 
 ## 📚 Documentation & Resources
 
@@ -124,7 +122,7 @@ Or download directly from the [Releases](https://releases.groupdocs.com/signatur
 - [NuGet Package](https://www.nuget.org/packages/GroupDocs.Signature)
 - [Free Support Forum](https://forum.groupdocs.com/c/signature)
 
----
+
 
 ## 🖥️ Cross-Platform Support
 
@@ -138,21 +136,21 @@ GroupDocs.Signature supports:
 - **Platforms:** Windows, Linux, macOS
 - **Cloud:** Azure, AWS, Google Cloud Platform
 
----
 
-## 📈 Why Choose GroupDocs.Signature?
 
-- ✅ **High-performance** signature processing for enterprise applications
-- ✅ **Zero dependencies** on external tools like Adobe Acrobat or Microsoft Office
-- ✅ **Memory-efficient** processing of large documents
-- ✅ **Thread-safe** operations for multi-threaded applications
-- ✅ **Comprehensive API** with 90+ supported document formats
-- ✅ **Easy integration** into existing .NET signature applications
-- ✅ **Regular updates** with new features and format support
+## Why Choose GroupDocs.Signature?
 
----
+- **High-performance** signature processing for enterprise applications
+- **Zero dependencies** on external tools like Adobe Acrobat or Microsoft Office
+- **Memory-efficient** processing of large documents
+- **Thread-safe** operations for multi-threaded applications
+- **Comprehensive API** with 90+ supported document formats
+- **Easy integration** into existing .NET signature applications
+- **Regular updates** with new features and format support
 
-## 🔒 Security & Compliance
+
+
+## Security & Compliance
 
 - **Digital Certificate Support**: RSA, DSA, ECDSA algorithms
 - **Standards Compliance**: PKCS#7, X.509, PDF/A compatibility
@@ -160,15 +158,15 @@ GroupDocs.Signature supports:
 - **Legal Compliance**: Suitable for legally binding digital signatures worldwide
 - **Audit Trail**: Complete signature history and document integrity verification
 
----
+
 
 ## Looking for GroupDocs.Signature for Java?
 
 👉 [View the Java version here](https://github.com/groupdocs-signature/GroupDocs.Signature-for-Java)
 
----
 
-## 🙌 Contribute
+
+## Contribute
 
 This repository contains **examples and demos** for GroupDocs.Signature for .NET. We welcome contributions and feedback! 
 
@@ -176,7 +174,7 @@ This repository contains **examples and demos** for GroupDocs.Signature for .NET
 - Fork the repo and submit pull requests with improvements
 - Help improve documentation and examples
 
----
+
 
 <!--
 SEO Keywords:
