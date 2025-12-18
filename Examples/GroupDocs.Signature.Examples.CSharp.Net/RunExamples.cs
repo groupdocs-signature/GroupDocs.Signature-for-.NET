@@ -265,6 +265,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign document with digital signatures got from one of certificate stores
             SignWithDigitalUsingCertificateStore.Run();
 
+            //Sign image with digital signature
+            SignImageWithDigital.Run();
+
             //Sign document with image signature applying specific options
             SignWithImageAdvanced.Run();
 
@@ -437,6 +440,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             // search multi-layer images for the signatures
             SearchForMultiLayerImagesAdvanced.Run();
 
+            //Search signatures with predicate function
+            SearchSignaturesWithPredicate.Run();
+
             #endregion // Search signed documents for different signature types with additional options
 
             #region Search for QR-Code Encryption, custom encryption, custom serialization            
@@ -461,6 +467,12 @@ namespace GroupDocs.Signature.Examples.CSharp
 
             //Verify document with digital signature with applying specific options
             VerifyDigitalAdvanced.Run();
+
+            //Verify image with digital signature
+            VerifyImageWithDigital.Run();
+
+            //Verify signatures with predicate function
+            VerifySignaturesWithPredicate.Run();
 
             #endregion // Verify signed documents with additional options
 
