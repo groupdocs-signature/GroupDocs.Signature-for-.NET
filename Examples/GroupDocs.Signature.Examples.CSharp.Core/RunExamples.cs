@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace GroupDocs.Signature.Examples.CSharp
 {
@@ -209,6 +210,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             SaveSignedPresentationWithDifferentOutputFileType.Run();
             SaveSignedImageWithDifferentOutputFileType.Run();
             SaveSignedImageWithVariousOutputTypes.Run();
+            SaveWordProcessingWithOoxmlCompliance.Run();
 
             SaveDocumentWithPassword.Run();
             SaveSignedDocumentsAsImages.Run();

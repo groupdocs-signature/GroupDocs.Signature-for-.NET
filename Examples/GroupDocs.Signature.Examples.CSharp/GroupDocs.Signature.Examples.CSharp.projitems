@@ -63,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveDocumentWithPassword.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveSignedDocumentsAsImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveSignedImageWithVariousOutputTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveWordProcessingWithOoxmlCompliance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchAndSkipExternalSignatures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchCertificateAdvanced.cs" />
