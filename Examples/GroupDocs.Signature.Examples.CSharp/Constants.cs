@@ -17,10 +17,16 @@ namespace GroupDocs.Signature.Examples.CSharp
         //Certificate
         public static string CertificatePfx { get { return Path.Combine(CertificatesPath, "MrSmithSignature.pfx"); } }
         public static string CertificateCer { get { return Path.Combine(CertificatesPath, "signtest.cer"); } }
+        // Expired in 2016, no password
+        public static string CertificateExpiredPfx { get { return Path.Combine(CertificatesPath, "acer.pfx"); } }
+        // Post-quantum ML-DSA-65 test certificate
+        public static string CertificateMlDsaPfx { get { return Path.Combine(CertificatesPath, "MLDSA65.pfx"); } }
 
         // WordProcessing
         public static string SAMPLE_WORDPROCESSING
             => GetSampleFilePath("sample.docx");
+        public static string SAMPLE_WORDPROCESSING_EXTERNAL_IMAGE
+            => GetSampleFilePath("sample_external_image.docx");
         public static string SAMPLE_FORMS_DOCX
             => GetSampleFilePath("sample_formfields.docx");
         public static string SAMPLE_SIGNED_MULTI

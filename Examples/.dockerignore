@@ -1,0 +1,10 @@
+**/.git
+**/bin
+**/obj
+**/out
+**/.vscode
+**/.vs
+**/.idea
+**/packages
+**/tools
+.dotnet

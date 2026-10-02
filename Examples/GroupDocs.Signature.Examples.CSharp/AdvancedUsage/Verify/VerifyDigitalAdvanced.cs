@@ -22,8 +22,8 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
             {
                 DigitalVerifyOptions options = new DigitalVerifyOptions()
                 {
-                    // specify special search criteria
-                    Comments = "Approved",
+                    // specify the signing reason (Comments applies to Word, Excel and PowerPoint documents, not to PDF)
+                    Reason = "Approved",
                     // specify date range period of signature
                     SignDateTimeFrom = new DateTime(year: 2020, month: 01, day: 01),
                     SignDateTimeTo = new DateTime(year: 2020, month: 12, day: 31)

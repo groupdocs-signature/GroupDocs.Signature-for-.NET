@@ -11,21 +11,38 @@ This repository contains examples and demos for GroupDocs.Signature for .NET, a 
 - Image, text, barcode, QR code signatures  
 - Metadata and form field signatures
 - Signature verification and removal
-- Cross-platform support (.NET Framework, .NET Core, .NET 5–8)
+- Cross-platform support (.NET Framework 4.6.2+, .NET 6, .NET 8 and .NET 10 on Windows, Linux and macOS)
+
+## How the examples are organized
+
+- `Examples/GroupDocs.Signature.Examples.CSharp/` - the shared example code (C# 7.3): one class per example, each with a static `Run()` method, in `QuickStart/`, `BasicUsage/` and `AdvancedUsage/`.
+- `Examples/GroupDocs.Signature.Examples.CSharp.Framework/`, `.Net/`, `.Net8/` and `.Net10/` - console projects for .NET Framework 4.6.2, .NET 6, .NET 8 and .NET 10; `RunExamples.cs` lists the examples to run.
+- `Examples/GroupDocs.Signature.Examples.CSharp/Resources/SampleFiles/` - sample documents and test certificates; `Constants.cs` holds their paths and `LicensePath`.
+
+## Examples added for version 26.9
+
+- [SkipExternalResourcesWhenLoading](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/SkipExternalResourcesWhenLoading.cs) - external resources that a document links to are skipped by default
+- [LoadWhitelistedExternalResources](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/LoadWhitelistedExternalResources.cs) - load external resources from trusted addresses only (`LoadOptions.WhitelistedResources`)
+- [SignWithDigitalAdvancedPdfHashAlgorithm](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalAdvancedPdfHashAlgorithm.cs) - PDF digital signature with SHA-512 (`HashAlgorithm`; SHA-256 is the default)
+- [SignWithDigitalExpiredCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalExpiredCertificate.cs) - expired certificates are rejected unless `DigitalSignOptions.AllowExpired` is set
+- [SignWithDigitalPostQuantumCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalPostQuantumCertificate.cs) - sign a Word document with a post-quantum ML-DSA certificate
+- [VerifyPdfWithDigital](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Verify/VerifyPdfWithDigital.cs) - verify a PDF digital signature by certificate subject, issuer and reason
+- [ConsoleLoggingWithLogLevels](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Logging/ConsoleLoggingWithLogLevels.cs) - choose which messages are logged (`SignatureSettings.LogLevel`)
+- [SignWithTextFontStyles](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithTextFontStyles.cs) - font styles with `SignatureFont`
 
 ## Documentation
 
 - [README.md](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/README.md) – Overview and getting started guide
 - [Official Documentation](https://docs.groupdocs.com/signature/net/) – Comprehensive API documentation
 - [Code Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Examples) – Working samples and demos
-- [API Reference](https://apireference.groupdocs.com/signature/net) – Full API reference
+- [API Reference](https://reference.groupdocs.com/signature/net/) – Full API reference
 
 ## Resources
 
 - [NuGet Package](https://www.nuget.org/packages/GroupDocs.Signature) – Install via NuGet
 - [Free Support Forum](https://forum.groupdocs.com/c/signature) – Community Q&A and support
 - [License Information](https://purchase.groupdocs.com/policies/license) – GroupDocs EULA
-- [Release Notes](https://docs.groupdocs.com/signature/net/release-notes/) – Version history and changes
+- [Release Notes](https://releases.groupdocs.com/signature/net/release-notes/) – Version history and changes
 
 ## Tags
 

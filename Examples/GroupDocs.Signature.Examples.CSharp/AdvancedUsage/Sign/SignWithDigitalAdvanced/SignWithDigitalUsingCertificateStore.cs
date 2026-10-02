@@ -62,6 +62,13 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     {
                         continue;
                     }
+                    //Only certificates within their validity period can sign: since version 26.9 an expired
+                    //or not-yet-valid certificate is rejected unless AllowExpired or AllowNotYetValid is set
+                    DateTime now = DateTime.Now;
+                    if (digitalSignature.Certificate.NotBefore > now || digitalSignature.Certificate.NotAfter < now)
+                    {
+                        continue;
+                    }
                     try
                     {
                         DigitalSignOptions options = new DigitalSignOptions()
@@ -79,7 +86,7 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"\nCertificate #{signatureNumber} is not suitable for signing. Perhaps it does not have exportable private key.");
+                        Console.WriteLine($"\nCertificate #{signatureNumber} is not suitable for signing: {ex.Message}");
                     }
                 }
                 return;

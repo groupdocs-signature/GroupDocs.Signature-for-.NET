@@ -32,8 +32,10 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
                     ContactInfo = "Contact",
                     Location = "Location",
                     Reason = "Reason",
-                    // Setting data for getting time stamp from third-party site for pdf digital signature
-                    TimeStamp = new TimeStamp("https://www.safestamper.com/tsa", "", "")
+                    // Time stamp from a time-stamp authority (RFC 3161), requested while the document is signed.
+                    // User name and password are optional: set either, both or neither, as the authority requires.
+                    // The time stamp uses the same digest as the signature (SHA-256 by default).
+                    TimeStamp = new TimeStamp("https://freetsa.org/tsr", "", "")
                 };
 
                 //Create digital signing options

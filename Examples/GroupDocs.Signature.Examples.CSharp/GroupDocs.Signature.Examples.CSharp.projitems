@@ -51,8 +51,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadingDocumentsFromDifferentSources\LoadDocumentFromUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadPasswordProtectedDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\LoadWhitelistedExternalResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\SkipExternalResourcesWhenLoading.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Loading\SpecifyFileTypeWhenLoading.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\ConsoleLogging.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\ConsoleLoggingWithLogLevels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\CustomLogging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging\FileLogging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Saving\SaveDocumentsWithDifferentOutputTypes\SaveSignedImageWithDifferentOutputFileType.cs" />
@@ -97,6 +100,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchForTextAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchSignaturesWithPredicate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Search\SearchWithExceptionHandling.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalAdvancedPdfHashAlgorithm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalExpiredCertificate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithDigitalAdvanced\SignWithDigitalPostQuantumCertificate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignWithTextFontStyles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SignaturePreview\GenerateSignaturePreviewAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignArchiveDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Sign\SignatureAppearances\SignWithDigitalAppearance.cs" />
@@ -182,6 +189,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyBarcodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyDigitalAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyImageWithDigital.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyPdfWithDigital.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyQRCodeAdvanced.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifySignaturesWithPredicate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Verify\VerifyTextAdvanced.cs" />
@@ -247,6 +255,9 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\ali.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\MLDSA65.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\Certificates\MrSmithSignature.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -285,6 +296,9 @@
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_external_image.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleFiles\sample_formfields.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

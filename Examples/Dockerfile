@@ -1,49 +1,31 @@
-# to build image run in PS - `docker build --pull -t signature:examples .`
-# to run tests run in PS - `docker run --rm -it -v ${PWD}:/examples/Results signature:examples`
- 
-FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS buid_env
+# to build the image run in PowerShell - `docker build --pull -t signature:examples .`
+# to run the examples run in PowerShell - `docker run --rm -it -v ${PWD}:/examples/Results signature:examples`
+
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build_env
 
 # prepare
 WORKDIR /examples
 COPY ./*.sln ./
 COPY ./GroupDocs.Signature.Examples.CSharp/ ./GroupDocs.Signature.Examples.CSharp/
-COPY ./GroupDocs.Signature.Examples.CSharp.Core/ ./GroupDocs.Signature.Examples.CSharp.Core/
+COPY ./GroupDocs.Signature.Examples.CSharp.Net10/ ./GroupDocs.Signature.Examples.CSharp.Net10/
 # end prepare
 
-# GroupDocs.Signature dependency - https://docs.groupdocs.com/display/signaturenet/.NET+Standard+2.0+API+Limitations
-RUN dotnet add ./GroupDocs.Signature.Examples.CSharp.Core/GroupDocs.Signature.Examples.CSharp.Core.csproj package SkiaSharp.NativeAssets.Linux --framework netcoreapp2.1
-# GroupDocs.Signature dependency
-
 # restore
-WORKDIR /examples
-RUN dotnet restore ./GroupDocs.Signature.Examples.CSharp.Core/GroupDocs.Signature.Examples.CSharp.Core.csproj
+RUN dotnet restore ./GroupDocs.Signature.Examples.CSharp.Net10/GroupDocs.Signature.Examples.CSharp.Net10.csproj
 # end restore
 
-## build
-WORKDIR /examples
-RUN dotnet publish ./GroupDocs.Signature.Examples.CSharp.Core/GroupDocs.Signature.Examples.CSharp.Core.csproj --no-restore --framework netcoreapp2.1 --configuration Debug -o ./../publish_output
-## end build
+# build
+RUN dotnet publish ./GroupDocs.Signature.Examples.CSharp.Net10/GroupDocs.Signature.Examples.CSharp.Net10.csproj --no-restore --configuration Release -o /publish_output
+# end build
 
-FROM mcr.microsoft.com/dotnet/core/runtime:2.1 
+FROM mcr.microsoft.com/dotnet/runtime:10.0
 
-# begin GroupDocs.Signature dependencies - https://docs.groupdocs.com/display/signaturenet/.NET+Standard+2.0+API+Limitations
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y libgdiplus && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y libc6-dev
-
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y libfontconfig1
-
-RUN echo "deb http://httpredir.debian.org/debian jessie main contrib" > /etc/apt/sources.list \
-    && echo "deb http://security.debian.org/ jessie/updates main contrib" >> /etc/apt/sources.list \
+# libgdiplus for the image operations of GroupDocs.Signature on Linux, and the fonts the examples use
+RUN apt-get update \
     && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
-    && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer \
-    && apt-get clean \
-    && apt-get autoremove -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libgdiplus libc6-dev fontconfig ttf-mscorefonts-installer \
     && rm -rf /var/lib/apt/lists/*
-# end GroupDocs.Signature dependencies
 
 WORKDIR /examples
-COPY --from=buid_env /examples/publish_output .
-ENTRYPOINT ["dotnet", "GroupDocs.Signature.Examples.CSharp.Core.dll"]
+COPY --from=build_env /publish_output .
+ENTRYPOINT ["dotnet", "GroupDocs.Signature.Examples.CSharp.Net10.dll"]

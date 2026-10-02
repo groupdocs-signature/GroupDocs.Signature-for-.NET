@@ -198,6 +198,8 @@ namespace GroupDocs.Signature.Examples.CSharp
             //LoadDocumentFromFtp.Run();            
             LoadPasswordProtectedDocument.Run();
             SpecifyFileTypeWhenLoading.Run();
+            SkipExternalResourcesWhenLoading.Run();
+            LoadWhitelistedExternalResources.Run();
             #endregion
 
             #region Saving
@@ -242,6 +244,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign document with text signature applying specific options
             SignWithTextAdvanced.Run();
 
+            //Sign document with text signatures using different font styles
+            SignWithTextFontStyles.Run();
+
             //Sign document with digital signature applying specific options
             SignWithDigitalAdvanced.Run();
             
@@ -254,6 +259,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign Pdf document with digital certificate
             SignWithDigitalAdvancedPdfCertificate.Run();
 
+            //Sign Pdf document with digital certificate using a specific hash algorithm
+            SignWithDigitalAdvancedPdfHashAlgorithm.Run();
+
             //Sign Pdf document with digital certificate and custom appearance settings
             SignWithDigitalAdvancedPdfAppearance.Run();
 
@@ -263,8 +271,14 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Sign document with digital signatures got from one of certificate stores
             SignWithDigitalUsingCertificateStore.Run();
             
-            //Sign document with digital signatures got from one of certificate stores
-            SignWithDigitalUsingCertificateStore.Run();
+            //Sign document incrementally with digital certificates only
+            SignWithDigitalIncrementalSaving.Run();
+
+            //Sign document with an expired certificate
+            SignWithDigitalExpiredCertificate.Run();
+
+            //Sign Word document with a post-quantum ML-DSA certificate
+            SignWithDigitalPostQuantumCertificate.Run();
 
             //Sign image with digital signature
             SignImageWithDigital.Run();
@@ -469,6 +483,9 @@ namespace GroupDocs.Signature.Examples.CSharp
             //Verify document with digital signature with applying specific options
             VerifyDigitalAdvanced.Run();
 
+            //Verify Pdf document digital signature by certificate subject, issuer and reason
+            VerifyPdfWithDigital.Run();
+
             //Verify image with digital signature
             VerifyImageWithDigital.Run();
 
@@ -536,6 +553,7 @@ namespace GroupDocs.Signature.Examples.CSharp
             #region Logging
             ConsoleLogging.Run();
             FileLogging.Run();
+            ConsoleLoggingWithLogLevels.Run();
             //CustomLogging.Run();
             #endregion
 

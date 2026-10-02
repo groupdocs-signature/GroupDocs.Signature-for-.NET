@@ -14,6 +14,9 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("[Example Advanced Usage] # SignWithDigitalIncrementalSaving : Sign document incrementally with digital certificates only\n");
+
             string [] certificates = new string[] {Constants.CertificatePfx, Constants.CertificatePfx};
 
             string[] passwords = new string[]

@@ -10,12 +10,12 @@ namespace GroupDocs.Signature.Examples.CSharp.AdvancedUsage
     public class SignWithTextStamp
     {
         /// <summary>
-        /// Sign document with text signature applying Stamp implementation type (this is default value)
+        /// Sign document with text signature applying Native implementation type (this is default value)
         /// </summary>
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Advanced Usage] # SignWithTextStamp : Sign document with text signature applying Stamp implementation type (this is default value)\n");
+            Console.WriteLine("[Example Advanced Usage] # SignWithTextStamp : Sign document with text signature applying Native implementation type (this is default value)\n");
 
             // The path to the documents directory.
             string filePath = Constants.SAMPLE_WORDPROCESSING;

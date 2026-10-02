@@ -73,6 +73,7 @@
 
 ```csharp
 using GroupDocs.Signature;
+using GroupDocs.Signature.Domain;
 using GroupDocs.Signature.Options;
 
 // Initialize signature with input document
@@ -89,7 +90,7 @@ using (Signature signature = new Signature("document.pdf"))
     
     // Sign document and save
     SignResult result = signature.Sign("signed.pdf", options);
-    Console.WriteLine($"Document signed with {result.Signatures.Count} signature(s)");
+    Console.WriteLine($"Document signed with {result.Succeeded.Count} signature(s)");
 }
 ```
 
@@ -102,13 +103,13 @@ using (Signature signature = new Signature("document.pdf"))
 Install via NuGet Package Manager:
 
 ```bash
-dotnet add package GroupDocs.Signature --version 25.6.0
+dotnet add package GroupDocs.Signature --version 26.9.0
 ```
 
 Or via Package Manager Console:
 
 ```powershell
-Install-Package GroupDocs.Signature -Version 25.6.0
+Install-Package GroupDocs.Signature -Version 26.9.0
 ```
 
 Or download directly from the [Releases](https://releases.groupdocs.com/signature/net/).
@@ -128,11 +129,8 @@ Or download directly from the [Releases](https://releases.groupdocs.com/signatur
 
 GroupDocs.Signature supports:
 
-- **.NET Framework** (2.0+, including 4.6.2+)
-- **.NET Core** 2.0 and above
-- **.NET Standard** 2.0 / 2.1
-- **.NET 6.0+**
-- **Mono Framework** 1.2+
+- **.NET Framework** 4.6.2 and later
+- **.NET 6**, **.NET 8** and **.NET 10**
 - **Platforms:** Windows, Linux, macOS
 - **Cloud:** Azure, AWS, Google Cloud Platform
 

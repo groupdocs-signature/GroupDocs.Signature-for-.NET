@@ -8,8 +8,13 @@
   <Import Project="..\GroupDocs.Signature.Examples.CSharp\GroupDocs.Signature.Examples.CSharp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Signature" Version="26.6.0" />
+    <PackageReference Include="GroupDocs.Signature" Version="26.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- On Linux and macOS GroupDocs.Signature uses System.Drawing (libgdiplus) for some image operations -->
+    <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />
   </ItemGroup>
 
 </Project>

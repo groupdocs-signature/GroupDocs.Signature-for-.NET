@@ -197,3 +197,4 @@ FakesAssemblies/
 Examples/GroupDocs.Signature.Examples.CSharp/Output/
 deploy_key
 *.lic
+/Examples/.idea
