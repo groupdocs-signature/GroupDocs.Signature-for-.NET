@@ -12,7 +12,7 @@
 
 ## Digitally Sign documents with .NET API
 
-GroupDocs.Signature for .NET allows you to **add a digital signature to PDF, DOCX, PPT, XLS** and over 90 formats with no external dependencies. Using powerful and flexible API you can easily add handwritten, barcode, QR code, Image and stamp signatures to a document. 
+GroupDocs.Signature for .NET allows you to **add a digital signature to PDF, DOCX, PPT, XLS** and other formats (40+ in total) with no external dependencies. Using powerful and flexible API you can easily add handwritten, barcode, QR code, Image and stamp signatures to a document. 
 
 This web application demonstrates all GroupDocs.Signature features with simple modern UI which can be used as standalone or be integrated into your project.
 
@@ -65,7 +65,7 @@ This web application demonstrates all GroupDocs.Signature features with simple m
 - Easily switchable colour theme (create your own colour theme in 5 minutes)
 - Responsive design
 - Mobile support (open application on any mobile device)
-- Support over 50 documents and image formats
+- Support 40+ document and image formats
 - Image mode
 - Fully customizable navigation panel
 - Sign password protected documents

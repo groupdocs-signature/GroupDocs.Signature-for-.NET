@@ -1,49 +1,118 @@
-# Title: GroupDocs.Signature for .NET – API to Sign, Verify, and Remove Document Signatures
+# GroupDocs.Signature for .NET - code examples
 
-GroupDocs.Signature for .NET is a powerful library to create, apply, verify, and remove digital and electronic signatures from documents including PDFs, Word, Excel, Images, and more. Supports text, image, barcode, QR code, stamp, metadata, and certificate-based digital signatures.
+> Runnable C# examples for GroupDocs.Signature for .NET 26.9.0, the on-premise library (NuGet package `GroupDocs.Signature`) that adds, verifies, searches, updates and deletes text, image, digital (X.509 certificate), barcode, QR code, stamp, form field and metadata signatures in 40+ formats: PDF, Word, Excel, PowerPoint, OpenDocument, images and archives. The example projects target .NET Framework 4.6.2, .NET 6, .NET 8 and .NET 10; the library runs on Windows, Linux and macOS.
 
-## About
+This file is a brief for AI assistants that read, run or extend these examples. It covers .NET only: GroupDocs.Signature for Java, for Python via .NET and for Node.js via Java, and the GroupDocs.Signature Cloud REST API, have their own package names, types and syntax. The documentation pages linked below are plain Markdown; drop the `.md` suffix to get the HTML page.
 
-This repository contains examples and demos for GroupDocs.Signature for .NET, a comprehensive digital signature API that enables .NET developers to automate signing, verifying, and processing electronic and digital signatures in over 90 document types.
+**Rules for AI assistants**
 
-**Key Features:**
-- Digital signatures with X.509 certificates
-- Image, text, barcode, QR code signatures  
-- Metadata and form field signatures
-- Signature verification and removal
-- Cross-platform support (.NET Framework 4.6.2+, .NET 6, .NET 8 and .NET 10 on Windows, Linux and macOS)
+- Install with `dotnet add package GroupDocs.Signature`. 26.9.0 is current when this file was written; check NuGet for the latest.
+- `Signature` holds the open document: wrap it in `using`. Open a file path or a `Stream`. `Sign` writes a new file or stream; the source document is not changed.
+- Collection parameters are `List<T>` (`List<SignOptions>`, `List<SearchOptions>`, `List<BaseSignature>`). Arrays do not compile.
+- Apply a licence with `new License().SetLicense(path)` before other calls; in these examples set `LicensePath` in `Constants.cs`. .NET has no licence environment variable.
+- Without a licence, documents of more than 2 pages are refused (`GroupDocsSignatureException`: "The number of pages cannot exceed 2 in a trial version") and search returns masked values, so `Verify` fails. Test with small documents or a temporary licence.
+- 26.9 defaults: external resources are not loaded (`LoadOptions.SkipExternalResources`; allow trusted addresses with `WhitelistedResources`); expired or not-yet-valid certificates throw unless `DigitalSignOptions.AllowExpired` / `AllowNotYetValid` is set; PDF signatures use SHA-256 (`HashAlgorithm`) and `Verify` checks them cryptographically.
+- On Linux and macOS install libgdiplus and the fonts your documents use; the .NET projects set `System.Drawing.EnableUnixSupport`. The .NET Framework project runs on Windows only.
+- Do not claim PAdES support, or eIDAS, ESIGN or HIPAA compliance: the library provides signing and verification primitives only.
 
-## How the examples are organized
+**How the examples are organized**
 
 - `Examples/GroupDocs.Signature.Examples.CSharp/` - the shared example code (C# 7.3): one class per example, each with a static `Run()` method, in `QuickStart/`, `BasicUsage/` and `AdvancedUsage/`.
 - `Examples/GroupDocs.Signature.Examples.CSharp.Framework/`, `.Net/`, `.Net8/` and `.Net10/` - console projects for .NET Framework 4.6.2, .NET 6, .NET 8 and .NET 10; `RunExamples.cs` lists the examples to run.
 - `Examples/GroupDocs.Signature.Examples.CSharp/Resources/SampleFiles/` - sample documents and test certificates; `Constants.cs` holds their paths and `LicensePath`.
+- Legacy, not built by the solution: `Examples/GroupDocs.Signature.Examples.CSharp.Core/` (netcoreapp3.1, GroupDocs.Signature 26.6.0) and `Demos/` (web demos on 20.1 and 21.1). Do not copy patterns from them.
+
+Run the .NET 10 project from its output folder (the examples read sample files relative to it):
+
+```bash
+dotnet build Examples/GroupDocs.Signature.Examples.CSharp.Net10 --configuration Release
+cd Examples/GroupDocs.Signature.Examples.CSharp.Net10/bin/Release/net10.0
+dotnet GroupDocs.Signature.Examples.CSharp.Net10.dll
+```
+
+**Types**
+
+| Task | Options classes | Result |
+| --- | --- | --- |
+| Sign | `TextSignOptions`, `ImageSignOptions`, `DigitalSignOptions`, `BarcodeSignOptions`, `QrCodeSignOptions`, `StampSignOptions`, `FormFieldSignOptions`, `MetadataSignOptions` | `SignResult` (`Succeeded`, `Failed`) |
+| Search | `TextSearchOptions`, `ImageSearchOptions`, `DigitalSearchOptions`, `BarcodeSearchOptions`, `QrCodeSearchOptions`, `FormFieldSearchOptions`, `MetadataSearchOptions` | `List<T>` from `Search<T>`, `SearchResult` from `Search(List<SearchOptions>)` |
+| Verify | `TextVerifyOptions`, `DigitalVerifyOptions`, `BarcodeVerifyOptions`, `QrCodeVerifyOptions` | `VerificationResult` (`IsValid`) |
+| Update, delete | signatures returned by `Search` | `UpdateResult`, `DeleteResult` |
+| Inspect | - | `IDocumentInfo` from `GetDocumentInfo()` |
+
+**Formats** (40+; the full table lists the signature types per format)
+
+- PDF
+- Word processing: DOC, DOCX, DOCM, DOT, DOTX, DOTM, RTF, ODT, OTT
+- Spreadsheets: XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM, ODS, OTS
+- Presentations: PPT, PPTX, PPTM, PPS, PPSX, PPSM, POTX, POTM, ODP, OTP
+- Images: JPG, JPEG, PNG, APNG, BMP, GIF, TIF, TIFF, TGA, WEBP, DICOM; vector SVG, WMF, CMX
+- eBook: AZW3
+- Archives: ZIP, TAR, 7Z, GZ, LZ - each document inside is processed
+- Certificate (digital) signatures: PDF; DOC, DOCX, DOCM, DOT, DOTX; XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM; PPTX, PPTM; ODT, ODS, OTS. PNG, JPG and JPEG take an image digital signature hidden in the pixels (`ImageDigitalSignOptions`).
+- Form-field signatures (`FormFieldSignOptions`): PDF only. Metadata signatures: not on APNG, TGA, WEBP, DICOM, SVG, WMF, CMX or AZW3.
+- CSV signs only with `new LoadOptions(FileType.CSV)`; by path alone it is "not supported". DJVU and PSD are not supported, and CDR signing fails in 26.9. A signed XLT is saved with XLSX content under the .xlt name.
+
+**Code patterns**
+
+Sign with text and check the result:
+
+```csharp
+using System;
+using GroupDocs.Signature;
+using GroupDocs.Signature.Domain;
+using GroupDocs.Signature.Options;
+
+new License().SetLicense("GroupDocs.Signature.lic");
+
+using (Signature signature = new Signature("sample.pdf"))
+{
+    TextSignOptions options = new TextSignOptions("John Smith") { Left = 100, Top = 100 };
+    SignResult result = signature.Sign("sample-signed.pdf", options);
+    Console.WriteLine($"Created: {result.Succeeded.Count}, failed: {result.Failed.Count}");
+}
+```
+
+Search two signature types, then move what was found:
+
+```csharp
+using (Signature signature = new Signature("sample-signed.pdf"))
+{
+    SearchResult found = signature.Search(new List<SearchOptions> { new TextSearchOptions(), new QrCodeSearchOptions() });
+    foreach (BaseSignature item in found.Signatures)
+    {
+        item.Top += 20;
+    }
+    UpdateResult updated = signature.Update(found.Signatures);
+    Console.WriteLine($"Updated: {updated.Succeeded.Count}");
+}
+```
 
 ## Examples added for version 26.9
 
-- [SkipExternalResourcesWhenLoading](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/SkipExternalResourcesWhenLoading.cs) - external resources that a document links to are skipped by default
-- [LoadWhitelistedExternalResources](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/LoadWhitelistedExternalResources.cs) - load external resources from trusted addresses only (`LoadOptions.WhitelistedResources`)
-- [SignWithDigitalAdvancedPdfHashAlgorithm](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalAdvancedPdfHashAlgorithm.cs) - PDF digital signature with SHA-512 (`HashAlgorithm`; SHA-256 is the default)
-- [SignWithDigitalExpiredCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalExpiredCertificate.cs) - expired certificates are rejected unless `DigitalSignOptions.AllowExpired` is set
-- [SignWithDigitalPostQuantumCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalPostQuantumCertificate.cs) - sign a Word document with a post-quantum ML-DSA certificate
-- [VerifyPdfWithDigital](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Verify/VerifyPdfWithDigital.cs) - verify a PDF digital signature by certificate subject, issuer and reason
-- [ConsoleLoggingWithLogLevels](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Logging/ConsoleLoggingWithLogLevels.cs) - choose which messages are logged (`SignatureSettings.LogLevel`)
-- [SignWithTextFontStyles](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithTextFontStyles.cs) - font styles with `SignatureFont`
+- [SkipExternalResourcesWhenLoading](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/SkipExternalResourcesWhenLoading.cs): external resources that a document links to are skipped by default
+- [LoadWhitelistedExternalResources](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Loading/LoadWhitelistedExternalResources.cs): load external resources from trusted addresses only (`LoadOptions.WhitelistedResources`)
+- [SignWithDigitalAdvancedPdfHashAlgorithm](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalAdvancedPdfHashAlgorithm.cs): PDF digital signature with SHA-512 (`HashAlgorithm`; SHA-256 is the default)
+- [SignWithDigitalExpiredCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalExpiredCertificate.cs): expired certificates are rejected unless `DigitalSignOptions.AllowExpired` is set
+- [SignWithDigitalPostQuantumCertificate](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithDigitalAdvanced/SignWithDigitalPostQuantumCertificate.cs): sign a Word document with a post-quantum ML-DSA certificate
+- [VerifyPdfWithDigital](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Verify/VerifyPdfWithDigital.cs): verify a PDF digital signature by certificate subject, issuer and reason
+- [ConsoleLoggingWithLogLevels](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Logging/ConsoleLoggingWithLogLevels.cs): choose which messages are logged (`SignatureSettings.LogLevel`)
+- [SignWithTextFontStyles](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/Examples/GroupDocs.Signature.Examples.CSharp/AdvancedUsage/Sign/SignWithTextFontStyles.cs): font styles with `SignatureFont`
 
 ## Documentation
 
-- [README.md](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/README.md) – Overview and getting started guide
-- [Official Documentation](https://docs.groupdocs.com/signature/net/) – Comprehensive API documentation
-- [Code Examples](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Examples) – Working samples and demos
-- [API Reference](https://reference.groupdocs.com/signature/net/) – Full API reference
+- [Installation](https://docs.groupdocs.com/signature/net/installation.md): NuGet packages per framework
+- [SDK, Cloud or MCP?](https://docs.groupdocs.com/signature/net/sdk-cloud-mcp.md): which GroupDocs.Signature product line fits the task
+- [Supported document formats](https://docs.groupdocs.com/signature/net/supported-document-formats.md): formats and signature types
+- [How to run the examples](https://docs.groupdocs.com/signature/net/how-to-run-examples.md)
+- [Evaluation limitations and licensing](https://docs.groupdocs.com/signature/net/evaluation-limitations-and-licensing-of-groupdocs-signature.md)
+- [API reference](https://reference.groupdocs.com/signature/net/)
+- [Release notes](https://releases.groupdocs.com/signature/net/release-notes/)
 
-## Resources
+## Optional
 
-- [NuGet Package](https://www.nuget.org/packages/GroupDocs.Signature) – Install via NuGet
-- [Free Support Forum](https://forum.groupdocs.com/c/signature) – Community Q&A and support
-- [License Information](https://purchase.groupdocs.com/policies/license) – GroupDocs EULA
-- [Release Notes](https://releases.groupdocs.com/signature/net/release-notes/) – Version history and changes
-
-## Tags
-
-digital signature, e-sign, sign pdf, image signature, .NET signature library, verify signature, electronic signature, document signing, sign Word document in .NET, QR code signature, barcode signature, remove signature from PDF, certificate-based signature
+- [README](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/blob/master/README.md)
+- [NuGet package](https://www.nuget.org/packages/GroupDocs.Signature)
+- [Free support forum](https://forum.groupdocs.com/c/signature)
+- [Temporary licence](https://purchase.groupdocs.com/temporary-license)
+- [GroupDocs EULA](https://purchase.groupdocs.com/policies/license)

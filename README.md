@@ -3,14 +3,14 @@
 ![NuGet](https://img.shields.io/nuget/v/GroupDocs.Signature)
 ![.NET](https://img.shields.io/badge/.NET-4.6.2+-informational)
 
-**Create, apply, and verify digital signatures** in documents with an advanced .NET **e-signature API**. Add electronic, barcode, QR-code, image, text, metadata, and form field signatures to **90+ document formats** including PDFs, Word, Excel, Images, and more.
+**Create, apply, and verify digital signatures** in documents with an advanced .NET **e-signature API**. Add electronic, barcode, QR-code, image, text, metadata, and form field signatures to **40+ document formats** including PDFs, Word, Excel, Images, and more.
 
 > ✅ Supports `create digital signature`, `esign pdf`, `sign pdf doc`, `verify signature`, and `remove signatures` features across multiple platforms.
 
 
 ## 🚀 Key Features
 
-- Add **electronic signatures** to **90+ document formats** including PDF, DOCX, XLSX, PPTX, PNG, TIFF, and more
+- Add **electronic signatures** to **40+ document formats** including PDF, DOCX, XLSX, PPTX, PNG, TIFF, and more
 - Create signatures from **image, barcode, QR code, stamp, text, metadata, or form fields**
 - Support for **signature validation**, **verification**, and **removal**
 - **Search and remove** existing signatures from documents
@@ -36,23 +36,24 @@
 
 
 
-## 📁 Supported Document Formats (90+)
+## 📁 Supported Document Formats (40+)
 
 **Office Documents:**
-- Microsoft Word (DOC, DOCX, DOCM, DOT, DOTX, DOTM)
+- Microsoft Word (DOC, DOCX, DOCM, DOT, DOTX, DOTM, RTF)
 - Excel (XLS, XLSX, XLSM, XLSB, XLT, XLTX, XLTM)
-- PowerPoint (PPT, PPTX, PPTM, PPS, PPSX)
-- Visio (VSD, VSDX, VSS, VSSX, VST, VSTX)
+- PowerPoint (PPT, PPTX, PPTM, PPS, PPSX, PPSM, POTX, POTM)
+- OpenDocument (ODT, OTT, ODS, OTS, ODP, OTP)
 
 **PDFs & Images:**
 - PDF (Portable Document Format)
-- Images (PNG, JPG, JPEG, BMP, TIFF, GIF, SVG, WEBP)
+- Images (PNG, APNG, JPG, JPEG, BMP, GIF, TIF, TIFF, TGA, WEBP, DICOM)
+- Vector graphics (SVG, WMF, CMX)
 
 **Other Formats:**
-- OpenDocument (ODT, ODS, ODP)
-- Text files (TXT, RTF, CSV)
-- Web formats (HTML, HTM)
-- And many more...
+- eBook (AZW3)
+- Archives (ZIP, TAR, 7Z, GZ, LZ): every document inside the archive is signed
+
+See the [supported document formats](https://docs.groupdocs.com/signature/net/supported-document-formats/) table for the signature types each format supports.
 
 
 
@@ -60,7 +61,7 @@
 
 - [**Sign PDF documents**](https://docs.groupdocs.com/signature/net/sign-document-with-digital-signature/) with digital certificates (X.509, PKCS#7)
 - [**E-sign Word documents**](https://docs.groupdocs.com/signature/net/sign-document-with-different-text-signature-implementation/#sign-document-with-text-signature-and-form-field-implementation-type) with image signatures or typed names
-- [**Add signatures to Excel spreadsheets**](https://docs.groupdocs.com/signature/net/how-to-sign-excel-macros-using-csharp/) and CSV files
+- [**Add signatures to Excel spreadsheets**](https://docs.groupdocs.com/signature/net/how-to-sign-excel-macros-using-csharp/)
 - [**Verify and validate e-signatures**](https://docs.groupdocs.com/signature/net/verify-digital-signatures-in-the-document/) for authenticity
 - [**Search and remove**](https://docs.groupdocs.com/signature/net/delete-barcode-signatures-from-documents/) existing signatures from documents
 - [**Metadata signatures**](https://docs.groupdocs.com/signature/net/esign-document-with-metadata-signature/) for document versioning and tracking
@@ -142,7 +143,7 @@ GroupDocs.Signature supports:
 - **Zero dependencies** on external tools like Adobe Acrobat or Microsoft Office
 - **Memory-efficient** processing of large documents
 - **Thread-safe** operations for multi-threaded applications
-- **Comprehensive API** with 90+ supported document formats
+- **Comprehensive API** with 40+ supported document formats
 - **Easy integration** into existing .NET signature applications
 - **Regular updates** with new features and format support
 
